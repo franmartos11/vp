@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+/* ─── Tailwind v4 @theme: Design Tokens ─── */
+@theme {
+  /* Colors */
+  --color-cream-50: #FAFAF7;
+  --color-cream-100: #F5F5F0;
+  --color-cream-200: #EEEDE6;
+  --color-cream-300: #E0DED5;
+  --color-charcoal-900: #0A0A0A;
+  --color-charcoal-800: #111111;
+  --color-charcoal-700: #1A1A1A;
+  --color-charcoal-600: #242424;
+  --color-warm-500: #8A8A85;
+  --color-warm-400: #A5A5A0;
+  --color-warm-300: #C0C0BB;
+  --color-warm-200: #D8D8D3;
+  --color-accent: #2A2A24;
+
+  /* Fonts */
+  --font-family-sans: var(--font-inter), system-ui, sans-serif;
+  --font-family-display: var(--font-inter), system-ui, sans-serif;
+
+  /* Spacing */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-26: 6.5rem;
+  --spacing-30: 7.5rem;
+
+  /* Letter spacing */
+  --letter-spacing-widest-2: 0.2em;
+  --letter-spacing-widest-3: 0.3em;
+
+  /* Transitions */
+  --transition-fast: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 600ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slower: 1000ms cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Font sizes (fluid) */
+  --font-size-2xs: 0.625rem;
+  --font-size-display-2xl: clamp(3rem, 8vw, 7rem);
+  --font-size-display-xl: clamp(2.5rem, 6vw, 5rem);
+  --font-size-display-lg: clamp(2rem, 4vw, 3.5rem);
+  --font-size-display-md: clamp(1.5rem, 3vw, 2.5rem);
+  --font-size-display-sm: clamp(1.25rem, 2vw, 1.875rem);
+
+  /* Max widths */
+  --max-width-8xl: 88rem;
+  --max-width-9xl: 96rem;
+}
+
+/* ─── Base Styles ─── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-cream-100);
+    color: var(--color-charcoal-900);
+    font-family: var(--font-family-sans);
+    font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-display);
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: var(--color-charcoal-900);
+    color: var(--color-cream-100);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-charcoal-900);
+    outline-offset: 3px;
+  }
+
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ─── Utilities ─── */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Swiss 12-column grid */
+  .grid-swiss {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* Eyebrow label */
+  .eyebrow {
+    font-size: 0.625rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-warm-500);
+    font-weight: 500;
+  }
+
+  /* Bottom-border rule for sections */
+  .section-rule {
+    border-top: 1px solid var(--color-warm-200);
+    padding-top: 1.5rem;
+  }
+
+  /* Nav link with animated underline */
+  .nav-link {
+    position: relative;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    color: var(--color-warm-500);
+    transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .nav-link:hover {
+    color: var(--color-charcoal-900);
+  }
+  .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: currentColor;
+    transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  /* Buttons */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--color-charcoal-900);
+    color: var(--color-cream-100);
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-primary:hover {
+    background-color: var(--color-charcoal-700);
+  }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--color-charcoal-900);
+    color: var(--color-charcoal-900);
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn-outline:hover {
+    background-color: var(--color-charcoal-900);
+    color: var(--color-cream-100);
+  }
+
+  /* Input field (borderless, bottom-line style) */
+  .input-field {
+    width: 100%;
+    padding: 0.75rem 0;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid var(--color-warm-200);
+    color: var(--color-charcoal-900);
+    font-size: 0.875rem;
+    transition: border-color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .input-field::placeholder {
+    color: var(--color-warm-400);
+  }
+  .input-field:focus {
+    outline: none;
+    border-bottom-color: var(--color-charcoal-900);
+  }
+}
