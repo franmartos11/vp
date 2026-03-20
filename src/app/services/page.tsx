@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Building2, Home, Layers, PenTool, Wrench, Ruler } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
-import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import FAQSection from "@/components/sections/FAQSection";
 import { sanityFetch, allServicesQuery } from "@/sanity/lib/queries";
-import { PortableText } from "@portabletext/react";
+import { urlFor } from "@/sanity/lib/image";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -17,28 +17,45 @@ export const metadata: Metadata = {
 type Service = {
   _id: string;
   title: string;
+  slug: { current: string };
   icon?: string;
   shortDescription?: string;
   fullDescription?: unknown[];
+  coverImage?: any;
+  keyDeliverables?: string[];
   order?: number;
 };
 
-const ICON_MAP: Record<string, React.ElementType> = {
-  Building2,
-  Home,
-  Layers,
-  PenTool,
-  Wrench,
-  Ruler,
-};
-
+// Update fallbacks to strictly 4 services with dummy image URLs
 const FALLBACK_SERVICES: Service[] = [
-  { _id: "1", title: "Custom Architecture", icon: "PenTool", shortDescription: "Complete architectural design from concept through construction documents, tailored to your vision and site." },
-  { _id: "2", title: "Residential Construction", icon: "Home", shortDescription: "Full-service luxury home construction — new builds, additions, and structural modifications." },
-  { _id: "3", title: "Commercial Projects", icon: "Building2", shortDescription: "Commercial build-outs, tenant improvements, and ground-up commercial developments." },
-  { _id: "4", title: "High-End Renovation", icon: "Wrench", shortDescription: "Surgical renovations that preserve architecture while elevating function, finish, and livability." },
-  { _id: "5", title: "Interior Design", icon: "Layers", shortDescription: "Space planning, finish specification, furniture procurement, and art curation for the full interior experience." },
-  { _id: "6", title: "Project Management", icon: "Ruler", shortDescription: "Owner's representative services — budget control, schedule management, and quality assurance from groundbreak to handover." },
+  { 
+    _id: "1", 
+    title: "Custom Architecture", 
+    slug: { current: "custom-architecture" }, 
+    shortDescription: "Complete architectural design from concept through construction documents, tailored to your vision and site.",
+    coverImage: { url: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&auto=format" }
+  },
+  { 
+    _id: "2", 
+    title: "Construction Management", 
+    slug: { current: "construction-management" }, 
+    shortDescription: "Full-service luxury execution — new builds and major structural developments with uncompromising quality.",
+    coverImage: { url: "https://images.unsplash.com/photo-1541888081198-bc4a7e9da1ca?w=1600&auto=format" }
+  },
+  { 
+    _id: "3", 
+    title: "High-End Renovation", 
+    slug: { current: "high-end-renovation" }, 
+    shortDescription: "Surgical renovations that preserve foundational architecture while elevating function, finish, and livability.",
+    coverImage: { url: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1600&auto=format" }
+  },
+  { 
+    _id: "4", 
+    title: "Interior Design", 
+    slug: { current: "interior-design" }, 
+    shortDescription: "Space planning, finish specification, furniture procurement, and art curation for the full interior experience.",
+    coverImage: { url: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&auto=format" }
+  },
 ];
 
 export default async function ServicesPage() {
@@ -52,87 +69,103 @@ export default async function ServicesPage() {
   return (
     <>
       <Nav />
-      <main className="pt-28 md:pt-36">
-        {/* Header */}
-        <section className="container mx-auto pb-16 border-b border-warm-200 mb-16">
-          <AnimatedSection>
-            <div className="grid-swiss">
-              <div className="col-span-12 md:col-span-7">
-                <SectionHeading
-                  eyebrow="What We Do"
-                  title="Comprehensive services, singular focus."
-                  subtitle="We offer the full spectrum of architecture, construction, and design — coordinated under one team."
-                />
+      <main className="bg-cream-50">
+        
+        {/* Dark Immersive Hero */}
+        <section className="relative h-[85vh] w-full overflow-hidden bg-charcoal-900 group mb-24 md:mb-32">
+          {/* Background Texture */}
+          <div className="absolute inset-0">
+            <Image
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=2000&auto=format"
+              alt="Abstract architecture structure"
+              fill
+              className="object-cover opacity-20 group-hover:scale-110 transition-transform duration-[30s] ease-out mix-blend-luminosity grayscale"
+              priority
+              sizes="100vw"
+            />
+          </div>
+          {/* Gradients for text legibility and mood */}
+          <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-charcoal-900/80 to-transparent" />
+          
+          {/* Content Wrapper */}
+          <div className="absolute inset-0 flex flex-col justify-end pb-24 md:pb-32 container mx-auto px-6 z-10">
+            <AnimatedSection>
+              <div className="max-w-4xl">
+                <span className="text-warm-400 font-mono text-xs md:text-sm tracking-[0.3em] uppercase mb-8 block flex items-center gap-4">
+                  <div className="w-12 h-px bg-warm-400" /> What We Do
+                </span>
+                <h1 className="text-display-xl lg:text-[7rem] font-display text-white leading-[0.9] mb-8 drop-shadow-2xl">
+                  Comprehensive <br />
+                  <span className="text-warm-200 italic font-light">expertise.</span>
+                </h1>
+                <p className="text-warm-300 text-lg md:text-2xl font-light leading-relaxed max-w-2xl">
+                  From pre-construction modeling to the final interior finishes, our vertically integrated team ensures total control over quality, budget, and timeline.
+                </p>
               </div>
-            </div>
-          </AnimatedSection>
-        </section>
-
-        {/* Services list */}
-        <section className="container mx-auto pb-24 md:pb-32">
-          <div className="grid-swiss">
-            
-            {/* Scroll Spy Sidebar */}
-            <div className="hidden md:block col-span-3 border-r border-warm-200">
-              <div className="sticky top-32 space-y-6 pt-1">
-                <span className="text-xs text-warm-400 uppercase tracking-widest font-mono border-b border-warm-200 pb-4 block mr-8">Index</span>
-                {displayServices.map((service, i) => (
-                  <a 
-                    key={`nav-${service._id}`} 
-                    href={`#service-${service._id}`} 
-                    className="block text-sm text-warm-500 hover:text-charcoal-900 transition-colors duration-300 font-mono"
-                  >
-                    <span className="text-warm-300 mr-2">0{i + 1}</span> {service.title}
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* List */}
-            <div className="col-span-12 md:col-span-8 md:col-start-5 space-y-0">
-              {displayServices.map((service, i) => {
-                const IconComponent = service.icon ? ICON_MAP[service.icon] || Layers : Layers;
-                return (
-                  <AnimatedSection key={service._id} delay={i * 50}>
-                    <div id={`service-${service._id}`} className="py-16 md:py-24 border-b border-warm-200 grid grid-cols-1 md:grid-cols-12 gap-8 group scroll-mt-24">
-                      <div className="col-span-1 md:col-span-2 flex items-start pt-1.5">
-                        <IconComponent
-                          size={24}
-                          className="text-warm-400 group-hover:text-charcoal-900 group-hover:scale-110 transition-all duration-500"
-                          aria-hidden="true"
-                        />
-                      </div>
-                      <div className="col-span-12 md:col-span-10">
-                        <span className="text-2xs text-warm-400 tracking-widest uppercase block mb-3 font-mono">
-                          0{i + 1}
-                        </span>
-                        <h2 className="font-display text-2xl md:text-3xl text-charcoal-900 mb-6 group-hover:text-warm-500 transition-colors duration-500">{service.title}</h2>
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                          {service.fullDescription ? (
-                            <div className="text-warm-500 text-base leading-relaxed prose-sm col-span-2 lg:col-span-1">
-                              <PortableText value={service.fullDescription as Parameters<typeof PortableText>[0]['value']} />
-                            </div>
-                          ) : (
-                            <p className="text-warm-500 text-base leading-relaxed lg:col-span-1">{service.shortDescription}</p>
-                          )}
-                          <div className="hidden lg:block border-l border-warm-200 pl-8">
-                            <span className="text-xs text-warm-400 uppercase tracking-widest font-mono mb-4 block">Key Deliverables</span>
-                            <ul className="space-y-3 text-sm text-charcoal-700">
-                              <li className="flex items-center gap-2"><span className="w-1 h-1 bg-warm-400 rounded-full"/> Design Strategy</li>
-                              <li className="flex items-center gap-2"><span className="w-1 h-1 bg-warm-400 rounded-full"/> Execution Planning</li>
-                              <li className="flex items-center gap-2"><span className="w-1 h-1 bg-warm-400 rounded-full"/> Quality Assurance</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </AnimatedSection>
-                );
-              })}
-            </div>
+            </AnimatedSection>
+          </div>
+          
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-warm-500/40 flex flex-col items-center gap-3 animate-bounce">
+            <span className="font-mono text-[10px] uppercase tracking-[0.3em] rotate-90 translate-y-2 mb-4">Discover</span>
+            <div className="w-px h-16 bg-gradient-to-b from-warm-500/50 to-transparent" />
           </div>
         </section>
+
+        {/* Services Zig-Zag Layout */}
+        <section className="pb-24 md:pb-32 overflow-hidden">
+          {displayServices.map((service, i) => {
+            const isEven = i % 2 !== 0; // Alternating logic
+            const imageUrl = service.coverImage?.asset?._ref 
+              ? urlFor(service.coverImage).width(1200).height(900).auto("format").url() 
+              : (service as any).coverImage?.url || "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format";
+            
+            return (
+              <AnimatedSection key={service._id} delay={i * 100}>
+                <div className={`flex flex-col ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center mb-20 md:mb-32 group`}>
+                   
+                   {/* Image Block */}
+                   <div className="w-full lg:w-1/2 h-[50vh] min-h-[400px] lg:h-[750px] relative overflow-hidden">
+                      <div className="absolute inset-0 bg-charcoal-900/10 group-hover:bg-transparent transition-colors duration-700 z-10" />
+                      <Image 
+                        src={imageUrl} 
+                        alt={service.title} 
+                        fill 
+                        className="object-cover group-hover:scale-105 transition-transform duration-[10s] ease-out" 
+                        sizes="(max-width: 1024px) 100vw, 50vw"
+                      />
+                   </div>
+
+                   {/* Text Block */}
+                   <div className={`w-full lg:w-1/2 flex flex-col justify-center px-6 py-16 lg:py-0 ${isEven ? 'lg:pr-16 xl:pr-32 lg:pl-16' : 'lg:pl-16 xl:pl-32 lg:pr-16'}`}>
+                      <span className="text-sm tracking-widest uppercase font-mono text-warm-500 mb-6 block">0{i + 1}</span>
+                      <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-charcoal-900 mb-8 leading-tight">
+                        {service.title}
+                      </h2>
+                      <p className="text-xl text-warm-600 leading-relaxed font-light mb-12 max-w-xl">
+                        {service.shortDescription}
+                      </p>
+                      
+                      {service.slug?.current && (
+                        <Link 
+                          href={`/services/${service.slug.current}`}
+                          className="inline-flex items-center gap-4 text-xs tracking-widest uppercase font-mono text-charcoal-900 border-b border-charcoal-900 pb-2 w-fit hover:text-warm-500 hover:border-warm-500 transition-colors group/link"
+                        >
+                          View Service Details
+                          <span className="group-hover/link:translate-x-1 transition-transform">→</span>
+                        </Link>
+                      )}
+                   </div>
+                   
+                </div>
+              </AnimatedSection>
+            );
+          })}
+        </section>
+
         <FAQSection />
+
       </main>
       <Footer />
     </>

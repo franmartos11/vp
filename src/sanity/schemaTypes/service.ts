@@ -52,6 +52,27 @@ export const serviceSchema = defineType({
       ],
     }),
     defineField({
+      name: "coverImage",
+      title: "Cover Image",
+      type: "image",
+      options: { hotspot: true },
+      description: "Main image for the individual service page hero and card background.",
+    }),
+    defineField({
+      name: "keyDeliverables",
+      title: "Key Deliverables",
+      type: "array",
+      of: [{ type: "string" }],
+      description: "List of exact deliverables (e.g. 'Space Planning', 'Permitting')",
+    }),
+    defineField({
+      name: "gallery",
+      title: "Service Gallery",
+      type: "array",
+      of: [{ type: "image", options: { hotspot: true } }],
+      description: "Optional images to show at the bottom of the individual service page.",
+    }),
+    defineField({
       name: "order",
       title: "Display Order",
       type: "number",

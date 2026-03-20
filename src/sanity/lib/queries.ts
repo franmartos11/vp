@@ -63,8 +63,25 @@ export const allServicesQuery = `*[_type == "service"] | order(order asc) {
   icon,
   shortDescription,
   fullDescription,
+  "coverImage": coverImage { asset, hotspot, crop, alt },
+  keyDeliverables,
+  "gallery": gallery[] { asset, hotspot, crop, alt, caption },
   order
 }`;
+
+export const serviceBySlugQuery = `*[_type == "service" && slug.current == $slug][0] {
+  _id,
+  title,
+  slug,
+  icon,
+  shortDescription,
+  fullDescription,
+  "coverImage": coverImage { asset, hotspot, crop, alt },
+  keyDeliverables,
+  "gallery": gallery[] { asset, hotspot, crop, alt, caption }
+}`;
+
+export const allServiceSlugsQuery = `*[_type == "service"] { "slug": slug.current }`;
 
 export const allTeamMembersQuery = `*[_type == "teamMember"] | order(order asc) {
   _id,
