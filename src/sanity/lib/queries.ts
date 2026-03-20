@@ -48,7 +48,10 @@ export const projectBySlugQuery = `*[_type == "project" && slug.current == $slug
   "gallery": gallery[] { asset, hotspot, crop, alt, caption },
   description,
   technicalSheet,
-  seoDescription
+  seoDescription,
+  materials,
+  testimonial,
+  videoUrl
 }`;
 
 export const allProjectSlugsQuery = `*[_type == "project"] { "slug": slug.current }`;

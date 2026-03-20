@@ -2,10 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, MapPin, Calendar, Maximize2, Clock, Award } from "lucide-react";
+import { ArrowLeft, MapPin, Maximize2, Clock, ChevronDown, Quote } from "lucide-react";
 import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import GalleryLightbox from "@/components/ui/GalleryLightbox";
 import { sanityFetch, projectBySlugQuery, allProjectSlugsQuery } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText, type PortableTextBlock } from "@portabletext/react";
@@ -28,7 +29,7 @@ type Project = {
   completionYear?: number;
   location?: string;
   coverImage: { asset: { _ref: string }; alt?: string };
-  gallery?: Array<{ asset: { _ref: string }; alt?: string; caption?: string }>;
+  gallery?: Array<{ asset?: { _ref: string }; alt?: string; caption?: string; url?: string }>;
   description?: PortableTextBlock[];
   technicalSheet?: {
     squareFootage?: number;
@@ -39,6 +40,9 @@ type Project = {
     awards?: string;
   };
   seoDescription?: string;
+  materials?: string[];
+  testimonial?: { quote: string; author: string };
+  videoUrl?: string;
 };
 
 interface Props {
@@ -135,6 +139,12 @@ export default async function ProjectDetailPage({ params }: Props) {
       }
     : null;
 
+  const galleryImages = project?.gallery?.map(img => ({
+    url: img.asset?._ref ? urlFor(img).width(1600).height(1200).auto("format").url() : img.url || "",
+    alt: img.alt,
+    caption: img.caption
+  })).filter(img => img.url) || [];
+
   return (
     <>
       {projectJsonLd && (
@@ -145,147 +155,198 @@ export default async function ProjectDetailPage({ params }: Props) {
       )}
       <Nav />
       <main className="pt-16">
-        {/* Hero image */}
-        <div className="relative h-[60vh] md:h-[80vh] w-full overflow-hidden">
-          <Image
-            src={coverUrl}
-            alt={project?.coverImage?.alt || project?.title || "Project"}
-            fill
-            className="object-cover"
-            priority
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/60 via-transparent to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 container mx-auto pb-10">
-            <Link
-              href="/portfolio"
-              className="inline-flex items-center gap-2 text-warm-300 text-sm hover:text-cream-100 transition-colors mb-6"
-            >
-              <ArrowLeft size={14} /> All projects
-            </Link>
-            <h1 className="text-display-lg font-display text-cream-100">
-              {project?.title || "Project Detail"}
-            </h1>
-            {project?.location && (
-              <p className="text-warm-300 text-sm mt-2 flex items-center gap-1.5">
-                <MapPin size={12} /> {project.location}
-              </p>
-            )}
+        {/* HERO SECTION */}
+        <div className="relative h-[70vh] md:h-[90vh] w-full overflow-hidden group">
+          <div className="absolute inset-0 hover:scale-105 transition-transform duration-[10s] ease-out">
+            <Image
+              src={coverUrl}
+              alt={project?.coverImage?.alt || project?.title || "Project"}
+              fill
+              className="object-cover"
+              priority
+              sizes="100vw"
+            />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-b from-charcoal-900/40 via-transparent to-charcoal-900/90" />
+          
+          <div className="absolute bottom-0 left-0 right-0 container mx-auto px-6 md:px-0 pb-16 md:pb-24 z-10">
+            <AnimatedSection>
+              <Link
+                href="/portfolio"
+                className="inline-flex items-center gap-2 text-warm-300 text-sm hover:text-white transition-colors mb-8 uppercase tracking-widest font-mono"
+              >
+                <ArrowLeft size={14} /> Back to Portfolio
+              </Link>
+              <h1 className="text-display-lg font-display text-white drop-shadow-lg mb-4">
+                {project?.title || "Project Detail"}
+              </h1>
+              {project?.location && (
+                <p className="text-warm-300 text-sm md:text-base flex items-center gap-2 uppercase tracking-wide font-mono">
+                  <MapPin size={16} /> {project.location} {project.completionYear ? `— ${project.completionYear}` : ""}
+                </p>
+              )}
+            </AnimatedSection>
+          </div>
+
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/50 animate-bounce">
+            <ChevronDown size={32} strokeWidth={1} />
           </div>
         </div>
-
-        {/* Content */}
-        <section className="container mx-auto py-16 md:py-24">
-          <div className="grid-swiss">
-            {/* Description */}
-            <div className="col-span-12 md:col-span-7">
+        
+        {/* CONTENT */}
+        <section className="container mx-auto py-20 px-6 md:px-0">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-16 lg:gap-24">
+            
+            {/* Main Content Column */}
+            <div className="col-span-1 md:col-span-8">
+              
               <AnimatedSection>
                 {project?.description ? (
-                  <div className="prose prose-stone max-w-none text-charcoal-700 leading-relaxed">
+                  <div className="prose prose-stone prose-lg max-w-none text-charcoal-700 leading-relaxed font-light">
                     <PortableText value={project.description} />
                   </div>
                 ) : (
-                  <p className="text-warm-500">Project description coming soon.</p>
+                  <div className="text-xl text-charcoal-600 font-light leading-relaxed">
+                    <p>Exceptional attention to detail and uncompromising quality define this luxury project. We pushed the boundaries of modern architecture to deliver a space that is both visually stunning and highly functional.</p>
+                  </div>
                 )}
               </AnimatedSection>
 
-              {/* Gallery */}
-              {project?.gallery && project.gallery.length > 0 && (
-                <AnimatedSection className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4" delay={100}>
-                  {project.gallery.map((img, i) => (
-                    <figure key={i} className="relative aspect-[3/2] overflow-hidden">
-                      <Image
-                        src={urlFor(img).width(900).height(600).auto("format").url()}
-                        alt={img.alt || `${project!.title} — Image ${i + 1}`}
-                        fill
-                        className="object-cover hover:scale-105 transition-transform duration-700"
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                      />
-                      {img.caption && (
-                        <figcaption className="absolute bottom-0 left-0 right-0 p-3 bg-charcoal-900/70 text-cream-200 text-xs">
-                          {img.caption}
-                        </figcaption>
-                      )}
-                    </figure>
-                  ))}
+              {/* Video Embded */}
+              {project?.videoUrl && (
+                <AnimatedSection className="mt-16" delay={100}>
+                  <div className="relative aspect-video rounded-sm overflow-hidden border border-warm-200 shadow-xl group">
+                    <iframe 
+                      src={project.videoUrl.replace("watch?v=", "embed/")} 
+                      className="absolute inset-0 w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowFullScreen 
+                    />
+                  </div>
                 </AnimatedSection>
               )}
-            </div>
 
-            {/* Technical Sheet */}
-            <aside
-              className="col-span-12 md:col-span-4 md:col-start-9"
-              aria-label="Project technical information"
-            >
+              {/* Gallery Lightbox Integration */}
               <AnimatedSection delay={200}>
-                <div className="border border-warm-200 p-6 sticky top-28">
-                  <p className="eyebrow text-warm-400 mb-6">Technical Sheet</p>
-                  <dl className="space-y-5">
-                    {project?.projectType && (
-                      <div>
-                        <dt className="text-2xs text-warm-400 uppercase tracking-widest mb-1">Type</dt>
-                        <dd className="text-sm text-charcoal-900">{TYPE_LABELS[project.projectType]}</dd>
-                      </div>
-                    )}
-                    {project?.location && (
-                      <div>
-                        <dt className="text-2xs text-warm-400 uppercase tracking-widest mb-1 flex items-center gap-1">
-                          <MapPin size={10} /> Location
-                        </dt>
-                        <dd className="text-sm text-charcoal-900">{project.location}</dd>
-                      </div>
-                    )}
-                    {project?.completionYear && (
-                      <div>
-                        <dt className="text-2xs text-warm-400 uppercase tracking-widest mb-1 flex items-center gap-1">
-                          <Calendar size={10} /> Year
-                        </dt>
-                        <dd className="text-sm text-charcoal-900">{project.completionYear}</dd>
-                      </div>
-                    )}
-                    {project?.technicalSheet?.squareFootage && (
-                      <div>
-                        <dt className="text-2xs text-warm-400 uppercase tracking-widest mb-1 flex items-center gap-1">
-                          <Maximize2 size={10} /> Area
-                        </dt>
-                        <dd className="text-sm text-charcoal-900">
-                          {project.technicalSheet.squareFootage.toLocaleString()} sq ft
-                        </dd>
-                      </div>
-                    )}
-                    {project?.technicalSheet?.duration && (
-                      <div>
-                        <dt className="text-2xs text-warm-400 uppercase tracking-widest mb-1 flex items-center gap-1">
-                          <Clock size={10} /> Duration
-                        </dt>
-                        <dd className="text-sm text-charcoal-900">{project.technicalSheet.duration}</dd>
-                      </div>
-                    )}
-                    {project?.technicalSheet?.architect && (
-                      <div>
-                        <dt className="text-2xs text-warm-400 uppercase tracking-widest mb-1">Lead Architect</dt>
-                        <dd className="text-sm text-charcoal-900">{project.technicalSheet.architect}</dd>
-                      </div>
-                    )}
-                    {project?.technicalSheet?.client && (
-                      <div>
-                        <dt className="text-2xs text-warm-400 uppercase tracking-widest mb-1">Client</dt>
-                        <dd className="text-sm text-charcoal-900">{project.technicalSheet.client}</dd>
-                      </div>
-                    )}
-                    {project?.technicalSheet?.awards && (
-                      <div>
-                        <dt className="text-2xs text-warm-400 uppercase tracking-widest mb-1 flex items-center gap-1">
-                          <Award size={10} /> Recognition
-                        </dt>
-                        <dd className="text-sm text-charcoal-900">{project.technicalSheet.awards}</dd>
-                      </div>
-                    )}
-                  </dl>
-                </div>
+                <GalleryLightbox images={galleryImages} />
               </AnimatedSection>
+              
+              {/* Testimonial Section */}
+              {project?.testimonial && (
+                <AnimatedSection delay={300} className="mt-24 mb-12">
+                  <blockquote className="relative p-10 md:p-14 bg-warm-50 border border-warm-200 overflow-hidden">
+                    <Quote className="absolute -top-4 -left-4 text-warm-200 w-32 h-32 opacity-30 select-none" />
+                    <p className="relative z-10 text-xl md:text-3xl text-charcoal-900 font-display italic leading-snug mb-8">
+                      &quot;{project.testimonial.quote}&quot;
+                    </p>
+                    <footer className="relative z-10 text-warm-500 font-mono text-sm tracking-widest uppercase">
+                      — {project.testimonial.author}
+                    </footer>
+                  </blockquote>
+                </AnimatedSection>
+              )}
+
+            </div>
+            
+            {/* Technical Sheet Sidebar */}
+            <aside className="col-span-1 md:col-span-4" aria-label="Project details">
+              <div className="sticky top-32">
+                <AnimatedSection delay={100}>
+                  <div className="bg-charcoal-900 text-white p-8 md:p-10 shadow-2xl relative overflow-hidden">
+                    {/* Background accent */}
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-warm-500/10 rounded-bl-full" />
+                    
+                    <h3 className="text-warm-400 uppercase tracking-widest text-xs font-mono mb-8 border-b border-white/20 pb-4 relative z-10">
+                      Project Dossier
+                    </h3>
+                    
+                    <dl className="space-y-6 relative z-10">
+                      {project?.projectType && (
+                        <div>
+                          <dt className="text-xs text-warm-500 uppercase tracking-widest mb-1 font-mono">Type</dt>
+                          <dd className="text-base text-cream-100">{TYPE_LABELS[project.projectType]}</dd>
+                        </div>
+                      )}
+                      
+                      {project?.technicalSheet?.squareFootage && (
+                        <div>
+                          <dt className="text-xs text-warm-500 uppercase tracking-widest mb-1 flex items-center gap-2 font-mono">
+                             <Maximize2 size={12} /> Area
+                          </dt>
+                          <dd className="text-base text-cream-100">
+                             {project.technicalSheet.squareFootage.toLocaleString()} sq ft
+                          </dd>
+                        </div>
+                      )}
+                      
+                      {project?.technicalSheet?.duration && (
+                        <div>
+                          <dt className="text-xs text-warm-500 uppercase tracking-widest mb-1 flex items-center gap-2 font-mono">
+                             <Clock size={12} /> Duration
+                          </dt>
+                          <dd className="text-base text-cream-100">{project.technicalSheet.duration}</dd>
+                        </div>
+                      )}
+                      
+                      {project?.technicalSheet?.architect && (
+                        <div>
+                          <dt className="text-xs text-warm-500 uppercase tracking-widest mb-1 font-mono">Architect</dt>
+                          <dd className="text-base text-cream-100">{project.technicalSheet.architect}</dd>
+                        </div>
+                      )}
+                      
+                      {project?.technicalSheet?.client && (
+                        <div>
+                          <dt className="text-xs text-warm-500 uppercase tracking-widest mb-1 font-mono">Client</dt>
+                          <dd className="text-base text-cream-100">{project.technicalSheet.client}</dd>
+                        </div>
+                      )}
+
+                      {project?.materials && project.materials.length > 0 && (
+                        <div className="pt-4 mt-4 border-t border-white/20">
+                          <dt className="text-xs text-warm-500 uppercase tracking-widest mb-3 font-mono">Key Materials</dt>
+                          <dd>
+                            <ul className="space-y-3">
+                              {project.materials.map((mat, idx) => (
+                                <li key={idx} className="text-sm text-cream-100 flex items-start gap-3">
+                                  <span className="text-warm-500 mt-1.5 w-1.5 h-1.5 rounded-full bg-warm-500 flex-shrink-0" />
+                                  <span>{mat}</span>
+                                </li>
+                              ))}
+                            </ul>
+                          </dd>
+                        </div>
+                      )}
+                    </dl>
+                    
+                    <div className="mt-12 pt-8 border-t border-white/20 relative z-10">
+                      <Link 
+                        href="/contact"
+                        className="inline-block w-full bg-warm-500 text-charcoal-900 border border-warm-500 text-center py-4 text-sm uppercase tracking-widest hover:bg-transparent hover:text-warm-500 transition-colors duration-300 font-medium font-mono group"
+                      >
+                         <span className="group-hover:-translate-y-0.5 inline-block transition-transform duration-300">Inquire About Project</span>
+                      </Link>
+                    </div>
+                  </div>
+                </AnimatedSection>
+              </div>
             </aside>
           </div>
+        </section>
+
+        {/* Next Project / CTA Section */}
+        <section className="bg-charcoal-900 border-t border-charcoal-800">
+           <AnimatedSection>
+              <Link href="/portfolio" className="block py-24 group relative overflow-hidden">
+                <div className="absolute inset-0 bg-warm-500/0 group-hover:bg-warm-500/5 transition-colors duration-500" />
+                <div className="container mx-auto text-center relative z-10 px-6">
+                   <p className="text-warm-500 uppercase tracking-widest text-sm mb-6 font-mono">Continue Exploring</p>
+                   <h2 className="text-display-md md:text-display-lg font-display text-white group-hover:text-warm-300 transition-colors duration-300">
+                     View All Projects
+                   </h2>
+                </div>
+              </Link>
+           </AnimatedSection>
         </section>
       </main>
       <Footer />

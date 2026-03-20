@@ -9,7 +9,24 @@ export const FALLBACK_PROJECTS = [
     coverImageUrl: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&auto=format',
     seoDescription: 'A stunning modern residential project nestled in the mountains.',
     description: null, // we can skip portable text for fallback or render simple strings
-    gallery: []
+    gallery: [
+      { alt: 'Living Room', url: 'https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=900&auto=format', caption: 'Open concept living area' },
+      { alt: 'Kitchen', url: 'https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=900&auto=format', caption: 'Custom millwork kitchen' },
+      { alt: 'Exterior', url: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&auto=format', caption: 'Rear exterior at dusk' }
+    ],
+    materials: ['Carrara Marble', 'Engineered White Oak', 'Custom Steel Accents', 'Limestone Cladding'],
+    testimonial: {
+      quote: "Vertex Build Group transformed our vision into a timeless masterpiece. The attention to detail is unparalleled.",
+      author: "Sarah J., Homeowner"
+    },
+    videoUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Dummy video
+    technicalSheet: {
+      squareFootage: 8500,
+      budget: "$4.5M",
+      duration: "18 Months",
+      client: "Private Client",
+      architect: "James Vertex"
+    }
   },
   { 
     _id: '2', 

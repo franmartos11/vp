@@ -70,38 +70,66 @@ export default async function ServicesPage() {
 
         {/* Services list */}
         <section className="container mx-auto pb-24 md:pb-32">
-          <div className="space-y-0">
-            {displayServices.map((service, i) => {
-              const IconComponent = service.icon ? ICON_MAP[service.icon] || Layers : Layers;
-              return (
-                <AnimatedSection key={service._id} delay={i * 50}>
-                  <div className="py-10 border-b border-warm-200 grid-swiss group">
-                    <div className="col-span-1 flex items-start pt-1">
-                      <IconComponent
-                        size={18}
-                        className="text-warm-400 group-hover:text-charcoal-900 transition-colors duration-300"
-                        aria-hidden="true"
-                      />
-                    </div>
-                    <div className="col-span-11 md:col-span-3">
-                      <span className="text-2xs text-warm-400 tracking-widest uppercase block mb-2">
-                        0{i + 1}
-                      </span>
-                      <h2 className="font-display text-xl text-charcoal-900">{service.title}</h2>
-                    </div>
-                    <div className="col-span-12 md:col-span-7 md:col-start-5 mt-4 md:mt-0">
-                      {service.fullDescription ? (
-                        <div className="text-warm-500 text-sm leading-relaxed prose-sm">
-                          <PortableText value={service.fullDescription as Parameters<typeof PortableText>[0]['value']} />
+          <div className="grid-swiss">
+            
+            {/* Scroll Spy Sidebar */}
+            <div className="hidden md:block col-span-3 border-r border-warm-200">
+              <div className="sticky top-32 space-y-6 pt-1">
+                <span className="text-xs text-warm-400 uppercase tracking-widest font-mono border-b border-warm-200 pb-4 block mr-8">Index</span>
+                {displayServices.map((service, i) => (
+                  <a 
+                    key={`nav-${service._id}`} 
+                    href={`#service-${service._id}`} 
+                    className="block text-sm text-warm-500 hover:text-charcoal-900 transition-colors duration-300 font-mono"
+                  >
+                    <span className="text-warm-300 mr-2">0{i + 1}</span> {service.title}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {/* List */}
+            <div className="col-span-12 md:col-span-8 md:col-start-5 space-y-0">
+              {displayServices.map((service, i) => {
+                const IconComponent = service.icon ? ICON_MAP[service.icon] || Layers : Layers;
+                return (
+                  <AnimatedSection key={service._id} delay={i * 50}>
+                    <div id={`service-${service._id}`} className="py-16 md:py-24 border-b border-warm-200 grid grid-cols-1 md:grid-cols-12 gap-8 group scroll-mt-24">
+                      <div className="col-span-1 md:col-span-2 flex items-start pt-1.5">
+                        <IconComponent
+                          size={24}
+                          className="text-warm-400 group-hover:text-charcoal-900 group-hover:scale-110 transition-all duration-500"
+                          aria-hidden="true"
+                        />
+                      </div>
+                      <div className="col-span-12 md:col-span-10">
+                        <span className="text-2xs text-warm-400 tracking-widest uppercase block mb-3 font-mono">
+                          0{i + 1}
+                        </span>
+                        <h2 className="font-display text-2xl md:text-3xl text-charcoal-900 mb-6 group-hover:text-warm-500 transition-colors duration-500">{service.title}</h2>
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                          {service.fullDescription ? (
+                            <div className="text-warm-500 text-base leading-relaxed prose-sm col-span-2 lg:col-span-1">
+                              <PortableText value={service.fullDescription as Parameters<typeof PortableText>[0]['value']} />
+                            </div>
+                          ) : (
+                            <p className="text-warm-500 text-base leading-relaxed lg:col-span-1">{service.shortDescription}</p>
+                          )}
+                          <div className="hidden lg:block border-l border-warm-200 pl-8">
+                            <span className="text-xs text-warm-400 uppercase tracking-widest font-mono mb-4 block">Key Deliverables</span>
+                            <ul className="space-y-3 text-sm text-charcoal-700">
+                              <li className="flex items-center gap-2"><span className="w-1 h-1 bg-warm-400 rounded-full"/> Design Strategy</li>
+                              <li className="flex items-center gap-2"><span className="w-1 h-1 bg-warm-400 rounded-full"/> Execution Planning</li>
+                              <li className="flex items-center gap-2"><span className="w-1 h-1 bg-warm-400 rounded-full"/> Quality Assurance</li>
+                            </ul>
+                          </div>
                         </div>
-                      ) : (
-                        <p className="text-warm-500 text-sm leading-relaxed">{service.shortDescription}</p>
-                      )}
+                      </div>
                     </div>
-                  </div>
-                </AnimatedSection>
-              );
-            })}
+                  </AnimatedSection>
+                );
+              })}
+            </div>
           </div>
         </section>
         <FAQSection />

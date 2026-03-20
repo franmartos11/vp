@@ -68,6 +68,44 @@ export default async function AboutPage() {
           </AnimatedSection>
         </section>
 
+        {/* Manifesto / Values */}
+        <section className="bg-charcoal-900 text-cream-100 py-32 md:py-40">
+          <div className="container mx-auto">
+             <AnimatedSection>
+               <h2 className="text-display-lg md:text-display-xl font-display text-center leading-none text-balance">
+                 We build for <br />
+                 <span className="text-warm-400 italic font-light">generations</span>, 
+                 not cycles.
+               </h2>
+             </AnimatedSection>
+          </div>
+        </section>
+
+        {/* Interactive Timeline */}
+        <section className="container mx-auto py-24 md:py-32" aria-labelledby="timeline-heading">
+          <AnimatedSection className="mb-16">
+            <SectionHeading eyebrow="Our History" title="A legacy of precision." />
+          </AnimatedSection>
+          
+          <div className="relative border-l border-warm-200 ml-4 md:ml-8 space-y-16">
+            {[
+              { year: "2005", title: "Foundation", description: "Established in Miami as a boutique architectural firm." },
+              { year: "2012", title: "Construction Division", description: "Integrated construction management to offer end-to-end quality control." },
+              { year: "2018", title: "National Expansion", description: "Opened our New York and Charleston offices to serve an expanding client base." },
+              { year: "2025", title: "A New Standard", description: "Pioneering sustainable luxury with passive-house certified estates across the US." }
+            ].map((item, idx) => (
+              <AnimatedSection key={item.year} delay={idx * 100} className="relative pl-8 md:pl-16">
+                {/* Timeline dot */}
+                <span className="absolute -left-[5px] top-1.5 w-2.5 h-2.5 rounded-full bg-warm-500 ring-4 ring-cream-100" />
+                
+                <span className="text-warm-500 font-mono tracking-widest text-sm mb-2 block">{item.year}</span>
+                <h3 className="font-display text-2xl text-charcoal-900 mb-2">{item.title}</h3>
+                <p className="text-warm-500 max-w-lg leading-relaxed">{item.description}</p>
+              </AnimatedSection>
+            ))}
+          </div>
+        </section>
+
         {/* Process */}
         <section className="bg-cream-50 py-24 md:py-32" aria-labelledby="process-heading">
           <div className="container mx-auto">

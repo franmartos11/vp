@@ -159,6 +159,38 @@ export const projectSchema = defineType({
       description: "Max 160 characters for Google",
       validation: (Rule) => Rule.max(160),
     }),
+    defineField({
+      name: "materials",
+      title: "Key Materials Used",
+      type: "array",
+      of: [{ type: "string" }],
+      description: "List of key luxury materials (e.g. Carrara Marble, Custom White Oak)",
+    }),
+    defineField({
+      name: "testimonial",
+      title: "Client / Architect Testimonial",
+      type: "object",
+      fields: [
+        defineField({
+          name: "quote",
+          title: "Quote",
+          type: "text",
+          rows: 4,
+        }),
+        defineField({
+          name: "author",
+          title: "Author Name & Title",
+          type: "string",
+          placeholder: "e.g. Sarah J., Homeowner",
+        }),
+      ],
+    }),
+    defineField({
+      name: "videoUrl",
+      title: "Video Walkthrough URL",
+      description: "YouTube or Vimeo video URL for a cinematic project tour",
+      type: "url",
+    }),
   ],
   orderings: [
     {
