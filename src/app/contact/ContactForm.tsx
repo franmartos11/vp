@@ -114,6 +114,26 @@ export function ContactForm() {
         </select>
       </div>
 
+      {/* Budget */}
+      <div>
+        <label htmlFor="contact-budget" className="eyebrow block mb-2">
+          Estimated Budget
+        </label>
+        <select
+          id="contact-budget"
+          name="budget"
+          className="input-field bg-transparent"
+        >
+          <option value="">Select a range…</option>
+          <option value="under-250k">Under $250,000</option>
+          <option value="250k-500k">$250,000 – $500,000</option>
+          <option value="500k-1m">$500,000 – $1,000,000</option>
+          <option value="1m-3m">$1,000,000 – $3,000,000</option>
+          <option value="3m-plus">$3,000,000+</option>
+          <option value="not-sure">Not sure yet</option>
+        </select>
+      </div>
+
       {/* Message */}
       <div>
         <label htmlFor="contact-message" className="eyebrow block mb-2">

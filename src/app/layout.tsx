@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import "@/styles/globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
+const oswald = localFont({
+  src: "../../public/Oswald-SemiBold.ttf",
+  variable: "--font-oswald",
   display: "swap",
 });
 
@@ -63,8 +63,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
   },
 };
 
@@ -133,7 +133,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={oswald.variable} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"

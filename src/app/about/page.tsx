@@ -7,6 +7,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { sanityFetch, allTeamMembersQuery } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
+import { FALLBACK_TEAM } from "@/lib/fallbackData";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -35,6 +36,10 @@ export default async function AboutPage() {
   try {
     team = await sanityFetch<TeamMember[]>({ query: allTeamMembersQuery, tags: ["teamMember"] });
   } catch { /* CMS not connected */ }
+
+  if (team.length === 0) {
+    team = FALLBACK_TEAM as any[];
+  }
 
   return (
     <>
@@ -104,9 +109,9 @@ export default async function AboutPage() {
             </AnimatedSection>
             <AnimatedSection stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {team.map((member) => {
-                const photoUrl = member.photo
+                const photoUrl = member.photo?.asset?._ref
                   ? urlFor(member.photo).width(600).height(700).auto("format").url()
-                  : null;
+                  : (member as any).photoUrl;
                 return (
                   <article key={member._id} className="group">
                     <div className="relative aspect-[3/4] overflow-hidden bg-warm-200 mb-4">

@@ -15,10 +15,11 @@ interface ProjectCardProps {
     projectType: string;
     completionYear?: number;
     location?: string;
-    coverImage: {
+    coverImage?: {
       asset: { _ref: string };
       alt?: string;
     };
+    coverImageUrl?: string;
   };
   priority?: boolean;
 }
@@ -31,11 +32,9 @@ const TYPE_LABELS: Record<string, string> = {
 };
 
 export default function ProjectCard({ project, priority = false }: ProjectCardProps) {
-  const imageUrl = urlFor(project.coverImage)
-    .width(900)
-    .height(600)
-    .auto("format")
-    .url();
+  const imageUrl = project.coverImage?.asset?._ref
+    ? urlFor(project.coverImage).width(900).height(600).auto("format").url()
+    : project.coverImageUrl || "https://images.unsplash.com/photo-1600607687920-4e4d3e45c1b1?w=900&auto=format";
 
   return (
     <motion.article
@@ -54,7 +53,7 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
         <div className="relative aspect-[3/2] overflow-hidden">
           <Image
             src={imageUrl}
-            alt={project.coverImage.alt || project.title}
+            alt={project.coverImage?.alt || project.title}
             fill
             className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             priority={priority}

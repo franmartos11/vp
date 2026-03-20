@@ -5,6 +5,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import PortfolioGrid from "@/components/sections/PortfolioGrid";
 import { sanityFetch, allProjectsQuery } from "@/sanity/lib/queries";
+import { FALLBACK_PROJECTS } from "@/lib/fallbackData";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -35,6 +36,10 @@ export default async function PortfolioPage() {
     });
   } catch {
     // CMS not connected
+  }
+
+  if (projects.length === 0) {
+    projects = FALLBACK_PROJECTS as any[];
   }
 
   return (

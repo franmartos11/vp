@@ -8,7 +8,10 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionHeading from "@/components/ui/SectionHeading";
 import ProjectCard from "@/components/ui/ProjectCard";
 import { HeroSection } from "@/components/sections/HeroSection";
+import StatsSection from "@/components/sections/StatsSection";
+import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import { sanityFetch, featuredProjectsQuery } from "@/sanity/lib/queries";
+import { FALLBACK_PROJECTS } from "@/lib/fallbackData";
 
 export const metadata: Metadata = {
   title: "Luxury Architecture & Construction | Vertex Build Group",
@@ -58,6 +61,10 @@ export default async function HomePage() {
     // CMS not connected yet — graceful fallback
   }
 
+  if (featuredProjects.length === 0) {
+    featuredProjects = FALLBACK_PROJECTS.slice(0, 3) as any[];
+  }
+
   return (
     <>
       <Nav />
@@ -91,6 +98,9 @@ export default async function HomePage() {
             </AnimatedSection>
           </div>
         </section>
+
+        {/* Stats */}
+        <StatsSection />
 
         {/* Featured Portfolio */}
         {featuredProjects.length > 0 && (
@@ -144,6 +154,9 @@ export default async function HomePage() {
             </div>
           </section>
         )}
+
+        {/* Testimonials */}
+        <TestimonialsSection />
 
         {/* CTA Band */}
         <section

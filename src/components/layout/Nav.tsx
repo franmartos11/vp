@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -45,10 +46,17 @@ export default function Nav() {
           {/* Logo */}
           <Link
             href="/"
-            className="font-display text-sm tracking-widest-2 uppercase font-medium text-charcoal-900 hover:text-warm-500 transition-colors duration-300"
+            className="flex items-center transition-opacity hover:opacity-80"
             aria-label="Vertex Build Group — Home"
           >
-            Vertex Build Group
+            <Image
+              src="/Logo.png"
+              alt="Vertex Build Group"
+              width={400}
+              height={120}
+              className="h-16 md:h-20 w-auto object-contain scale-[2.5] md:scale-[3] origin-left"
+              priority
+            />
           </Link>
 
           {/* Desktop nav */}
@@ -57,7 +65,7 @@ export default function Nav() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`nav-link ${pathname.startsWith(link.href) ? "active text-charcoal-900" : ""}`}
+                  className={`nav-link ${pathname.startsWith(link.href) ? "active text-brand-blue" : ""}`}
                 >
                   {link.label}
                 </Link>
@@ -90,8 +98,15 @@ export default function Nav() {
             aria-label="Mobile navigation"
           >
             <div className="container mx-auto flex items-center justify-between h-16">
-              <Link href="/" className="font-display text-sm tracking-widest-2 uppercase font-medium">
-                Vertex Build Group
+              <Link href="/" className="flex items-center transition-opacity hover:opacity-80">
+                <Image
+                  src="/Logo.png"
+                  alt="Vertex Build Group"
+                  width={300}
+                  height={100}
+                  className="h-16 w-auto object-contain scale-[2.5] origin-left"
+                  priority
+                />
               </Link>
               <button
                 onClick={() => setMenuOpen(false)}
@@ -110,7 +125,7 @@ export default function Nav() {
                 >
                   <Link
                     href={link.href}
-                    className="text-display-md font-display text-charcoal-900 hover:text-warm-500 transition-colors"
+                    className="text-display-md font-display text-charcoal-900 hover:text-brand-blue transition-colors"
                   >
                     {link.label}
                   </Link>

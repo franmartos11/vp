@@ -9,6 +9,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import { sanityFetch, projectBySlugQuery, allProjectSlugsQuery } from "@/sanity/lib/queries";
 import { urlFor } from "@/sanity/lib/image";
 import { PortableText, type PortableTextBlock } from "@portabletext/react";
+import { FALLBACK_PROJECTS } from "@/lib/fallbackData";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://yourfirm.com";
 
@@ -50,25 +51,29 @@ export async function generateStaticParams() {
       query: allProjectSlugsQuery,
       tags: ["project"],
     });
+    if (slugs.length === 0) throw new Error();
     return slugs.map((s) => ({ slug: s.slug }));
   } catch {
-    return [];
+    return FALLBACK_PROJECTS.map((p) => ({ slug: p.slug.current }));
   }
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   try {
-    const project = await sanityFetch<Project>({
+    let project = await sanityFetch<Project>({
       query: projectBySlugQuery,
       params: { slug },
       tags: [`project-${slug}`],
     });
+    if (!project) {
+      project = FALLBACK_PROJECTS.find(p => p.slug.current === slug) as any;
+    }
     if (!project) return {};
 
-    const imageUrl = project.coverImage
+    const imageUrl = project.coverImage?.asset?._ref
       ? urlFor(project.coverImage).width(1200).height(630).auto("format").url()
-      : undefined;
+      : (project as any).coverImageUrl;
 
     return {
       title: project.title,
@@ -98,13 +103,17 @@ export default async function ProjectDetailPage({ params }: Props) {
     // CMS not connected
   }
 
+  if (!project) {
+    project = FALLBACK_PROJECTS.find(p => p.slug.current === slug) as any;
+  }
+
   if (!project && process.env.NEXT_PUBLIC_SANITY_PROJECT_ID !== "your_project_id") {
     notFound();
   }
 
-  const coverUrl = project?.coverImage
+  const coverUrl = project?.coverImage?.asset?._ref
     ? urlFor(project.coverImage).width(2000).height(1200).auto("format").url()
-    : "https://images.unsplash.com/photo-1600607687920-4e4d3e45c1b1?w=2000&auto=format";
+    : (project as any)?.coverImageUrl || "https://images.unsplash.com/photo-1600607687920-4e4d3e45c1b1?w=2000&auto=format";
 
   const projectJsonLd = project
     ? {

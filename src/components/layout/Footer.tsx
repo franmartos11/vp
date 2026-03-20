@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Instagram, Linkedin } from "lucide-react";
 
 const footerLinks = [
@@ -19,9 +20,17 @@ export default function Footer() {
           <div className="col-span-12 md:col-span-4 mb-12 md:mb-0">
             <Link
               href="/"
-              className="font-display text-sm tracking-widest-2 uppercase font-medium text-cream-100 hover:text-warm-400 transition-colors block mb-4"
+              className="inline-block mb-8 transition-opacity hover:opacity-80"
+              aria-label="Vertex Build Group — Home"
             >
-              Vertex Build Group
+              <Image
+                src="/Logo.png"
+                alt="Vertex Build Group"
+                width={400}
+                height={120}
+                className="h-16 md:h-20 w-auto object-contain brightness-0 invert scale-[2.5] md:scale-[3] origin-left"
+                priority
+              />
             </Link>
             <p className="text-warm-500 text-sm leading-relaxed max-w-xs">
               Crafting exceptional architecture and construction across the United States.
@@ -32,7 +41,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="text-warm-500 hover:text-cream-100 transition-colors"
+                className="text-warm-500 hover:text-brand-blue transition-colors"
               >
                 <Instagram size={18} />
               </a>
@@ -56,7 +65,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-warm-400 hover:text-cream-100 transition-colors text-sm"
+                    className="text-warm-400 hover:text-brand-blue transition-colors text-sm"
                   >
                     {link.label}
                   </Link>

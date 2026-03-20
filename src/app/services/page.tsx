@@ -4,6 +4,7 @@ import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import FAQSection from "@/components/sections/FAQSection";
 import { sanityFetch, allServicesQuery } from "@/sanity/lib/queries";
 import { PortableText } from "@portabletext/react";
 
@@ -103,6 +104,7 @@ export default async function ServicesPage() {
             })}
           </div>
         </section>
+        <FAQSection />
       </main>
       <Footer />
     </>
