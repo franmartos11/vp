@@ -5,9 +5,7 @@ import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import { sanityFetch, allTeamMembersQuery } from "@/sanity/lib/queries";
-import { urlFor } from "@/sanity/lib/image";
-import { FALLBACK_TEAM } from "@/lib/fallbackData";
+import { FALLBACK_TEAM } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -32,14 +30,7 @@ const PROCESS_STEPS = [
 ];
 
 export default async function AboutPage() {
-  let team: TeamMember[] = [];
-  try {
-    team = await sanityFetch<TeamMember[]>({ query: allTeamMembersQuery, tags: ["teamMember"] });
-  } catch { /* CMS not connected */ }
-
-  if (team.length === 0) {
-    team = FALLBACK_TEAM as any[];
-  }
+  const team = FALLBACK_TEAM;
 
   return (
     <>
@@ -146,17 +137,15 @@ export default async function AboutPage() {
               <SectionHeading eyebrow="Our Team" title="The people behind the work." />
             </AnimatedSection>
             <AnimatedSection stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              {team.map((member) => {
-                const photoUrl = member.photo?.asset?._ref
-                  ? urlFor(member.photo).width(600).height(700).auto("format").url()
-                  : (member as any).photoUrl;
+              {team.map((member: any) => {
+                const photoUrl = member.photoUrl;
                 return (
                   <article key={member._id} className="group">
                     <div className="relative aspect-[3/4] overflow-hidden bg-warm-200 mb-4">
                       {photoUrl ? (
                         <Image
                           src={photoUrl}
-                          alt={member.photo?.alt || member.name}
+                          alt={member.name}
                           fill
                           className="object-cover group-hover:scale-105 transition-transform duration-700"
                           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

@@ -7,10 +7,7 @@ import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import GalleryLightbox from "@/components/ui/GalleryLightbox";
-import { sanityFetch, projectBySlugQuery, allProjectSlugsQuery } from "@/sanity/lib/queries";
-import { urlFor } from "@/sanity/lib/image";
-import { PortableText, type PortableTextBlock } from "@portabletext/react";
-import { FALLBACK_PROJECTS } from "@/lib/fallbackData";
+import { db } from "@/lib/db";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://yourfirm.com";
 
@@ -21,110 +18,49 @@ const TYPE_LABELS: Record<string, string> = {
   interior: "Interior Design",
 };
 
-type Project = {
-  _id: string;
-  title: string;
-  slug: { current: string };
-  projectType: string;
-  completionYear?: number;
-  location?: string;
-  coverImage: { asset: { _ref: string }; alt?: string };
-  gallery?: Array<{ asset?: { _ref: string }; alt?: string; caption?: string; url?: string }>;
-  description?: PortableTextBlock[];
-  technicalSheet?: {
-    squareFootage?: number;
-    budget?: string;
-    duration?: string;
-    client?: string;
-    architect?: string;
-    awards?: string;
-  };
-  seoDescription?: string;
-  materials?: string[];
-  testimonial?: { quote: string; author: string };
-  videoUrl?: string;
-};
-
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  try {
-    const slugs = await sanityFetch<Array<{ slug: string }>>({
-      query: allProjectSlugsQuery,
-      tags: ["project"],
-    });
-    if (slugs.length === 0) throw new Error();
-    return slugs.map((s) => ({ slug: s.slug }));
-  } catch {
-    return FALLBACK_PROJECTS.map((p) => ({ slug: p.slug.current }));
-  }
+  const projects = await db.project.findMany({ select: { slug: true } });
+  return projects.map((p) => ({ slug: p.slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  try {
-    let project = await sanityFetch<Project>({
-      query: projectBySlugQuery,
-      params: { slug },
-      tags: [`project-${slug}`],
-    });
-    if (!project) {
-      project = FALLBACK_PROJECTS.find(p => p.slug.current === slug) as any;
-    }
-    if (!project) return {};
+  const project = await db.project.findUnique({ where: { slug } });
+  if (!project) return {};
 
-    const imageUrl = project.coverImage?.asset?._ref
-      ? urlFor(project.coverImage).width(1200).height(630).auto("format").url()
-      : (project as any).coverImageUrl;
+  const imageUrl = project.coverImage || "";
 
-    return {
-      title: project.title,
-      description: project.seoDescription || `${project.title} — A ${TYPE_LABELS[project.projectType]} project by Vertex Build Group.`,
-      openGraph: {
-        title: `${project.title} | Vertex Build Group`,
-        description: project.seoDescription,
-        images: imageUrl ? [{ url: imageUrl, width: 1200, height: 630 }] : [],
-      },
-    };
-  } catch {
-    return {};
-  }
+  return {
+    title: project.title,
+    description: `${project.title} — A ${TYPE_LABELS[project.projectType]} project by Vertex Build Group.`,
+    openGraph: {
+      title: `${project.title} | Vertex Build Group`,
+      description: `${project.title} — A ${TYPE_LABELS[project.projectType]} project by Vertex Build Group.`,
+      images: imageUrl ? [{ url: imageUrl, width: 1200, height: 630 }] : [],
+    },
+  };
 }
 
 export default async function ProjectDetailPage({ params }: Props) {
   const { slug } = await params;
-
-  let project: Project | null = null;
-  try {
-    project = await sanityFetch<Project>({
-      query: projectBySlugQuery,
-      params: { slug },
-      tags: [`project-${slug}`],
-    });
-  } catch {
-    // CMS not connected
-  }
+  const project = await db.project.findUnique({ where: { slug } });
 
   if (!project) {
-    project = FALLBACK_PROJECTS.find(p => p.slug.current === slug) as any;
-  }
-
-  if (!project && process.env.NEXT_PUBLIC_SANITY_PROJECT_ID !== "your_project_id") {
     notFound();
   }
 
-  const coverUrl = project?.coverImage?.asset?._ref
-    ? urlFor(project.coverImage).width(2000).height(1200).auto("format").url()
-    : (project as any)?.coverImageUrl || "https://images.unsplash.com/photo-1600607687920-4e4d3e45c1b1?w=2000&auto=format";
+  const coverUrl = project.coverImage || "";
 
   const projectJsonLd = project
     ? {
         "@context": "https://schema.org",
         "@type": "Project",
         name: project.title,
-        description: project.seoDescription,
+        description: project.description,
         url: `${SITE_URL}/portfolio/${slug}`,
         image: coverUrl,
         location: project.location
@@ -139,11 +75,15 @@ export default async function ProjectDetailPage({ params }: Props) {
       }
     : null;
 
-  const galleryImages = project?.gallery?.map(img => ({
-    url: img.asset?._ref ? urlFor(img).width(1600).height(1200).auto("format").url() : img.url || "",
+  const rawGallery = project.gallery ? JSON.parse(project.gallery) : [];
+  const galleryImages = rawGallery.map((img: any) => ({
+    url: img.url || "",
     alt: img.alt,
-    caption: img.caption
-  })).filter(img => img.url) || [];
+    caption: ""
+  })).filter((img: any) => img.url) || [];
+
+  const rawTestimonial = project.testimonial ? JSON.parse(project.testimonial) : null;
+  const rawMaterials = project.materials ? JSON.parse(project.materials) : [];
 
   return (
     <>
@@ -160,7 +100,7 @@ export default async function ProjectDetailPage({ params }: Props) {
           <div className="absolute inset-0 hover:scale-105 transition-transform duration-[10s] ease-out">
             <Image
               src={coverUrl}
-              alt={project?.coverImage?.alt || project?.title || "Project"}
+              alt={project?.title || "Project"}
               fill
               className="object-cover"
               priority
@@ -197,17 +137,15 @@ export default async function ProjectDetailPage({ params }: Props) {
         <section className="container mx-auto py-20 px-6 md:px-0">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-16 lg:gap-24">
             
-            {/* Main Content Column */}
-            <div className="col-span-1 md:col-span-8">
-              
+            {/* Left: Project Details */}
+            <div className="col-span-1 md:col-span-8 lg:pr-16 order-last md:order-first">
               <AnimatedSection>
-                {project?.description ? (
-                  <div className="prose prose-stone prose-lg max-w-none text-charcoal-700 leading-relaxed font-light">
-                    <PortableText value={project.description} />
-                  </div>
-                ) : (
-                  <div className="text-xl text-charcoal-600 font-light leading-relaxed">
-                    <p>Exceptional attention to detail and uncompromising quality define this luxury project. We pushed the boundaries of modern architecture to deliver a space that is both visually stunning and highly functional.</p>
+                <h2 className="text-display-sm font-display text-charcoal-900 mb-8 border-b border-warm-200 pb-6 uppercase tracking-widest text-sm">
+                  The Vision
+                </h2>
+                {project?.description && (
+                  <div className="prose prose-stone prose-lg max-w-none text-charcoal-700 leading-relaxed font-light mb-16 whitespace-pre-line">
+                    <p>{project.description}</p>
                   </div>
                 )}
               </AnimatedSection>
@@ -232,15 +170,15 @@ export default async function ProjectDetailPage({ params }: Props) {
               </AnimatedSection>
               
               {/* Testimonial Section */}
-              {project?.testimonial && (
+              {rawTestimonial && rawTestimonial.quote && (
                 <AnimatedSection delay={300} className="mt-24 mb-12">
                   <blockquote className="relative p-10 md:p-14 bg-warm-50 border border-warm-200 overflow-hidden">
                     <Quote className="absolute -top-4 -left-4 text-warm-200 w-32 h-32 opacity-30 select-none" />
                     <p className="relative z-10 text-xl md:text-3xl text-charcoal-900 font-display italic leading-snug mb-8">
-                      &quot;{project.testimonial.quote}&quot;
+                      &quot;{rawTestimonial.quote}&quot;
                     </p>
                     <footer className="relative z-10 text-warm-500 font-mono text-sm tracking-widest uppercase">
-                      — {project.testimonial.author}
+                      — {rawTestimonial.author}
                     </footer>
                   </blockquote>
                 </AnimatedSection>
@@ -268,46 +206,18 @@ export default async function ProjectDetailPage({ params }: Props) {
                         </div>
                       )}
                       
-                      {project?.technicalSheet?.squareFootage && (
-                        <div>
-                          <dt className="text-xs text-warm-500 uppercase tracking-widest mb-1 flex items-center gap-2 font-mono">
-                             <Maximize2 size={12} /> Area
-                          </dt>
-                          <dd className="text-base text-cream-100">
-                             {project.technicalSheet.squareFootage.toLocaleString()} sq ft
-                          </dd>
-                        </div>
-                      )}
-                      
-                      {project?.technicalSheet?.duration && (
-                        <div>
-                          <dt className="text-xs text-warm-500 uppercase tracking-widest mb-1 flex items-center gap-2 font-mono">
-                             <Clock size={12} /> Duration
-                          </dt>
-                          <dd className="text-base text-cream-100">{project.technicalSheet.duration}</dd>
-                        </div>
-                      )}
-                      
-                      {project?.technicalSheet?.architect && (
-                        <div>
-                          <dt className="text-xs text-warm-500 uppercase tracking-widest mb-1 font-mono">Architect</dt>
-                          <dd className="text-base text-cream-100">{project.technicalSheet.architect}</dd>
-                        </div>
-                      )}
-                      
-                      {project?.technicalSheet?.client && (
-                        <div>
-                          <dt className="text-xs text-warm-500 uppercase tracking-widest mb-1 font-mono">Client</dt>
-                          <dd className="text-base text-cream-100">{project.technicalSheet.client}</dd>
+                      {project?.technicalSheet && (
+                        <div className="whitespace-pre-line text-sm text-cream-100 mt-6 pt-6 border-t border-white/20">
+                          {project.technicalSheet}
                         </div>
                       )}
 
-                      {project?.materials && project.materials.length > 0 && (
+                      {rawMaterials && rawMaterials.length > 0 && (
                         <div className="pt-4 mt-4 border-t border-white/20">
                           <dt className="text-xs text-warm-500 uppercase tracking-widest mb-3 font-mono">Key Materials</dt>
                           <dd>
                             <ul className="space-y-3">
-                              {project.materials.map((mat, idx) => (
+                              {rawMaterials.map((mat: any, idx: number) => (
                                 <li key={idx} className="text-sm text-cream-100 flex items-start gap-3">
                                   <span className="text-warm-500 mt-1.5 w-1.5 h-1.5 rounded-full bg-warm-500 flex-shrink-0" />
                                   <span>{mat}</span>

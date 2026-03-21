@@ -98,9 +98,13 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="border-t border-charcoal-600 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-warm-500 text-xs">
-            &copy; {year} Vertex Build Group. All rights reserved.
-          </p>
+          <div className="flex items-center gap-2">
+            <p className="text-warm-500 text-xs">
+              &copy; {year} Vertex Build Group. All rights reserved.
+            </p>
+            {/* Hidden quick access to CMS */}
+            <Link href="/admin" aria-label="Admin Panel Login" className="w-1.5 h-1.5 rounded-full bg-charcoal-800 hover:bg-warm-500 transition-colors" />
+          </div>
           <p className="text-warm-500 text-xs">
             Licensed General Contractor · State of Florida
           </p>

@@ -11,28 +11,23 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/contact`, lastModified: new Date(), changeFrequency: "yearly", priority: 0.7 },
   ];
 
-  // Only fetch from Sanity when a real project ID is configured
-  const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
-  if (!projectId || projectId === "your_project_id") {
-    return staticRoutes;
-  }
+  const { db } = await import("@/lib/db");
+  const projects = await db.project.findMany({ select: { slug: true, updatedAt: true } });
+  const services = await db.service.findMany({ select: { slug: true, updatedAt: true } });
+  
+  const projectRoutes: MetadataRoute.Sitemap = projects.map((p: any) => ({
+    url: `${SITE_URL}/portfolio/${p.slug}`,
+    lastModified: p.updatedAt || new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
 
-  let projectRoutes: MetadataRoute.Sitemap = [];
-  try {
-    const { sanityFetch, allProjectSlugsQuery } = await import("@/sanity/lib/queries");
-    const slugs = await sanityFetch<Array<{ slug: string }>>({
-      query: allProjectSlugsQuery,
-      tags: ["project"],
-    });
-    projectRoutes = slugs.map(({ slug }) => ({
-      url: `${SITE_URL}/portfolio/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    }));
-  } catch {
-    // CMS not connected — return static routes only
-  }
+  const serviceRoutes: MetadataRoute.Sitemap = services.map((s: any) => ({
+    url: `${SITE_URL}/services/${s.slug}`,
+    lastModified: s.updatedAt || new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
 
-  return [...staticRoutes, ...projectRoutes];
+  return [...staticRoutes, ...projectRoutes, ...serviceRoutes];
 }

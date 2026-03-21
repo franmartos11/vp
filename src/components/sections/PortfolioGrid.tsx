@@ -14,13 +14,14 @@ const FILTERS = [
 ];
 
 type Project = {
-  _id: string;
+  id: string;
   title: string;
-  slug: { current: string };
+  slug: string | { current: string };
   projectType: string;
-  completionYear?: number;
-  location?: string;
-  coverImage: { asset: { _ref: string }; alt?: string };
+  completionYear?: number | null;
+  location?: string | null;
+  coverImage?: string | null;
+  coverImageUrl?: string | null;
 };
 
 interface PortfolioGridProps {
@@ -71,8 +72,8 @@ export default function PortfolioGrid({ projects }: PortfolioGridProps) {
         >
           {filtered.length > 0 ? (
             filtered.map((project, i) => (
-              <motion.div key={project._id} variants={fadeInUp}>
-                <ProjectCard project={project} priority={i < 3} />
+              <motion.div key={project.id} variants={fadeInUp}>
+                <ProjectCard project={project as any} priority={i < 3} />
               </motion.div>
             ))
           ) : (

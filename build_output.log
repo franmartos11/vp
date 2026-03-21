@@ -1,0 +1,52 @@
+
+> web-vp@0.1.0 build
+> next build
+
+▲ Next.js 16.2.0 (Turbopack)
+- Environments: .env.local
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 3.7s
+  Running TypeScript ...
+  Finished TypeScript in 4.8s ...
+  Collecting page data using 11 workers ...
+  Generating static pages using 11 workers (0/17) ...
+  Generating static pages using 11 workers (4/17) 
+  Generating static pages using 11 workers (8/17) 
+  Generating static pages using 11 workers (12/17) 
+✓ Generating static pages using 11 workers (17/17) in 555ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ○ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /admin
+├ ○ /admin/login
+├ ƒ /admin/projects
+├ ƒ /admin/projects/[id]
+├ ƒ /admin/services
+├ ƒ /admin/services/[id]
+├ ƒ /api/auth/login
+├ ƒ /api/auth/logout
+├ ƒ /api/projects
+├ ƒ /api/projects/[id]
+├ ƒ /api/services
+├ ƒ /api/services/[id]
+├ ƒ /api/upload
+├ ○ /contact
+├ ○ /portfolio
+├ ● /portfolio/[slug]
+├ ● /portfolio/[slug]/layout-b
+├ ○ /robots.txt
+├ ○ /services
+├ ● /services/[slug]
+└ ○ /sitemap.xml
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

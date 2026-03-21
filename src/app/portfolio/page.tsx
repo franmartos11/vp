@@ -4,8 +4,7 @@ import Footer from "@/components/layout/Footer";
 import SectionHeading from "@/components/ui/SectionHeading";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import PortfolioGrid from "@/components/sections/PortfolioGrid";
-import { sanityFetch, allProjectsQuery } from "@/sanity/lib/queries";
-import { FALLBACK_PROJECTS } from "@/lib/fallbackData";
+import { db } from "@/lib/db";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -17,30 +16,10 @@ export const metadata: Metadata = {
   },
 };
 
-type Project = {
-  _id: string;
-  title: string;
-  slug: { current: string };
-  projectType: string;
-  completionYear?: number;
-  location?: string;
-  coverImage: { asset: { _ref: string }; alt?: string };
-};
-
 export default async function PortfolioPage() {
-  let projects: Project[] = [];
-  try {
-    projects = await sanityFetch<Project[]>({
-      query: allProjectsQuery,
-      tags: ["project"],
-    });
-  } catch {
-    // CMS not connected
-  }
-
-  if (projects.length === 0) {
-    projects = FALLBACK_PROJECTS as any[];
-  }
+  const projects = await db.project.findMany({
+    orderBy: { order: "asc" }
+  }) as any[];
 
   return (
     <>

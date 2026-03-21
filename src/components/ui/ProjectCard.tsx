@@ -5,21 +5,18 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { cardHover, imageOverlay, textSlideUp } from "@/lib/animations";
-import { urlFor } from "@/sanity/lib/image";
 
 interface ProjectCardProps {
   project: {
-    _id: string;
+    _id?: string;
+    id?: string;
     title: string;
-    slug: { current: string };
+    slug: string | { current: string };
     projectType: string;
-    completionYear?: number;
-    location?: string;
-    coverImage?: {
-      asset: { _ref: string };
-      alt?: string;
-    };
-    coverImageUrl?: string;
+    completionYear?: number | null;
+    location?: string | null;
+    coverImageUrl?: string | null;
+    coverImage?: string | null;
   };
   priority?: boolean;
 }
@@ -32,9 +29,8 @@ const TYPE_LABELS: Record<string, string> = {
 };
 
 export default function ProjectCard({ project, priority = false }: ProjectCardProps) {
-  const imageUrl = project.coverImage?.asset?._ref
-    ? urlFor(project.coverImage).width(900).height(600).auto("format").url()
-    : project.coverImageUrl || "https://images.unsplash.com/photo-1600607687920-4e4d3e45c1b1?w=900&auto=format";
+  const imageUrl = project.coverImage || project.coverImageUrl || "https://images.unsplash.com/photo-1600607687920-4e4d3e45c1b1?w=900&auto=format";
+  const slugTarget = typeof project.slug === 'string' ? project.slug : project.slug.current;
 
   return (
     <motion.article
@@ -45,7 +41,7 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
       className="group relative overflow-hidden bg-warm-200 block"
     >
       <Link
-        href={`/portfolio/${project.slug.current}`}
+        href={`/portfolio/${slugTarget}`}
         aria-label={`View project: ${project.title}`}
         className="block"
       >
@@ -53,7 +49,7 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
         <div className="relative aspect-[3/2] overflow-hidden">
           <Image
             src={imageUrl}
-            alt={project.coverImage?.alt || project.title}
+            alt={project.title}
             fill
             className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             priority={priority}

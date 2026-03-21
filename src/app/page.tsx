@@ -10,23 +10,12 @@ import ProjectCard from "@/components/ui/ProjectCard";
 import { HeroSection } from "@/components/sections/HeroSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
-import { sanityFetch, featuredProjectsQuery } from "@/sanity/lib/queries";
-import { FALLBACK_PROJECTS } from "@/lib/fallbackData";
+import { db } from "@/lib/db";
 
 export const metadata: Metadata = {
   title: "Luxury Architecture & Construction | Vertex Build Group",
   description:
     "Vertex Build Group — Award-winning luxury architecture and construction in the United States. Residential, commercial, and interior projects crafted with precision.",
-};
-
-type Project = {
-  _id: string;
-  title: string;
-  slug: { current: string };
-  projectType: string;
-  completionYear?: number;
-  location?: string;
-  coverImage: { asset: { _ref: string }; alt?: string };
 };
 
 const PILLARS = [
@@ -51,18 +40,17 @@ const PILLARS = [
 ];
 
 export default async function HomePage() {
-  let featuredProjects: Project[] = [];
-  try {
-    featuredProjects = await sanityFetch<Project[]>({
-      query: featuredProjectsQuery,
-      tags: ["project"],
-    });
-  } catch {
-    // CMS not connected yet — graceful fallback
-  }
+  let featuredProjects = await db.project.findMany({
+    where: { featured: true },
+    orderBy: { order: "asc" },
+    take: 3
+  });
 
   if (featuredProjects.length === 0) {
-    featuredProjects = FALLBACK_PROJECTS.slice(0, 3) as any[];
+    featuredProjects = await db.project.findMany({
+      orderBy: { order: "asc" },
+      take: 3
+    });
   }
 
   return (
@@ -120,8 +108,8 @@ export default async function HomePage() {
               </AnimatedSection>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {featuredProjects.map((project, i) => (
-                  <ProjectCard key={project._id} project={project} priority={i === 0} />
+                {featuredProjects.map((project, index) => (
+                  <ProjectCard key={project.id} project={project as any} priority={index === 0} />
                 ))}
               </div>
 

@@ -5,8 +5,7 @@ import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import FAQSection from "@/components/sections/FAQSection";
-import { sanityFetch, allServicesQuery } from "@/sanity/lib/queries";
-import { urlFor } from "@/sanity/lib/image";
+import { db } from "@/lib/db";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -14,57 +13,10 @@ export const metadata: Metadata = {
     "Vertex Build Group offers end-to-end luxury architecture, construction management, renovation, and interior design services across the United States.",
 };
 
-type Service = {
-  _id: string;
-  title: string;
-  slug: { current: string };
-  icon?: string;
-  shortDescription?: string;
-  fullDescription?: unknown[];
-  coverImage?: any;
-  keyDeliverables?: string[];
-  order?: number;
-};
-
-// Update fallbacks to strictly 4 services with dummy image URLs
-const FALLBACK_SERVICES: Service[] = [
-  { 
-    _id: "1", 
-    title: "Custom Architecture", 
-    slug: { current: "custom-architecture" }, 
-    shortDescription: "Complete architectural design from concept through construction documents, tailored to your vision and site.",
-    coverImage: { url: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&auto=format" }
-  },
-  { 
-    _id: "2", 
-    title: "Construction Management", 
-    slug: { current: "construction-management" }, 
-    shortDescription: "Full-service luxury execution — new builds and major structural developments with uncompromising quality.",
-    coverImage: { url: "https://images.unsplash.com/photo-1541888081198-bc4a7e9da1ca?w=1600&auto=format" }
-  },
-  { 
-    _id: "3", 
-    title: "High-End Renovation", 
-    slug: { current: "high-end-renovation" }, 
-    shortDescription: "Surgical renovations that preserve foundational architecture while elevating function, finish, and livability.",
-    coverImage: { url: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1600&auto=format" }
-  },
-  { 
-    _id: "4", 
-    title: "Interior Design", 
-    slug: { current: "interior-design" }, 
-    shortDescription: "Space planning, finish specification, furniture procurement, and art curation for the full interior experience.",
-    coverImage: { url: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&auto=format" }
-  },
-];
-
 export default async function ServicesPage() {
-  let services: Service[] = [];
-  try {
-    services = await sanityFetch<Service[]>({ query: allServicesQuery, tags: ["service"] });
-  } catch { /* CMS not connected */ }
-
-  const displayServices = services.length > 0 ? services : FALLBACK_SERVICES;
+  const displayServices = await db.service.findMany({
+    orderBy: { order: "asc" }
+  }) as any[];
 
   return (
     <>
@@ -117,12 +69,10 @@ export default async function ServicesPage() {
         <section className="pb-24 md:pb-32 overflow-hidden">
           {displayServices.map((service, i) => {
             const isEven = i % 2 !== 0; // Alternating logic
-            const imageUrl = service.coverImage?.asset?._ref 
-              ? urlFor(service.coverImage).width(1200).height(900).auto("format").url() 
-              : (service as any).coverImage?.url || "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format";
+            const imageUrl = service.coverImageUrl || "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format";
             
             return (
-              <AnimatedSection key={service._id} delay={i * 100}>
+              <AnimatedSection key={service.id} delay={i * 100}>
                 <div className={`flex flex-col ${isEven ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center mb-20 md:mb-32 group`}>
                    
                    {/* Image Block */}
@@ -147,9 +97,9 @@ export default async function ServicesPage() {
                         {service.shortDescription}
                       </p>
                       
-                      {service.slug?.current && (
+                      {service.slug && (
                         <Link 
-                          href={`/services/${service.slug.current}`}
+                          href={`/services/${typeof service.slug === 'string' ? service.slug : service.slug.current}`}
                           className="inline-flex items-center gap-4 text-xs tracking-widest uppercase font-mono text-charcoal-900 border-b border-charcoal-900 pb-2 w-fit hover:text-warm-500 hover:border-warm-500 transition-colors group/link"
                         >
                           View Service Details
