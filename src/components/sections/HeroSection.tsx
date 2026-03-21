@@ -41,7 +41,9 @@ export function HeroSection() {
           poster="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=2000&auto=format&fit=crop"
         />
         {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/30 to-charcoal-900/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/40 to-charcoal-900/10" />
+        {/* Cinematic Film Grain Overlay */}
+        <div className="absolute inset-0 opacity-[0.05] pointer-events-none mix-blend-overlay" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
       </motion.div>
 
       {/* Content */}
@@ -58,12 +60,20 @@ export function HeroSection() {
           >
             Architecture · Construction · Design
           </motion.p>
-          <motion.h1
-            variants={fadeInUp}
-            className="text-display-2xl font-display text-white leading-none mb-8 text-balance drop-shadow-2xl"
-          >
-            Building spaces that outlast trends.
-          </motion.h1>
+          <h1 className="text-display-2xl md:text-[5.5rem] lg:text-[7rem] font-display text-white leading-[0.9] mb-8 drop-shadow-2xl flex flex-wrap gap-x-4 gap-y-2">
+            {["Building", "spaces", "that", "outlast", "trends."].map((word, i) => (
+              <span key={i} className="overflow-hidden block">
+                <motion.span
+                  initial={{ y: "100%", rotate: 2 }}
+                  animate={{ y: 0, rotate: 0 }}
+                  transition={{ duration: 1, delay: i * 0.15 + 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  className="block origin-bottom-left"
+                >
+                  {word}
+                </motion.span>
+              </span>
+            ))}
+          </h1>
           <motion.p
             variants={fadeInUp}
             className="text-warm-300 text-lg md:text-xl max-w-xl leading-relaxed mb-10 font-light"

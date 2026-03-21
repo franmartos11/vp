@@ -51,6 +51,7 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
             src={imageUrl}
             alt={project.title}
             fill
+            unoptimized
             className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
             priority={priority}
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"

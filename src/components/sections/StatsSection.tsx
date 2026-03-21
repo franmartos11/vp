@@ -49,17 +49,18 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
 export default function StatsSection() {
   return (
     <section
-      className="py-20 md:py-28 bg-brand-blue"
+      className="py-20 md:py-28 bg-charcoal-900 border-t border-charcoal-800"
       aria-label="Company statistics"
     >
       <div className="container mx-auto">
-        <AnimatedSection stagger className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4">
+        <AnimatedSection stagger className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 relative z-10">
           {STATS.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="font-display text-4xl md:text-5xl font-semibold text-cream-100 mb-2">
+            <div key={stat.label} className="text-center group">
+              <p className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-4 group-hover:scale-110 transition-transform duration-500">
                 <CountUp target={stat.value} suffix={stat.suffix} />
               </p>
-              <p className="text-sm text-cream-200/80 tracking-widest uppercase">
+              <div className="w-8 h-px bg-warm-500 mx-auto mb-4" />
+              <p className="text-xs text-warm-500 tracking-widest uppercase font-mono">
                 {stat.label}
               </p>
             </div>

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Nav from "@/components/layout/Nav";
@@ -10,6 +9,12 @@ import ProjectCard from "@/components/ui/ProjectCard";
 import { HeroSection } from "@/components/sections/HeroSection";
 import StatsSection from "@/components/sections/StatsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
+import { StickyPillars } from "@/components/sections/StickyPillars";
+import { InfiniteMarquee } from "@/components/sections/InfiniteMarquee";
+import { MakersStory } from "@/components/sections/MakersStory";
+import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
+import { ParallaxSeparator } from "@/components/sections/ParallaxSeparator";
+import { TrustedPartners } from "@/components/sections/TrustedPartners";
 import { db } from "@/lib/db";
 
 export const metadata: Metadata = {
@@ -17,27 +22,6 @@ export const metadata: Metadata = {
   description:
     "Vertex Build Group — Award-winning luxury architecture and construction in the United States. Residential, commercial, and interior projects crafted with precision.",
 };
-
-const PILLARS = [
-  {
-    number: "01",
-    title: "Precision Design",
-    description:
-      "Every detail engineered to purpose. We apply Swiss-inspired rigor to spatial planning, material selection, and finish.",
-  },
-  {
-    number: "02",
-    title: "Timeless Craft",
-    description:
-      "We work with master craftspeople and premium subcontractors who share our obsession with long-lasting quality.",
-  },
-  {
-    number: "03",
-    title: "Client Partnership",
-    description:
-      "Transparent communication and collaborative process — so you always know exactly where your project stands.",
-  },
-];
 
 export default async function HomePage() {
   let featuredProjects = await db.project.findMany({
@@ -60,35 +44,17 @@ export default async function HomePage() {
         {/* Hero */}
         <HeroSection />
 
-        {/* Pillars */}
-        <section className="py-24 md:py-32" aria-labelledby="pillars-heading">
-          <div className="container mx-auto">
-            <AnimatedSection>
-              <SectionHeading
-                eyebrow="Our Approach"
-                title="Architecture with intention."
-                subtitle="We design and build spaces that endure — aesthetically and structurally. No shortcuts."
-                className="mb-16"
-              />
-            </AnimatedSection>
+        <InfiniteMarquee />
+        <MakersStory />
 
-            <AnimatedSection stagger className="grid-swiss">
-              {PILLARS.map((pillar) => (
-                <div
-                  key={pillar.number}
-                  className="col-span-12 md:col-span-4 border-t border-warm-200 pt-8"
-                >
-                  <span className="eyebrow text-warm-300 block mb-4">{pillar.number}</span>
-                  <h3 className="font-display text-xl text-charcoal-900 mb-3">{pillar.title}</h3>
-                  <p className="text-sm text-warm-500 leading-relaxed">{pillar.description}</p>
-                </div>
-              ))}
-            </AnimatedSection>
-          </div>
-        </section>
+        {/* Pillars */}
+        <StickyPillars />
 
         {/* Stats */}
         <StatsSection />
+        
+        <TrustedPartners />
+        <ParallaxSeparator />
 
         {/* Featured Portfolio */}
         {featuredProjects.length > 0 && (
@@ -142,6 +108,8 @@ export default async function HomePage() {
             </div>
           </section>
         )}
+
+        <ProcessTimeline />
 
         {/* Testimonials */}
         <TestimonialsSection />
