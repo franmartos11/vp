@@ -62,14 +62,22 @@ export function StickyPillars() {
                 />
                 
                 {/* Gradient Overlay */}
-                <div className={`absolute inset-0 transition-colors duration-700 ${isActive ? 'bg-charcoal-900/40' : 'bg-charcoal-900/80'}`} />
+                <div 
+                  className={`absolute inset-0 transition-opacity duration-700 ${
+                    isActive 
+                      ? 'bg-gradient-to-t from-charcoal-900/90 via-charcoal-900/20 to-transparent opacity-100' 
+                      : 'bg-charcoal-900/80 opacity-100'
+                  }`} 
+                />
 
                 {/* Content */}
                 <div className={`absolute inset-0 p-8 md:p-12 flex flex-col justify-end transition-all duration-700`}>
-                   <div className="flex items-center gap-4 mb-4">
-                     <span className="text-warm-400 font-mono tracking-widest text-sm">{pillar.number}</span>
-                     {/* Horizontal view (Desktop) title rotation logic can be handled naturally. But standard left-aligned is cleaner */}
-                     <h3 className="text-2xl md:text-3xl font-display text-white whitespace-nowrap">
+                   <div className="flex items-center gap-6 mb-4">
+                     <span className={`font-mono tracking-widest text-sm transition-colors duration-500 ${isActive ? 'text-brand-blue' : 'text-warm-400'}`}>
+                       {pillar.number}
+                     </span>
+                     <div className={`h-[1px] w-12 bg-warm-400/30 transition-all duration-500 ${isActive ? 'w-24 bg-brand-blue/50' : ''}`} />
+                     <h3 className={`text-2xl md:text-3xl font-display whitespace-nowrap transition-colors duration-500 ${isActive ? 'text-white' : 'text-warm-200'}`}>
                        {pillar.title}
                      </h3>
                    </div>
@@ -77,11 +85,11 @@ export function StickyPillars() {
                    <AnimatePresence>
                      {isActive && (
                        <motion.p 
-                         initial={{ opacity: 0, y: 20 }}
+                         initial={{ opacity: 0, y: 30 }}
                          animate={{ opacity: 1, y: 0 }}
-                         exit={{ opacity: 0, y: 10 }}
-                         transition={{ delay: 0.2 }}
-                         className="text-warm-100/90 text-sm md:text-base font-light leading-relaxed max-w-md"
+                         exit={{ opacity: 0, y: 20 }}
+                         transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                         className="text-cream-50/90 text-sm md:text-lg font-light leading-relaxed max-w-md ml-[4.5rem]"
                        >
                          {pillar.description}
                        </motion.p>
