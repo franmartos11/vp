@@ -5,6 +5,7 @@ import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import FAQSection from "@/components/sections/FAQSection";
+import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
 import { db } from "@/lib/db";
 
 export const metadata: Metadata = {
@@ -114,7 +115,140 @@ export default async function ServicesPage() {
           })}
         </section>
 
+        <ProcessTimeline />
+
+        {/* Technology & Transparency (Client Experience) */}
+        <section className="bg-charcoal-900 py-24 md:py-32 text-white overflow-hidden relative">
+          <div className="container mx-auto px-6">
+            <AnimatedSection>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="order-2 lg:order-1 relative aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
+                  <Image 
+                    src="https://images.unsplash.com/photo-1542621334-a254cf47733d?q=80&w=2070&auto=format&fit=crop"
+                    alt="Technology and blueprint review"
+                    fill
+                    className="object-cover opacity-80 mix-blend-luminosity grayscale"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-tr from-charcoal-900/80 to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6 p-6 backdrop-blur-md bg-white/10 border border-white/20 rounded-lg">
+                    <p className="font-mono text-xs tracking-widest uppercase text-warm-300 mb-2">Client Portal</p>
+                    <p className="text-sm font-light">Real-time budget tracking, weekly photo updates, and direct communication.</p>
+                  </div>
+                </div>
+                <div className="order-1 lg:order-2">
+                  <span className="text-warm-400 font-mono text-xs tracking-[0.3em] uppercase mb-4 block">Transparency & Control</span>
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-display mb-8 leading-tight">
+                    Total visibility. <br/><span className="text-warm-200 italic font-light">Zero surprises.</span>
+                  </h2>
+                  <p className="text-xl font-light text-warm-100/70 mb-8 leading-relaxed">
+                    Luxury construction shouldn't mean uncertainty. We deploy industry-leading project management software to give you 24/7 access to your project's heartbeat.
+                  </p>
+                  <ul className="space-y-4">
+                    {[
+                      "Real-time schedule & financial tracking",
+                      "Weekly site progress photography",
+                      "Centralized document & permit storage",
+                      "Direct line to your dedicated Project Manager"
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-start gap-4">
+                        <div className="w-6 h-6 rounded-full border border-warm-400 flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="block w-1.5 h-1.5 bg-warm-400 rounded-full" />
+                        </div>
+                        <span className="text-lg font-light text-warm-50">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </AnimatedSection>
+          </div>
+        </section>
+
+        {/* Quality Assurance */}
+        <section className="bg-cream-100 py-32 border-t border-warm-200">
+          <div className="container mx-auto px-6 max-w-7xl">
+            <AnimatedSection className="flex flex-col items-center justify-center text-center mb-20 md:mb-28">
+              <span className="text-warm-500 font-mono text-xs tracking-[0.3em] uppercase mb-6 flex items-center gap-4">
+                 <div className="w-8 h-px bg-warm-400" />The Vertex Standard<div className="w-8 h-px bg-warm-400" />
+              </span>
+              <h2 className="text-5xl md:text-6xl lg:text-7xl font-display text-charcoal-900 leading-[1.1] max-w-4xl">
+                Uncompromising <br/><span className="italic font-light text-warm-600">quality assurance.</span>
+              </h2>
+            </AnimatedSection>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Master Craftsmanship",
+                  desc: "We partner exclusively with artisans and tradespeople who share our obsessive attention to detail."
+                },
+                {
+                  title: "Zero-Defect Handover",
+                  desc: "A rigorous multi-point inspection process ensures perfection before you ever turn the key."
+                },
+                {
+                  title: "White-Glove Care",
+                  desc: "Comprehensive warranty and post-build maintenance programs to protect your investment."
+                }
+              ].map((item, i) => (
+                <AnimatedSection key={i} delay={i * 100} className="relative group h-full">
+                  <div className="h-full px-8 py-16 bg-white hover:bg-charcoal-900 transition-colors duration-700 flex flex-col items-center text-center shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:shadow-2xl">
+                    <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-transparent group-hover:border-warm-500 transition-colors duration-700 opacity-0 group-hover:opacity-100 m-6" />
+                    
+                    {/* Minimalist Icon / Number */}
+                    <div className="w-20 h-20 mb-10 rounded-full border border-warm-200 flex items-center justify-center text-warm-500 group-hover:border-warm-600 group-hover:text-warm-400 transition-colors duration-700 text-center pl-1">
+                       <span className="font-mono text-xl tracking-[0.2em] leading-none">0{i + 1}</span>
+                    </div>
+                    
+                    <h3 className="text-2xl md:text-3xl font-display mb-6 text-charcoal-900 group-hover:text-white transition-colors duration-700">
+                      {item.title}
+                    </h3>
+                    
+                    <p className="text-charcoal-600 font-light text-lg leading-relaxed group-hover:text-warm-100/80 transition-colors duration-700 max-w-sm">
+                      {item.desc}
+                    </p>
+                    
+                    {/* Bottom Line */}
+                    <div className="w-12 h-px bg-warm-300 group-hover:bg-warm-600 transition-colors duration-700 mt-10" />
+                  </div>
+                </AnimatedSection>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <FAQSection />
+
+        {/* Final CTA */}
+        <section className="bg-charcoal-900 py-32 relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-charcoal-900/90 z-10" />
+            <Image 
+              src="https://images.unsplash.com/photo-1600607686527-6fb886090705?w=2000&auto=format"
+              alt="Luxury interior"
+              fill
+              className="object-cover mix-blend-overlay opacity-30 grayscale"
+            />
+          </div>
+          <div className="container mx-auto px-6 relative z-20 text-center">
+            <AnimatedSection>
+              <h2 className="text-5xl md:text-7xl font-display text-white mb-8">
+                Your vision. <br />
+                <span className="text-warm-200 italic font-light">Our execution.</span>
+              </h2>
+              <p className="text-xl font-light text-warm-100/70 mb-12 max-w-2xl mx-auto">
+                Take the first step towards realizing your next masterpiece. Our principals are ready to discuss your ambitions.
+              </p>
+              <Link 
+                href="/contact"
+                className="inline-flex items-center gap-4 bg-warm-500 text-charcoal-900 px-10 py-5 text-sm uppercase tracking-[0.2em] font-mono hover:bg-white transition-colors duration-300"
+              >
+                Schedule Consultation
+                <span>→</span>
+              </Link>
+            </AnimatedSection>
+          </div>
+        </section>
 
       </main>
       <Footer />

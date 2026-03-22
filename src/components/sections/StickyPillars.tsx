@@ -16,7 +16,7 @@ const PILLARS_DATA = [
     number: "02",
     title: "Timeless Craft",
     description: "We work with master craftspeople and premium subcontractors who share our obsession with long-lasting quality.",
-    image: "https://images.unsplash.com/photo-1541888081198-bc4a7e9da1ca?w=1600&auto=format"
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&auto=format"
   },
   {
     number: "03",

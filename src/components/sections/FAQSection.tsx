@@ -43,28 +43,31 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-warm-200">
+    <div className="border-b border-warm-200 last:border-b-0">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between py-6 text-left group"
+        className="w-full flex items-center justify-between py-8 md:py-10 text-left group"
         aria-expanded={open}
       >
-        <span className="font-display text-base md:text-lg text-charcoal-900 group-hover:text-brand-blue transition-colors duration-300 pr-6">
+        <span className="font-display text-xl md:text-2xl text-charcoal-900 group-hover:text-warm-600 transition-colors duration-300 pr-8">
           {question}
         </span>
-        <span className="shrink-0 text-warm-400 group-hover:text-brand-blue transition-colors duration-300">
-          {open ? <Minus size={18} /> : <Plus size={18} />}
+        <span className="shrink-0 text-warm-400 group-hover:text-warm-600 transition-colors duration-300">
+          <div className={`relative w-8 h-8 rounded-full border border-warm-300 flex items-center justify-center transition-all duration-500 ${open ? 'rotate-180 bg-warm-100 border-warm-400' : ''}`}>
+             <Plus size={16} strokeWidth={1.5} className={`absolute transition-opacity duration-300 ${open ? 'opacity-0' : 'opacity-100'}`} />
+             <Minus size={16} strokeWidth={1.5} className={`absolute transition-opacity duration-300 ${open ? 'opacity-100' : 'opacity-0'}`} />
+          </div>
         </span>
       </button>
       <AnimatePresence>
         {open && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] } }}
-            exit={{ height: 0, opacity: 0, transition: { duration: 0.2 } }}
+            animate={{ height: "auto", opacity: 1, transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] } }}
+            exit={{ height: 0, opacity: 0, transition: { duration: 0.3 } }}
             className="overflow-hidden"
           >
-            <p className="text-warm-500 text-sm leading-relaxed pb-6">{answer}</p>
+            <p className="text-charcoal-600/80 font-light text-lg md:text-xl leading-relaxed pb-10 pr-12 max-w-3xl">{answer}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -75,21 +78,23 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 export default function FAQSection() {
   return (
     <section className="bg-cream-50 py-24 md:py-32" aria-label="Frequently asked questions">
-      <div className="container mx-auto">
-        <AnimatedSection className="mb-16">
+      <div className="container mx-auto px-6">
+        <AnimatedSection className="mb-20">
           <div className="grid-swiss">
-            <div className="col-span-12 md:col-span-6">
-              <SectionHeading
-                eyebrow="FAQ"
-                title="Common questions, clear answers."
-                subtitle="Everything you need to know before starting a conversation with us."
-              />
+            <div className="col-span-12 md:col-span-8">
+              <span className="text-warm-500 font-mono text-xs tracking-widest uppercase mb-6 block">FAQ</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-charcoal-900 mb-6">
+                Common questions,<br/><span className="italic font-light text-warm-600">clear answers.</span>
+              </h2>
+              <p className="text-xl font-light text-charcoal-600 max-w-2xl">
+                Everything you need to know before starting a conversation with us.
+              </p>
             </div>
           </div>
         </AnimatedSection>
 
         <AnimatedSection>
-          <div className="max-w-3xl">
+          <div className="max-w-4xl">
             {FAQS.map((faq) => (
               <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
             ))}

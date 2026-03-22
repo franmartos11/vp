@@ -12,7 +12,7 @@ export function MakersStory() {
           {/* Image */}
           <div className="lg:col-span-5 relative h-[500px] lg:h-[700px] w-full">
             <Image
-              src="https://images.unsplash.com/photo-1594968417631-4171691c22bf?w=800&auto=format"
+              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&auto=format"
               alt="Architect drafting plans"
               fill
               unoptimized

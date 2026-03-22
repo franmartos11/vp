@@ -21,13 +21,13 @@ const STEPS = [
     num: "03",
     title: "Precision Execution",
     desc: "Our master builders and site managers bring blueprints into physical reality with Swiss engineering.",
-    image: "https://images.unsplash.com/photo-1541888081198-bc4a7e9da1ca?w=1000&auto=format"
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1000&auto=format"
   },
   {
     num: "04",
     title: "Handover",
     desc: "A meticulous walkthrough and delivery of your finished space, ready for generations of use.",
-    image: "https://images.unsplash.com/photo-1600607687920-4e4d3e45c1b1?w=1000&auto=format"
+    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1000&auto=format"
   }
 ];
 
