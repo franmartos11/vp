@@ -3,8 +3,10 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useTranslations } from "next-intl";
 
 export function ParallaxSeparator() {
+  const t = useTranslations("ParallaxSeparator");
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -32,10 +34,10 @@ export function ParallaxSeparator() {
       
       <div className="relative z-10 px-6 max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-5xl lg:text-5xl font-display text-white italic drop-shadow-2xl leading-tight">
-          "Architecture should speak of its time and place, but yearn for timelessness."
+          "{t('quote')}"
         </h2>
         <div className="w-12 h-px bg-warm-500 mx-auto mt-8 mb-6" />
-        <p className="text-warm-300 font-mono tracking-widest text-xs uppercase">The Core Philosophy</p>
+        <p className="text-warm-300 font-mono tracking-widest text-xs uppercase">{t('caption')}</p>
       </div>
     </section>
   );

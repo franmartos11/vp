@@ -3,8 +3,10 @@
 import Image from "next/image";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionHeading from "@/components/ui/SectionHeading";
+import { useTranslations } from "next-intl";
 
 export function MakersStory() {
+  const t = useTranslations("MakersStory");
   return (
     <section className="py-24 md:py-32 bg-cream-50 overflow-hidden" aria-labelledby="manifesto-heading">
       <div className="container mx-auto px-6 md:px-12">
@@ -28,13 +30,13 @@ export function MakersStory() {
           {/* Text */}
           <div className="lg:col-span-7">
             <SectionHeading
-              eyebrow="The Maker's Story"
-              title="A relentless pursuit of permanence."
+              eyebrow={t('eyebrow')}
+              title={t('title')}
               className="mb-8"
             />
             <div className="prose prose-lg text-charcoal-700 font-light max-w-2xl leading-relaxed">
               <p className="mb-6">
-                When we founded VERTEX, the vision was singular: to bridge the gap between uncompromising design and masterful execution. Too often, visionary architecture is lost in translation during construction.
+                {t('description')}
               </p>
               <p className="mb-6">
                 We believe that a building should not merely exist; it should resonate. Every pour of concrete, every piece of millwork, and every sheet of glass we place is meticulously intended to stand the test of time and trends.

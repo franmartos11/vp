@@ -6,33 +6,20 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionHeading from "@/components/ui/SectionHeading";
+import { useTranslations } from "next-intl";
 
-const TESTIMONIALS = [
-  {
-    quote: "Working with this team was unlike any construction experience I've had. Every detail was considered, every deadline met. The final result exceeded our expectations by a wide margin.",
-    author: "Jonathan M.",
-    role: "Private Residential Client — Miami, FL",
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&auto=format"
-  },
-  {
-    quote: "They took a complex commercial brief and turned it into something that now defines our brand. The design intelligence and on-site execution were both world-class.",
-    author: "Sarah K.",
-    role: "CEO, Horizon Capital Group — New York, NY",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&auto=format"
-  },
-  {
-    quote: "From the first conversation to the final walkthrough, the communication was transparent and proactive. That's rare. The craftsmanship is simply exceptional.",
-    author: "David L.",
-    role: "Real Estate Developer — Charlotte, NC",
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&auto=format"
-  },
+const TESTIMONIALS_IMAGES = [
+  "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&auto=format",
+  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&auto=format",
+  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&auto=format"
 ];
 
 export default function TestimonialsSection() {
+  const t = useTranslations("Testimonials");
   const [current, setCurrent] = useState(0);
 
-  const prev = () => setCurrent((c) => (c === 0 ? TESTIMONIALS.length - 1 : c - 1));
-  const next = () => setCurrent((c) => (c === TESTIMONIALS.length - 1 ? 0 : c + 1));
+  const prev = () => setCurrent((c) => (c === 0 ? TESTIMONIALS_IMAGES.length - 1 : c - 1));
+  const next = () => setCurrent((c) => (c === TESTIMONIALS_IMAGES.length - 1 ? 0 : c + 1));
 
   return (
     <section
@@ -49,7 +36,7 @@ export default function TestimonialsSection() {
            exit={{ opacity: 0, transition: { duration: 0.8 } }}
         >
           <Image 
-            src={TESTIMONIALS[current].image}
+            src={TESTIMONIALS_IMAGES[current]}
             alt="Testimonial background"
             fill
             unoptimized
@@ -64,8 +51,8 @@ export default function TestimonialsSection() {
       <div className="container mx-auto relative z-10 px-6">
         <AnimatedSection className="mb-16">
           <SectionHeading
-            eyebrow="Testimonials"
-            title="What our clients say."
+            eyebrow={t("eyebrow")}
+            title={t("title")}
             className="text-white"
             light
           />
@@ -86,15 +73,15 @@ export default function TestimonialsSection() {
                 aria-hidden="true"
               />
               <p className="text-white text-2xl md:text-4xl leading-snug lg:leading-normal font-display mb-10 drop-shadow-md">
-                &ldquo;{TESTIMONIALS[current].quote}&rdquo;
+                &ldquo;{t(`list.${current}.quote` as any)}&rdquo;
               </p>
               
               {/* Profile Image / Info */}
               <div className="flex flex-col items-center">
                  <div className="w-16 h-16 relative rounded-full overflow-hidden mb-4 border-2 border-warm-500/30">
                    <Image 
-                     src={TESTIMONIALS[current].image}
-                     alt={TESTIMONIALS[current].author}
+                     src={TESTIMONIALS_IMAGES[current]}
+                     alt={t(`list.${current}.author` as any)}
                      fill
                      unoptimized
                      className="object-cover"
@@ -102,8 +89,8 @@ export default function TestimonialsSection() {
                    />
                  </div>
                  <footer>
-                   <p className="text-cream-100 font-medium tracking-wide text-lg">{TESTIMONIALS[current].author}</p>
-                   <p className="text-warm-400/80 text-sm mt-1 uppercase tracking-widest font-mono">{TESTIMONIALS[current].role}</p>
+                   <p className="text-cream-100 font-medium tracking-wide text-lg">{t(`list.${current}.author` as any)}</p>
+                   <p className="text-warm-400/80 text-sm mt-1 uppercase tracking-widest font-mono">{t(`list.${current}.role` as any)}</p>
                  </footer>
               </div>
             </motion.blockquote>
@@ -119,7 +106,7 @@ export default function TestimonialsSection() {
               <ChevronLeft size={20} />
             </button>
             <div className="flex gap-3" role="tablist" aria-label="Testimonial navigation">
-              {TESTIMONIALS.map((_, i) => (
+              {TESTIMONIALS_IMAGES.map((_, i) => (
                 <button
                   key={i}
                   role="tab"

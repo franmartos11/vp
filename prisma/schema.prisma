@@ -10,18 +10,25 @@ generator client {
 model Project {
   id             String   @id @default(cuid())
   title          String
+  titleEs        String?
   slug           String   @unique
   description    String?
+  descriptionEs  String?
   projectType    String
+  projectTypeEs  String?
   completionYear Int?
   location       String?
+  locationEs     String?
   featured       Boolean  @default(false)
   coverImage     String?
   videoUrl       String?
-  technicalSheet String?
-  materials      String?
-  testimonial    String?
-  gallery        String?  // JSON stringified array of URLs
+  technicalSheet   String?
+  technicalSheetEs String?
+  materials        String?
+  materialsEs      String?
+  testimonial      String?
+  testimonialEs    String?
+  gallery          String?  // JSON stringified array of URLs
   order          Int      @default(0)
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
@@ -29,14 +36,18 @@ model Project {
 
 model Service {
   id               String   @id @default(cuid())
-  title            String
-  slug             String   @unique
-  shortDescription String?
-  fullDescription  String?
-  icon             String?
-  coverImage       String?
-  keyDeliverables  String?  // JSON stringified array of strings
-  gallery          String?  // JSON stringified array of URLs
+  title              String
+  titleEs            String?
+  slug               String   @unique
+  shortDescription   String?
+  shortDescriptionEs String?
+  fullDescription    String?
+  fullDescriptionEs  String?
+  icon               String?
+  coverImage         String?
+  keyDeliverables    String?  // JSON stringified array of strings
+  keyDeliverablesEs  String?  // JSON stringified array of strings
+  gallery            String?  // JSON stringified array of URLs
   order            Int      @default(0)
   createdAt        DateTime @default(now())
   updatedAt        DateTime @updatedAt

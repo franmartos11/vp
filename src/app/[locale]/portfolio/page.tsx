@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import PortfolioGrid from "@/components/sections/PortfolioGrid";
 import { db } from "@/lib/db";
+import { getLocale, getTranslations } from "next-intl/server";
 
 export const metadata: Metadata = {
   title: "Portfolio",
@@ -17,9 +18,24 @@ export const metadata: Metadata = {
 };
 
 export default async function PortfolioPage() {
-  const projects = await db.project.findMany({
+  const t = await getTranslations("PortfolioPage");
+  const locale = await getLocale();
+
+  const rawProjects = await db.project.findMany({
     orderBy: { order: "asc" }
   }) as any[];
+
+  // Dynamic mapping for i18n
+  const projects = rawProjects.map(p => ({
+    ...p,
+    title: locale === 'es' && p.titleEs ? p.titleEs : p.title,
+    description: locale === 'es' && p.descriptionEs ? p.descriptionEs : p.description,
+    projectType: locale === 'es' && p.projectTypeEs ? p.projectTypeEs : p.projectType,
+    location: locale === 'es' && p.locationEs ? p.locationEs : p.location,
+    technicalSheet: locale === 'es' && p.technicalSheetEs ? p.technicalSheetEs : p.technicalSheet,
+    materials: locale === 'es' && p.materialsEs ? p.materialsEs : p.materials,
+    testimonial: locale === 'es' && p.testimonialEs ? p.testimonialEs : p.testimonial,
+  }));
 
   return (
     <>
@@ -48,14 +64,14 @@ export default async function PortfolioPage() {
             <AnimatedSection>
               <div className="max-w-4xl">
                 <span className="text-warm-400 font-mono text-xs md:text-sm tracking-[0.3em] uppercase mb-8 block flex items-center gap-4">
-                  <div className="w-12 h-px bg-warm-400" /> Our Work
+                  <div className="w-12 h-px bg-warm-400" /> {t("our_work")}
                 </span>
                 <h1 className="text-display-xl lg:text-[7rem] font-display text-white leading-[0.9] mb-8 drop-shadow-2xl">
-                  Selected <br />
-                  <span className="text-warm-200 italic font-light">projects.</span>
+                  {t("title_1")} <br />
+                  <span className="text-warm-200 italic font-light">{t("title_2")}</span>
                 </h1>
                 <p className="text-warm-300 text-lg md:text-2xl font-light leading-relaxed max-w-2xl">
-                  A curated selection of our residential, commercial, renovation, and interior design work across the United States.
+                  {t("subtitle")}
                 </p>
               </div>
             </AnimatedSection>
@@ -63,7 +79,7 @@ export default async function PortfolioPage() {
           
           {/* Scroll Indicator */}
           <div className="absolute bottom-10 left-1/2 -translate-x-1/2 text-warm-500/40 flex flex-col items-center gap-3 animate-bounce">
-            <span className="font-mono text-[10px] uppercase tracking-[0.3em] rotate-90 translate-y-2 mb-4">Discover</span>
+            <span className="font-mono text-[10px] uppercase tracking-[0.3em] rotate-90 translate-y-2 mb-4">{t("discover")}</span>
             <div className="w-px h-16 bg-gradient-to-b from-warm-500/50 to-transparent" />
           </div>
         </section>
@@ -72,7 +88,7 @@ export default async function PortfolioPage() {
         <section className="container mx-auto pb-16 md:pb-20">
           <AnimatedSection>
             <div className="flex justify-between items-end border-b border-warm-200 pb-8 mb-12">
-              <h2 className="text-2xl md:text-3xl font-display text-charcoal-900">Explore our portfolio</h2>
+              <h2 className="text-2xl md:text-3xl font-display text-charcoal-900">{t("explore")}</h2>
               <p className="text-xs text-warm-500 font-mono tracking-widest uppercase">
                 {projects.length > 0 ? `${projects.length} projects` : ""}
               </p>
@@ -86,7 +102,7 @@ export default async function PortfolioPage() {
           {projects.length === 0 && (
             <div className="py-24 text-center">
               <p className="text-warm-500 text-sm">
-                Portfolio projects are being added. Please check back soon.
+                {t("empty")}
               </p>
             </div>
           )}

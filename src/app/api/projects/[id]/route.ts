@@ -4,7 +4,7 @@ import { db } from "@/lib/db";
 export async function PUT(req: Request, { params }: { params: Promise<{ id: string }> }) {
   try {
     const { id } = await params;
-    const data = await req.json();
+    const data: any = await req.json();
     
     const slug = data.slug || data.title.toLowerCase().replace(/[^a-z0-9]+/g, "-");
 
@@ -12,20 +12,27 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
       where: { id },
       data: {
         title: data.title,
+        titleEs: data.titleEs,
         slug,
         description: data.description,
+        descriptionEs: data.descriptionEs,
         projectType: data.projectType || "residential",
+        projectTypeEs: data.projectTypeEs || "residencial",
         completionYear: data.completionYear ? parseInt(data.completionYear) : null,
         location: data.location,
+        locationEs: data.locationEs,
         featured: data.featured || false,
         coverImage: data.coverImage,
         videoUrl: data.videoUrl,
         technicalSheet: data.technicalSheet,
+        technicalSheetEs: data.technicalSheetEs,
         materials: data.materials ? JSON.stringify(data.materials) : null,
+        materialsEs: data.materialsEs ? JSON.stringify(data.materialsEs) : null,
         testimonial: data.testimonial ? JSON.stringify(data.testimonial) : null,
+        testimonialEs: data.testimonialEs ? JSON.stringify(data.testimonialEs) : null,
         gallery: data.gallery ? JSON.stringify(data.gallery) : null,
         order: data.order || 0,
-      },
+      } as any,
     });
 
     return NextResponse.json({ success: true, project });

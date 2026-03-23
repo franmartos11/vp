@@ -1,12 +1,14 @@
 "use client";
 
 import { useRef } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { heroReveal, fadeInUp, staggerFast } from "@/lib/animations";
+import { useTranslations } from "next-intl";
 
 export function HeroSection() {
+  const t = useTranslations("Hero");
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -58,10 +60,10 @@ export function HeroSection() {
             variants={fadeInUp}
             className="text-xs tracking-widest uppercase text-warm-400 mb-6 font-mono"
           >
-            Architecture · Construction · Design
+            {t("eyebrow")}
           </motion.p>
           <h1 className="text-display-2xl md:text-[5.5rem] lg:text-[7rem] font-display text-white leading-[0.9] mb-8 drop-shadow-2xl flex flex-wrap gap-x-4 gap-y-2">
-            {["Building", "spaces", "that", "outlast", "trends."].map((word, i) => (
+            {[t("headline_building"), t("headline_spaces"), t("headline_that"), t("headline_outlast"), t("headline_trends")].map((word, i) => (
               <span key={i} className="overflow-hidden block">
                 <motion.span
                   initial={{ y: "100%", rotate: 2 }}
@@ -78,15 +80,14 @@ export function HeroSection() {
             variants={fadeInUp}
             className="text-warm-300 text-lg md:text-xl max-w-xl leading-relaxed mb-10 font-light"
           >
-            Luxury architecture and construction across the United States.
-            From concept to completion — with absolute precision.
+            {t("description")}
           </motion.p>
           <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
             <Link href="/portfolio" className="btn-primary bg-white text-charcoal-900 hover:bg-warm-100 transition-colors uppercase tracking-widest text-sm font-semibold">
-              View our work <ArrowRight size={14} className="ml-2 inline-block" />
+              {t("view_work")} <ArrowRight size={14} className="ml-2 inline-block" />
             </Link>
             <Link href="/contact" className="btn-outline border-white text-white hover:bg-white hover:text-charcoal-900 transition-colors uppercase tracking-widest text-sm font-semibold">
-              Start a project
+              {t("start_project")}
             </Link>
           </motion.div>
         </motion.div>
@@ -99,7 +100,7 @@ export function HeroSection() {
           className="absolute bottom-6 right-6 flex flex-col items-center gap-2 text-warm-400"
           aria-hidden="true"
         >
-          <span className="text-[10px] tracking-widest uppercase writing-vertical font-mono">Scroll</span>
+          <span className="text-[10px] tracking-widest uppercase writing-vertical font-mono">{t("scroll")}</span>
           <span className="w-px h-12 bg-white/30 block relative overflow-hidden">
             <span className="absolute top-0 left-0 w-full h-1/2 bg-warm-400 animate-pulse" />
           </span>

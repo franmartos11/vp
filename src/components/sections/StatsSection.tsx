@@ -2,13 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import { useTranslations } from "next-intl";
 
 const STATS = [
-  { value: 120, suffix: "+", label: "Projects Completed" },
-  { value: 15, suffix: "+", label: "Years of Experience" },
-  { value: 98, suffix: "%", label: "Client Satisfaction" },
-  { value: 40, suffix: "+", label: "Awards & Recognitions" },
-];
+  { value: 120, suffix: "+", labelKey: "projects_completed" },
+  { value: 15, suffix: "+", labelKey: "years_experience" },
+  { value: 98, suffix: "%", labelKey: "client_satisfaction" },
+  { value: 40, suffix: "+", labelKey: "awards" },
+] as const;
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
   const [count, setCount] = useState(0);
@@ -47,6 +48,7 @@ function CountUp({ target, suffix }: { target: number; suffix: string }) {
 }
 
 export default function StatsSection() {
+  const t = useTranslations("StatsSection");
   return (
     <section
       className="py-20 md:py-28 bg-charcoal-900 border-t border-charcoal-800"
@@ -55,13 +57,13 @@ export default function StatsSection() {
       <div className="container mx-auto">
         <AnimatedSection stagger className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 relative z-10">
           {STATS.map((stat) => (
-            <div key={stat.label} className="text-center group">
+            <div key={stat.labelKey} className="text-center group">
               <p className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-4 group-hover:scale-110 transition-transform duration-500">
                 <CountUp target={stat.value} suffix={stat.suffix} />
               </p>
               <div className="w-8 h-px bg-warm-500 mx-auto mb-4" />
               <p className="text-xs text-warm-500 tracking-widest uppercase font-mono">
-                {stat.label}
+                {t(stat.labelKey)}
               </p>
             </div>
           ))}

@@ -4,14 +4,15 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ProjectCard from "@/components/ui/ProjectCard";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { useTranslations } from "next-intl";
 
 const FILTERS = [
-  { label: "All", value: "all" },
-  { label: "Residential", value: "residential" },
-  { label: "Commercial", value: "commercial" },
-  { label: "Renovation", value: "renovation" },
-  { label: "Interior", value: "interior" },
-];
+  "all",
+  "residential",
+  "commercial",
+  "renovation",
+  "interior"
+] as const;
 
 type Project = {
   id: string;
@@ -29,6 +30,7 @@ interface PortfolioGridProps {
 }
 
 export default function PortfolioGrid({ projects }: PortfolioGridProps) {
+  const t = useTranslations("PortfolioGrid");
   const [activeFilter, setActiveFilter] = useState("all");
 
   const filtered =
@@ -46,16 +48,16 @@ export default function PortfolioGrid({ projects }: PortfolioGridProps) {
       >
         {FILTERS.map((f) => (
           <button
-            key={f.value}
-            onClick={() => setActiveFilter(f.value)}
-            aria-pressed={activeFilter === f.value}
+            key={f}
+            onClick={() => setActiveFilter(f)}
+            aria-pressed={activeFilter === f}
             className={`px-4 py-2 text-xs tracking-widest uppercase transition-all duration-300 ${
-              activeFilter === f.value
+              activeFilter === f
                 ? "bg-charcoal-900 text-cream-100"
                 : "bg-transparent border border-warm-200 text-warm-500 hover:border-charcoal-900 hover:text-charcoal-900"
             }`}
           >
-            {f.label}
+            {t(`filters.${f}` as any)}
           </button>
         ))}
       </div>
@@ -81,7 +83,7 @@ export default function PortfolioGrid({ projects }: PortfolioGridProps) {
               variants={fadeInUp}
               className="col-span-3 text-warm-500 text-sm py-16 text-center"
             >
-              No projects in this category yet.
+              {t('no_projects')}
             </motion.p>
           )}
         </motion.div>

@@ -8,6 +8,7 @@ import Footer from "@/components/layout/Footer";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import GalleryLightbox from "@/components/ui/GalleryLightbox";
 import { db } from "@/lib/db";
+import { getLocale, getTranslations } from "next-intl/server";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://yourfirm.com";
 
@@ -19,7 +20,7 @@ const TYPE_LABELS: Record<string, string> = {
 };
 
 interface Props {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string, locale: string }>;
 }
 
 export async function generateStaticParams() {
@@ -28,18 +29,20 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
-  const project = await db.project.findUnique({ where: { slug } });
+  const { slug, locale } = await params;
+  const project = await db.project.findUnique({ where: { slug } }) as any;
   if (!project) return {};
+
+  const title = locale === 'es' && project.titleEs ? project.titleEs : project.title;
 
   const imageUrl = project.coverImage || "";
 
   return {
-    title: project.title,
-    description: `${project.title} — A ${TYPE_LABELS[project.projectType]} project by Vertex Build Group.`,
+    title: title,
+    description: `${title} — Project by Vertex Build Group.`,
     openGraph: {
-      title: `${project.title} | Vertex Build Group`,
-      description: `${project.title} — A ${TYPE_LABELS[project.projectType]} project by Vertex Build Group.`,
+      title: `${title} | Vertex Build Group`,
+      description: `${title} — Project by Vertex Build Group.`,
       images: imageUrl ? [{ url: imageUrl, width: 1200, height: 630 }] : [],
     },
   };
@@ -47,11 +50,27 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ProjectDetailPage({ params }: Props) {
   const { slug } = await params;
-  const project = await db.project.findUnique({ where: { slug } });
+  const projectRecord = await db.project.findUnique({ where: { slug } });
 
-  if (!project) {
+  if (!projectRecord) {
     notFound();
   }
+
+  const locale = await getLocale();
+  const t = await getTranslations("ProjectDetail");
+  
+  const rawProject = projectRecord as any;
+
+  const project = {
+    ...projectRecord,
+    title: locale === 'es' && rawProject.titleEs ? rawProject.titleEs : rawProject.title,
+    description: locale === 'es' && rawProject.descriptionEs ? rawProject.descriptionEs : rawProject.description,
+    projectType: locale === 'es' && rawProject.projectTypeEs ? rawProject.projectTypeEs : rawProject.projectType,
+    location: locale === 'es' && rawProject.locationEs ? rawProject.locationEs : rawProject.location,
+    technicalSheet: locale === 'es' && rawProject.technicalSheetEs ? rawProject.technicalSheetEs : rawProject.technicalSheet,
+    materials: locale === 'es' && rawProject.materialsEs ? rawProject.materialsEs : rawProject.materials,
+    testimonial: locale === 'es' && rawProject.testimonialEs ? rawProject.testimonialEs : rawProject.testimonial,
+  };
 
   const coverUrl = project.coverImage || "";
 
@@ -115,12 +134,12 @@ export default async function ProjectDetailPage({ params }: Props) {
                 href="/portfolio"
                 className="inline-flex items-center gap-2 text-warm-300 text-sm hover:text-white transition-colors mb-8 uppercase tracking-widest font-mono"
               >
-                <ArrowLeft size={14} /> Back to Portfolio
+                <ArrowLeft size={14} /> {t("back")}
               </Link>
               <h1 className="text-display-lg font-display text-white drop-shadow-lg mb-4">
-                {project?.title || "Project Detail"}
+                {project.title || "Project Detail"}
               </h1>
-              {project?.location && (
+              {project.location && (
                 <p className="text-warm-300 text-sm md:text-base flex items-center gap-2 uppercase tracking-wide font-mono">
                   <MapPin size={16} /> {project.location} {project.completionYear ? `— ${project.completionYear}` : ""}
                 </p>
@@ -141,7 +160,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             <div className="col-span-1 md:col-span-8 lg:pr-16 order-last md:order-first">
               <AnimatedSection>
                 <h2 className="text-display-sm font-display text-charcoal-900 mb-8 border-b border-warm-200 pb-6 uppercase tracking-widest text-sm">
-                  The Vision
+                  {t("vision")}
                 </h2>
                 {project?.description && (
                   <div className="prose prose-stone prose-lg max-w-none text-charcoal-700 leading-relaxed font-light mb-16 whitespace-pre-line">
@@ -195,14 +214,14 @@ export default async function ProjectDetailPage({ params }: Props) {
                     <div className="absolute top-0 right-0 w-32 h-32 bg-warm-500/10 rounded-bl-full" />
                     
                     <h3 className="text-warm-400 uppercase tracking-widest text-xs font-mono mb-8 border-b border-white/20 pb-4 relative z-10">
-                      Project Dossier
+                      {t("dossier")}
                     </h3>
                     
                     <dl className="space-y-6 relative z-10">
-                      {project?.projectType && (
+                      {project.projectType && (
                         <div>
-                          <dt className="text-xs text-warm-500 uppercase tracking-widest mb-1 font-mono">Type</dt>
-                          <dd className="text-base text-cream-100">{TYPE_LABELS[project.projectType]}</dd>
+                          <dt className="text-xs text-warm-500 uppercase tracking-widest mb-1 font-mono">{t("type_label")}</dt>
+                          <dd className="text-base text-cream-100">{t(`types.${project.projectType}` as any) || project.projectType}</dd>
                         </div>
                       )}
                       
@@ -214,7 +233,7 @@ export default async function ProjectDetailPage({ params }: Props) {
 
                       {rawMaterials && rawMaterials.length > 0 && (
                         <div className="pt-4 mt-4 border-t border-white/20">
-                          <dt className="text-xs text-warm-500 uppercase tracking-widest mb-3 font-mono">Key Materials</dt>
+                          <dt className="text-xs text-warm-500 uppercase tracking-widest mb-3 font-mono">{t("materials_label")}</dt>
                           <dd>
                             <ul className="space-y-3">
                               {rawMaterials.map((mat: any, idx: number) => (
@@ -234,7 +253,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                         href="/contact"
                         className="inline-block w-full bg-warm-500 text-charcoal-900 border border-warm-500 text-center py-4 text-sm uppercase tracking-widest hover:bg-transparent hover:text-warm-500 transition-colors duration-300 font-medium font-mono group"
                       >
-                         <span className="group-hover:-translate-y-0.5 inline-block transition-transform duration-300">Inquire About Project</span>
+                         <span className="group-hover:-translate-y-0.5 inline-block transition-transform duration-300">{t("inquire")}</span>
                       </Link>
                     </div>
                   </div>
@@ -250,9 +269,9 @@ export default async function ProjectDetailPage({ params }: Props) {
               <Link href="/portfolio" className="block py-24 group relative overflow-hidden">
                 <div className="absolute inset-0 bg-warm-500/0 group-hover:bg-warm-500/5 transition-colors duration-500" />
                 <div className="container mx-auto text-center relative z-10 px-6">
-                   <p className="text-warm-500 uppercase tracking-widest text-sm mb-6 font-mono">Continue Exploring</p>
+                   <p className="text-warm-500 uppercase tracking-widest text-sm mb-6 font-mono">{t("continue")}</p>
                    <h2 className="text-display-md md:text-display-lg font-display text-white group-hover:text-warm-300 transition-colors duration-300">
-                     View All Projects
+                     {t("view_all")}
                    </h2>
                 </div>
               </Link>

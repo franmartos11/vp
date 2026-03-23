@@ -1,0 +1,318 @@
+{
+  "Navigation": {
+    "home": "Home",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "Hero": {
+    "eyebrow": "Architecture · Construction · Design",
+    "headline_building": "Building",
+    "headline_spaces": "spaces",
+    "headline_that": "that",
+    "headline_outlast": "outlast",
+    "headline_trends": "trends.",
+    "description": "Luxury architecture and construction across the United States. From concept to completion — with absolute precision.",
+    "view_work": "View our work",
+    "start_project": "Start a project",
+    "scroll": "Scroll"
+  },
+  "StickyPillars": {
+    "eyebrow": "Our Approach",
+    "title": "Architecture with intention.",
+    "subtitle": "We design and build spaces that endure — aesthetically and structurally. No shortcuts.",
+    "pillars": [
+      {
+        "title": "Precision Design",
+        "description": "Every detail engineered to purpose. We apply Swiss-inspired rigor to spatial planning, material selection, and finish."
+      },
+      {
+        "title": "Timeless Craft",
+        "description": "We work with master craftspeople and premium subcontractors who share our obsession with long‑lasting quality."
+      },
+      {
+        "title": "Client Partnership",
+        "description": "Transparent communication and collaborative process — so you always know exactly where your project stands."
+      }
+    ]
+  },
+  "StatsSection": {
+    "projects_completed": "Projects Completed",
+    "years_experience": "Years of Experience",
+    "client_satisfaction": "Client Satisfaction",
+    "awards": "Awards & Recognitions"
+  },
+  "ProcessTimeline": {
+    "eyebrow": "The Method",
+    "title": "Engineered precision, step by step.",
+    "steps": [
+      {
+        "num": "01",
+        "title": "Discovery & Vision",
+        "desc": "An immersive exploration of your lifestyle, site potential, and aesthetic ambitions."
+      },
+      {
+        "num": "02",
+        "title": "Architectural Response",
+        "desc": "Translating concepts into exacting schematic designs, materializing intention through 3D visualization."
+      },
+      {
+        "num": "03",
+        "title": "Precision Execution",
+        "desc": "Our master builders and site managers bring blueprints into physical reality with Swiss engineering."
+      },
+      {
+        "num": "04",
+        "title": "Handover",
+        "desc": "A meticulous walkthrough and delivery of your finished space, ready for generations of use."
+      }
+    ]
+  },
+  "FAQ": {
+    "eyebrow": "FAQ",
+    "title": "Common questions,\nclear answers.",
+    "subtitle": "Everything you need to know before starting a conversation with us.",
+    "questions": [
+      {
+        "q": "How long does a typical project take from start to finish?",
+        "a": "It depends on scope. A high-end renovation typically runs 3–6 months. New residential construction ranges from 10–18 months. Commercial projects vary widely. We provide a detailed schedule before breaking ground so you always know the timeline."
+      },
+      {
+        "q": "Do you work outside of Florida?",
+        "a": "Yes. We currently operate across Florida, New York, and the Carolinas. For larger commercial projects, we're able to mobilize nationally with our network of vetted trade partners."
+      },
+      {
+        "q": "Do you provide architectural renderings before construction?",
+        "a": "Absolutely. Every project includes concept sketches, 3D renderings, and construction documents before any work begins. We believe in full visual alignment before breaking ground."
+      },
+      {
+        "q": "What's your approach to budgeting and cost control?",
+        "a": "We use open-book budgeting: you see every line item. We provide a detailed estimate before construction starts and keep you informed of any variances. Our goal is zero budget surprises."
+      },
+      {
+        "q": "Can you handle the permitting process?",
+        "a": "Yes, permitting and municipal approvals are part of our full-service offering. We manage all submissions, follow-ups, and compliance documentation so you don't have to."
+      },
+      {
+        "q": "What types of projects do you specialize in?",
+        "a": "We work across custom residential estates, commercial developments, high-end renovations, and full interior design. Our strength is end-to-end delivery — from architectural concept through construction handover."
+      }
+    ]
+  },
+  "MakersStory": {
+    "eyebrow": "Our Story",
+    "title": "Crafting timeless spaces",
+    "description": "From humble beginnings to a leading luxury architecture firm, our journey is defined by precision, passion, and partnership."
+  },
+  "TrustedPartners": {
+    "heading": "Recognized & Featured By"
+  },
+  "Testimonials": {
+    "eyebrow": "Testimonials",
+    "title": "What our clients say.",
+    "list": [
+      {
+        "quote": "Working with this team was unlike any construction experience I've had. Every detail was considered, every deadline met. The final result exceeded our expectations by a wide margin.",
+        "author": "Jonathan M.",
+        "role": "Private Residential Client — Miami, FL"
+      },
+      {
+        "quote": "They took a complex commercial brief and turned it into something that now defines our brand. The design intelligence and on-site execution were both world-class.",
+        "author": "Sarah K.",
+        "role": "CEO, Horizon Capital Group — New York, NY"
+      },
+      {
+        "quote": "From the first conversation to the final walkthrough, the communication was transparent and proactive. That's rare. The craftsmanship is simply exceptional.",
+        "author": "David L.",
+        "role": "Real Estate Developer — Charlotte, NC"
+      }
+    ]
+  },
+  "PortfolioGrid": {
+    "filters": {
+      "all": "All",
+      "residential": "Residential",
+      "commercial": "Commercial",
+      "renovation": "Renovation",
+      "interior": "Interior"
+    },
+    "no_projects": "No projects in this category yet."
+  },
+  "ParallaxSeparator": {
+    "quote": "Architecture should speak of its time and place, but yearn for timelessness.",
+    "caption": "The Core Philosophy"
+  },
+  "PortfolioPage": {
+    "our_work": "Our Work",
+    "title_1": "Selected",
+    "title_2": "projects.",
+    "subtitle": "A curated selection of our residential, commercial, renovation, and interior design work across the United States.",
+    "discover": "Discover",
+    "explore": "Explore our portfolio",
+    "empty": "Portfolio projects are being added. Please check back soon."
+  },
+  "ProjectDetail": {
+    "back": "Back to Portfolio",
+    "vision": "The Vision",
+    "dossier": "Project Dossier",
+    "type_label": "Type",
+    "materials_label": "Key Materials",
+    "inquire": "Inquire About Project",
+    "continue": "Continue Exploring",
+    "view_all": "View All Projects",
+    "types": {
+      "residential": "Residential",
+      "commercial": "Commercial",
+      "renovation": "Renovation",
+      "interior": "Interior Design"
+    }
+  },
+  "ServicesPage": {
+    "what_we_do": "What We Do",
+    "hero_title_1": "Comprehensive",
+    "hero_title_2": "expertise.",
+    "hero_subtitle": "From pre-construction modeling to the final interior finishes, our vertically integrated team ensures total control over quality, budget, and timeline.",
+    "discover": "Discover",
+    "view_details": "View Service Details",
+    "tech": {
+      "portal": "Client Portal",
+      "portal_desc": "Real-time budget tracking, weekly photo updates, and direct communication.",
+      "eyebrow": "Transparency & Control",
+      "title_1": "Total visibility.",
+      "title_2": "Zero surprises.",
+      "desc": "Luxury construction shouldn't mean uncertainty. We deploy industry-leading project management software to give you 24/7 access to your project's heartbeat.",
+      "list_1": "Real-time schedule & financial tracking",
+      "list_2": "Weekly site progress photography",
+      "list_3": "Centralized document & permit storage",
+      "list_4": "Direct line to your dedicated Project Manager"
+    },
+    "quality": {
+      "eyebrow": "The Vertex Standard",
+      "title_1": "Uncompromising",
+      "title_2": "quality assurance.",
+      "items": [
+        {
+          "title": "Master Craftsmanship",
+          "desc": "We partner exclusively with artisans and tradespeople who share our obsessive attention to detail."
+        },
+        {
+          "title": "Zero-Defect Handover",
+          "desc": "A rigorous multi-point inspection process ensures perfection before you ever turn the key."
+        },
+        {
+          "title": "White-Glove Care",
+          "desc": "Comprehensive warranty and post-build maintenance programs to protect your investment."
+        }
+      ]
+    },
+    "cta": {
+      "title_1": "Your vision.",
+      "title_2": "Our execution.",
+      "desc": "Take the first step towards realizing your next masterpiece. Our principals are ready to discuss your ambitions.",
+      "btn": "Schedule Consultation"
+    }
+  },
+  "ServiceDetail": {
+    "return": "Return to Services",
+    "timeline": "Timeline Benchmark",
+    "timeline_val": "6 - 18 Months",
+    "investment": "Investment Level",
+    "investment_val": "Varies by Scope & Finishes",
+    "ideal": "Ideal For",
+    "ideal_val": "Custom Builds & Deep Renovations",
+    "fallback_desc": "By unifying design and construction, we eliminate the communication gaps that plague traditional project delivery. Our process guarantees that the architectural vision is executed precisely, on schedule, and within the agreed parameters. We act as your single point of responsibility, streamlining the entire journey from the initial sketch to the final walkthrough. Every detail, from structural framing to artisanal finishes, is meticulously coordinated under one roof.",
+    "deliverables": "Core",
+    "deliverables_it": "Deliverables",
+    "dev_fallback": "Detailed parameters curated per project scope.",
+    "execution": "Execution Strategy",
+    "delivery": "How we deliver",
+    "delivery_it": "this service.",
+    "phases": [
+      {
+        "phase": "Phase 1",
+        "title": "Assessment & Foundation",
+        "desc": "We begin with a granular analysis of your site, objectives, and parameters, laying the unshakeable groundwork for success."
+      },
+      {
+        "phase": "Phase 2",
+        "title": "Design & Engineering",
+        "desc": "Rigorous planning and 3D modeling eliminate guesswork. We finalize all permits, structural engineering, and design intent."
+      },
+      {
+        "phase": "Phase 3",
+        "title": "Precision Execution",
+        "desc": "Our in-house master builders and dedicated project managers execute the blueprints with militaristic precision."
+      }
+    ],
+    "proof": "Proof of Work",
+    "results": "Results in",
+    "focus": "focus.",
+    "view_portfolio": "View full portfolio",
+    "default_type": "Luxury Build",
+    "gallery_title": "Service Gallery",
+    "gallery_sub": "Detail & Execution",
+    "faq_title": "Common Questions",
+    "faqs": [
+      {
+        "q": "Is this service customized to my specific property?",
+        "a": "Absolutely. Every engagement begins with a bespoke assessment of your site conditions, local zoning laws, and personal aesthetic requirements. We never use out-of-the-box solutions."
+      },
+      {
+        "q": "Do you handle all necessary permitting internally?",
+        "a": "Yes. To maintain full control over the project timeline, our dedicated in-house compliance team manages all municipal submissions, variances, and architectural review boards."
+      },
+      {
+        "q": "Will I have a dedicated point of contact?",
+        "a": "To ensure absolute clarity, you are assigned a principal-level Project Director along with a dedicated Site Manager who provide weekly debriefs and are always accessible."
+      }
+    ],
+    "next_step": "Take the next step",
+    "ready": "Ready to begin your",
+    "project": "project?",
+    "schedule": "Schedule a discovery phase with our {service} specialists.",
+    "inquire": "Inquire Now"
+  },
+  "ContactPage": {
+    "eyebrow": "Contact",
+    "title": "Start a conversation.",
+    "subtitle": "Every great architectural endeavor begins with an honest dialogue. Tell us about your vision, site, and aspirations.",
+    "hq": "Miami Headquarters",
+    "hours_week": "Mon – Fri: 9:00 AM – 6:00 PM",
+    "hours_weekend": "Weekends by exclusive appointment",
+    "book": "Book a slot",
+    "prefer_title_1": "Prefer to speak",
+    "prefer_title_2": "directly with us?",
+    "prefer_desc": "Bypass the form completely. Schedule a 15-minute, no-obligation discovery call with one of our principal architects at a time that works flawlessly for your schedule.",
+    "select_time": "SELECT A TIME ON THE RIGHT"
+  },
+  "ContactForm": {
+    "types": {
+      "res_new": "Residential — New Build",
+      "res_ren": "Residential — Renovation",
+      "com_new": "Commercial — New Build",
+      "interior": "Interior Design",
+      "other": "Other"
+    },
+    "budgets": {
+      "under250": "Under $250k",
+      "250to500": "$250k – $500k",
+      "500to1m": "$500k – $1M",
+      "1to3m": "$1M – $3M",
+      "3mplus": "$3M+",
+      "notsure": "Not sure"
+    },
+    "success": "Message sent.",
+    "name_label": "Full Name *",
+    "name_placeholder": "Jane Smith",
+    "email_label": "Email Address *",
+    "email_placeholder": "jane@example.com",
+    "phone_label": "Phone (optional)",
+    "type_label": "Project Type",
+    "budget_label": "Estimated Budget",
+    "message_label": "Tell us about your project *",
+    "message_placeholder": "Briefly describe your vision, timeline, and what you're looking for.",
+    "btn_send": "Send Message",
+    "btn_sending": "Sending..."
+  }
+}

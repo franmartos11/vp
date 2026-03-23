@@ -5,39 +5,9 @@ import { Plus, Minus } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionHeading from "@/components/ui/SectionHeading";
+import { useTranslations } from "next-intl";
 
-const FAQS = [
-  {
-    question: "How long does a typical project take from start to finish?",
-    answer:
-      "It depends on scope. A high-end renovation typically runs 3–6 months. New residential construction ranges from 10–18 months. Commercial projects vary widely. We provide a detailed schedule before breaking ground so you always know the timeline.",
-  },
-  {
-    question: "Do you work outside of Florida?",
-    answer:
-      "Yes. We currently operate across Florida, New York, and the Carolinas. For larger commercial projects, we're able to mobilize nationally with our network of vetted trade partners.",
-  },
-  {
-    question: "Do you provide architectural renderings before construction?",
-    answer:
-      "Absolutely. Every project includes concept sketches, 3D renderings, and construction documents before any work begins. We believe in full visual alignment before breaking ground.",
-  },
-  {
-    question: "What's your approach to budgeting and cost control?",
-    answer:
-      "We use open-book budgeting: you see every line item. We provide a detailed estimate before construction starts and keep you informed of any variances. Our goal is zero budget surprises.",
-  },
-  {
-    question: "Can you handle the permitting process?",
-    answer:
-      "Yes, permitting and municipal approvals are part of our full-service offering. We manage all submissions, follow-ups, and compliance documentation so you don't have to.",
-  },
-  {
-    question: "What types of projects do you specialize in?",
-    answer:
-      "We work across custom residential estates, commercial developments, high-end renovations, and full interior design. Our strength is end-to-end delivery — from architectural concept through construction handover.",
-  },
-];
+
 
 function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
@@ -76,18 +46,20 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
 }
 
 export default function FAQSection() {
+  const t = useTranslations("FAQ");
+  
   return (
     <section className="bg-cream-50 py-24 md:py-32" aria-label="Frequently asked questions">
       <div className="container mx-auto px-6">
         <AnimatedSection className="mb-20">
           <div className="grid-swiss">
             <div className="col-span-12 md:col-span-8">
-              <span className="text-warm-500 font-mono text-xs tracking-widest uppercase mb-6 block">FAQ</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-charcoal-900 mb-6">
-                Common questions,<br/><span className="italic font-light text-warm-600">clear answers.</span>
+              <span className="text-warm-500 font-mono text-xs tracking-widest uppercase mb-6 block">{t("eyebrow")}</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-charcoal-900 mb-6 whitespace-pre-line">
+                {t("title")}
               </h2>
               <p className="text-xl font-light text-charcoal-600 max-w-2xl">
-                Everything you need to know before starting a conversation with us.
+                {t("subtitle")}
               </p>
             </div>
           </div>
@@ -95,9 +67,11 @@ export default function FAQSection() {
 
         <AnimatedSection>
           <div className="max-w-4xl">
-            {FAQS.map((faq) => (
-              <FAQItem key={faq.question} question={faq.question} answer={faq.answer} />
-            ))}
+            {[0, 1, 2, 3, 4, 5].map((index) => {
+              const question = t(`questions.${index}.q` as any);
+              const answer = t(`questions.${index}.a` as any);
+              return <FAQItem key={index} question={question} answer={answer} />;
+            })}
           </div>
         </AnimatedSection>
       </div>

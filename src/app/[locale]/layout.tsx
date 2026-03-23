@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "@/styles/globals.css";
+import {NextIntlClientProvider} from 'next-intl';
+import {getMessages} from 'next-intl/server';
+import {notFound} from 'next/navigation';
+import {routing} from '@/i18n/routing';
 
 const oswald = localFont({
-  src: "../../public/Oswald-SemiBold.ttf",
+  src: "../../../public/Oswald-SemiBold.ttf",
   variable: "--font-oswald",
   display: "swap",
 });
@@ -127,13 +131,23 @@ const organizationJsonLd = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+
+  if (!routing.locales.includes(locale as any)) {
+    notFound();
+  }
+
+  const messages = await getMessages();
+
   return (
-    <html lang="en" className={oswald.variable} suppressHydrationWarning>
+    <html lang={locale} className={oswald.variable} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
@@ -141,7 +155,9 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-screen bg-cream-100 antialiased">
-        {children}
+        <NextIntlClientProvider messages={messages}>
+          {children}
+        </NextIntlClientProvider>
       </body>
     </html>
   );

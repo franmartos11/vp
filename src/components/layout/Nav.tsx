@@ -1,23 +1,25 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-
-const navLinks = [
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/contact", label: "Contact" },
-];
+import { useTranslations } from "next-intl";
+import { Link, usePathname } from "@/i18n/routing";
+import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 
 export default function Nav() {
+  const t = useTranslations("Navigation");
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
+
+  const navLinks = [
+    { href: "/about", label: t("about") },
+    { href: "/services", label: t("services") },
+    { href: "/portfolio", label: t("portfolio") },
+    { href: "/contact", label: t("contact") },
+  ] as const;
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -71,6 +73,9 @@ export default function Nav() {
                 </Link>
               </li>
             ))}
+            <li>
+              <LanguageSwitcher />
+            </li>
           </ul>
 
           {/* Mobile hamburger */}
@@ -117,6 +122,9 @@ export default function Nav() {
               </button>
             </div>
             <nav className="flex-1 container mx-auto flex flex-col justify-center gap-8">
+              <div className="flex justify-center mb-4">
+                <LanguageSwitcher />
+              </div>
               {navLinks.map((link, i) => (
                 <motion.div
                   key={link.href}

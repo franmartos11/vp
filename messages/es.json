@@ -1,0 +1,318 @@
+{
+  "Navigation": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "portfolio": "Portafolio",
+    "services": "Servicios",
+    "contact": "Contacto"
+  },
+  "Hero": {
+    "eyebrow": "Arquitectura · Construcción · Diseño",
+    "headline_building": "Creando",
+    "headline_spaces": "espacios",
+    "headline_that": "que",
+    "headline_outlast": "trascienden",
+    "headline_trends": "tendencias.",
+    "description": "Arquitectura y construcción de lujo en los Estados Unidos. Desde el concepto hasta la finalización — con precisión absoluta.",
+    "view_work": "Ver trabajo",
+    "start_project": "Iniciar proyecto",
+    "scroll": "Bajar"
+  },
+  "StickyPillars": {
+    "eyebrow": "Nuestro Enfoque",
+    "title": "Arquitectura con intención.",
+    "subtitle": "Diseñamos y construimos espacios que perduran — estéticamente y estructuralmente. Sin atajos.",
+    "pillars": [
+      {
+        "title": "Diseño de Precisión",
+        "description": "Cada detalle está diseñado con propósito. Aplicamos rigor suizo a la planificación espacial, selección de materiales y acabados."
+      },
+      {
+        "title": "Artesanía Atemporal",
+        "description": "Trabajamos con artesanos maestros y subcontratistas premium que comparten nuestra obsesión por la calidad duradera."
+      },
+      {
+        "title": "Asociación con el Cliente",
+        "description": "Comunicación transparente y proceso colaborativo — siempre sabes exactamente en qué estado está tu proyecto."
+      }
+    ]
+  },
+  "StatsSection": {
+    "projects_completed": "Proyectos Completados",
+    "years_experience": "Años de Experiencia",
+    "client_satisfaction": "Satisfacción del Cliente",
+    "awards": "Premios & Reconocimientos"
+  },
+  "ProcessTimeline": {
+    "eyebrow": "El Método",
+    "title": "Precisión ingenieril, paso a paso.",
+    "steps": [
+      {
+        "num": "01",
+        "title": "Descubrimiento & Visión",
+        "desc": "Una exploración inmersiva de tu estilo de vida, potencial del sitio y ambiciones estéticas."
+      },
+      {
+        "num": "02",
+        "title": "Respuesta Arquitectónica",
+        "desc": "Traduciendo conceptos a diseños esquemáticos exactos, materializando la intención mediante visualizaciones 3D."
+      },
+      {
+        "num": "03",
+        "title": "Ejecución Precisa",
+        "desc": "Nuestros constructores maestros y gestores de obra convierten planos en realidad física con ingeniería suiza."
+      },
+      {
+        "num": "04",
+        "title": "Entrega",
+        "desc": "Una revisión meticulosa y entrega de tu espacio terminado, listo para generaciones de uso."
+      }
+    ]
+  },
+  "FAQ": {
+    "eyebrow": "FAQ",
+    "title": "Preguntas comunes,\nrespuestas claras.",
+    "subtitle": "Todo lo que necesitas saber antes de iniciar una conversación con nosotros.",
+    "questions": [
+      {
+        "q": "¿Cuánto dura un proyecto típico de principio a fin?",
+        "a": "Depende del alcance. Una renovación de alta gama suele durar de 3 a 6 meses. La nueva construcción residencial oscila de 10 a 18 meses. Los proyectos comerciales varían ampliamente. Proporcionamos un cronograma detallado antes de comenzar la obra para que siempre conozcas los tiempos."
+      },
+      {
+        "q": "¿Trabajas fuera de Florida?",
+        "a": "Sí. Operamos actualmente en Florida, Nueva York y las Carolinas. Para proyectos comerciales más grandes, podemos movilizarnos a nivel nacional gracias a nuestra red de socios comerciales verificados."
+      },
+      {
+        "q": "¿Proporcionan renderizados arquitectónicos antes de la construcción?",
+        "a": "Absolutamente. Cada proyecto incluye bocetos conceptuales, renderizados en 3D y documentos de construcción antes de que comience cualquier trabajo. Creemos en una alineación visual completa antes de la ejecución."
+      },
+      {
+        "q": "¿Cuál es su enfoque respecto al presupuesto y control de costos?",
+        "a": "Usamos un presupuesto transparente (open-book): ves cada línea de gasto. Entregamos un estimado detallado antes de que inicie la construcción y te mantenemos informado de cualquier variación. Nuestra meta es que no haya sorpresas en el presupuesto."
+      },
+      {
+        "q": "¿Pueden encargarse del proceso de permisos?",
+        "a": "Sí, los permisos y aprobaciones municipales son parte de nuestro servicio integral. Gestionamos todas las solicitudes, el seguimiento y la documentación de cumplimiento para que no tengas que preocuparte."
+      },
+      {
+        "q": "¿En qué tipos de proyectos se especializan?",
+        "a": "Trabajamos en fincas residenciales personalizadas, desarrollos comerciales, renovaciones de lujo y diseño interior integral. Nuestra fortaleza es la entrega de principio a fin — desde el concepto arquitectónico hasta la entrega de la construcción."
+      }
+    ]
+  },
+  "MakersStory": {
+    "eyebrow": "Nuestra Historia",
+    "title": "Creando espacios atemporales",
+    "description": "Desde humildes comienzos hasta una firma líder en arquitectura de lujo, nuestro viaje está definido por precisión, pasión y asociación."
+  },
+  "TrustedPartners": {
+    "heading": "Reconocido y Destacado Por"
+  },
+  "Testimonials": {
+    "eyebrow": "Testimonios",
+    "title": "Lo que dicen nuestros clientes.",
+    "list": [
+      {
+        "quote": "Trabajar con este equipo fue distinto a cualquier experiencia de construcción que haya tenido. Cada detalle fue considerado y cada plazo cumplido. El resultado superó nuestras expectativas por un amplio margen.",
+        "author": "Jonathan M.",
+        "role": "Cliente Residencial Privado — Miami, FL"
+      },
+      {
+        "quote": "Tomaron un brief comercial complejo y lo convirtieron en algo que ahora define a nuestra marca. Tanto la inteligencia en el diseño como la ejecución en obra fueron de primer nivel mundial.",
+        "author": "Sarah K.",
+        "role": "CEO, Horizon Capital Group — Nueva York, NY"
+      },
+      {
+        "quote": "Desde la primera conversación hasta el recorrido final, la comunicación fue transparente y proactiva. Eso es algo raro. La destreza artesanal es sencillamente excepcional.",
+        "author": "David L.",
+        "role": "Desarrollador de Bienes Raíces — Charlotte, NC"
+      }
+    ]
+  },
+  "PortfolioGrid": {
+    "filters": {
+      "all": "Todos",
+      "residential": "Residencial",
+      "commercial": "Comercial",
+      "renovation": "Renovación",
+      "interior": "Interiores"
+    },
+    "no_projects": "Aún no hay proyectos en esta categoría."
+  },
+  "ParallaxSeparator": {
+    "quote": "La arquitectura debe hablar de su tiempo y lugar, pero anhelar la atemporalidad.",
+    "caption": "Nuestra Filosofía Central"
+  },
+  "PortfolioPage": {
+    "our_work": "Nuestro Trabajo",
+    "title_1": "Proyectos",
+    "title_2": "seleccionados.",
+    "subtitle": "Una selección curada de nuestro trabajo residencial, comercial, de renovación y diseño de interiores en Estados Unidos.",
+    "discover": "Descubrir",
+    "explore": "Explora nuestro portafolio",
+    "empty": "Se están agregando proyectos al portafolio. Vuelve pronto."
+  },
+  "ProjectDetail": {
+    "back": "Volver al Portafolio",
+    "vision": "La Visión",
+    "dossier": "Dossier del Proyecto",
+    "type_label": "Tipo",
+    "materials_label": "Materiales Clave",
+    "inquire": "Consultar Sobre el Proyecto",
+    "continue": "Continuar Explorando",
+    "view_all": "Ver Todos los Proyectos",
+    "types": {
+      "residential": "Residencial",
+      "commercial": "Comercial",
+      "renovation": "Renovación",
+      "interior": "Diseño de Interiores"
+    }
+  },
+  "ServicesPage": {
+    "what_we_do": "Lo Que Hacemos",
+    "hero_title_1": "Experiencia",
+    "hero_title_2": "integral.",
+    "hero_subtitle": "Desde el modelado previo a la construcción hasta los acabados interiores finales, nuestro equipo garantiza el control total sobre la calidad, presupuesto y tiempos.",
+    "discover": "Descubrir",
+    "view_details": "Ver Detalles del Servicio",
+    "tech": {
+      "portal": "Portal del Cliente",
+      "portal_desc": "Seguimiento del presupuesto en tiempo real, fotos semanales y comunicación directa.",
+      "eyebrow": "Transparencia y Control",
+      "title_1": "Visibilidad total.",
+      "title_2": "Cero sorpresas.",
+      "desc": "La construcción de lujo no debería implicar incertidumbre. Usamos el mejor software de gestión para darte acceso 24/7 a tu proyecto.",
+      "list_1": "Seguimiento financiero y cronograma en tiempo real",
+      "list_2": "Fotografía semanal del avance de obra",
+      "list_3": "Almacenamiento centralizado de documentos y permisos",
+      "list_4": "Línea directa con tu Gerente de Proyecto dedicado"
+    },
+    "quality": {
+      "eyebrow": "El Estándar Vertex",
+      "title_1": "Aseguramiento",
+      "title_2": "de calidad incondicional.",
+      "items": [
+        {
+          "title": "Maestría Artesanal",
+          "desc": "Trabajamos exclusivamente con artesanos que comparten nuestra obsesión por el detalle."
+        },
+        {
+          "title": "Entrega Cero-Defectos",
+          "desc": "Un riguroso proceso de inspección multipunto garantiza la perfección antes de la entrega."
+        },
+        {
+          "title": "Atención de Primera",
+          "desc": "Garantía total y programas de mantenimiento post-construcción para proteger tu inversión."
+        }
+      ]
+    },
+    "cta": {
+      "title_1": "Tu visión.",
+      "title_2": "Nuestra ejecución.",
+      "desc": "Da el primer paso para hacer realidad tu próxima obra maestra. Estamos listos para escuchar tus ideas.",
+      "btn": "Programar Consulta"
+    }
+  },
+  "ServiceDetail": {
+    "return": "Regresar a Servicios",
+    "timeline": "Tiempo Estimado",
+    "timeline_val": "6 - 18 Meses",
+    "investment": "Nivel de Inversión",
+    "investment_val": "Varía por Alcance y Acabados",
+    "ideal": "Ideal Para",
+    "ideal_val": "Construcciones Personalizadas y Renovaciones Profundas",
+    "fallback_desc": "Al unificar diseño y construcción, eliminamos las deficiencias de comunicación habituales. Nuestro proceso garantiza que la visión arquitectónica se ejecute de manera precisa, a tiempo y dentro de los parámetros acordados. Actuamos como tu único punto de responsabilidad, facilitando todo el trayecto desde el boceto inicial hasta la entrega final. Cada detalle es meticulosamente coordinado bajo un mismo techo.",
+    "deliverables": "Entregables",
+    "deliverables_it": "Principales",
+    "dev_fallback": "Parámetros detallados seleccionados según el alcance del proyecto.",
+    "execution": "Estrategia de Ejecución",
+    "delivery": "Cómo entregamos",
+    "delivery_it": "este servicio.",
+    "phases": [
+      {
+        "phase": "Fase 1",
+        "title": "Evaluación y Bases",
+        "desc": "Comenzamos con un análisis detallado de tu terreno, objetivos y parámetros, sentando unas bases inamovibles para el éxito."
+      },
+      {
+        "phase": "Fase 2",
+        "title": "Diseño e Ingeniería",
+        "desc": "La planificación rigurosa y el modelado 3D eliminan las suposiciones. Finalizamos todos los permisos e ingeniería."
+      },
+      {
+        "phase": "Fase 3",
+        "title": "Ejecución de Precisión",
+        "desc": "Nuestros maestros constructores y gerentes de proyecto ejecutan los planos con precisión impecable."
+      }
+    ],
+    "proof": "Evidencia de Trabajo",
+    "results": "Resultados en",
+    "focus": "enfoque.",
+    "view_portfolio": "Ver portafolio completo",
+    "default_type": "Construcción de Lujo",
+    "gallery_title": "Galería de Servicios",
+    "gallery_sub": "Detalle y Ejecución",
+    "faq_title": "Preguntas Frecuentes",
+    "faqs": [
+      {
+        "q": "¿Este servicio se personaliza para mi propiedad?",
+        "a": "Absolutamente. Cada compromiso comienza con una evaluación a medida de las condiciones de tu sitio, leyes de zonificación y estética. Nunca usamos soluciones genéricas."
+      },
+      {
+        "q": "¿Gestionan todos los permisos necesarios internamente?",
+        "a": "Sí. Para mantener control total sobre los tiempos, nuestro equipo maneja todas las presentaciones municipales y regulaciones."
+      },
+      {
+        "q": "¿Tendré un contacto dedicado?",
+        "a": "Para asegurar claridad absoluta, se te asigna un Director de Proyecto a nivel de socio junto con un Gerente de Obra que proveen informes semanales y siempre están accesibles."
+      }
+    ],
+    "next_step": "Toma el siguiente paso",
+    "ready": "¿Listo para comenzar tu",
+    "project": "proyecto?",
+    "schedule": "Programa una fase de descubrimiento con nuestros especialistas de {service}.",
+    "inquire": "Consultar Ahora"
+  },
+  "ContactPage": {
+    "eyebrow": "Contacto",
+    "title": "Iniciemos una conversación.",
+    "subtitle": "Cada gran proyecto arquitectónico comienza con un diálogo honesto. Cuéntanos sobre tu visión, terreno y aspiraciones.",
+    "hq": "Sede principal en Miami",
+    "hours_week": "Lun - Vie: 9:00 AM - 6:00 PM",
+    "hours_weekend": "Fines de semana solo con cita exclusiva",
+    "book": "Reserva un espacio",
+    "prefer_title_1": "¿Prefieres hablar",
+    "prefer_title_2": "directamente con nosotros?",
+    "prefer_desc": "Evita el formulario por completo. Programa una llamada de descubrimiento de 15 minutos sin compromiso con uno de nuestros arquitectos principales en el horario que mejor te convenga.",
+    "select_time": "SELECCIONA UNA HORA A LA DERECHA"
+  },
+  "ContactForm": {
+    "types": {
+      "res_new": "Residencial — Obra Nueva",
+      "res_ren": "Residencial — Renovación",
+      "com_new": "Comercial — Obra Nueva",
+      "interior": "Diseño de Interiores",
+      "other": "Otro"
+    },
+    "budgets": {
+      "under250": "Menos de $250k",
+      "250to500": "$250k – $500k",
+      "500to1m": "$500k – $1M",
+      "1to3m": "$1M – $3M",
+      "3mplus": "Más de $3M",
+      "notsure": "No estoy seguro"
+    },
+    "success": "Mensaje enviado.",
+    "name_label": "Nombre Completo *",
+    "name_placeholder": "Juan Pérez",
+    "email_label": "Correo Electrónico *",
+    "email_placeholder": "juan@ejemplo.com",
+    "phone_label": "Teléfono (opcional)",
+    "type_label": "Tipo de Proyecto",
+    "budget_label": "Presupuesto Estimado",
+    "message_label": "Cuéntanos sobre tu proyecto *",
+    "message_placeholder": "Describe brevemente tu visión, tiempos y lo que estás buscando.",
+    "btn_send": "Enviar Mensaje",
+    "btn_sending": "Enviando..."
+  }
+}

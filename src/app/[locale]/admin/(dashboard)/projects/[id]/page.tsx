@@ -25,7 +25,9 @@ export default async function EditProjectPage({
   const parsedProject = project ? {
     ...project,
     materials: project.materials ? JSON.parse(project.materials) : [],
+    materialsEs: (project as any).materialsEs ? JSON.parse((project as any).materialsEs) : [],
     testimonial: project.testimonial ? JSON.parse(project.testimonial) : { quote: "", author: "" },
+    testimonialEs: (project as any).testimonialEs ? JSON.parse((project as any).testimonialEs) : { quote: "", author: "" },
     gallery: project.gallery ? JSON.parse(project.gallery) : [],
   } : null;
 

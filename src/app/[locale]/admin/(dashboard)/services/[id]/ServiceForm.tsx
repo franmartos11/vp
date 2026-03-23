@@ -15,11 +15,15 @@ export default function ServiceForm({ initialData }: ServiceFormProps) {
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     title: initialData?.title || "",
+    titleEs: initialData?.titleEs || "",
     slug: initialData?.slug || "",
     shortDescription: initialData?.shortDescription || "",
+    shortDescriptionEs: initialData?.shortDescriptionEs || "",
     fullDescription: initialData?.fullDescription || "",
+    fullDescriptionEs: initialData?.fullDescriptionEs || "",
     coverImage: initialData?.coverImage || "",
     keyDeliverables: initialData?.keyDeliverables || [],
+    keyDeliverablesEs: initialData?.keyDeliverablesEs || [],
     gallery: initialData?.gallery || [],
   });
 
@@ -73,25 +77,41 @@ export default function ServiceForm({ initialData }: ServiceFormProps) {
            </h2>
 
            <div className="grid grid-cols-2 gap-6">
-             <div className="space-y-2 col-span-2 md:col-span-1">
-               <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700">Título</label>
-               <input type="text" required value={formData.title} onChange={(e) => setFormData({...formData, title: e.target.value})} className="w-full border-b border-warm-300 p-2 outline-none focus:border-warm-500 text-lg font-display" placeholder="Ej: Custom Architecture" />
+             <div className="space-y-2">
+               <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700">Título (EN)</label>
+               <input type="text" required value={formData.title} onChange={(e) => setFormData({...formData, title: e.target.value})} className="w-full border-b border-warm-300 p-2 outline-none focus:border-warm-500 text-lg font-display" placeholder="Ex: Custom Architecture" />
              </div>
-             
-             <div className="space-y-2 col-span-2 md:col-span-1">
-               <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700">Identificador URL (Slug)</label>
-               <input type="text" value={formData.slug} onChange={(e) => setFormData({...formData, slug: e.target.value})} className="w-full border-b border-warm-300 p-2 outline-none focus:border-warm-500 text-sm font-mono" placeholder="custom-architecture" />
+             <div className="space-y-2">
+               <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700">Título (ES)</label>
+               <input type="text" value={formData.titleEs} onChange={(e) => setFormData({...formData, titleEs: e.target.value})} className="w-full border-b border-warm-300 p-2 outline-none focus:border-warm-500 text-lg font-display" placeholder="Ej: Arquitectura Personalizada" />
              </div>
            </div>
 
            <div className="space-y-2">
-             <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700 block">Descripción Corta (Tarjeta Principal)</label>
-             <textarea rows={3} value={formData.shortDescription} onChange={(e) => setFormData({...formData, shortDescription: e.target.value})} className="w-full border border-warm-200 p-4 outline-none focus:border-warm-500 text-sm font-light text-charcoal-700 rounded-sm" placeholder="Resumen del servicio en 2 líneas..." />
+             <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700">Identificador URL (Slug)</label>
+             <input type="text" value={formData.slug} onChange={(e) => setFormData({...formData, slug: e.target.value})} className="w-full border-b border-warm-300 p-2 outline-none focus:border-warm-500 text-sm font-mono" placeholder="custom-architecture" />
            </div>
 
-           <div className="space-y-2">
-             <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700 block">Descripción Narrativa Extensa</label>
-             <textarea rows={8} value={formData.fullDescription} onChange={(e) => setFormData({...formData, fullDescription: e.target.value})} className="w-full border border-warm-200 p-4 outline-none focus:border-warm-500 text-sm text-charcoal-700 rounded-sm leading-relaxed" placeholder="Todo lo que el cliente debe saber sobre tu proceso..." />
+           <div className="grid grid-cols-2 gap-6">
+             <div className="space-y-2">
+               <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700 block">Descripción Corta (EN)</label>
+               <textarea rows={3} value={formData.shortDescription} onChange={(e) => setFormData({...formData, shortDescription: e.target.value})} className="w-full border border-warm-200 p-4 outline-none focus:border-warm-500 text-sm font-light text-charcoal-700 rounded-sm" placeholder="Service summary in 2 lines..." />
+             </div>
+             <div className="space-y-2">
+               <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700 block">Descripción Corta (ES)</label>
+               <textarea rows={3} value={formData.shortDescriptionEs} onChange={(e) => setFormData({...formData, shortDescriptionEs: e.target.value})} className="w-full border border-warm-200 p-4 outline-none focus:border-warm-500 text-sm font-light text-charcoal-700 rounded-sm" placeholder="Resumen del servicio en 2 líneas..." />
+             </div>
+           </div>
+
+           <div className="grid grid-cols-2 gap-6">
+             <div className="space-y-2">
+               <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700 block">Descripción Completa (EN)</label>
+               <textarea rows={8} value={formData.fullDescription} onChange={(e) => setFormData({...formData, fullDescription: e.target.value})} className="w-full border border-warm-200 p-4 outline-none focus:border-warm-500 text-sm text-charcoal-700 rounded-sm leading-relaxed" placeholder="Everything the client needs to know..." />
+             </div>
+             <div className="space-y-2">
+               <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700 block">Descripción Completa (ES)</label>
+               <textarea rows={8} value={formData.fullDescriptionEs} onChange={(e) => setFormData({...formData, fullDescriptionEs: e.target.value})} className="w-full border border-warm-200 p-4 outline-none focus:border-warm-500 text-sm text-charcoal-700 rounded-sm leading-relaxed" placeholder="Todo lo que el cliente debe saber sobre tu proceso..." />
+             </div>
            </div>
         </div>
 
@@ -124,13 +144,12 @@ export default function ServiceForm({ initialData }: ServiceFormProps) {
            <div className="bg-white p-8 rounded-xl shadow-sm border border-warm-200">
              <div className="flex justify-between items-center mb-6 border-b border-warm-100 pb-4">
                <h2 className="text-sm font-mono tracking-widest uppercase text-warm-500">
-                  3. Entregables Clave
+                  3. Entregables Clave (EN)
                </h2>
                <button type="button" onClick={() => setFormData({...formData, keyDeliverables: [...formData.keyDeliverables, ""]})} className="text-[10px] uppercase tracking-widest font-mono text-warm-500 hover:text-charcoal-900 border border-warm-300 px-2 py-1 flex items-center gap-1 transition-colors">
                   <Plus size={10} /> Añadir
                </button>
              </div>
-             
              <div className="space-y-3">
                {formData.keyDeliverables.map((item: string, idx: number) => (
                  <div key={idx} className="flex gap-2 items-center">
@@ -139,7 +158,7 @@ export default function ServiceForm({ initialData }: ServiceFormProps) {
                      const newList = [...formData.keyDeliverables];
                      newList[idx] = e.target.value;
                      setFormData({...formData, keyDeliverables: newList});
-                   }} className="flex-1 border-b border-warm-200 p-2 outline-none focus:border-warm-500 text-sm font-mono bg-warm-50" placeholder="Ej: Site Analysis & Zoning" />
+                   }} className="flex-1 border-b border-warm-200 p-2 outline-none focus:border-warm-500 text-sm font-mono bg-warm-50" placeholder="Ex: Site Analysis & Zoning" />
                    <button type="button" onClick={() => {
                      const newList = [...formData.keyDeliverables];
                      newList.splice(idx, 1);
@@ -150,6 +169,37 @@ export default function ServiceForm({ initialData }: ServiceFormProps) {
                  </div>
                ))}
                {formData.keyDeliverables.length === 0 && <p className="text-xs text-warm-400 italic font-mono uppercase text-center py-4">Sin entregables añadidos.</p>}
+             </div>
+           </div>
+
+           <div className="bg-white p-8 rounded-xl shadow-sm border border-warm-200">
+             <div className="flex justify-between items-center mb-6 border-b border-warm-100 pb-4">
+               <h2 className="text-sm font-mono tracking-widest uppercase text-warm-500">
+                  Entregables Clave (ES)
+               </h2>
+               <button type="button" onClick={() => setFormData({...formData, keyDeliverablesEs: [...formData.keyDeliverablesEs, ""]})} className="text-[10px] uppercase tracking-widest font-mono text-warm-500 hover:text-charcoal-900 border border-warm-300 px-2 py-1 flex items-center gap-1 transition-colors">
+                  <Plus size={10} /> Añadir
+               </button>
+             </div>
+             <div className="space-y-3">
+               {formData.keyDeliverablesEs.map((item: string, idx: number) => (
+                 <div key={idx} className="flex gap-2 items-center">
+                   <div className="w-1.5 h-1.5 bg-warm-400 rounded-full shrink-0" />
+                   <input type="text" value={item} onChange={(e) => {
+                     const newList = [...formData.keyDeliverablesEs];
+                     newList[idx] = e.target.value;
+                     setFormData({...formData, keyDeliverablesEs: newList});
+                   }} className="flex-1 border-b border-warm-200 p-2 outline-none focus:border-warm-500 text-sm font-mono bg-warm-50" placeholder="Ej: Análisis del Sitio" />
+                   <button type="button" onClick={() => {
+                     const newList = [...formData.keyDeliverablesEs];
+                     newList.splice(idx, 1);
+                     setFormData({...formData, keyDeliverablesEs: newList});
+                   }} className="p-2 text-warm-300 hover:text-red-500 transition-colors">
+                     <Trash2 size={16} />
+                   </button>
+                 </div>
+               ))}
+               {formData.keyDeliverablesEs.length === 0 && <p className="text-xs text-warm-400 italic font-mono uppercase text-center py-4">Sin entregables añadidos.</p>}
              </div>
            </div>
         </div>

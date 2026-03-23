@@ -1,16 +1,18 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import Image from "next/image";
 import { Instagram, Linkedin } from "lucide-react";
-
-const footerLinks = [
-  { href: "/about", label: "About" },
-  { href: "/services", label: "Services" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/contact", label: "Contact" },
-];
+import { useTranslations } from "next-intl";
 
 export default function Footer() {
+  const t = useTranslations("Navigation");
   const year = new Date().getFullYear();
+
+  const footerLinks = [
+    { href: "/about", label: t("about") },
+    { href: "/services", label: t("services") },
+    { href: "/portfolio", label: t("portfolio") },
+    { href: "/contact", label: t("contact") },
+  ];
 
   return (
     <footer className="bg-charcoal-900 text-cream-200 mt-auto" role="contentinfo">
