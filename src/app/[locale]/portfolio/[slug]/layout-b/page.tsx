@@ -87,7 +87,7 @@ export default async function ProjectLayoutBPage({ params }: Props) {
           
           <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-10">
             <AnimatedSection>
-              <h1 className="text-display-xl lg:text-[7rem] font-display text-white drop-shadow-2xl mb-6">
+              <h1 className="text-4xl sm:text-display-xl lg:text-[7rem] font-display text-white drop-shadow-2xl mb-6 px-4">
                 {project.title}
               </h1>
               <p className="text-white/80 text-lg md:text-xl uppercase tracking-[0.3em] font-mono">

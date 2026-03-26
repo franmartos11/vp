@@ -139,7 +139,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 />
                 {t("return")}
               </Link>
-              <h1 className="text-display-lg md:text-[7rem] font-display text-white mb-8 leading-[0.9] drop-shadow-xl max-w-6xl">
+              <h1 className="text-5xl md:text-display-lg lg:text-[7rem] font-display text-white mb-8 leading-[0.9] drop-shadow-xl max-w-6xl">
                 {service.title}
               </h1>
               <p className="text-warm-100/80 text-xl md:text-2xl font-light max-w-3xl leading-relaxed">
@@ -185,7 +185,7 @@ export default async function ServiceDetailPage({ params }: Props) {
             {/* Left: Description (Editorial Style) */}
             <div className="lg:col-span-7 xl:col-span-8">
               <AnimatedSection>
-                <div className="prose prose-stone prose-lg md:prose-xl max-w-none text-charcoal-700 leading-relaxed font-light whitespace-pre-line first-letter:text-7xl first-letter:font-display first-letter:text-charcoal-900 first-letter:float-left first-letter:mr-6 first-letter:-mt-2 first-letter:leading-none">
+                <div className="prose prose-stone prose-lg md:prose-xl max-w-none text-charcoal-700 leading-relaxed font-light whitespace-pre-line first-letter:text-5xl lg:first-letter:text-7xl first-letter:font-display first-letter:text-charcoal-900 first-letter:float-left first-letter:mr-4 lg:first-letter:mr-6 first-letter:-mt-2 first-letter:leading-none">
                   {service.fullDescription ? (
                     <p>{service.fullDescription}</p>
                   ) : (
@@ -196,8 +196,8 @@ export default async function ServiceDetailPage({ params }: Props) {
             </div>
 
             {/* Right: Key Deliverables Sidebar (Luxury Style) */}
-            <div className="lg:col-span-5 xl:col-span-4">
-              <div className="sticky top-32 bg-white p-10 md:p-12 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-warm-100">
+            <div className="lg:col-span-5 xl:col-span-4 mt-12 lg:mt-0">
+              <div className="lg:sticky lg:top-32 bg-white p-8 md:p-12 shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-warm-100">
                 <AnimatedSection delay={100}>
                   <h3 className="font-display text-3xl text-charcoal-900 mb-8 pb-6 border-b border-warm-200">
                     {t("deliverables")}{" "}

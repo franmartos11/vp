@@ -101,11 +101,11 @@ export default function TestimonialsSection() {
             <button
               onClick={prev}
               aria-label="Previous testimonial"
-              className="p-3 border border-charcoal-600 text-warm-300 hover:border-warm-500 hover:text-warm-500 transition-colors duration-300 rounded-full"
+              className="p-4 border border-charcoal-600 text-warm-300 hover:border-warm-500 hover:text-warm-500 transition-colors duration-300 rounded-full"
             >
               <ChevronLeft size={20} />
             </button>
-            <div className="flex gap-3" role="tablist" aria-label="Testimonial navigation">
+            <div className="flex gap-1" role="tablist" aria-label="Testimonial navigation">
               {TESTIMONIALS_IMAGES.map((_, i) => (
                 <button
                   key={i}
@@ -113,16 +113,18 @@ export default function TestimonialsSection() {
                   aria-selected={i === current}
                   aria-label={`Go to testimonial ${i + 1}`}
                   onClick={() => setCurrent(i)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    i === current ? "bg-warm-500 w-8" : "bg-charcoal-600 hover:bg-warm-500/50"
-                  }`}
-                />
+                  className="p-2 transition-all duration-300 group"
+                >
+                  <div className={`h-2 rounded-full transition-all duration-300 ${
+                    i === current ? "bg-warm-500 w-8" : "bg-charcoal-600 w-2 group-hover:bg-warm-500/50"
+                  }`} />
+                </button>
               ))}
             </div>
             <button
               onClick={next}
               aria-label="Next testimonial"
-              className="p-3 border border-charcoal-600 text-warm-300 hover:border-warm-500 hover:text-warm-500 transition-colors duration-300 rounded-full"
+              className="p-4 border border-charcoal-600 text-warm-300 hover:border-warm-500 hover:text-warm-500 transition-colors duration-300 rounded-full"
             >
               <ChevronRight size={20} />
             </button>

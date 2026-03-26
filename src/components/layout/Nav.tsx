@@ -56,7 +56,7 @@ export default function Nav() {
               alt="Vertex Build Group"
               width={400}
               height={120}
-              className="h-16 md:h-20 w-auto object-contain scale-[2.5] md:scale-[3] origin-left"
+              className="h-16 md:h-20 w-auto object-contain scale-[2.5] md:scale-[3] origin-left max-w-[140px] md:max-w-none"
               priority
             />
           </Link>
@@ -109,7 +109,7 @@ export default function Nav() {
                   alt="Vertex Build Group"
                   width={300}
                   height={100}
-                  className="h-16 w-auto object-contain scale-[2.5] origin-left"
+                  className="h-16 w-auto object-contain scale-[2.5] origin-left max-w-[140px]"
                   priority
                 />
               </Link>
@@ -133,12 +133,21 @@ export default function Nav() {
                 >
                   <Link
                     href={link.href}
-                    className="text-display-md font-display text-charcoal-900 hover:text-brand-blue transition-colors"
+                    className="text-4xl md:text-5xl font-display text-charcoal-900 hover:text-brand-blue transition-colors"
                   >
                     {link.label}
                   </Link>
                 </motion.div>
               ))}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0, transition: { delay: 0.3, duration: 0.4, ease: [0.16, 1, 0.3, 1] } }}
+                className="mt-8 flex justify-center"
+              >
+                <Link href="/contact" className="btn-primary w-full max-w-sm text-center bg-charcoal-900 text-white hover:bg-brand-blue transition-colors uppercase tracking-widest text-sm font-semibold py-4">
+                  {t("start_project")}
+                </Link>
+              </motion.div>
             </nav>
           </motion.div>
         )}

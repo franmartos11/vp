@@ -30,7 +30,7 @@ export default async function ContactPage() {
       <main className="min-h-screen flex flex-col bg-cream-50">
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 min-h-[100svh]">
           {/* Right Side (Form) - Ordered First on Mobile */}
-          <div className="order-1 lg:order-2 px-6 py-32 lg:px-16 xl:px-24 flex flex-col justify-center overflow-y-auto">
+          <div className="order-1 lg:order-2 px-6 pt-24 pb-16 lg:py-32 lg:px-16 xl:px-24 flex flex-col justify-center overflow-y-auto">
             <AnimatedSection>
               <SectionHeading
                 eyebrow={t("eyebrow")}
@@ -43,9 +43,9 @@ export default async function ContactPage() {
           </div>
 
           {/* Left Side (Map + Info Overlay) - Ordered Second on Mobile */}
-          <div className="relative order-2 lg:order-1 h-[60vh] lg:h-auto min-h-[600px] group border-t lg:border-t-0 lg:border-r border-warm-200">
+          <div className="relative order-2 lg:order-1 flex flex-col min-h-[600px] border-t lg:border-t-0 lg:border-r border-warm-200">
             {/* Map Iframe */}
-            <div className="absolute inset-0 z-0 bg-[#e5e3df]">
+            <div className="relative h-[40vh] lg:h-auto lg:absolute lg:inset-0 z-0 bg-[#e5e3df]">
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/20 to-transparent pointer-events-none z-10" />
               <iframe
                 src={mapsEmbedUrl}
@@ -57,14 +57,14 @@ export default async function ContactPage() {
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Vertex Build Group office map"
                 aria-label="Map showing Vertex Build Group office location in Miami"
-                className="w-full h-full grayscale contrast-125 opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-1000 ease-in-out"
+                className="w-full h-full grayscale-[50%] lg:grayscale contrast-125 lg:opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-1000 ease-in-out"
               />
             </div>
 
             {/* Contact Info Card */}
-            <div className="absolute bottom-6 left-6 right-6 md:bottom-12 md:left-12 md:right-12 z-20">
+            <div className="relative lg:absolute lg:bottom-12 lg:left-12 lg:right-12 z-20 mt-auto bg-white/95 lg:bg-white/95 backdrop-blur-md p-8 md:p-12 lg:shadow-2xl border-t lg:border border-warm-200 lg:border-white">
               <AnimatedSection delay={200}>
-                <div className="bg-white/95 backdrop-blur-md p-8 md:p-12 shadow-2xl border border-white">
+                <div>
                   <h2 className="font-display text-2xl text-charcoal-900 mb-8 border-b border-warm-200 pb-6">
                     {t("hq")}
                   </h2>
@@ -148,7 +148,7 @@ export default async function ContactPage() {
               </div>
 
               {/* Calendly Inline Widget Embed */}
-              <div className="order-1 lg:order-2 h-[650px] w-full rounded-sm overflow-hidden bg-white/5 border border-white/10 shadow-2xl relative group/cal">
+              <div className="order-1 lg:order-2 h-[500px] md:h-[650px] w-full rounded-sm overflow-hidden bg-white/5 border border-white/10 shadow-2xl relative group/cal">
                 <div className="absolute inset-0 bg-charcoal-900/50 flex items-center justify-center opacity-0 group-hover/cal:opacity-100 transition-opacity pointer-events-none z-10 duration-500">
                   {/* Optional interaction overlay */}
                 </div>

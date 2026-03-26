@@ -134,7 +134,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               >
                 <ArrowLeft size={14} /> {t("back")}
               </Link>
-              <h1 className="text-display-lg font-display text-white drop-shadow-lg mb-4">
+              <h1 className="text-4xl md:text-display-lg font-display text-white drop-shadow-lg mb-4">
                 {project.title || "Project Detail"}
               </h1>
               {project.location && (
@@ -205,7 +205,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             
             {/* Technical Sheet Sidebar */}
             <aside className="col-span-1 md:col-span-4" aria-label="Project details">
-              <div className="sticky top-32">
+              <div className="md:sticky md:top-32">
                 <AnimatedSection delay={100}>
                   <div className="bg-charcoal-900 text-white p-8 md:p-10 shadow-2xl relative overflow-hidden">
                     {/* Background accent */}

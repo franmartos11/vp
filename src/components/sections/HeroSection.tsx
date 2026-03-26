@@ -48,8 +48,7 @@ export function HeroSection() {
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none mix-blend-overlay" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
       </motion.div>
 
-      {/* Content */}
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto relative z-10 px-6 md:px-0">
         <motion.div
           variants={staggerFast}
           initial="hidden"
@@ -62,7 +61,7 @@ export function HeroSection() {
           >
             {t("eyebrow")}
           </motion.p>
-          <h1 className="text-display-2xl md:text-[5.5rem] lg:text-[7rem] font-display text-white leading-[0.9] mb-8 drop-shadow-2xl flex flex-wrap gap-x-4 gap-y-2">
+          <h1 className="text-5xl sm:text-6xl md:text-[5.5rem] lg:text-[7rem] font-display text-white leading-[0.9] mb-8 drop-shadow-2xl md:flex flex-wrap gap-x-4 gap-y-2">
             {[t("headline_building"), t("headline_spaces"), t("headline_that"), t("headline_outlast"), t("headline_trends")].map((word, i) => (
               <span key={i} className="overflow-hidden block">
                 <motion.span
@@ -97,7 +96,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 1, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute bottom-6 right-6 flex flex-col items-center gap-2 text-warm-400"
+          className="absolute bottom-6 right-6 hidden md:flex flex-col items-center gap-2 text-warm-400"
           aria-hidden="true"
         >
           <span className="text-[10px] tracking-widest uppercase writing-vertical font-mono">{t("scroll")}</span>

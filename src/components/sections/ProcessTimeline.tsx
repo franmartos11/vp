@@ -27,7 +27,7 @@ export function ProcessTimeline() {
         </AnimatedSection>
 
         <div className="max-w-6xl mx-auto relative">
-          <div className="space-y-16 lg:space-y-24">
+          <div className="space-y-10 lg:space-y-24">
             {[0, 1, 2, 3].map((index) => {
               const num = t(`steps.${index}.num` as any);
               const title = t(`steps.${index}.title` as any);
@@ -39,7 +39,7 @@ export function ProcessTimeline() {
                  className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
               >
                 {/* Visual Node / Image */}
-                <div className="w-full md:w-1/2 relative h-[300px] md:h-[450px] overflow-hidden group border border-warm-200 shadow-xl">
+                <div className="w-full md:w-1/2 relative h-[250px] md:h-[450px] overflow-hidden group border border-warm-200 shadow-xl">
                    <Image 
                      src={STEPS_IMAGES[index]}
                      alt={title}
@@ -59,7 +59,7 @@ export function ProcessTimeline() {
                 <div className="w-full md:w-1/2 relative bg-transparent p-6 md:p-8">
                    <span className="text-xs tracking-widest uppercase text-warm-400 font-mono mb-4 block">Stage {num}</span>
                    <h3 className="text-2xl md:text-4xl font-display text-charcoal-900 mb-6">{title}</h3>
-                   <p className="text-charcoal-700 font-light leading-relaxed max-w-md text-lg">{desc}</p>
+                   <p className="text-charcoal-700 font-light leading-relaxed md:max-w-md text-lg">{desc}</p>
                    <div className="mt-8 w-12 h-px bg-warm-300" />
                 </div>
               </AnimatedSection>

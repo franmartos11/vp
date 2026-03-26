@@ -28,7 +28,7 @@ export function StickyPillars() {
            className="mb-16"
         />
 
-        <div className="flex flex-col lg:flex-row h-[700px] lg:h-[600px] w-full gap-4">
+        <div className="flex flex-col lg:flex-row min-h-[500px] lg:h-[600px] w-full gap-4 lg:gap-4">
           {[0, 1, 2].map((index) => {
             const title = t(`pillars.${index}.title` as any);
             const description = t(`pillars.${index}.description` as any);
@@ -37,7 +37,8 @@ export function StickyPillars() {
               <motion.div
                 key={index}
                 onMouseEnter={() => setHoveredIndex(index)}
-                className="relative overflow-hidden cursor-pointer flex-1"
+                onClick={() => setHoveredIndex(index)}
+                className="relative overflow-hidden cursor-pointer flex-1 min-h-[220px] md:min-h-[300px] lg:min-h-0 rounded-sm"
                 animate={{
                    flex: isActive ? 4 : 1
                 }}
@@ -49,26 +50,41 @@ export function StickyPillars() {
                    alt={title}
                    fill
                    unoptimized
-                   className={`object-cover transition-transform duration-[10s] ease-out ${isActive ? 'scale-105' : 'scale-100 grayscale'}`}
+                   className={`object-cover transition-transform duration-[10s] ease-out lg:block ${isActive ? 'scale-105' : 'scale-100 lg:grayscale'}`}
                 />
                 
                 {/* Gradient Overlay */}
                 <div 
-                  className={`absolute inset-0 transition-opacity duration-700 ${
+                  className={`absolute inset-0 transition-opacity duration-700 bg-gradient-to-t from-charcoal-900 via-charcoal-900/60 to-transparent lg:bg-none ${
                     isActive 
-                      ? 'bg-gradient-to-t from-charcoal-900/90 via-charcoal-900/20 to-transparent opacity-100' 
-                      : 'bg-charcoal-900/80 opacity-100'
+                      ? 'lg:bg-gradient-to-t lg:from-charcoal-900/90 lg:via-charcoal-900/20 lg:to-transparent lg:opacity-100' 
+                      : 'lg:bg-charcoal-900/80 lg:opacity-100'
                   }`} 
                 />
 
                 {/* Content */}
-                <div className={`absolute inset-0 p-8 md:p-12 flex flex-col justify-end transition-all duration-700`}>
-                   <div className="flex items-center gap-6 mb-4">
+                <div className={`absolute inset-0 p-6 md:p-12 flex flex-col justify-end transition-all duration-700`}>
+                   
+                   {/* Mobile Layout Title (Always visible, wrapping okay) */}
+                   <div className="lg:hidden flex flex-col gap-2 mb-2">
+                     <span className="font-mono tracking-widest text-xs text-brand-blue uppercase">
+                       Phase {String(index + 1).padStart(2, '0')}
+                     </span>
+                     <h3 className="text-2xl font-display text-white drop-shadow-md">
+                       {title}
+                     </h3>
+                     <p className="text-cream-50/90 text-sm font-light leading-relaxed max-w-sm drop-shadow-sm line-clamp-3">
+                       {description}
+                     </p>
+                   </div>
+
+                   {/* Desktop Layout Title & Description (Hover dependent) */}
+                   <div className="hidden lg:flex items-center gap-6 mb-4">
                      <span className={`font-mono tracking-widest text-sm transition-colors duration-500 ${isActive ? 'text-brand-blue' : 'text-warm-400'}`}>
                        {String(index + 1).padStart(2, '0')}
                      </span>
                      <div className={`h-[1px] w-12 bg-warm-400/30 transition-all duration-500 ${isActive ? 'w-24 bg-brand-blue/50' : ''}`} />
-                     <h3 className={`text-2xl md:text-3xl font-display whitespace-nowrap transition-colors duration-500 ${isActive ? 'text-white' : 'text-warm-200'}`}>
+                     <h3 className={`text-3xl font-display whitespace-nowrap transition-colors duration-500 ${isActive ? 'text-white' : 'text-warm-200'}`}>
                        {title}
                      </h3>
                    </div>
@@ -80,7 +96,7 @@ export function StickyPillars() {
                          animate={{ opacity: 1, y: 0 }}
                          exit={{ opacity: 0, y: 20 }}
                          transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                         className="text-cream-50/90 text-sm md:text-lg font-light leading-relaxed max-w-md ml-[4.5rem]"
+                         className="hidden lg:block text-cream-50/90 text-lg font-light leading-relaxed max-w-md ml-[4.5rem]"
                        >
                          {description}
                        </motion.p>
