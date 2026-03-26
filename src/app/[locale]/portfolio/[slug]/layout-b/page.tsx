@@ -22,10 +22,8 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
-export async function generateStaticParams() {
-  const projects = await db.project.findMany({ select: { slug: true } });
-  return projects.map((p) => ({ slug: p.slug }));
-}
+export const revalidate = 60;
+
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
