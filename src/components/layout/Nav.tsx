@@ -56,7 +56,7 @@ export default function Nav() {
               alt="Vertex Build Group"
               width={400}
               height={120}
-              className="h-16 md:h-20 w-auto object-contain scale-[2.5] md:scale-[3] origin-left max-w-[140px] md:max-w-none"
+              className={`h-16 md:h-20 w-auto object-contain scale-[2.5] md:scale-[3] origin-left max-w-[140px] md:max-w-none transition-all ${!scrolled && isHome ? 'brightness-0 invert' : ''}`}
               priority
             />
           </Link>
@@ -67,20 +67,22 @@ export default function Nav() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`nav-link ${pathname.startsWith(link.href) ? "active text-brand-blue" : ""}`}
+                  className={`nav-link ${pathname.startsWith(link.href) ? "active text-brand-blue" : ""} ${!scrolled && isHome ? "text-white hover:text-white/80" : ""}`}
                 >
                   {link.label}
                 </Link>
               </li>
             ))}
             <li>
-              <LanguageSwitcher />
+              <div className={`${!scrolled && isHome ? "text-white" : "text-charcoal-900"}`}>
+                <LanguageSwitcher />
+              </div>
             </li>
           </ul>
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden p-2 -mr-2 text-charcoal-900"
+            className={`md:hidden p-2 -mr-2 ${!scrolled && isHome ? 'text-white' : 'text-charcoal-900'}`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-expanded={menuOpen}
             aria-label={menuOpen ? "Close menu" : "Open menu"}

@@ -3,21 +3,23 @@
 /* ─── Tailwind v4 @theme: Design Tokens ─── */
 @theme {
   /* Colors */
-  --color-cream-50: #FAFAF7;
-  --color-cream-100: #F5F5F0;
-  --color-cream-200: #EEEDE6;
-  --color-cream-300: #E0DED5;
-  --color-charcoal-900: #0A0A0A;
-  --color-charcoal-800: #111111;
-  --color-charcoal-700: #1A1A1A;
-  --color-charcoal-600: #242424;
-  --color-warm-500: #8A8A85;
-  --color-warm-400: #A5A5A0;
-  --color-warm-300: #C0C0BB;
-  --color-warm-200: #D8D8D3;
-  --color-accent: #2A2A24;
-  --color-brand-blue: #1E73BE;
-  --color-brand-blue-dark: #155693;
+  --color-cream-50: #FFFFFF;
+  --color-cream-100: #F5F5F5;
+  --color-cream-200: #EAEAEA;
+  --color-cream-300: #DFDFDF;
+  --color-charcoal-900: #000000;
+  --color-charcoal-800: #262626;
+  --color-charcoal-700: #4D4D4D;
+  --color-charcoal-600: #737373;
+  --color-warm-500: #8C8C8C;
+  --color-warm-400: #A6A6A6;
+  --color-warm-300: #BFBFBF;
+  --color-warm-200: #D9D9D9;
+  --color-warm-100: #F2F2F2;
+  --color-warm-50: #FAFAFA;
+  --color-accent: #000000;
+  --color-brand-blue: #0071BC;
+  --color-brand-blue-dark: #005A96;
 
   /* Fonts */
   --font-family-sans: var(--font-oswald), system-ui, sans-serif;
@@ -133,7 +135,7 @@
     position: relative;
     font-size: 0.875rem;
     letter-spacing: 0.05em;
-    color: var(--color-warm-500);
+    color: var(--color-charcoal-700);
     transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .nav-link:hover {

@@ -33,11 +33,11 @@ export function ParallaxSeparator() {
       <div className="absolute inset-0 bg-charcoal-900/60 mix-blend-multiply" />
       
       <div className="relative z-10 px-6 max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl md:text-5xl lg:text-5xl font-display text-white italic drop-shadow-2xl leading-tight">
-          "{t('quote')}"
+        <h2 className="text-3xl md:text-5xl lg:text-5xl font-display text-white italic drop-shadow-[0_4px_12px_rgba(0,0,0,1)] leading-tight">
+          &ldquo;{t('quote')}&rdquo;
         </h2>
         <div className="w-12 h-px bg-warm-500 mx-auto mt-8 mb-6" />
-        <p className="text-warm-300 font-mono tracking-widest text-xs uppercase">{t('caption')}</p>
+        <p className="text-warm-200 font-mono tracking-widest text-xs uppercase">{t('caption')}</p>
       </div>
     </section>
   );

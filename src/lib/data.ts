@@ -51,38 +51,38 @@ export const FALLBACK_SERVICES = [
   { 
     _id: "s1", 
     id: "s1",
-    title: "Custom Architecture", 
-    slug: { current: "custom-architecture" }, 
-    shortDescription: "Complete architectural design from concept through construction documents, tailored to your vision and site.",
-    coverImageUrl: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&auto=format",
-    keyDeliverables: ["Site Analysis & Zoning", "Schematic Design", "Design Development", "Construction Documents", "Bidding & Negotiation"]
+    title: "STRUCTURAL ENGINEERING", 
+    slug: { current: "structural-engineering" }, 
+    shortDescription: "We provide comprehensive structural engineering services for residential and commercial projects, including single- and multi-family developments, as well as low- and mid-rise buildings.",
+    coverImageUrl: "https://images.unsplash.com/photo-1541888081198-bc4a7e9da1ca?w=1600&auto=format",
+    keyDeliverables: ["Structural System Design", "Shop Drawings Preparation", "Code-Compliant Solutions", "Constructability Optimization"]
   },
   { 
     _id: "s2", 
     id: "s2",
-    title: "Construction Management", 
-    slug: { current: "construction-management" }, 
-    shortDescription: "Full-service luxury execution — new builds and major structural developments with uncompromising quality.",
-    coverImageUrl: "https://images.unsplash.com/photo-1541888081198-bc4a7e9da1ca?w=1600&auto=format",
-    keyDeliverables: ["Pre-Construction Cost Estimating", "Critical Path Scheduling", "Subcontractor Selection", "On-Site Supervision", "Project Closeout"]
+    title: "BUILDING RECERTIFICATIONS", 
+    slug: { current: "building-recertifications" }, 
+    shortDescription: "Building recertifications are required to ensure that existing structures remain safe for continued occupancy and comply with current regulations.",
+    coverImageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&auto=format",
+    keyDeliverables: ["Structural & Electrical Inspections", "Photometric & Thermographic Studies", "Drone Facade/Roof Inspections", "Code-Compliant Reporting"]
   },
   { 
     _id: "s3", 
     id: "s3",
-    title: "High-End Renovation", 
-    slug: { current: "high-end-renovation" }, 
-    shortDescription: "Surgical renovations that preserve foundational architecture while elevating function, finish, and livability.",
-    coverImageUrl: "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1600&auto=format",
-    keyDeliverables: ["Structural Feasibility", "Demolition Planning", "Historical Preservation", "MEP Updates", "Finish Enhancements"]
+    title: "STRUCTURAL INSPECTIONS", 
+    slug: { current: "structural-inspections" }, 
+    shortDescription: "We provide structural inspection services throughout the construction process to verify that the work is performed in accordance with approved plans and applicable codes.",
+    coverImageUrl: "https://images.unsplash.com/photo-1502444330042-d1a1ddf971b1?w=1600&auto=format",
+    keyDeliverables: ["Construction Phase Inspections", "Special Inspector Duties", "Threshold Building Inspections", "Certification Letters & Reports"]
   },
   { 
     _id: "s4", 
     id: "s4",
-    title: "Interior Design", 
-    slug: { current: "interior-design" }, 
-    shortDescription: "Space planning, finish specification, furniture procurement, and art curation for the full interior experience.",
-    coverImageUrl: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1600&auto=format",
-    keyDeliverables: ["Space Planning", "Material & Finish Sourcing", "Custom Millwork Design", "Furniture Procurement", "Art Selection & Styling"]
+    title: "MEP ENGINEERING", 
+    slug: { current: "mep-engineering" }, 
+    shortDescription: "Comprehensive MEP engineering services for residential and commercial projects, including the design and coordination of mechanical, electrical, and plumbing systems.",
+    coverImageUrl: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1600&auto=format",
+    keyDeliverables: ["Mechanical & Electrical Design", "Plumbing Systems Coordination", "Fire Sprinkler & Alarm Design", "Subcontractor Management"]
   },
 ];
 

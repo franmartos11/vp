@@ -12,9 +12,9 @@ import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
 import { FALLBACK_TEAM } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "About Us | Vertex Build Group",
+  title: "About Us | DH Engineering & Consulting LLC",
   description:
-    "Learn about Vertex Build Group's design philosophy, process, and the team behind our award-winning architecture and construction projects.",
+    "Learn about DH Engineering & Consulting LLC — a specialized engineering firm providing structural design, MEP coordination, building recertifications, and inspections across Florida.",
 };
 
 type TeamMember = {
@@ -57,11 +57,11 @@ export default async function AboutPage() {
                   <div className="w-8 h-px bg-warm-400" /> Our Firm
                 </span>
                 <h1 className="text-display-lg md:text-[8rem] font-display text-white leading-[0.9] mb-8 drop-shadow-2xl">
-                  Permanence in <br />
-                  <span className="text-warm-200 italic font-light">design.</span>
+                  Engineering <br />
+                  <span className="text-warm-200 italic font-light">built to last.</span>
                 </h1>
                 <p className="text-warm-100/80 text-xl md:text-2xl font-light leading-relaxed max-w-3xl">
-                  Vertex Build Group was founded on a simple conviction: that buildings should outlast their owners in beauty and utility. Our team eliminates the friction that degrades most luxury projects.
+                  DH Engineering & Consulting LLC provides comprehensive structural and MEP engineering services — combining technical expertise with a practical understanding of construction and permitting across Florida.
                 </p>
               </div>
             </AnimatedSection>
@@ -73,16 +73,16 @@ export default async function AboutPage() {
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-warm-800/30 font-mono tracking-widest uppercase text-xs">
               <div className="py-10 md:px-10 flex flex-col gap-2 justify-center items-center text-center">
-                 <span className="text-4xl lg:text-5xl font-display text-white mb-2">20+</span>
-                 <span className="text-warm-500/70 text-[10px]">Years of Excellence</span>
+                 <span className="text-4xl lg:text-5xl font-display text-white mb-2">100+</span>
+                 <span className="text-warm-500/70 text-[10px]">Completed Projects</span>
               </div>
               <div className="py-10 md:px-10 flex flex-col gap-2 justify-center items-center text-center">
-                 <span className="text-4xl lg:text-5xl font-display text-white mb-2">$500M+</span>
-                 <span className="text-warm-500/70 text-[10px]">Managed Portfolio</span>
+                 <span className="text-4xl lg:text-5xl font-display text-white mb-2">FBC</span>
+                 <span className="text-warm-500/70 text-[10px]">Florida Building Code Experts</span>
               </div>
               <div className="py-10 md:px-10 flex flex-col gap-2 justify-center items-center text-center">
-                 <span className="text-4xl lg:text-5xl font-display text-white mb-2">50+</span>
-                 <span className="text-warm-500/70 text-[10px]">Industry Awards</span>
+                 <span className="text-4xl lg:text-5xl font-display text-white mb-2">4</span>
+                 <span className="text-warm-500/70 text-[10px]">Core Engineering Disciplines</span>
               </div>
             </div>
           </div>
@@ -109,17 +109,17 @@ export default async function AboutPage() {
               
               {/* Text side */}
               <div className="col-span-1 lg:col-span-6 lg:col-start-7 flex flex-col justify-center py-8">
-                <span className="text-warm-500 font-mono text-xs tracking-widest uppercase mb-6 block">The Vision</span>
+                <span className="text-warm-500 font-mono text-xs tracking-widest uppercase mb-6 block">Our Mission</span>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-charcoal-900 mb-12 leading-tight">
-                  Architecture that speaks to <span className="italic font-light text-warm-600">generations.</span>
+                  Engineering that serves <span className="italic font-light text-warm-600">your vision.</span>
                 </h2>
                 
                 <div className="prose prose-stone prose-lg max-w-none text-charcoal-700 leading-relaxed font-light first-letter:text-7xl first-letter:font-display first-letter:text-charcoal-900 first-letter:float-left first-letter:mr-6 first-letter:-mt-2 first-letter:leading-none">
                   <p className="mb-8">
-                    Vertex Build Group was founded on a simple conviction: spaces should outlast their creators. We bring together architects, engineers, and builders under one roof to eliminate the friction that degrades most luxury projects.
+                    At DH Engineering & Consulting LLC, we provide comprehensive engineering services by combining structural expertise with a practical understanding of construction and permitting processes. We specialize in structural design for residential and commercial projects, along with MEP coordination — delivering efficient and fully integrated solutions under one firm.
                   </p>
                   <p className="mb-12">
-                    From Florida to New York, our residential estates and commercial landmarks are crafted to stand the test of time, honoring natural materials and rigorous engineering. By unifying the phases of conception and execution, we protect the purity of the design while ensuring its structural and financial viability.
+                    With extensive experience under the Florida Building Code, we produce accurate, code-compliant designs with a strong focus on constructability and cost-efficiency. We also offer building recertifications, structural inspections, and as-built evaluations, supporting clients throughout every stage of their projects.
                   </p>
                 </div>
                 
@@ -127,8 +127,8 @@ export default async function AboutPage() {
                 <div className="flex items-center gap-6 mt-4">
                   <div className="w-16 h-px bg-warm-300" />
                   <div className="flex flex-col">
-                    <span className="font-display text-4xl text-charcoal-900">Jonah Vertex</span>
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-warm-500 font-mono mt-1">Founder & Principal</span>
+                    <span className="font-display text-4xl text-charcoal-900">DH Engineering</span>
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-warm-500 font-mono mt-1">& Consulting LLC</span>
                   </div>
                 </div>
               </div>
@@ -141,15 +141,15 @@ export default async function AboutPage() {
            <div className="container mx-auto px-6">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                  <div className="order-2 lg:order-1">
-                    <span className="font-mono text-xs tracking-[0.3em] uppercase text-warm-500 mb-6 block">Studio Culture</span>
+                    <span className="font-mono text-xs tracking-[0.3em] uppercase text-warm-500 mb-6 block">How We Work</span>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-display leading-tight mb-8">
-                       An environment of <br/><span className="text-warm-200 italic font-light">relentless refinement.</span>
+                       Precision at every <br/><span className="text-warm-200 italic font-light">phase.</span>
                     </h2>
                     <p className="text-warm-100/70 font-light text-lg lg:text-xl leading-relaxed max-w-lg mb-12">
-                       Great architecture requires a culture that champions critique, collaboration, and an obsession with the details. Our headquarters is designed to blur the lines between drafting tables and material libraries.
+                       We take pride in providing reliable, high-quality engineering services at competitive prices — meeting deadlines and supporting our clients with clear communication at every step of the process.
                     </p>
                     <ul className="space-y-6">
-                       {['In-house material lab', 'Collaborative open-plan studios', 'Continuous education programs'].map((item, i) => (
+                       {['Code-compliant structural design', 'Integrated MEP coordination', 'Permitting & code compliance support', 'Construction-phase engineering support'].map((item, i) => (
                            <li key={i} className="flex items-center gap-4 text-warm-50 font-light">
                              <div className="w-1.5 h-1.5 bg-warm-500 rounded-full" /> {item}
                            </li>
@@ -182,9 +182,9 @@ export default async function AboutPage() {
         <section className="bg-cream-100 container-none py-24 md:py-40 border-t border-warm-200" aria-labelledby="timeline-heading">
           <div className="container mx-auto px-6 max-w-5xl">
             <AnimatedSection className="text-center mb-20 md:mb-32">
-              <span className="font-mono text-xs tracking-[0.3em] uppercase text-warm-500 mb-6 block">Our History</span>
+              <span className="font-mono text-xs tracking-[0.3em] uppercase text-warm-500 mb-6 block">Our Journey</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-charcoal-900">
-                A legacy of <span className="italic font-light text-warm-600">progress.</span>
+                Built on <span className="italic font-light text-warm-600">experience.</span>
               </h2>
             </AnimatedSection>
             
@@ -193,10 +193,10 @@ export default async function AboutPage() {
               <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-warm-300 -translate-x-1/2" />
               
               {[
-                { year: "2005", title: "Foundation", description: "Established in Miami as a boutique architectural firm focusing on high-end residential." },
-                { year: "2012", title: "Integrated Construction", description: "Launched our construction division to offer end-to-end quality control and total transparency." },
-                { year: "2018", title: "National Operations", description: "Opened our New York and Charleston offices to serve an expanding luxury client base." },
-                { year: "2025", title: "A New Standard", description: "Pioneering sustainable luxury with passive-house certified estates across the US." }
+                { year: "Est.", title: "Founded in Florida", description: "DH Engineering & Consulting LLC was established with a clear mission: deliver accurate, code-compliant engineering services at competitive prices, with a focus on constructability." },
+                { year: "Core", title: "Structural Design", description: "Developed a strong foundation in residential and commercial structural design under the Florida Building Code — from single-family homes to mid-rise buildings." },
+                { year: "Exp.", title: "MEP Integration", description: "Expanded services to include MEP coordination, enabling a fully integrated engineering solution under one firm and eliminating costly interdisciplinary gaps." },
+                { year: "Now", title: "Full-Service Engineering", description: "Today we provide structural inspections, building recertifications, as-built evaluations, and shop drawings — supporting clients through every phase of their project." }
               ].map((item, idx) => {
                 const isEven = idx % 2 === 0;
                 return (
@@ -230,9 +230,9 @@ export default async function AboutPage() {
             <div className="container mx-auto max-w-7xl">
               <AnimatedSection className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24">
                 <div>
-                  <span className="font-mono text-xs tracking-[0.3em] uppercase text-warm-500 mb-4 block">Our People</span>
+                  <span className="font-mono text-xs tracking-[0.3em] uppercase text-warm-500 mb-4 block">Our Team</span>
                   <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-white">
-                    The architects <br/><span className="italic font-light text-warm-200">of reality.</span>
+                    The engineers <br/><span className="italic font-light text-warm-200">behind your project.</span>
                   </h2>
                 </div>
               </AnimatedSection>
@@ -303,13 +303,13 @@ export default async function AboutPage() {
           <div className="absolute inset-0 bg-charcoal-900/60" />
           <div className="relative z-10 text-center px-6">
             <AnimatedSection>
-              <span className="font-mono text-xs tracking-[0.3em] uppercase text-warm-500 mb-6 block">Initiate a dialogue</span>
+              <span className="font-mono text-xs tracking-[0.3em] uppercase text-warm-500 mb-6 block">Start a conversation</span>
               <h2 className="text-display-lg md:text-7xl font-display text-white mb-12 leading-tight">
-                Ready to build your <span className="text-warm-300 italic font-light">legacy?</span>
+                Ready to start your <span className="text-warm-300 italic font-light">project?</span>
               </h2>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <Link href="/portfolio" className="bg-white text-charcoal-900 px-10 py-5 uppercase tracking-[0.2em] text-xs font-mono hover:bg-warm-100 transition-colors w-full sm:w-auto text-center border border-white">
-                  View Portfolio
+                <Link href="/services" className="bg-white text-charcoal-900 px-10 py-5 uppercase tracking-[0.2em] text-xs font-mono hover:bg-warm-100 transition-colors w-full sm:w-auto text-center border border-white">
+                  Our Services
                 </Link>
                 <Link href="/contact" className="text-white px-10 py-5 uppercase tracking-[0.2em] text-xs font-mono border border-white hover:text-charcoal-900 hover:bg-white transition-colors w-full sm:w-auto text-center">
                   Contact Us

@@ -57,7 +57,7 @@ export function HeroSection() {
         >
           <motion.p
             variants={fadeInUp}
-            className="text-xs tracking-widest uppercase text-warm-400 mb-6 font-mono"
+            className="text-xs tracking-widest uppercase text-warm-300 mb-6 font-mono"
           >
             {t("eyebrow")}
           </motion.p>

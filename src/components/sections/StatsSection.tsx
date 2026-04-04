@@ -62,7 +62,7 @@ export default function StatsSection() {
                 <CountUp target={stat.value} suffix={stat.suffix} />
               </p>
               <div className="w-8 h-px bg-warm-500 mx-auto mb-4" />
-              <p className="text-xs text-warm-500 tracking-widest uppercase font-mono">
+              <p className="text-xs text-warm-300 tracking-widest uppercase font-mono">
                 {t(stat.labelKey)}
               </p>
             </div>

@@ -57,7 +57,7 @@ export function ProcessTimeline() {
                 
                 {/* Content */}
                 <div className="w-full md:w-1/2 relative bg-transparent p-6 md:p-8">
-                   <span className="text-xs tracking-widest uppercase text-warm-400 font-mono mb-4 block">Stage {num}</span>
+                   <span className="text-xs tracking-widest uppercase text-charcoal-600 font-mono mb-4 block">Stage {num}</span>
                    <h3 className="text-2xl md:text-4xl font-display text-charcoal-900 mb-6">{title}</h3>
                    <p className="text-charcoal-700 font-light leading-relaxed md:max-w-md text-lg">{desc}</p>
                    <div className="mt-8 w-12 h-px bg-warm-300" />

@@ -23,19 +23,19 @@ export default function Footer() {
             <Link
               href="/"
               className="inline-block mb-8 transition-opacity hover:opacity-80"
-              aria-label="Vertex Build Group — Home"
+              aria-label="DH Engineering & Consulting LLC — Home"
             >
               <Image
                 src="/Logo.png"
-                alt="Vertex Build Group"
+                alt="DH Engineering & Consulting LLC"
                 width={400}
                 height={120}
                 className="h-16 md:h-20 w-auto object-contain brightness-0 invert scale-[2.5] md:scale-[3] origin-left"
                 priority
               />
             </Link>
-            <p className="text-warm-500 text-sm leading-relaxed max-w-xs">
-              Crafting exceptional architecture and construction across the United States.
+            <p className="text-warm-300 text-sm leading-relaxed max-w-xs">
+              Comprehensive structural and MEP engineering services from Florida.
             </p>
             <div className="flex items-center gap-4 mt-6">
               <a
@@ -61,13 +61,13 @@ export default function Footer() {
 
           {/* Nav col */}
           <div className="col-span-6 md:col-span-3 md:col-start-6">
-            <p className="eyebrow text-warm-500 mb-4">Navigation</p>
+            <p className="eyebrow text-warm-400 mb-4">Navigation</p>
             <ul className="space-y-3" role="list">
               {footerLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-warm-400 hover:text-brand-blue transition-colors text-sm"
+                    className="text-warm-300 hover:text-brand-blue transition-colors text-sm"
                   >
                     {link.label}
                   </Link>
@@ -78,8 +78,8 @@ export default function Footer() {
 
           {/* Contact col */}
           <div className="col-span-6 md:col-span-4 md:col-start-9">
-            <p className="eyebrow text-warm-500 mb-4">Contact</p>
-            <address className="not-italic text-warm-400 text-sm space-y-2">
+            <p className="eyebrow text-warm-400 mb-4">Contact</p>
+            <address className="not-italic text-warm-300 text-sm space-y-2">
               <p>100 Brickell Ave, Suite 1200</p>
               <p>Miami, FL 33131</p>
               <a
@@ -89,10 +89,10 @@ export default function Footer() {
                 +1 (305) 000-0000
               </a>
               <a
-                href="mailto:hello@vertexbuildgroup.com"
+                href="mailto:info@dhengineering.com"
                 className="block hover:text-cream-100 transition-colors"
               >
-                hello@vertexbuildgroup.com
+                info@dhengineering.com
               </a>
             </address>
           </div>
@@ -101,14 +101,14 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-charcoal-600 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <p className="text-warm-500 text-xs">
-              &copy; {year} Vertex Build Group. All rights reserved.
+            <p className="text-warm-400 text-xs">
+              &copy; {year} DH Engineering & Consulting LLC. All rights reserved.
             </p>
             {/* Hidden quick access to CMS */}
             <Link href="/admin" aria-label="Admin Panel Login" className="w-1.5 h-1.5 rounded-full bg-charcoal-800 hover:bg-warm-500 transition-colors" />
           </div>
-          <p className="text-warm-500 text-xs">
-            Licensed General Contractor · State of Florida
+          <p className="text-warm-400 text-xs">
+            Licensed Engineering Firm · State of Florida
           </p>
         </div>
       </div>

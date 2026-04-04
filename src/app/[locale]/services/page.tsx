@@ -88,7 +88,7 @@ export default async function ServicesPage() {
           {displayServices.map((service, i) => {
             const isEven = i % 2 !== 0; // Alternating logic
             const imageUrl =
-              service.coverImageUrl ||
+              service.coverImage ||
               "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format";
 
             return (

@@ -57,6 +57,10 @@ export default async function ServiceDetailPage({ params }: Props) {
   const locale = await getLocale();
   const t = await getTranslations("ServiceDetail");
 
+  const getT = (key: string) => {
+    return t.has(`${slug}.${key}` as any) ? t(`${slug}.${key}` as any) : t(key as any);
+  };
+
   const service = {
     ...serviceRecord,
     title:
@@ -153,25 +157,25 @@ export default async function ServiceDetailPage({ params }: Props) {
             <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-warm-800/30 font-mono tracking-widest uppercase text-xs">
               <div className="py-8 md:px-8 flex flex-col gap-2 justify-center">
                 <span className="text-warm-500/70 text-[10px]">
-                  {t("timeline")}
+                  {getT("timeline")}
                 </span>
                 <span className="text-warm-100 text-sm">
-                  {t("timeline_val")}
+                  {getT("timeline_val")}
                 </span>
               </div>
               <div className="py-8 md:px-8 flex flex-col gap-2 justify-center">
                 <span className="text-warm-500/70 text-[10px]">
-                  {t("investment")}
+                  {getT("investment")}
                 </span>
                 <span className="text-warm-100 text-sm">
-                  {t("investment_val")}
+                  {getT("investment_val")}
                 </span>
               </div>
               <div className="py-8 md:px-8 flex flex-col gap-2 justify-center">
                 <span className="text-warm-500/70 text-[10px]">
-                  {t("ideal")}
+                  {getT("ideal")}
                 </span>
-                <span className="text-warm-100 text-sm">{t("ideal_val")}</span>
+                <span className="text-warm-100 text-sm">{getT("ideal_val")}</span>
               </div>
             </div>
           </div>
@@ -247,9 +251,9 @@ export default async function ServiceDetailPage({ params }: Props) {
 
             <div className="space-y-0 text-center md:text-left relative before:absolute before:inset-0 before:ml-auto before:mr-auto md:before:ml-[28px] before:-translate-x-px md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-warm-800 before:to-transparent">
               {[0, 1, 2].map((i) => {
-                const phase = t(`phases.${i}.phase` as any);
-                const title = t(`phases.${i}.title` as any);
-                const desc = t(`phases.${i}.desc` as any);
+                const phase = getT(`phases.${i}.phase`);
+                const title = getT(`phases.${i}.title`);
+                const desc = getT(`phases.${i}.desc`);
                 return (
                   <AnimatedSection
                     key={i}
@@ -323,7 +327,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                         {project.title}
                       </h3>
                       <p className="text-warm-500 font-mono text-xs uppercase tracking-widest">
-                        {project.projectType || t("default_type")}
+                        {project.projectType || getT("default_type")}
                       </p>
                     </Link>
                   </AnimatedSection>
@@ -362,8 +366,8 @@ export default async function ServiceDetailPage({ params }: Props) {
 
             <div className="space-y-16">
               {[0, 1, 2].map((i) => {
-                const q = t(`faqs.${i}.q` as any);
-                const a = t(`faqs.${i}.a` as any);
+                const q = getT(`faqs.${i}.q`);
+                const a = getT(`faqs.${i}.a`);
                 return (
                   <AnimatedSection key={i} delay={i * 100}>
                     <h4 className="text-2xl font-display text-charcoal-900 mb-4">

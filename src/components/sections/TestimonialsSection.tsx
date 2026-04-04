@@ -90,7 +90,7 @@ export default function TestimonialsSection() {
                  </div>
                  <footer>
                    <p className="text-cream-100 font-medium tracking-wide text-lg">{t(`list.${current}.author` as any)}</p>
-                   <p className="text-warm-400/80 text-sm mt-1 uppercase tracking-widest font-mono">{t(`list.${current}.role` as any)}</p>
+                   <p className="text-warm-300 text-sm mt-1 uppercase tracking-widest font-mono">{t(`list.${current}.role` as any)}</p>
                  </footer>
               </div>
             </motion.blockquote>
@@ -101,7 +101,7 @@ export default function TestimonialsSection() {
             <button
               onClick={prev}
               aria-label="Previous testimonial"
-              className="p-4 border border-charcoal-600 text-warm-300 hover:border-warm-500 hover:text-warm-500 transition-colors duration-300 rounded-full"
+              className="p-4 border border-warm-600/40 text-warm-300 hover:border-warm-500 hover:text-white hover:bg-warm-500/10 transition-all duration-300 rounded-full"
             >
               <ChevronLeft size={20} />
             </button>
@@ -116,7 +116,7 @@ export default function TestimonialsSection() {
                   className="p-2 transition-all duration-300 group"
                 >
                   <div className={`h-2 rounded-full transition-all duration-300 ${
-                    i === current ? "bg-warm-500 w-8" : "bg-charcoal-600 w-2 group-hover:bg-warm-500/50"
+                    i === current ? "bg-warm-500 w-8" : "bg-warm-600/40 w-2 group-hover:bg-warm-500/50"
                   }`} />
                 </button>
               ))}
@@ -124,7 +124,7 @@ export default function TestimonialsSection() {
             <button
               onClick={next}
               aria-label="Next testimonial"
-              className="p-4 border border-charcoal-600 text-warm-300 hover:border-warm-500 hover:text-warm-500 transition-colors duration-300 rounded-full"
+              className="p-4 border border-warm-600/40 text-warm-300 hover:border-warm-500 hover:text-white hover:bg-warm-500/10 transition-all duration-300 rounded-full"
             >
               <ChevronRight size={20} />
             </button>

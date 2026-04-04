@@ -15,12 +15,13 @@ import { MakersStory } from "@/components/sections/MakersStory";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
 import { ParallaxSeparator } from "@/components/sections/ParallaxSeparator";
 import { TrustedPartners } from "@/components/sections/TrustedPartners";
+import { AllServicesGrid } from "@/components/sections/AllServicesGrid";
 import { db } from "@/lib/db";
 
 export const metadata: Metadata = {
-  title: "Luxury Architecture & Construction | Vertex Build Group",
+  title: "DH Engineering & Consulting LLC | Structural & MEP Engineering",
   description:
-    "Vertex Build Group — Award-winning luxury architecture and construction in the United States. Residential, commercial, and interior projects crafted with precision.",
+    "DH Engineering & Consulting LLC — Comprehensive structural design, MEP coordination, building recertifications, and inspections across Florida. Code-compliant, cost-efficient solutions.",
 };
 
 export default async function HomePage() {
@@ -49,6 +50,9 @@ export default async function HomePage() {
 
         {/* Pillars */}
         <StickyPillars />
+
+        {/* All Services Grid */}
+        <AllServicesGrid />
 
         {/* Stats */}
         <StatsSection />
@@ -125,8 +129,8 @@ export default async function HomePage() {
                 <div className="col-span-12 md:col-span-7">
                   <SectionHeading
                     eyebrow="Start a project"
-                    title="Let's build something exceptional."
-                    subtitle="Tell us about your vision. We'll tell you how we'd approach it."
+                    title="Ready to engineer your vision?"
+                    subtitle="Tell us about your project. We'll provide precise, code-compliant engineering from day one."
                     light
                   />
                 </div>

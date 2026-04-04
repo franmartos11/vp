@@ -7,33 +7,33 @@
     "contact": "Contacto"
   },
   "Hero": {
-    "eyebrow": "Arquitectura · Construcción · Diseño",
-    "headline_building": "Creando",
-    "headline_spaces": "espacios",
-    "headline_that": "que",
-    "headline_outlast": "trascienden",
-    "headline_trends": "tendencias.",
-    "description": "Arquitectura y construcción de lujo en los Estados Unidos. Desde el concepto hasta la finalización — con precisión absoluta.",
-    "view_work": "Ver trabajo",
+    "eyebrow": "Estructural · MEP · Inspecciones · Recertificaciones",
+    "headline_building": "Soluciones",
+    "headline_spaces": "de",
+    "headline_that": "ingeniería",
+    "headline_outlast": "que",
+    "headline_trends": "perduran.",
+    "description": "Servicios integrales de ingeniería estructural y MEP en Florida. Diseños precisos y conformes al código con enfoque en constructabilidad y eficiencia de costos.",
+    "view_work": "Ver nuestros servicios",
     "start_project": "Iniciar proyecto",
     "scroll": "Bajar"
   },
   "StickyPillars": {
     "eyebrow": "Nuestro Enfoque",
-    "title": "Arquitectura con intención.",
-    "subtitle": "Diseñamos y construimos espacios que perduran — estéticamente y estructuralmente. Sin atajos.",
+    "title": "Ingeniería con propósito.",
+    "subtitle": "Combinamos experiencia estructural con un entendimiento práctico de la construcción y los permisos — entregando soluciones integradas y eficientes.",
     "pillars": [
       {
-        "title": "Diseño de Precisión",
-        "description": "Cada detalle está diseñado con propósito. Aplicamos rigor suizo a la planificación espacial, selección de materiales y acabados."
+        "title": "Diseño Conforme al Código",
+        "description": "Con amplia experiencia bajo el Florida Building Code, producimos diseños precisos con un fuerte enfoque en constructabilidad y eficiencia de costos."
       },
       {
-        "title": "Artesanía Atemporal",
-        "description": "Trabajamos con artesanos maestros y subcontratistas premium que comparten nuestra obsesión por la calidad duradera."
+        "title": "Soluciones Integradas",
+        "description": "Al combinar la experiencia estructural con la coordinación MEP, entregamos soluciones de ingeniería bajo una sola firma, eliminando brechas y retrasos."
       },
       {
-        "title": "Asociación con el Cliente",
-        "description": "Comunicación transparente y proceso colaborativo — siempre sabes exactamente en qué estado está tu proyecto."
+        "title": "Proceso Centrado en el Cliente",
+        "description": "Nos enorgullecemos de la comunicación clara, los precios competitivos y el cumplimiento de plazos, asegurando una experiencia sin contratiempos."
       }
     ]
   },
@@ -44,66 +44,67 @@
     "awards": "Premios & Reconocimientos"
   },
   "ProcessTimeline": {
-    "eyebrow": "El Método",
-    "title": "Precisión ingenieril, paso a paso.",
+    "eyebrow": "Cómo Trabajamos",
+    "title": "Un proceso fluido, cada vez.",
     "steps": [
       {
         "num": "01",
-        "title": "Descubrimiento & Visión",
-        "desc": "Una exploración inmersiva de tu estilo de vida, potencial del sitio y ambiciones estéticas."
+        "title": "Consulta Inicial",
+        "desc": "Comenzamos con un entendimiento profundo del alcance del proyecto, condiciones del sitio, códigos locales y parámetros de presupuesto para definir una hoja de ruta clara."
       },
       {
         "num": "02",
-        "title": "Respuesta Arquitectónica",
-        "desc": "Traduciendo conceptos a diseños esquemáticos exactos, materializando la intención mediante visualizaciones 3D."
+        "title": "Diseño Estructural y MEP",
+        "desc": "Desarrollamos diseños precisos y conformes al código, coordinando todas las disciplinas bajo una sola firma para eliminar conflictos y revisiones costosas."
       },
       {
         "num": "03",
-        "title": "Ejecución Precisa",
-        "desc": "Nuestros constructores maestros y gestores de obra convierten planos en realidad física con ingeniería suiza."
+        "title": "Permisos y Cumplimiento",
+        "desc": "Preparamos y presentamos toda la documentación requerida ante el municipio, gestionando el proceso de permisos para que tu proyecto se mantenga en cronograma."
       },
       {
         "num": "04",
-        "title": "Entrega",
-        "desc": "Una revisión meticulosa y entrega de tu espacio terminado, listo para generaciones de uso."
+        "title": "Soporte de Construcción",
+        "desc": "Permanecemos involucrados durante la construcción, brindando respuestas a RFIs, inspecciones de campo y evaluaciones de as-built para garantizar la fiel ejecución."
       }
     ]
   },
   "FAQ": {
     "eyebrow": "FAQ",
     "title": "Preguntas comunes,\nrespuestas claras.",
-    "subtitle": "Todo lo que necesitas saber antes de iniciar una conversación con nosotros.",
+    "subtitle": "Todo lo que necesitas saber antes de iniciar una conversación con nuestro equipo de ingeniería.",
     "questions": [
       {
-        "q": "¿Cuánto dura un proyecto típico de principio a fin?",
-        "a": "Depende del alcance. Una renovación de alta gama suele durar de 3 a 6 meses. La nueva construcción residencial oscila de 10 a 18 meses. Los proyectos comerciales varían ampliamente. Proporcionamos un cronograma detallado antes de comenzar la obra para que siempre conozcas los tiempos."
+        "q": "¿Qué tipos de proyectos manejan?",
+        "a": "Nos especializamos en diseño estructural para proyectos residenciales y comerciales — desde viviendas unifamiliares y multifamiliares hasta edificios de baja y media altura. También ofrecemos coordinación MEP, recertificaciones de edificios, inspecciones estructurales y evaluaciones de as-built."
       },
       {
-        "q": "¿Trabajas fuera de Florida?",
-        "a": "Sí. Operamos actualmente en Florida, Nueva York y las Carolinas. Para proyectos comerciales más grandes, podemos movilizarnos a nivel nacional gracias a nuestra red de socios comerciales verificados."
+        "q": "¿Trabajan bajo el Florida Building Code?",
+        "a": "Sí. Tenemos amplia experiencia bajo el Florida Building Code y garantizamos que todos nuestros diseños sean precisos, conformes al código y revisados cuidadosamente con foco en constructabilidad y eficiencia de costos."
       },
       {
-        "q": "¿Proporcionan renderizados arquitectónicos antes de la construcción?",
-        "a": "Absolutamente. Cada proyecto incluye bocetos conceptuales, renderizados en 3D y documentos de construcción antes de que comience cualquier trabajo. Creemos en una alineación visual completa antes de la ejecución."
+        "q": "¿Pueden ayudar con el proceso de permisos?",
+        "a": "Absolutamente. Preparamos toda la documentación de ingeniería necesaria y coordinamos directamente con los municipios locales para garantizar una experiencia de permisos fluida y oportuna."
       },
       {
-        "q": "¿Cuál es su enfoque respecto al presupuesto y control de costos?",
-        "a": "Usamos un presupuesto transparente (open-book): ves cada línea de gasto. Entregamos un estimado detallado antes de que inicie la construcción y te mantenemos informado de cualquier variación. Nuestra meta es que no haya sorpresas en el presupuesto."
+        "q": "¿Qué es una recertificación de edificio y cuándo es obligatoria?",
+        "a": "Las recertificaciones verifican que las estructuras existentes sean seguras y cumplan con las normas actuales. Generalmente se requieren a los 25, 30 y 40 años, y cada 10 años a partir de entonces. Nos encargamos de todo el proceso de inspección e informes."
       },
       {
-        "q": "¿Pueden encargarse del proceso de permisos?",
-        "a": "Sí, los permisos y aprobaciones municipales son parte de nuestro servicio integral. Gestionamos todas las solicitudes, el seguimiento y la documentación de cumplimiento para que no tengas que preocuparte."
+        "q": "¿Elaboran planos de taller?",
+        "a": "Sí. Elaboramos planos de taller de alta calidad para escaleras, barandas, terrazas, pérgolas, celosias, cercas, canopies y otros componentes estructurales como parte de nuestro alcance de ingeniería estructural."
       },
       {
-        "q": "¿En qué tipos de proyectos se especializan?",
-        "a": "Trabajamos en fincas residenciales personalizadas, desarrollos comerciales, renovaciones de lujo y diseño interior integral. Nuestra fortaleza es la entrega de principio a fin — desde el concepto arquitectónico hasta la entrega de la construcción."
+        "q": "¿Cómo mantienen los proyectos dentro del presupuesto?",
+        "a": "Abordamos cada proyecto con un fuerte enfoque en la constructabilidad y eficiencia de costos. Comunicamos claramente durante todo el proceso, ayudándote a entender los costos y las decisiones antes de que sean definitivas."
       }
     ]
   },
   "MakersStory": {
-    "eyebrow": "Nuestra Historia",
-    "title": "Creando espacios atemporales",
-    "description": "Desde humildes comienzos hasta una firma líder en arquitectura de lujo, nuestro viaje está definido por precisión, pasión y asociación."
+    "eyebrow": "Quiénes Somos",
+    "title": "Ingeniería en la que puedes confiar",
+    "description": "En DH Engineering & Consulting LLC, brindamos servicios integrales de ingeniería combinando la experiencia estructural con un entendimiento práctico de la construcción y los procesos de permisos.",
+    "mission": "DECLARACIÓN DE MISIÓN: CONVERTIRNOS EN UN SOCIO DE CONFIANZA Y SERVICIO COMPLETO EN EL ENTORNO CONSTRUIDO—MOLDEANDO EL FUTURO A TRAVÉS DE LA EXCELENCIA INTEGRADA EN ARQUITECTURA, INGENIERÍA Y CONSTRUCCIÓN"
   },
   "TrustedPartners": {
     "heading": "Reconocido y Destacado Por"
@@ -140,8 +141,8 @@
     "no_projects": "Aún no hay proyectos en esta categoría."
   },
   "ParallaxSeparator": {
-    "quote": "La arquitectura debe hablar de su tiempo y lugar, pero anhelar la atemporalidad.",
-    "caption": "Nuestra Filosofía Central"
+    "quote": "La ingeniería confiable no se trata solo de cálculos — se trata de confianza, claridad y resultados que resisten la prueba del tiempo.",
+    "caption": "El Estándar DH Engineering"
   },
   "PortfolioPage": {
     "our_work": "Nuestro Trabajo",
@@ -171,45 +172,45 @@
   "ServicesPage": {
     "what_we_do": "Lo Que Hacemos",
     "hero_title_1": "Experiencia",
-    "hero_title_2": "integral.",
-    "hero_subtitle": "Desde el modelado previo a la construcción hasta los acabados interiores finales, nuestro equipo garantiza el control total sobre la calidad, presupuesto y tiempos.",
+    "hero_title_2": "de ingeniería.",
+    "hero_subtitle": "Desde el diseño estructural y coordinación MEP hasta recertificaciones e inspecciones — soluciones integrales de ingeniería bajo una sola firma.",
     "discover": "Descubrir",
     "view_details": "Ver Detalles del Servicio",
     "tech": {
-      "portal": "Portal del Cliente",
-      "portal_desc": "Seguimiento del presupuesto en tiempo real, fotos semanales y comunicación directa.",
-      "eyebrow": "Transparencia y Control",
-      "title_1": "Visibilidad total.",
+      "portal": "Comunicación Directa",
+      "portal_desc": "Actualizaciones oportunas y un punto de contacto dedicado durante todo tu proyecto.",
+      "eyebrow": "Transparencia y Eficiencia",
+      "title_1": "Proceso claro.",
       "title_2": "Cero sorpresas.",
-      "desc": "La construcción de lujo no debería implicar incertidumbre. Usamos el mejor software de gestión para darte acceso 24/7 a tu proyecto.",
-      "list_1": "Seguimiento financiero y cronograma en tiempo real",
-      "list_2": "Fotografía semanal del avance de obra",
-      "list_3": "Almacenamiento centralizado de documentos y permisos",
-      "list_4": "Línea directa con tu Gerente de Proyecto dedicado"
+      "desc": "Estamos comprometidos con la comunicación transparente y la gestión proactiva de proyectos — para que siempre sepas exactamente cómo avanza tu proyecto de ingeniería.",
+      "list_1": "Punto de contacto de ingeniería dedicado",
+      "list_2": "Actualizaciones proactivas en cada hito",
+      "list_3": "Coordinación centralizada de documentos y permisos",
+      "list_4": "Precios competitivos sin costos ocultos"
     },
     "quality": {
-      "eyebrow": "El Estándar Vertex",
-      "title_1": "Aseguramiento",
-      "title_2": "de calidad incondicional.",
+      "eyebrow": "El Estándar DH Engineering",
+      "title_1": "Calidad de",
+      "title_2": "ingeniería incondicional.",
       "items": [
         {
-          "title": "Maestría Artesanal",
-          "desc": "Trabajamos exclusivamente con artesanos que comparten nuestra obsesión por el detalle."
+          "title": "Precisión Normativa",
+          "desc": "Cada diseño es revisado rigurosamente en cuanto a precisión y cumplimiento del Florida Building Code, priorizando la seguridad sobre todo."
         },
         {
-          "title": "Entrega Cero-Defectos",
-          "desc": "Un riguroso proceso de inspección multipunto garantiza la perfección antes de la entrega."
+          "title": "Enfoque en Constructabilidad",
+          "desc": "Nuestros diseños se conciben pensando en la ejecución real — minimizando RFIs, reduciendo órdenes de cambio y manteniendo el proyecto en cronograma."
         },
         {
-          "title": "Atención de Primera",
-          "desc": "Garantía total y programas de mantenimiento post-construcción para proteger tu inversión."
+          "title": "Entrega Integrada",
+          "desc": "Al unificar la ingeniería estructural y MEP bajo una sola firma, eliminamos las brechas de coordinación y brindamos una solución completamente integrada."
         }
       ]
     },
     "cta": {
-      "title_1": "Tu visión.",
-      "title_2": "Nuestra ejecución.",
-      "desc": "Da el primer paso para hacer realidad tu próxima obra maestra. Estamos listos para escuchar tus ideas.",
+      "title_1": "Tu proyecto.",
+      "title_2": "Nuestra experiencia.",
+      "desc": "Cuéntanos sobre tu proyecto. Nuestro equipo de ingeniería está listo para entregarte resultados precisos, eficientes y sin contratiempos desde el primer día.",
       "btn": "Programar Consulta"
     }
   },
@@ -271,7 +272,155 @@
     "ready": "¿Listo para comenzar tu",
     "project": "proyecto?",
     "schedule": "Programa una fase de descubrimiento con nuestros especialistas de {service}.",
-    "inquire": "Consultar Ahora"
+    "inquire": "Consultar Ahora",
+    "structural-engineering": {
+      "timeline_val": "2 - 8 Semanas",
+      "investment_val": "Por Metro Cuadrado / Complejidad",
+      "ideal_val": "Nuevas Obras y Ampliaciones Mayores",
+      "phases": [
+        {
+          "phase": "Fase 1",
+          "title": "Análisis Estructural",
+          "desc": "Evaluamos las limitantes del sitio, requerimientos de carga y planos arquitectónicos preliminares para formular un concepto estructural seguro y eficiente."
+        },
+        {
+          "phase": "Fase 2",
+          "title": "Ingeniería de Detalle",
+          "desc": "Nuestro equipo prepara cálculos estructurales y detallados precisos, incluyendo planos de taller para todos los componentes estructurales necesarios."
+        },
+        {
+          "phase": "Fase 3",
+          "title": "Soporte de Construcción",
+          "desc": "Entregamos planos que cumplen con los códigos para la obtención de permisos y nos involucramos para asegurar una constructabilidad fluida en obra."
+        }
+      ],
+      "default_type": "Proyecto Estructural",
+      "faqs": [
+        {
+          "q": "¿Diseñan de acuerdo a los códigos de construcción locales?",
+          "a": "Sí, nuestras soluciones de ingeniería cumplen estrictamente con los códigos de la región, priorizando la seguridad, constructabilidad y rendimiento."
+        },
+        {
+          "q": "¿Pueden proporcionar planos de taller para componentes específicos?",
+          "a": "Absolutamente. Nuestro alcance cubre el detallado de sistemas que incluye planos de taller altamente específicos para escaleras, terrazas y pérgolas."
+        },
+        {
+          "q": "¿Coordinan el trabajo con el equipo arquitectónico?",
+          "a": "La coordinación es central en nuestro proceso. Nos aseguramos de que nuestros sistemas estructurales se integren sin problemas a la intención arquitectónica."
+        }
+      ]
+    },
+    "building-recertifications": {
+      "timeline_val": "3 - 6 Semanas",
+      "investment_val": "Por Tamaño y Antigüedad",
+      "ideal_val": "Inspecciones de 25, 30 y 40 años",
+      "phases": [
+        {
+          "phase": "Fase 1",
+          "title": "Evaluación Preliminar",
+          "desc": "Revisamos la documentación histórica de la propiedad y realizamos una inspección visual inicial para determinar el alcance de la recertificación."
+        },
+        {
+          "phase": "Fase 2",
+          "title": "Auditoría Estructural y Eléctrica",
+          "desc": "Nuestros ingenieros realizan pruebas no destructivas, sondeo de concreto y revisiones exhaustivas de la seguridad de los paneles eléctricos."
+        },
+        {
+          "phase": "Fase 3",
+          "title": "Reporte de Certificación Final",
+          "desc": "Compilamos los hallazgos en un informe certificado, firmado y sellado que se presenta directamente al municipio para asegurar el cumplimiento."
+        }
+      ],
+      "default_type": "Recertificación",
+      "faqs": [
+        {
+          "q": "¿Cuándo es obligatoria una recertificación de edificio?",
+          "a": "Dependiendo de la jurisdicción local, las recertificaciones suelen ser obligatorias cuando un edificio alcanza los 25, 30 o 40 años de antigüedad, y cada 10 años en adelante."
+        },
+        {
+          "q": "¿Qué sucede si se necesitan reparaciones?",
+          "a": "Detallamos el alcance exacto de las reparaciones. Una vez completadas por un contratista de reparaciones, re-inspeccionamos para emitir la certificación final."
+        },
+        {
+          "q": "¿La recertificación incluye los sistemas eléctricos?",
+          "a": "Sí, las inspecciones de seguridad humana en los sistemas eléctricos, incluyendo paneles y cableado, son un componente obligatorio de la recertificación."
+        }
+      ]
+    },
+    "structural-inspections": {
+      "timeline_val": "1 - 3 Semanas",
+      "investment_val": "Según el Alcance",
+      "ideal_val": "Transacciones Inmobiliarias y Seguridad",
+      "phases": [
+        {
+          "phase": "Fase 1",
+          "title": "Evaluación en Sitio",
+          "desc": "Realizamos una inspección visual integral de los cimientos, muros de carga, cerchas del techo y todas las conexiones estructurales vitales."
+        },
+        {
+          "phase": "Fase 2",
+          "title": "Pruebas de Diagnóstico",
+          "desc": "Cuando es necesario, utilizamos herramientas avanzadas como mapeo infrarrojo o muestreo de materiales para identificar fallas estructurales ocultas."
+        },
+        {
+          "phase": "Fase 3",
+          "title": "Estrategia de Mitigación",
+          "desc": "Proporcionamos un informe de ingeniería claro y procesable con recomendaciones priorizadas de reparación para cualquier deficiencia detectada."
+        }
+      ],
+      "default_type": "Informe de Inspección",
+      "faqs": [
+        {
+          "q": "¿Necesito una inspección estructural antes de comprar una propiedad?",
+          "a": "Es altamente recomendado para propiedades antiguas, comerciales o si los inspectores de compra-venta notan grietas en los cimientos."
+        },
+        {
+          "q": "¿Pueden evaluar el impacto de daños por agua?",
+          "a": "Sí, rastreamos cómo la filtración de humedad puede haber comprometido los elementos estructurales, causando corrosión en el concreto o pudrición."
+        },
+        {
+          "q": "¿El reporte incluirá la firma de un ingeniero oficial?",
+          "a": "Absolutamente. Todas las inspecciones concluyen con un reporte detallado, firmado y sellado por un Ingeniero Profesional con licencia."
+        }
+      ]
+    },
+    "mep-engineering": {
+      "timeline_val": "4 - 8 Semanas",
+      "investment_val": "Según Complejidad del Sistema",
+      "ideal_val": "Desarrollos Comerciales y Nuevas Obras",
+      "phases": [
+        {
+          "phase": "Fase 1",
+          "title": "Diseño de Concepto MEP",
+          "desc": "Evaluamos el uso del edificio para determinar con precisión las cargas mecánicas, las demandas eléctricas y el enrutamiento óptimo de tuberías."
+        },
+        {
+          "phase": "Fase 2",
+          "title": "Coordinación y BIM",
+          "desc": "Utilizando modelado BIM avanzado, integramos las redes MEP asegurando que no interfieran con elementos arquitectónicos ni vigas estructurales."
+        },
+        {
+          "phase": "Fase 3",
+          "title": "Planos de Ingeniería Finales",
+          "desc": "Entregamos planos precisos listos para agilizar los permisos de construcción y guiar la ejecución de los subcontratistas especializados."
+        }
+      ],
+      "default_type": "Proyecto MEP",
+      "faqs": [
+        {
+          "q": "¿Realizan los cálculos de carga térmica para HVAC?",
+          "a": "Sí, efectuamos cálculos rigurosos de carga térmica para garantizar sistemas de climatización altamente eficientes y del tamaño adecuado."
+        },
+        {
+          "q": "¿Coordinan el trabajo con nuestro diseñador de interiores?",
+          "a": "La coordinación es vital. Enrutamos los sistemas inteligentemente para preservar alturas de techos, iluminación y la visión estética general."
+        },
+        {
+          "q": "¿Sus diseños cumplen con el código de conservación de energía?",
+          "a": "Todos nuestros diseños siguen estrictamente los últimos códigos locales de sostenibilidad, reduciendo drásticamente los costos operativos."
+        }
+      ]
+    }
   },
   "ContactPage": {
     "eyebrow": "Contacto",

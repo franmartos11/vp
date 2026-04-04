@@ -7,33 +7,33 @@
     "contact": "Contact"
   },
   "Hero": {
-    "eyebrow": "Architecture · Construction · Design",
-    "headline_building": "Building",
-    "headline_spaces": "spaces",
-    "headline_that": "that",
-    "headline_outlast": "outlast",
-    "headline_trends": "trends.",
-    "description": "Luxury architecture and construction across the United States. From concept to completion — with absolute precision.",
-    "view_work": "View our work",
+    "eyebrow": "Structural · MEP · Inspections · Recertifications",
+    "headline_building": "Engineering",
+    "headline_spaces": "solutions",
+    "headline_that": "built",
+    "headline_outlast": "to",
+    "headline_trends": "last.",
+    "description": "Comprehensive structural and MEP engineering services across Florida. Code-compliant designs with a strong focus on constructability and cost-efficiency.",
+    "view_work": "View our services",
     "start_project": "Start a project",
     "scroll": "Scroll"
   },
   "StickyPillars": {
     "eyebrow": "Our Approach",
-    "title": "Architecture with intention.",
-    "subtitle": "We design and build spaces that endure — aesthetically and structurally. No shortcuts.",
+    "title": "Engineering with purpose.",
+    "subtitle": "We combine structural expertise with a practical understanding of construction and permitting — delivering efficient, integrated solutions.",
     "pillars": [
       {
-        "title": "Precision Design",
-        "description": "Every detail engineered to purpose. We apply Swiss-inspired rigor to spatial planning, material selection, and finish."
+        "title": "Code-Compliant Design",
+        "description": "With extensive experience under the Florida Building Code, we produce accurate, precise designs with a strong focus on constructability and cost-efficiency."
       },
       {
-        "title": "Timeless Craft",
-        "description": "We work with master craftspeople and premium subcontractors who share our obsession with long‑lasting quality."
+        "title": "Integrated Solutions",
+        "description": "By combining structural expertise with MEP coordination, we deliver fully integrated engineering solutions under one firm — eliminating gaps and delays."
       },
       {
-        "title": "Client Partnership",
-        "description": "Transparent communication and collaborative process — so you always know exactly where your project stands."
+        "title": "Client-First Process",
+        "description": "We take pride in clear communication, competitive pricing, and meeting deadlines — making every project a smooth, efficient, and stress-free experience."
       }
     ]
   },
@@ -44,66 +44,67 @@
     "awards": "Awards & Recognitions"
   },
   "ProcessTimeline": {
-    "eyebrow": "The Method",
-    "title": "Engineered precision, step by step.",
+    "eyebrow": "How We Work",
+    "title": "A seamless process, every time.",
     "steps": [
       {
         "num": "01",
-        "title": "Discovery & Vision",
-        "desc": "An immersive exploration of your lifestyle, site potential, and aesthetic ambitions."
+        "title": "Project Intake",
+        "desc": "We start with a thorough understanding of your project scope, site conditions, local codes, and budget parameters to define a clear engineering roadmap."
       },
       {
         "num": "02",
-        "title": "Architectural Response",
-        "desc": "Translating concepts into exacting schematic designs, materializing intention through 3D visualization."
+        "title": "Structural & MEP Design",
+        "desc": "Our team develops accurate, code-compliant structural and MEP designs, coordinating all disciplines under one roof to eliminate conflicts and costly revisions."
       },
       {
         "num": "03",
-        "title": "Precision Execution",
-        "desc": "Our master builders and site managers bring blueprints into physical reality with Swiss engineering."
+        "title": "Permitting & Compliance",
+        "desc": "We prepare and submit all required documentation to the local municipality, managing the entire permitting process so your project stays on schedule."
       },
       {
         "num": "04",
-        "title": "Handover",
-        "desc": "A meticulous walkthrough and delivery of your finished space, ready for generations of use."
+        "title": "Construction Support",
+        "desc": "We remain engaged through construction, providing RFI responses, field inspections, and as-built evaluations to ensure faithful execution of the engineering design."
       }
     ]
   },
   "FAQ": {
     "eyebrow": "FAQ",
     "title": "Common questions,\nclear answers.",
-    "subtitle": "Everything you need to know before starting a conversation with us.",
+    "subtitle": "Everything you need to know before starting a conversation with our engineering team.",
     "questions": [
       {
-        "q": "How long does a typical project take from start to finish?",
-        "a": "It depends on scope. A high-end renovation typically runs 3–6 months. New residential construction ranges from 10–18 months. Commercial projects vary widely. We provide a detailed schedule before breaking ground so you always know the timeline."
+        "q": "What types of projects do you handle?",
+        "a": "We specialize in structural design for residential and commercial projects — from single and multi-family developments to low- and mid-rise buildings. We also provide MEP coordination, building recertifications, structural inspections, and as-built evaluations."
       },
       {
-        "q": "Do you work outside of Florida?",
-        "a": "Yes. We currently operate across Florida, New York, and the Carolinas. For larger commercial projects, we're able to mobilize nationally with our network of vetted trade partners."
+        "q": "Do you work under the Florida Building Code?",
+        "a": "Yes. We have extensive experience under the Florida Building Code and ensure all our designs are accurate, code-compliant, and thoroughly reviewed for constructability and cost-efficiency."
       },
       {
-        "q": "Do you provide architectural renderings before construction?",
-        "a": "Absolutely. Every project includes concept sketches, 3D renderings, and construction documents before any work begins. We believe in full visual alignment before breaking ground."
+        "q": "Can you assist with the permitting process?",
+        "a": "Absolutely. We prepare all required engineering documentation and coordinate directly with local municipalities to ensure a smooth and timely permitting experience."
       },
       {
-        "q": "What's your approach to budgeting and cost control?",
-        "a": "We use open-book budgeting: you see every line item. We provide a detailed estimate before construction starts and keep you informed of any variances. Our goal is zero budget surprises."
+        "q": "What is a building recertification and when is it required?",
+        "a": "Building recertifications verify that existing structures remain safe and code-compliant. They are typically required at 25, 30, and 40-year milestones, and every 10 years thereafter. We handle the full inspection and reporting process."
       },
       {
-        "q": "Can you handle the permitting process?",
-        "a": "Yes, permitting and municipal approvals are part of our full-service offering. We manage all submissions, follow-ups, and compliance documentation so you don't have to."
+        "q": "Do you provide shop drawings?",
+        "a": "Yes. We prepare high-quality shop drawings for stairs, railings, terraces, pergolas, trellis, fences, canopies, and other structural components as part of our structural engineering scope."
       },
       {
-        "q": "What types of projects do you specialize in?",
-        "a": "We work across custom residential estates, commercial developments, high-end renovations, and full interior design. Our strength is end-to-end delivery — from architectural concept through construction handover."
+        "q": "How do you keep projects on budget?",
+        "a": "We approach every project with a strong focus on constructability and cost-efficiency. We communicate clearly throughout the process, helping you understand costs and trade-offs before decisions are made."
       }
     ]
   },
   "MakersStory": {
-    "eyebrow": "Our Story",
-    "title": "Crafting timeless spaces",
-    "description": "From humble beginnings to a leading luxury architecture firm, our journey is defined by precision, passion, and partnership."
+    "eyebrow": "Who We Are",
+    "title": "Engineering you can trust",
+    "description": "At DH Engineering & Consulting LLC, we provide comprehensive engineering services by combining structural expertise with a practical understanding of construction and permitting processes.",
+    "mission": "MISSION STATEMENT: TO BECOME A TRUSTED, FULL-SERVICE PARTNER IN THE BUILT ENVIRONMENT—SHAPING THE FUTURE THROUGH INTEGRATED ARCHITECTURE, ENGINEERING, AND CONSTRUCTION EXCELLENCE."
   },
   "TrustedPartners": {
     "heading": "Recognized & Featured By"
@@ -140,8 +141,8 @@
     "no_projects": "No projects in this category yet."
   },
   "ParallaxSeparator": {
-    "quote": "Architecture should speak of its time and place, but yearn for timelessness.",
-    "caption": "The Core Philosophy"
+    "quote": "Reliable engineering is not just about calculations — it is about trust, clarity, and results that stand the test of time.",
+    "caption": "The DH Engineering Standard"
   },
   "PortfolioPage": {
     "our_work": "Our Work",
@@ -170,47 +171,47 @@
   },
   "ServicesPage": {
     "what_we_do": "What We Do",
-    "hero_title_1": "Comprehensive",
+    "hero_title_1": "Engineering",
     "hero_title_2": "expertise.",
-    "hero_subtitle": "From pre-construction modeling to the final interior finishes, our vertically integrated team ensures total control over quality, budget, and timeline.",
+    "hero_subtitle": "From structural design and MEP coordination to building recertifications and inspections — we deliver integrated engineering solutions under one firm.",
     "discover": "Discover",
     "view_details": "View Service Details",
     "tech": {
-      "portal": "Client Portal",
-      "portal_desc": "Real-time budget tracking, weekly photo updates, and direct communication.",
-      "eyebrow": "Transparency & Control",
-      "title_1": "Total visibility.",
+      "portal": "Direct Communication",
+      "portal_desc": "Clear, timely updates and a dedicated point of contact throughout your project.",
+      "eyebrow": "Transparency & Efficiency",
+      "title_1": "Clear process.",
       "title_2": "Zero surprises.",
-      "desc": "Luxury construction shouldn't mean uncertainty. We deploy industry-leading project management software to give you 24/7 access to your project's heartbeat.",
-      "list_1": "Real-time schedule & financial tracking",
-      "list_2": "Weekly site progress photography",
-      "list_3": "Centralized document & permit storage",
-      "list_4": "Direct line to your dedicated Project Manager"
+      "desc": "We are committed to transparent communication and proactive project management — so you always know exactly where your engineering project stands, from first contact to final certification.",
+      "list_1": "Dedicated engineering point of contact",
+      "list_2": "Proactive updates at every milestone",
+      "list_3": "Centralized document & permit coordination",
+      "list_4": "Competitive pricing with no hidden fees"
     },
     "quality": {
-      "eyebrow": "The Vertex Standard",
+      "eyebrow": "The DH Engineering Standard",
       "title_1": "Uncompromising",
-      "title_2": "quality assurance.",
+      "title_2": "engineering quality.",
       "items": [
         {
-          "title": "Master Craftsmanship",
-          "desc": "We partner exclusively with artisans and tradespeople who share our obsessive attention to detail."
+          "title": "Code-Compliant Precision",
+          "desc": "Every design is rigorously reviewed for accuracy and compliance with the Florida Building Code, prioritizing safety above all else."
         },
         {
-          "title": "Zero-Defect Handover",
-          "desc": "A rigorous multi-point inspection process ensures perfection before you ever turn the key."
+          "title": "Constructability Focus",
+          "desc": "Our designs are built with real-world execution in mind — minimizing RFIs, reducing change orders, and keeping your project on schedule."
         },
         {
-          "title": "White-Glove Care",
-          "desc": "Comprehensive warranty and post-build maintenance programs to protect your investment."
+          "title": "Integrated Delivery",
+          "desc": "By unifying structural and MEP engineering under one firm, we eliminate coordination gaps and deliver a seamless, fully integrated solution."
         }
       ]
     },
     "cta": {
-      "title_1": "Your vision.",
-      "title_2": "Our execution.",
-      "desc": "Take the first step towards realizing your next masterpiece. Our principals are ready to discuss your ambitions.",
-      "btn": "Schedule Consultation"
+      "title_1": "Your project.",
+      "title_2": "Our expertise.",
+      "desc": "Tell us about your project. Our engineering team is ready to deliver a precise, efficient, and stress-free experience from day one.",
+      "btn": "Schedule a Consultation"
     }
   },
   "ServiceDetail": {
@@ -271,7 +272,155 @@
     "ready": "Ready to begin your",
     "project": "project?",
     "schedule": "Schedule a discovery phase with our {service} specialists.",
-    "inquire": "Inquire Now"
+    "inquire": "Inquire Now",
+    "structural-engineering": {
+      "timeline_val": "2 - 8 Weeks",
+      "investment_val": "Per Square Foot / Complexity",
+      "ideal_val": "New Builds & Major Additions",
+      "phases": [
+        {
+          "phase": "Phase 1",
+          "title": "Structural Analysis",
+          "desc": "We evaluate site constraints, load requirements, and preliminary architectural drawings to formulate a safe and efficient structural concept."
+        },
+        {
+          "phase": "Phase 2",
+          "title": "Detailed Engineering",
+          "desc": "Our team prepares highly precise structural calculations and detailing, including shop drawings for all necessary structural components."
+        },
+        {
+          "phase": "Phase 3",
+          "title": "Construction Support",
+          "desc": "We deliver code-compliant plans for permitting and remain involved to ensure seamless constructability and execution on-site."
+        }
+      ],
+      "default_type": "Structural Project",
+      "faqs": [
+        {
+          "q": "Do you design for local building codes?",
+          "a": "Yes, our engineering solutions are strictly code-compliant for the region, prioritizing safety, constructability, and long-term performance."
+        },
+        {
+          "q": "Can you provide shop drawings for specific components?",
+          "a": "Absolutely. Our scope covers the detailing of structural systems including highly specific shop drawings for elements such as stairs, terraces, and pergolas."
+        },
+        {
+          "q": "Do you coordinate with the architectural team?",
+          "a": "Coordination is central to our process. We ensure our structural systems integrate seamlessly into the architectural intent without compromising efficiency."
+        }
+      ]
+    },
+    "building-recertifications": {
+      "timeline_val": "3 - 6 Weeks",
+      "investment_val": "Per Building Size & Age",
+      "ideal_val": "25, 30, and 40-year Milestones",
+      "phases": [
+        {
+          "phase": "Phase 1",
+          "title": "Preliminary Assessment",
+          "desc": "We review historical property documentation and perform an initial visual site inspection to determine the audit scope."
+        },
+        {
+          "phase": "Phase 2",
+          "title": "Structural & Electrical Audit",
+          "desc": "Our engineers conduct detailed non-destructive testing, concrete sounding, and comprehensive life-safety electrical panel reviews."
+        },
+        {
+          "phase": "Phase 3",
+          "title": "Final Certification Report",
+          "desc": "We compile findings into a certified, signed, and sealed report submitted directly to the local municipality to ensure full compliance."
+        }
+      ],
+      "default_type": "Recertification",
+      "faqs": [
+        {
+          "q": "When is a building recertification required?",
+          "a": "Depending on the jurisdiction, milestone inspections are typically mandated when a commercial or multi-family building reaches 25, 30, or 40 years of age, and every 10 years thereafter."
+        },
+        {
+          "q": "What happens if repairs are needed?",
+          "a": "We outline a precise repair scope. Once repairs are executed by a licensed contractor, we reinspect the work and issue the final certification."
+        },
+        {
+          "q": "Does the recertification cover electrical systems?",
+          "a": "Yes, thorough life-safety electrical inspections, including panel and wiring integrity reviews, are a mandatory component of our recertification audits."
+        }
+      ]
+    },
+    "structural-inspections": {
+      "timeline_val": "1 - 3 Weeks",
+      "investment_val": "Per Scope of Inspection",
+      "ideal_val": "Real Estate Transactions & Safety",
+      "phases": [
+        {
+          "phase": "Phase 1",
+          "title": "Site Evaluation",
+          "desc": "We perform a comprehensive visual inspection of the foundation, load-bearing walls, roof trusses, and structural connections."
+        },
+        {
+          "phase": "Phase 2",
+          "title": "Diagnostic Testing",
+          "desc": "When required, we utilize advanced diagnostic tools such as infrared mapping or materials sampling to identify hidden anomalies."
+        },
+        {
+          "phase": "Phase 3",
+          "title": "Mitigation Strategy",
+          "desc": "We provide a clear, actionable engineering report outlining root causes and prioritized repair methodologies for any deficiencies."
+        }
+      ],
+      "default_type": "Inspection Report",
+      "faqs": [
+        {
+          "q": "Do I need a structural inspection before buying a property?",
+          "a": "It is highly recommended for older properties, commercial acquisitions, or if standard home inspectors note signs of cracking or settling."
+        },
+        {
+          "q": "Can you inspect for water-induced damage?",
+          "a": "Yes, we trace how water intrusion may have compromised structural elements, identifying conditions like wood rot or concrete spalling."
+        },
+        {
+          "q": "Will I receive a signed engineering report?",
+          "a": "Absolutely. All our inspections conclude with a detailed report, officially signed and sealed by a licensed Professional Engineer."
+        }
+      ]
+    },
+    "mep-engineering": {
+      "timeline_val": "4 - 8 Weeks",
+      "investment_val": "Based on System Complexity",
+      "ideal_val": "Commercial Fit-outs & New Developments",
+      "phases": [
+        {
+          "phase": "Phase 1",
+          "title": "Systems Concept Design",
+          "desc": "We evaluate the building's usage to determine accurate mechanical loads, electrical demands, and efficient plumbing routing."
+        },
+        {
+          "phase": "Phase 2",
+          "title": "Clash Detection & Integration",
+          "desc": "Using advanced BIM modeling, we integrate MEP networks to ensure they do not interfere with structural or architectural elements."
+        },
+        {
+          "phase": "Phase 3",
+          "title": "Final Engineering Drawings",
+          "desc": "We deliver precise, energy-code compliant plans ready for swift permitting and meticulous execution by specialized subcontractors."
+        }
+      ],
+      "default_type": "MEP Project",
+      "faqs": [
+        {
+          "q": "Do you perform HVAC thermal load calculations?",
+          "a": "Yes, we perform rigorous algorithmic thermal load calculations to ensure highly energy-efficient and perfectly sized mechanical systems."
+        },
+        {
+          "q": "Can you coordinate with interior designers?",
+          "a": "Coordination is paramount. We route systems intelligently to preserve ceiling heights, lighting plans, and overall aesthetic goals."
+        },
+        {
+          "q": "Are your designs energy code compliant?",
+          "a": "All our designs adhere strictly to the latest local energy conservation codes, prioritizing long-term sustainability and reduced operational costs."
+        }
+      ]
+    }
   },
   "ContactPage": {
     "eyebrow": "Contact",

@@ -38,16 +38,21 @@ export function MakersStory() {
               <p className="mb-6">
                 {t('description')}
               </p>
+              <div className="mb-8 p-6 bg-brand-blue/5 border-l-4 border-brand-blue rounded-r-lg">
+                <p className="text-brand-blue font-display text-xl leading-relaxed uppercase tracking-wide">
+                  {t('mission')}
+                </p>
+              </div>
               <p className="mb-6">
-                We believe that a building should not merely exist; it should resonate. Every pour of concrete, every piece of millwork, and every sheet of glass we place is meticulously intended to stand the test of time and trends.
+                We specialize in structural design for residential and commercial projects, along with MEP coordination, delivering efficient and fully integrated solutions under one firm.
               </p>
               <p className="mb-10 text-charcoal-900 font-normal">
-                Because true luxury isn't about extravagance—it's about absolute precision and flawless execution.
+                We take pride in providing reliable, high-quality engineering services at competitive prices — meeting deadlines and supporting our clients with clear communication, helping them achieve their vision through a smooth, efficient, and stress-free process.
               </p>
               <div className="font-display italic text-3xl md:text-4xl text-warm-500">
-                James Vertex
+                DH Engineering
               </div>
-              <p className="text-xs uppercase tracking-widest text-warm-400 mt-2 font-mono">Principal & Founder</p>
+              <p className="text-xs uppercase tracking-widest text-charcoal-600 mt-2 font-mono">& Consulting LLC</p>
             </div>
           </div>
         </AnimatedSection>
