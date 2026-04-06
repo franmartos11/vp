@@ -98,7 +98,7 @@ export default async function AboutPage() {
                   src="https://images.unsplash.com/photo-1481253127861-534498168948?w=1200&auto=format"
                   alt="Architecture sketching"
                   fill
-                  className="object-cover grayscale mix-blend-multiply opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
+                  className="object-cover opacity-90 group-hover:opacity-100 transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-brand-blue/10 group-hover:bg-transparent transition-colors duration-1000" />
                 
@@ -161,7 +161,7 @@ export default async function AboutPage() {
                       src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200" 
                       alt="Architecture Studio" 
                       fill 
-                      className="object-cover opacity-80 mix-blend-luminosity grayscale" 
+                      className="object-cover opacity-80" 
                     />
                     <div className="absolute inset-0 bg-charcoal-900/20" />
                     {/* Floating secondary image */}
@@ -170,7 +170,7 @@ export default async function AboutPage() {
                          src="https://images.unsplash.com/photo-1542621334-a254cf47733d?q=80&w=2070" 
                          alt="Blueprint detailing"
                          fill
-                         className="object-cover grayscale"
+                         className="object-cover"
                        />
                     </div>
                  </div>

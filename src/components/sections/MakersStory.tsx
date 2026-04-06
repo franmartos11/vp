@@ -18,7 +18,7 @@ export function MakersStory() {
               alt="Architect drafting plans"
               fill
               unoptimized
-              className="object-cover object-center grayscale opacity-80 contrast-125"
+              className="object-cover object-center opacity-80 contrast-125"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-charcoal-900/10 mix-blend-multiply" />

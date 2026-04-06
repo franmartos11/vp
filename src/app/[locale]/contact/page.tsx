@@ -44,20 +44,25 @@ export default async function ContactPage() {
 
           {/* Left Side (Map + Info Overlay) - Ordered Second on Mobile */}
           <div className="relative order-2 lg:order-1 flex flex-col min-h-[600px] border-t lg:border-t-0 lg:border-r border-brand-blue/10">
-            {/* Map Iframe */}
-            <div className="relative h-[40vh] lg:h-auto lg:absolute lg:inset-0 z-0 bg-[#e5e3df]">
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/20 to-transparent pointer-events-none z-10" />
+            {/* Map Iframe — dark blue styled via CSS filter (invert + hue-rotate) */}
+            <div className="relative h-[40vh] lg:h-auto lg:absolute lg:inset-0 z-0 bg-charcoal-900">
+              {/* Vignette gradient */}
+              <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/40 to-transparent pointer-events-none z-10" />
+              <div className="absolute inset-0 bg-brand-blue/20 mix-blend-multiply z-10 pointer-events-none" />
               <iframe
                 src={mapsEmbedUrl}
                 width="100%"
                 height="100%"
-                style={{ border: 0 }}
+                style={{
+                  border: 0,
+                  filter: "invert(0.92) hue-rotate(200deg) saturate(1.3) brightness(0.75)",
+                }}
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Vertex Build Group office map"
                 aria-label="Map showing Vertex Build Group office location in Miami"
-                className="w-full h-full grayscale-[50%] lg:grayscale contrast-125 lg:opacity-70 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-1000 ease-in-out"
+                className="w-full h-full transition-all duration-1000 ease-in-out"
               />
             </div>
 

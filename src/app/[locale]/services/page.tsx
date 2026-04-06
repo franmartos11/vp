@@ -152,7 +152,7 @@ export default async function ServicesPage() {
                     src="https://images.unsplash.com/photo-1542621334-a254cf47733d?q=80&w=2070&auto=format&fit=crop"
                     alt="Technology and blueprint review"
                     fill
-                    className="object-cover opacity-80 mix-blend-luminosity grayscale"
+                    className="object-cover opacity-80"
                   />
                   <div className="absolute inset-0 bg-gradient-to-tr from-charcoal-900/80 to-transparent" />
                   <div className="absolute bottom-6 left-6 right-6 p-6 backdrop-blur-md bg-white/10 border border-white/20 rounded-lg">
