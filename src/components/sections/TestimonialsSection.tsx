@@ -49,7 +49,7 @@ export default function TestimonialsSection() {
       <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/80 to-charcoal-900/40" />
 
       <div className="container mx-auto relative z-10 px-6">
-        <AnimatedSection className="mb-16">
+        <AnimatedSection className="mb-8 md:mb-16">
           <SectionHeading
             eyebrow={t("eyebrow")}
             title={t("title")}
@@ -69,7 +69,7 @@ export default function TestimonialsSection() {
             >
               <Quote
                 size={40}
-                className="text-warm-500 mx-auto mb-10 opacity-50"
+                className="text-brand-blue mx-auto mb-10 opacity-50"
                 aria-hidden="true"
               />
               <p className="text-white text-2xl md:text-4xl leading-snug lg:leading-normal font-display mb-10 drop-shadow-md">
@@ -78,7 +78,7 @@ export default function TestimonialsSection() {
               
               {/* Profile Image / Info */}
               <div className="flex flex-col items-center">
-                 <div className="w-16 h-16 relative rounded-full overflow-hidden mb-4 border-2 border-warm-500/30">
+                 <div className="w-16 h-16 relative rounded-full overflow-hidden mb-4 border-2 border-brand-blue/30">
                    <Image 
                      src={TESTIMONIALS_IMAGES[current]}
                      alt={t(`list.${current}.author` as any)}
@@ -97,11 +97,11 @@ export default function TestimonialsSection() {
           </AnimatePresence>
 
           {/* Controls */}
-          <div className="flex items-center justify-center gap-8 mt-16 pb-4">
+          <div className="flex items-center justify-center gap-4 md:gap-8 mt-12 md:mt-16 pb-4">
             <button
               onClick={prev}
               aria-label="Previous testimonial"
-              className="p-4 border border-warm-600/40 text-warm-300 hover:border-warm-500 hover:text-white hover:bg-warm-500/10 transition-all duration-300 rounded-full"
+              className="p-4 border border-warm-600/40 text-warm-300 hover:border-brand-blue hover:text-brand-blue hover:bg-brand-blue/10 transition-all duration-300 rounded-full"
             >
               <ChevronLeft size={20} />
             </button>
@@ -116,7 +116,7 @@ export default function TestimonialsSection() {
                   className="p-2 transition-all duration-300 group"
                 >
                   <div className={`h-2 rounded-full transition-all duration-300 ${
-                    i === current ? "bg-warm-500 w-8" : "bg-warm-600/40 w-2 group-hover:bg-warm-500/50"
+                    i === current ? "bg-brand-blue w-8" : "bg-warm-600/40 w-2 group-hover:bg-brand-blue/50"
                   }`} />
                 </button>
               ))}
@@ -124,7 +124,7 @@ export default function TestimonialsSection() {
             <button
               onClick={next}
               aria-label="Next testimonial"
-              className="p-4 border border-warm-600/40 text-warm-300 hover:border-warm-500 hover:text-white hover:bg-warm-500/10 transition-all duration-300 rounded-full"
+              className="p-4 border border-warm-600/40 text-warm-300 hover:border-brand-blue hover:text-brand-blue hover:bg-brand-blue/10 transition-all duration-300 rounded-full"
             >
               <ChevronRight size={20} />
             </button>

@@ -49,8 +49,8 @@ export function ContactForm() {
             transition={{ duration: 0.5, ease: "easeOut" }}
             className="flex flex-col items-center justify-center min-h-[400px] text-center p-8 bg-warm-50 border border-warm-200"
           >
-            <div className="w-16 h-16 rounded-full bg-cream-200 flex items-center justify-center mb-6">
-              <CheckCircle size={32} className="text-charcoal-900" />
+            <div className="w-16 h-16 rounded-full bg-brand-blue/10 flex items-center justify-center mb-6">
+              <CheckCircle size={32} className="text-brand-blue" />
             </div>
             <h3 className="text-3xl font-display text-charcoal-900 mb-4">
               {t("success")}
@@ -79,7 +79,7 @@ export function ContactForm() {
               <div className="group">
                 <label
                   htmlFor="contact-name"
-                  className="text-xs tracking-widest uppercase font-mono text-warm-500 mb-2 block group-focus-within:text-charcoal-900 transition-colors"
+                  className="text-xs tracking-widest uppercase font-mono text-warm-500 mb-2 block group-focus-within:text-brand-blue transition-colors"
                 >
                   {t("name_label")}
                 </label>
@@ -90,7 +90,7 @@ export function ContactForm() {
                   required
                   autoComplete="name"
                   placeholder={t("name_placeholder")}
-                  className="w-full bg-transparent border-b border-warm-300 py-3 text-charcoal-900 placeholder:text-warm-300 focus:outline-none focus:border-charcoal-900 transition-colors text-lg"
+                  className="w-full bg-transparent border-b border-warm-300 py-3 text-charcoal-900 placeholder:text-warm-300 focus:outline-none focus:border-brand-blue transition-colors text-lg"
                   aria-describedby={
                     state.errors?.name ? "name-error" : undefined
                   }
@@ -110,7 +110,7 @@ export function ContactForm() {
               <div className="group">
                 <label
                   htmlFor="contact-email"
-                  className="text-xs tracking-widest uppercase font-mono text-warm-500 mb-2 block group-focus-within:text-charcoal-900 transition-colors"
+                  className="text-xs tracking-widest uppercase font-mono text-warm-500 mb-2 block group-focus-within:text-brand-blue transition-colors"
                 >
                   {t("email_label")}
                 </label>
@@ -121,7 +121,7 @@ export function ContactForm() {
                   required
                   autoComplete="email"
                   placeholder={t("email_placeholder")}
-                  className="w-full bg-transparent border-b border-warm-300 py-3 text-charcoal-900 placeholder:text-warm-300 focus:outline-none focus:border-charcoal-900 transition-colors text-lg"
+                  className="w-full bg-transparent border-b border-warm-300 py-3 text-charcoal-900 placeholder:text-warm-300 focus:outline-none focus:border-brand-blue transition-colors text-lg"
                   aria-describedby={
                     state.errors?.email ? "email-error" : undefined
                   }
@@ -141,7 +141,7 @@ export function ContactForm() {
               <div className="md:col-span-2 group">
                 <label
                   htmlFor="contact-phone"
-                  className="text-xs tracking-widest uppercase font-mono text-warm-500 mb-2 block group-focus-within:text-charcoal-900 transition-colors"
+                  className="text-xs tracking-widest uppercase font-mono text-warm-500 mb-2 block group-focus-within:text-brand-blue transition-colors"
                 >
                   {t("phone_label")}
                 </label>
@@ -151,7 +151,7 @@ export function ContactForm() {
                   type="tel"
                   autoComplete="tel"
                   placeholder="+1 (305) 000-0000"
-                  className="w-full bg-transparent border-b border-warm-300 py-3 text-charcoal-900 placeholder:text-warm-300 focus:outline-none focus:border-charcoal-900 transition-colors text-lg"
+                  className="w-full bg-transparent border-b border-warm-300 py-3 text-charcoal-900 placeholder:text-warm-300 focus:outline-none focus:border-brand-blue transition-colors text-lg"
                 />
               </div>
             </div>
@@ -161,16 +161,16 @@ export function ContactForm() {
               <label className="text-xs tracking-widest uppercase font-mono text-warm-500 mb-4 block">
                 {t("type_label")}
               </label>
-              <div className="flex flex-wrap gap-3">
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-3">
                 {PROJECT_TYPES.map((type) => (
                   <button
                     key={type}
                     type="button"
                     onClick={() => setProjectType(type)}
-                    className={`px-4 py-2 border text-sm transition-all duration-300 ${
+                    className={`px-3 py-2.5 border text-xs sm:text-sm transition-all duration-300 text-left sm:text-center ${
                       projectType === type
-                        ? "bg-charcoal-900 border-charcoal-900 text-cream-100 shadow-xl"
-                        : "bg-transparent border-warm-300 text-warm-500 hover:border-charcoal-900 hover:text-charcoal-900 hover:shadow-md"
+                        ? "bg-brand-blue border-brand-blue text-white shadow-xl shadow-brand-blue/20"
+                        : "bg-transparent border-warm-300 text-warm-500 hover:border-brand-blue hover:text-brand-blue hover:shadow-md"
                     }`}
                   >
                     {type}
@@ -184,16 +184,16 @@ export function ContactForm() {
               <label className="text-xs tracking-widest uppercase font-mono text-warm-500 mb-4 block">
                 {t("budget_label")}
               </label>
-              <div className="flex flex-wrap gap-3">
+              <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-3">
                 {BUDGET_RANGES.map((range) => (
                   <button
                     key={range.value}
                     type="button"
                     onClick={() => setBudget(range.value)}
-                    className={`px-4 py-2 border text-sm font-mono tracking-wide transition-all duration-300 ${
+                    className={`px-3 py-2.5 border text-xs sm:text-sm font-mono tracking-wide transition-all duration-300 text-left sm:text-center ${
                       budget === range.value
-                        ? "bg-charcoal-900 border-charcoal-900 text-cream-100 shadow-xl"
-                        : "bg-transparent border-warm-300 text-warm-500 hover:border-charcoal-900 hover:text-charcoal-900 hover:shadow-md"
+                        ? "bg-brand-blue border-brand-blue text-white shadow-xl shadow-brand-blue/20"
+                        : "bg-transparent border-warm-300 text-warm-500 hover:border-brand-blue hover:text-brand-blue hover:shadow-md"
                     }`}
                   >
                     {range.label}
@@ -206,7 +206,7 @@ export function ContactForm() {
             <div className="group">
               <label
                 htmlFor="contact-message"
-                className="text-xs tracking-widest uppercase font-mono text-warm-500 mb-4 block group-focus-within:text-charcoal-900 transition-colors"
+                className="text-xs tracking-widest uppercase font-mono text-warm-500 mb-4 block group-focus-within:text-brand-blue transition-colors"
               >
                 {t("message_label")}
               </label>
@@ -216,7 +216,7 @@ export function ContactForm() {
                 required
                 rows={4}
                 placeholder={t("message_placeholder")}
-                className="w-full bg-transparent border-b border-warm-300 py-3 text-charcoal-900 placeholder:text-warm-300 focus:outline-none focus:border-charcoal-900 transition-colors text-lg resize-none"
+                className="w-full bg-transparent border-b border-warm-300 py-3 text-charcoal-900 placeholder:text-warm-300 focus:outline-none focus:border-brand-blue transition-colors text-lg resize-none"
                 aria-describedby={
                   state.errors?.message ? "message-error" : undefined
                 }
@@ -248,7 +248,7 @@ export function ContactForm() {
             <button
               type="submit"
               disabled={isPending}
-              className="group relative w-full md:w-auto overflow-hidden bg-charcoal-900 text-cream-100 px-10 py-5 font-mono uppercase tracking-widest text-sm disabled:opacity-70 disabled:cursor-not-allowed transition-all hover:bg-charcoal-800"
+              className="group relative w-full md:w-auto overflow-hidden bg-brand-blue text-white px-10 py-5 font-mono uppercase tracking-widest text-sm disabled:opacity-70 disabled:cursor-not-allowed transition-all hover:bg-brand-blue-dark"
               aria-busy={isPending}
             >
               <span

@@ -57,11 +57,11 @@ export function HeroSection() {
         >
           <motion.p
             variants={fadeInUp}
-            className="text-xs tracking-widest uppercase text-warm-300 mb-6 font-mono"
+            className="text-xs tracking-widest uppercase text-brand-blue mb-6 font-mono"
           >
             {t("eyebrow")}
           </motion.p>
-          <h1 className="text-5xl sm:text-6xl md:text-[5.5rem] lg:text-[7rem] font-display text-white leading-[0.9] mb-8 drop-shadow-2xl md:flex flex-wrap gap-x-4 gap-y-2">
+          <h1 className="text-4xl sm:text-5xl md:text-[5.5rem] lg:text-[7rem] font-display text-white leading-[0.9] mb-8 drop-shadow-2xl flex flex-wrap gap-x-3 gap-y-1 md:gap-x-4 md:gap-y-2">
             {[t("headline_building"), t("headline_spaces"), t("headline_that"), t("headline_outlast"), t("headline_trends")].map((word, i) => (
               <span key={i} className="overflow-hidden block">
                 <motion.span
@@ -81,11 +81,11 @@ export function HeroSection() {
           >
             {t("description")}
           </motion.p>
-          <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
-            <Link href="/portfolio" className="btn-primary bg-white text-charcoal-900 hover:bg-warm-100 transition-colors uppercase tracking-widest text-sm font-semibold">
+          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row flex-wrap gap-4">
+            <Link href="/portfolio" className="btn-primary bg-brand-blue text-white hover:bg-brand-blue-dark transition-colors uppercase tracking-widest text-sm font-semibold">
               {t("view_work")} <ArrowRight size={14} className="ml-2 inline-block" />
             </Link>
-            <Link href="/contact" className="btn-outline border-white text-white hover:bg-white hover:text-charcoal-900 transition-colors uppercase tracking-widest text-sm font-semibold">
+            <Link href="/contact" className="btn-outline border-white/60 text-white hover:bg-brand-blue/20 hover:border-white transition-colors uppercase tracking-widest text-sm font-semibold">
               {t("start_project")}
             </Link>
           </motion.div>

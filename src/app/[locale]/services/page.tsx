@@ -38,7 +38,7 @@ export default async function ServicesPage() {
       <Nav />
       <main className="bg-cream-50">
         {/* Dark Immersive Hero */}
-        <section className="relative h-[85vh] w-full overflow-hidden bg-charcoal-900 group mb-24 md:mb-32">
+        <section className="relative h-[80vh] md:h-[85vh] w-full overflow-hidden bg-charcoal-900 group mb-16 md:mb-32">
           {/* Background Texture */}
           <div className="absolute inset-0">
             <Image
@@ -58,16 +58,16 @@ export default async function ServicesPage() {
           <div className="absolute inset-0 flex flex-col justify-end pb-24 md:pb-32 container mx-auto px-6 z-10">
             <AnimatedSection>
               <div className="max-w-4xl">
-                <span className="text-warm-400 font-mono text-xs md:text-sm tracking-[0.3em] uppercase mb-8 block flex items-center gap-4">
-                  <div className="w-12 h-px bg-warm-400" /> {t("what_we_do")}
+                <span className="text-brand-blue font-mono text-xs md:text-sm tracking-[0.3em] uppercase mb-8 block flex items-center gap-4">
+                  <div className="w-12 h-px bg-brand-blue" /> {t("what_we_do")}
                 </span>
-                <h1 className="text-display-xl lg:text-[7rem] font-display text-white leading-[0.9] mb-8 drop-shadow-2xl">
+                <h1 className="text-4xl sm:text-5xl md:text-[5.5rem] lg:text-[7rem] font-display text-white leading-[0.9] mb-6 md:mb-8 drop-shadow-2xl">
                   {t("hero_title_1")} <br />
-                  <span className="text-warm-200 italic font-light">
+                  <span className="text-brand-blue/70 italic font-light">
                     {t("hero_title_2")}
                   </span>
                 </h1>
-                <p className="text-warm-300 text-lg md:text-2xl font-light leading-relaxed max-w-2xl">
+                <p className="text-warm-300 text-base md:text-xl lg:text-2xl font-light leading-relaxed max-w-2xl">
                   {t("hero_subtitle")}
                 </p>
               </div>
@@ -94,10 +94,10 @@ export default async function ServicesPage() {
             return (
               <AnimatedSection key={service.id} delay={i * 100}>
                 <div
-                  className={`flex flex-col ${isEven ? "lg:flex-row-reverse" : "lg:flex-row"} items-center mb-20 md:mb-32 group`}
+                  className={`flex flex-col ${isEven ? "lg:flex-row-reverse" : "lg:flex-row"} items-center mb-12 md:mb-24 lg:mb-32 group`}
                 >
                   {/* Image Block */}
-                  <div className="w-full lg:w-1/2 h-[50vh] min-h-[400px] lg:h-[750px] relative overflow-hidden">
+                  <div className="w-full lg:w-1/2 h-[40vh] md:h-[50vh] min-h-[280px] lg:h-[750px] relative overflow-hidden">
                     <div className="absolute inset-0 bg-charcoal-900/10 group-hover:bg-transparent transition-colors duration-700 z-10" />
                     <Image
                       src={imageUrl}
@@ -110,22 +110,22 @@ export default async function ServicesPage() {
 
                   {/* Text Block */}
                   <div
-                    className={`w-full lg:w-1/2 flex flex-col justify-center px-6 py-16 lg:py-0 ${isEven ? "lg:pr-16 xl:pr-32 lg:pl-16" : "lg:pl-16 xl:pl-32 lg:pr-16"}`}
+                    className={`w-full lg:w-1/2 flex flex-col justify-center px-6 py-10 md:py-16 lg:py-0 ${isEven ? "lg:pr-16 xl:pr-32 lg:pl-16" : "lg:pl-16 xl:pl-32 lg:pr-16"}`}
                   >
-                    <span className="text-sm tracking-widest uppercase font-mono text-warm-500 mb-6 block">
+                    <span className="text-sm tracking-widest uppercase font-mono text-brand-blue mb-6 block">
                       0{i + 1}
                     </span>
-                    <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-charcoal-900 mb-8 leading-tight">
+                    <h2 className="font-display text-3xl md:text-5xl lg:text-6xl text-charcoal-900 mb-5 md:mb-8 leading-tight">
                       {service.title}
                     </h2>
-                    <p className="text-xl text-warm-600 leading-relaxed font-light mb-12 max-w-xl">
+                    <p className="text-base md:text-xl text-warm-600 leading-relaxed font-light mb-8 md:mb-12 max-w-xl">
                       {service.shortDescription}
                     </p>
 
                     {service.slug && (
                       <Link
                         href={`/services/${typeof service.slug === "string" ? service.slug : service.slug.current}`}
-                        className="inline-flex items-center gap-4 text-xs tracking-widest uppercase font-mono text-charcoal-900 border-b border-charcoal-900 pb-2 w-fit hover:text-warm-500 hover:border-warm-500 transition-colors group/link"
+                        className="inline-flex items-center gap-4 text-xs tracking-widest uppercase font-mono text-brand-blue border-b border-brand-blue pb-2 w-fit hover:text-brand-blue-dark hover:border-brand-blue-dark transition-colors group/link"
                       >
                         {t("view_details")}
                         <span className="group-hover/link:translate-x-1 transition-transform">
@@ -143,10 +143,10 @@ export default async function ServicesPage() {
         <ProcessTimeline />
 
         {/* Technology & Transparency (Client Experience) */}
-        <section className="bg-charcoal-900 py-24 md:py-32 text-white overflow-hidden relative">
+        <section className="bg-charcoal-900 py-14 md:py-32 text-white overflow-hidden relative">
           <div className="container mx-auto px-6">
             <AnimatedSection>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
                 <div className="order-2 lg:order-1 relative aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
                   <Image
                     src="https://images.unsplash.com/photo-1542621334-a254cf47733d?q=80&w=2070&auto=format&fit=crop"
@@ -165,16 +165,16 @@ export default async function ServicesPage() {
                   </div>
                 </div>
                 <div className="order-1 lg:order-2">
-                  <span className="text-warm-400 font-mono text-xs tracking-[0.3em] uppercase mb-4 block">
+                  <span className="text-brand-blue/80 font-mono text-xs tracking-[0.3em] uppercase mb-4 block">
                     {t("tech.eyebrow")}
                   </span>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-display mb-8 leading-tight">
+                  <h2 className="text-3xl md:text-5xl lg:text-6xl font-display mb-6 md:mb-8 leading-tight">
                     {t("tech.title_1")} <br />
-                    <span className="text-warm-200 italic font-light">
+                    <span className="text-brand-blue/60 italic font-light">
                       {t("tech.title_2")}
                     </span>
                   </h2>
-                  <p className="text-xl font-light text-warm-100/70 mb-8 leading-relaxed">
+                  <p className="text-base md:text-xl font-light text-warm-100/70 mb-6 md:mb-8 leading-relaxed">
                     {t("tech.desc")}
                   </p>
                   <ul className="space-y-4">
@@ -185,8 +185,8 @@ export default async function ServicesPage() {
                       t("tech.list_4"),
                     ].map((item, i) => (
                       <li key={i} className="flex items-start gap-4">
-                        <div className="w-6 h-6 rounded-full border border-warm-400 flex items-center justify-center flex-shrink-0 mt-1">
-                          <span className="block w-1.5 h-1.5 bg-warm-400 rounded-full" />
+                        <div className="w-6 h-6 rounded-full border border-brand-blue/60 flex items-center justify-center flex-shrink-0 mt-1">
+                          <span className="block w-1.5 h-1.5 bg-brand-blue rounded-full" />
                         </div>
                         <span className="text-lg font-light text-warm-50">
                           {item}
@@ -201,17 +201,17 @@ export default async function ServicesPage() {
         </section>
 
         {/* Quality Assurance */}
-        <section className="bg-cream-100 py-32 border-t border-warm-200">
+        <section className="bg-cream-100 py-16 md:py-32 border-t border-warm-200">
           <div className="container mx-auto px-6 max-w-7xl">
-            <AnimatedSection className="flex flex-col items-center justify-center text-center mb-20 md:mb-28">
-              <span className="text-warm-500 font-mono text-xs tracking-[0.3em] uppercase mb-6 flex items-center gap-4">
-                <div className="w-8 h-px bg-warm-400" />
+            <AnimatedSection className="flex flex-col items-center justify-center text-center mb-12 md:mb-28">
+              <span className="text-brand-blue font-mono text-xs tracking-[0.3em] uppercase mb-6 flex items-center gap-4">
+                <div className="w-8 h-px bg-brand-blue" />
                 {t("quality.eyebrow")}
-                <div className="w-8 h-px bg-warm-400" />
+                <div className="w-8 h-px bg-brand-blue" />
               </span>
-              <h2 className="text-5xl md:text-6xl lg:text-7xl font-display text-charcoal-900 leading-[1.1] max-w-4xl">
+              <h2 className="text-3xl md:text-6xl lg:text-7xl font-display text-charcoal-900 leading-[1.1] max-w-4xl">
                 {t("quality.title_1")} <br />
-                <span className="italic font-light text-warm-600">
+                <span className="italic font-light text-brand-blue">
                   {t("quality.title_2")}
                 </span>
               </h2>
@@ -231,7 +231,7 @@ export default async function ServicesPage() {
                       <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-transparent group-hover:border-warm-500 transition-colors duration-700 opacity-0 group-hover:opacity-100 m-6" />
 
                       {/* Minimalist Icon / Number */}
-                      <div className="w-20 h-20 mb-10 rounded-full border border-warm-200 flex items-center justify-center text-warm-500 group-hover:border-warm-600 group-hover:text-warm-400 transition-colors duration-700 text-center pl-1">
+                      <div className="w-20 h-20 mb-10 rounded-full border border-brand-blue/20 flex items-center justify-center text-brand-blue group-hover:border-brand-blue group-hover:text-brand-blue transition-colors duration-700 text-center pl-1">
                         <span className="font-mono text-xl tracking-[0.2em] leading-none">
                           0{i + 1}
                         </span>
@@ -246,7 +246,7 @@ export default async function ServicesPage() {
                       </p>
 
                       {/* Bottom Line */}
-                      <div className="w-12 h-px bg-warm-300 group-hover:bg-warm-600 transition-colors duration-700 mt-10" />
+                      <div className="w-12 h-px bg-brand-blue/30 group-hover:bg-brand-blue transition-colors duration-700 mt-10" />
                     </div>
                   </AnimatedSection>
                 );
@@ -258,7 +258,7 @@ export default async function ServicesPage() {
         <FAQSection />
 
         {/* Final CTA */}
-        <section className="bg-charcoal-900 py-32 relative overflow-hidden">
+        <section className="bg-charcoal-900 py-16 md:py-32 relative overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-charcoal-900/90 z-10" />
             <Image
@@ -270,18 +270,18 @@ export default async function ServicesPage() {
           </div>
           <div className="container mx-auto px-6 relative z-20 text-center">
             <AnimatedSection>
-              <h2 className="text-5xl md:text-7xl font-display text-white mb-8">
+              <h2 className="text-3xl md:text-7xl font-display text-white mb-6 md:mb-8">
                 {t("cta.title_1")} <br />
                 <span className="text-warm-200 italic font-light">
                   {t("cta.title_2")}
                 </span>
               </h2>
-              <p className="text-xl font-light text-warm-100/70 mb-12 max-w-2xl mx-auto">
+              <p className="text-base md:text-xl font-light text-warm-100/70 mb-8 md:mb-12 max-w-2xl mx-auto">
                 {t("cta.desc")}
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-4 bg-warm-500 text-charcoal-900 px-10 py-5 text-sm uppercase tracking-[0.2em] font-mono hover:bg-white transition-colors duration-300"
+                className="inline-flex items-center gap-4 bg-brand-blue text-white px-10 py-5 text-sm uppercase tracking-[0.2em] font-mono hover:bg-brand-blue-dark transition-colors duration-300"
               >
                 {t("cta.btn")}
                 <span>→</span>

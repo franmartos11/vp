@@ -30,20 +30,20 @@ export default async function ContactPage() {
       <main className="min-h-screen flex flex-col bg-cream-50">
         <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 min-h-[100svh]">
           {/* Right Side (Form) - Ordered First on Mobile */}
-          <div className="order-1 lg:order-2 px-6 pt-24 pb-16 lg:py-32 lg:px-16 xl:px-24 flex flex-col justify-center overflow-y-auto">
+          <div className="order-1 lg:order-2 px-6 pt-20 md:pt-24 pb-12 md:pb-16 lg:py-32 lg:px-16 xl:px-24 flex flex-col justify-center overflow-y-auto">
             <AnimatedSection>
               <SectionHeading
                 eyebrow={t("eyebrow")}
                 title={t("title")}
                 subtitle={t("subtitle")}
-                className="mb-16"
+                className="mb-10 md:mb-16"
               />
               <ContactForm />
             </AnimatedSection>
           </div>
 
           {/* Left Side (Map + Info Overlay) - Ordered Second on Mobile */}
-          <div className="relative order-2 lg:order-1 flex flex-col min-h-[600px] border-t lg:border-t-0 lg:border-r border-warm-200">
+          <div className="relative order-2 lg:order-1 flex flex-col min-h-[600px] border-t lg:border-t-0 lg:border-r border-brand-blue/10">
             {/* Map Iframe */}
             <div className="relative h-[40vh] lg:h-auto lg:absolute lg:inset-0 z-0 bg-[#e5e3df]">
               <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900/20 to-transparent pointer-events-none z-10" />
@@ -65,7 +65,7 @@ export default async function ContactPage() {
             <div className="relative lg:absolute lg:bottom-12 lg:left-12 lg:right-12 z-20 mt-auto bg-white/95 lg:bg-white/95 backdrop-blur-md p-8 md:p-12 lg:shadow-2xl border-t lg:border border-warm-200 lg:border-white">
               <AnimatedSection delay={200}>
                 <div>
-                  <h2 className="font-display text-2xl text-charcoal-900 mb-8 border-b border-warm-200 pb-6">
+                  <h2 className="font-display text-2xl text-charcoal-900 mb-8 border-b border-brand-blue/20 pb-6">
                     {t("hq")}
                   </h2>
 
@@ -74,7 +74,7 @@ export default async function ContactPage() {
                       <p className="flex items-start gap-4">
                         <MapPin
                           size={20}
-                          className="text-warm-500 shrink-0 mt-0.5"
+                          className="text-brand-blue shrink-0 mt-0.5"
                         />
                         <span>
                           100 Brickell Ave, Suite 1200
@@ -86,30 +86,30 @@ export default async function ContactPage() {
 
                     <a
                       href="tel:+13050000000"
-                      className="flex items-center gap-4 text-charcoal-700 text-sm md:text-base hover:text-warm-500 transition-colors group/link"
+                      className="flex items-center gap-4 text-charcoal-700 text-sm md:text-base hover:text-brand-blue transition-colors group/link"
                     >
                       <Phone
                         size={20}
-                        className="text-warm-500 shrink-0 group-hover/link:scale-110 transition-transform"
+                        className="text-brand-blue shrink-0 group-hover/link:scale-110 transition-transform"
                       />
                       +1 (305) 000-0000
                     </a>
 
                     <a
                       href="mailto:hello@vertexbuildgroup.com"
-                      className="flex items-center gap-4 text-charcoal-700 text-sm md:text-base hover:text-warm-500 transition-colors group/link"
+                      className="flex items-center gap-4 text-charcoal-700 text-sm md:text-base hover:text-brand-blue transition-colors group/link"
                     >
                       <Mail
                         size={20}
-                        className="text-warm-500 shrink-0 group-hover/link:scale-110 transition-transform"
+                        className="text-brand-blue shrink-0 group-hover/link:scale-110 transition-transform"
                       />
                       hello@vertexbuildgroup.com
                     </a>
 
-                    <div className="flex items-start gap-4 text-charcoal-700 text-sm md:text-base pt-4 border-t border-warm-200 border-dashed">
+                    <div className="flex items-start gap-4 text-charcoal-700 text-sm md:text-base pt-4 border-t border-brand-blue/10 border-dashed">
                       <Clock
                         size={20}
-                        className="text-warm-500 shrink-0 mt-0.5"
+                        className="text-brand-blue shrink-0 mt-0.5"
                       />
                       <div>
                         <p>{t("hours_week")}</p>
@@ -126,29 +126,29 @@ export default async function ContactPage() {
         </div>
 
         {/* Dedicated Calendly Section */}
-        <div className="bg-charcoal-900 text-cream-100 py-24 lg:py-32 border-t border-charcoal-800">
+        <div className="bg-charcoal-900 text-cream-100 py-14 md:py-24 lg:py-32 border-t border-brand-blue/20">
           <div className="container mx-auto px-6 md:px-12">
-            <AnimatedSection className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+            <AnimatedSection className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 lg:gap-24 items-center">
               {/* Text Context */}
               <div className="order-2 lg:order-1">
-                <span className="text-xs tracking-widest uppercase font-mono text-warm-500 mb-6 block">
+                <span className="text-xs tracking-widest uppercase font-mono text-brand-blue/80 mb-6 block">
                   {t("book")}
                 </span>
-                <h2 className="text-display-md md:text-display-lg font-display text-white mb-6 leading-tight">
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-display text-white mb-5 md:mb-6 leading-tight">
                   {t("prefer_title_1")} <br className="hidden md:block" />{" "}
                   {t("prefer_title_2")}
                 </h2>
-                <p className="text-warm-300 text-lg leading-relaxed max-w-lg mb-8 font-light">
+                <p className="text-warm-300 text-base md:text-lg leading-relaxed max-w-lg mb-6 md:mb-8 font-light">
                   {t("prefer_desc")}
                 </p>
                 <div className="flex items-center gap-4 text-sm font-mono tracking-widest text-warm-400">
-                  <span className="w-12 h-px bg-warm-400" />
+                  <span className="w-12 h-px bg-brand-blue/60" />
                   {t("select_time")}
                 </div>
               </div>
 
               {/* Calendly Inline Widget Embed */}
-              <div className="order-1 lg:order-2 h-[500px] md:h-[650px] w-full rounded-sm overflow-hidden bg-white/5 border border-white/10 shadow-2xl relative group/cal">
+              <div className="order-1 lg:order-2 h-[500px] md:h-[650px] w-full rounded-sm overflow-hidden bg-white/5 border border-brand-blue/20 shadow-2xl relative group/cal">
                 <div className="absolute inset-0 bg-charcoal-900/50 flex items-center justify-center opacity-0 group-hover/cal:opacity-100 transition-opacity pointer-events-none z-10 duration-500">
                   {/* Optional interaction overlay */}
                 </div>

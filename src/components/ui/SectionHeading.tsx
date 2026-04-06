@@ -18,7 +18,7 @@ export default function SectionHeading({
   const alignClass = align === "center" ? "text-center items-center" : "";
   const textColor = light ? "text-cream-100" : "text-charcoal-900";
   const subtitleColor = light ? "text-warm-300" : "text-warm-500";
-  const eyebrowColor = light ? "text-warm-300" : "text-warm-500";
+  const eyebrowColor = light ? "text-brand-blue/80" : "text-brand-blue";
 
   return (
     <div className={`flex flex-col gap-3 ${alignClass} ${className}`}>

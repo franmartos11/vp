@@ -54,15 +54,15 @@ export default function StatsSection() {
       className="py-20 md:py-28 bg-charcoal-900 border-t border-charcoal-800"
       aria-label="Company statistics"
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto px-6">
         <AnimatedSection stagger className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-4 relative z-10">
           {STATS.map((stat) => (
             <div key={stat.labelKey} className="text-center group">
-              <p className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-white mb-4 group-hover:scale-110 transition-transform duration-500">
+              <p className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold text-brand-blue mb-4 group-hover:scale-110 transition-transform duration-500">
                 <CountUp target={stat.value} suffix={stat.suffix} />
               </p>
-              <div className="w-8 h-px bg-warm-500 mx-auto mb-4" />
-              <p className="text-xs text-warm-300 tracking-widest uppercase font-mono">
+              <div className="w-8 h-px bg-brand-blue mx-auto mb-4" />
+              <p className="text-xs text-warm-200 tracking-widest uppercase font-mono">
                 {t(stat.labelKey)}
               </p>
             </div>

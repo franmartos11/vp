@@ -130,7 +130,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             <AnimatedSection>
               <Link
                 href="/portfolio"
-                className="inline-flex items-center gap-2 text-warm-300 text-sm hover:text-white transition-colors mb-8 uppercase tracking-widest font-mono"
+                className="inline-flex items-center gap-2 text-warm-300 text-sm hover:text-brand-blue transition-colors mb-8 uppercase tracking-widest font-mono"
               >
                 <ArrowLeft size={14} /> {t("back")}
               </Link>
@@ -139,7 +139,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               </h1>
               {project.location && (
                 <p className="text-warm-300 text-sm md:text-base flex items-center gap-2 uppercase tracking-wide font-mono">
-                  <MapPin size={16} /> {project.location} {project.completionYear ? `— ${project.completionYear}` : ""}
+                  <MapPin size={16} className="text-brand-blue" /> {project.location} {project.completionYear ? `— ${project.completionYear}` : ""}
                 </p>
               )}
             </AnimatedSection>
@@ -157,7 +157,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             {/* Left: Project Details */}
             <div className="col-span-1 md:col-span-8 lg:pr-16 order-last md:order-first">
               <AnimatedSection>
-                <h2 className="text-display-sm font-display text-charcoal-900 mb-8 border-b border-warm-200 pb-6 uppercase tracking-widest text-sm">
+                <h2 className="text-display-sm font-display text-charcoal-900 mb-8 border-b border-brand-blue/15 pb-6 uppercase tracking-widest text-sm">
                   {t("vision")}
                 </h2>
                 {project?.description && (
@@ -170,7 +170,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               {/* Video Embded */}
               {project?.videoUrl && (
                 <AnimatedSection className="mt-16" delay={100}>
-                  <div className="relative aspect-video rounded-sm overflow-hidden border border-warm-200 shadow-xl group">
+                  <div className="relative aspect-video rounded-sm overflow-hidden border border-brand-blue/15 shadow-xl group">
                     <iframe 
                       src={project.videoUrl.replace("watch?v=", "embed/")} 
                       className="absolute inset-0 w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700"
@@ -189,12 +189,12 @@ export default async function ProjectDetailPage({ params }: Props) {
               {/* Testimonial Section */}
               {rawTestimonial && rawTestimonial.quote && (
                 <AnimatedSection delay={300} className="mt-24 mb-12">
-                  <blockquote className="relative p-10 md:p-14 bg-warm-50 border border-warm-200 overflow-hidden">
-                    <Quote className="absolute -top-4 -left-4 text-warm-200 w-32 h-32 opacity-30 select-none" />
+                  <blockquote className="relative p-10 md:p-14 bg-brand-blue/5 border border-brand-blue/15 overflow-hidden">
+                    <Quote className="absolute -top-4 -left-4 text-brand-blue/20 w-32 h-32 opacity-30 select-none" />
                     <p className="relative z-10 text-xl md:text-3xl text-charcoal-900 font-display italic leading-snug mb-8">
                       &quot;{rawTestimonial.quote}&quot;
                     </p>
-                    <footer className="relative z-10 text-warm-500 font-mono text-sm tracking-widest uppercase">
+                    <footer className="relative z-10 text-brand-blue font-mono text-sm tracking-widest uppercase">
                       — {rawTestimonial.author}
                     </footer>
                   </blockquote>
@@ -209,16 +209,16 @@ export default async function ProjectDetailPage({ params }: Props) {
                 <AnimatedSection delay={100}>
                   <div className="bg-charcoal-900 text-white p-8 md:p-10 shadow-2xl relative overflow-hidden">
                     {/* Background accent */}
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-warm-500/10 rounded-bl-full" />
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand-blue/10 rounded-bl-full" />
                     
-                    <h3 className="text-warm-400 uppercase tracking-widest text-xs font-mono mb-8 border-b border-white/20 pb-4 relative z-10">
+                    <h3 className="text-brand-blue/60 uppercase tracking-widest text-xs font-mono mb-8 border-b border-brand-blue/20 pb-4 relative z-10">
                       {t("dossier")}
                     </h3>
                     
                     <dl className="space-y-6 relative z-10">
                       {project.projectType && (
                         <div>
-                          <dt className="text-xs text-warm-500 uppercase tracking-widest mb-1 font-mono">{t("type_label")}</dt>
+                          <dt className="text-xs text-brand-blue/50 uppercase tracking-widest mb-1 font-mono">{t("type_label")}</dt>
                           <dd className="text-base text-cream-100">{t(`types.${project.projectType}` as any) || project.projectType}</dd>
                         </div>
                       )}
@@ -231,12 +231,12 @@ export default async function ProjectDetailPage({ params }: Props) {
 
                       {rawMaterials && rawMaterials.length > 0 && (
                         <div className="pt-4 mt-4 border-t border-white/20">
-                          <dt className="text-xs text-warm-500 uppercase tracking-widest mb-3 font-mono">{t("materials_label")}</dt>
+                          <dt className="text-xs text-brand-blue/50 uppercase tracking-widest mb-3 font-mono">{t("materials_label")}</dt>
                           <dd>
                             <ul className="space-y-3">
                               {rawMaterials.map((mat: any, idx: number) => (
                                 <li key={idx} className="text-sm text-cream-100 flex items-start gap-3">
-                                  <span className="text-warm-500 mt-1.5 w-1.5 h-1.5 rounded-full bg-warm-500 flex-shrink-0" />
+                                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-brand-blue flex-shrink-0" />
                                   <span>{mat}</span>
                                 </li>
                               ))}
@@ -249,7 +249,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                     <div className="mt-12 pt-8 border-t border-white/20 relative z-10">
                       <Link 
                         href="/contact"
-                        className="inline-block w-full bg-warm-500 text-charcoal-900 border border-warm-500 text-center py-4 text-sm uppercase tracking-widest hover:bg-transparent hover:text-warm-500 transition-colors duration-300 font-medium font-mono group"
+                        className="inline-block w-full bg-brand-blue text-white border border-brand-blue text-center py-4 text-sm uppercase tracking-widest hover:bg-brand-blue-dark hover:border-brand-blue-dark transition-colors duration-300 font-medium font-mono group"
                       >
                          <span className="group-hover:-translate-y-0.5 inline-block transition-transform duration-300">{t("inquire")}</span>
                       </Link>
@@ -265,10 +265,10 @@ export default async function ProjectDetailPage({ params }: Props) {
         <section className="bg-charcoal-900 border-t border-charcoal-800">
            <AnimatedSection>
               <Link href="/portfolio" className="block py-24 group relative overflow-hidden">
-                <div className="absolute inset-0 bg-warm-500/0 group-hover:bg-warm-500/5 transition-colors duration-500" />
+                <div className="absolute inset-0 bg-brand-blue/0 group-hover:bg-brand-blue/5 transition-colors duration-500" />
                 <div className="container mx-auto text-center relative z-10 px-6">
-                   <p className="text-warm-500 uppercase tracking-widest text-sm mb-6 font-mono">{t("continue")}</p>
-                   <h2 className="text-display-md md:text-display-lg font-display text-white group-hover:text-warm-300 transition-colors duration-300">
+                   <p className="text-brand-blue/60 uppercase tracking-widest text-sm mb-6 font-mono">{t("continue")}</p>
+                   <h2 className="text-display-md md:text-display-lg font-display text-white group-hover:text-brand-blue/80 transition-colors duration-300">
                      {t("view_all")}
                    </h2>
                 </div>

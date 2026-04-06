@@ -19,16 +19,17 @@ export function StickyPillars() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-24 md:py-32 bg-cream-50" aria-labelledby="pillars-heading">
+    <section className="py-24 md:py-32 bg-charcoal-900" aria-labelledby="pillars-heading">
       <div className="container mx-auto px-6">
         <SectionHeading
            eyebrow={t('eyebrow')}
            title={t('title')}
            subtitle={t('subtitle')}
            className="mb-16"
+           light
         />
 
-        <div className="flex flex-col lg:flex-row min-h-[500px] lg:h-[600px] w-full gap-2 lg:gap-4">
+        <div className="flex flex-col lg:flex-row min-h-[500px] md:min-h-[600px] lg:h-[600px] w-full gap-2 lg:gap-4">
           {[0, 1, 2].map((index) => {
             const title = t(`pillars.${index}.title` as any);
             const description = t(`pillars.${index}.description` as any);
@@ -54,7 +55,7 @@ export function StickyPillars() {
                 />
                 
                 {/* Base Dark Overlay for overall contrast */}
-                <div className={`absolute inset-0 transition-all duration-700 ${isActive ? 'bg-charcoal-950/30' : 'bg-charcoal-950/50'}`} />
+                <div className={`absolute inset-0 transition-all duration-700 ${isActive ? 'bg-charcoal-950/50 lg:bg-charcoal-950/30' : 'bg-charcoal-950/65 lg:bg-charcoal-950/50'}`} />
                 
                 {/* Heavy Gradient Overlay for Text Area */}
                 <div 
@@ -70,7 +71,7 @@ export function StickyPillars() {
                    
                    {/* Mobile Layout Title (Always visible, wrapping okay) */}
                    <div className="lg:hidden flex flex-col gap-2 mb-2 relative z-10">
-                     <span className="font-mono tracking-widest text-xs text-warm-300 uppercase drop-shadow-md">
+                     <span className="font-mono tracking-widest text-xs text-brand-blue uppercase drop-shadow-md">
                        0{index + 1}
                      </span>
                      <h3 className="text-2xl font-display text-white drop-shadow-lg leading-tight">
@@ -84,11 +85,11 @@ export function StickyPillars() {
                    {/* Desktop Layout Title & Description */}
                    <div className="hidden lg:flex flex-col w-full relative z-10 justify-end h-full">
                      <div className={`flex transition-all duration-700 w-full ${isActive ? 'flex-row items-center gap-6 mb-4' : 'flex-col items-center gap-4 pb-4'}`}>
-                       <span className={`font-mono tracking-widest text-sm transition-colors duration-500 shrink-0 ${isActive ? 'text-warm-300' : 'text-warm-300'}`}>
+                       <span className={`font-mono tracking-widest text-sm transition-colors duration-500 shrink-0 ${isActive ? 'text-brand-blue' : 'text-brand-blue'}`}>
                          {String(index + 1).padStart(2, '0')}
                        </span>
-                       <div className={`bg-warm-400/40 transition-all duration-700 shrink-0 ${isActive ? 'h-[1px] w-12' : 'w-[1px] h-12'}`} />
-                       <h3 className={`font-display transition-all duration-700 whitespace-nowrap drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${isActive ? 'text-4xl text-white tracking-wide' : 'text-2xl text-warm-100 [writing-mode:vertical-rl] rotate-180 tracking-widest opacity-80'}`}>
+                       <div className={`bg-brand-blue/40 transition-all duration-700 shrink-0 ${isActive ? 'h-[1px] w-12' : 'w-[1px] h-12'}`} />
+                       <h3 className={`font-display transition-all duration-700 whitespace-nowrap overflow-hidden drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] ${isActive ? 'text-4xl text-white tracking-wide' : 'text-2xl text-warm-100 [writing-mode:vertical-rl] rotate-180 tracking-widest opacity-80'}`}>
                          {title}
                        </h3>
                      </div>

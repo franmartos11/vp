@@ -53,15 +53,15 @@ export default async function AboutPage() {
           <div className="absolute inset-0 flex flex-col justify-end pb-24 md:pb-32 container mx-auto px-6 z-10 transition-all">
             <AnimatedSection>
               <div className="max-w-6xl">
-                <span className="text-warm-400 font-mono text-xs tracking-[0.3em] uppercase mb-8 block flex items-center gap-4">
-                  <div className="w-8 h-px bg-warm-400" /> Our Firm
+                <span className="text-brand-blue font-mono text-xs tracking-[0.3em] uppercase mb-8 block flex items-center gap-4">
+                  <div className="w-8 h-px bg-brand-blue" /> Our Firm
                 </span>
-                <h1 className="text-display-lg md:text-[8rem] font-display text-white leading-[0.9] mb-8 drop-shadow-2xl">
+                <h1 className="text-4xl sm:text-5xl md:text-[8rem] font-display text-white leading-[0.9] mb-6 md:mb-8 drop-shadow-2xl">
                   Engineering <br />
-                  <span className="text-warm-200 italic font-light">built to last.</span>
+                  <span className="text-brand-blue/70 italic font-light">built to last.</span>
                 </h1>
-                <p className="text-warm-100/80 text-xl md:text-2xl font-light leading-relaxed max-w-3xl">
-                  DH Engineering & Consulting LLC provides comprehensive structural and MEP engineering services — combining technical expertise with a practical understanding of construction and permitting across Florida.
+                <p className="text-warm-100/80 text-base md:text-xl lg:text-2xl font-light leading-relaxed max-w-3xl">
+                  DH Engineering &amp; Consulting LLC provides comprehensive structural and MEP engineering services — combining technical expertise with a practical understanding of construction and permitting across Florida.
                 </p>
               </div>
             </AnimatedSection>
@@ -69,52 +69,52 @@ export default async function AboutPage() {
         </section>
 
         {/* AT-A-GLANCE METRICS STRIP (The Authority Stats) */}
-        <section className="bg-charcoal-800 border-y border-warm-800/30 text-white relative z-20">
+        <section className="bg-charcoal-800 border-y border-brand-blue/20 text-white relative z-20">
           <div className="container mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-warm-800/30 font-mono tracking-widest uppercase text-xs">
-              <div className="py-10 md:px-10 flex flex-col gap-2 justify-center items-center text-center">
-                 <span className="text-4xl lg:text-5xl font-display text-white mb-2">100+</span>
-                 <span className="text-warm-500/70 text-[10px]">Completed Projects</span>
+            <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-brand-blue/20 font-mono tracking-widest uppercase text-xs">
+              <div className="py-6 md:py-10 md:px-10 flex flex-col gap-2 justify-center items-center text-center">
+                 <span className="text-4xl lg:text-5xl font-display text-white mb-1 md:mb-2">100+</span>
+                 <span className="text-brand-blue/60 text-[10px]">Completed Projects</span>
               </div>
-              <div className="py-10 md:px-10 flex flex-col gap-2 justify-center items-center text-center">
-                 <span className="text-4xl lg:text-5xl font-display text-white mb-2">FBC</span>
-                 <span className="text-warm-500/70 text-[10px]">Florida Building Code Experts</span>
+              <div className="py-6 md:py-10 md:px-10 flex flex-col gap-2 justify-center items-center text-center">
+                 <span className="text-4xl lg:text-5xl font-display text-white mb-1 md:mb-2">FBC</span>
+                 <span className="text-brand-blue/60 text-[10px]">Florida Building Code Experts</span>
               </div>
-              <div className="py-10 md:px-10 flex flex-col gap-2 justify-center items-center text-center">
-                 <span className="text-4xl lg:text-5xl font-display text-white mb-2">4</span>
-                 <span className="text-warm-500/70 text-[10px]">Core Engineering Disciplines</span>
+              <div className="py-6 md:py-10 md:px-10 flex flex-col gap-2 justify-center items-center text-center">
+                 <span className="text-4xl lg:text-5xl font-display text-white mb-1 md:mb-2">4</span>
+                 <span className="text-brand-blue/60 text-[10px]">Core Engineering Disciplines</span>
               </div>
             </div>
           </div>
         </section>
 
         {/* The Vision / Editorial */}
-        <section className="container mx-auto py-24 md:py-32 px-6" aria-labelledby="vision-heading">
+        <section className="container mx-auto py-16 md:py-32 px-6" aria-labelledby="vision-heading">
           <AnimatedSection>
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24 items-start">
               {/* Image side */}
-              <div className="col-span-1 lg:col-span-5 relative h-[600px] w-full group">
+              <div className="col-span-1 lg:col-span-5 relative h-[300px] md:h-[450px] lg:h-[600px] w-full group">
                 <Image
                   src="https://images.unsplash.com/photo-1481253127861-534498168948?w=1200&auto=format"
                   alt="Architecture sketching"
                   fill
                   className="object-cover grayscale mix-blend-multiply opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-1000"
                 />
-                <div className="absolute inset-0 bg-warm-900/10 group-hover:bg-transparent transition-colors duration-1000" />
+                <div className="absolute inset-0 bg-brand-blue/10 group-hover:bg-transparent transition-colors duration-1000" />
                 
                 {/* Decorative Elements */}
-                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-warm-200 -z-10" />
-                <div className="absolute -top-6 -left-6 w-32 h-32 border border-warm-300 -z-10" />
+                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-blue/10 -z-10" />
+                <div className="absolute -top-6 -left-6 w-32 h-32 border border-brand-blue/20 -z-10" />
               </div>
               
               {/* Text side */}
               <div className="col-span-1 lg:col-span-6 lg:col-start-7 flex flex-col justify-center py-8">
-                <span className="text-warm-500 font-mono text-xs tracking-widest uppercase mb-6 block">Our Mission</span>
+                <span className="text-brand-blue font-mono text-xs tracking-widest uppercase mb-6 block">Our Mission</span>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-charcoal-900 mb-12 leading-tight">
-                  Engineering that serves <span className="italic font-light text-warm-600">your vision.</span>
+                  Engineering that serves <span className="italic font-light text-brand-blue">your vision.</span>
                 </h2>
                 
-                <div className="prose prose-stone prose-lg max-w-none text-charcoal-700 leading-relaxed font-light first-letter:text-7xl first-letter:font-display first-letter:text-charcoal-900 first-letter:float-left first-letter:mr-6 first-letter:-mt-2 first-letter:leading-none">
+                <div className="prose prose-stone prose-base md:prose-lg max-w-none text-charcoal-700 leading-relaxed font-light md:first-letter:text-7xl md:first-letter:font-display md:first-letter:text-charcoal-900 md:first-letter:float-left md:first-letter:mr-6 md:first-letter:-mt-2 md:first-letter:leading-none">
                   <p className="mb-8">
                     At DH Engineering & Consulting LLC, we provide comprehensive engineering services by combining structural expertise with a practical understanding of construction and permitting processes. We specialize in structural design for residential and commercial projects, along with MEP coordination — delivering efficient and fully integrated solutions under one firm.
                   </p>
@@ -125,10 +125,10 @@ export default async function AboutPage() {
                 
                 {/* Signature element */}
                 <div className="flex items-center gap-6 mt-4">
-                  <div className="w-16 h-px bg-warm-300" />
+                  <div className="w-16 h-px bg-brand-blue/40" />
                   <div className="flex flex-col">
                     <span className="font-display text-4xl text-charcoal-900">DH Engineering</span>
-                    <span className="text-[10px] uppercase tracking-[0.2em] text-warm-500 font-mono mt-1">& Consulting LLC</span>
+                    <span className="text-[10px] uppercase tracking-[0.2em] text-brand-blue/60 font-mono mt-1">& Consulting LLC</span>
                   </div>
                 </div>
               </div>
@@ -137,13 +137,13 @@ export default async function AboutPage() {
         </section>
 
         {/* Culture / Studio Behind the Scenes */}
-        <section className="bg-charcoal-900 text-white py-32 overflow-hidden border-t border-warm-800">
+        <section className="bg-charcoal-900 text-white py-16 md:py-32 overflow-hidden border-t border-brand-blue/20">
            <div className="container mx-auto px-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
                  <div className="order-2 lg:order-1">
-                    <span className="font-mono text-xs tracking-[0.3em] uppercase text-warm-500 mb-6 block">How We Work</span>
-                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-display leading-tight mb-8">
-                       Precision at every <br/><span className="text-warm-200 italic font-light">phase.</span>
+                    <span className="font-mono text-xs tracking-[0.3em] uppercase text-brand-blue/80 mb-4 md:mb-6 block">How We Work</span>
+                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-display leading-tight mb-6 md:mb-8">
+                       Precision at every <br/><span className="text-brand-blue/60 italic font-light">phase.</span>
                     </h2>
                     <p className="text-warm-100/70 font-light text-lg lg:text-xl leading-relaxed max-w-lg mb-12">
                        We take pride in providing reliable, high-quality engineering services at competitive prices — meeting deadlines and supporting our clients with clear communication at every step of the process.
@@ -151,7 +151,7 @@ export default async function AboutPage() {
                     <ul className="space-y-6">
                        {['Code-compliant structural design', 'Integrated MEP coordination', 'Permitting & code compliance support', 'Construction-phase engineering support'].map((item, i) => (
                            <li key={i} className="flex items-center gap-4 text-warm-50 font-light">
-                             <div className="w-1.5 h-1.5 bg-warm-500 rounded-full" /> {item}
+                             <div className="w-1.5 h-1.5 bg-brand-blue rounded-full" /> {item}
                            </li>
                        ))}
                     </ul>
@@ -179,18 +179,18 @@ export default async function AboutPage() {
         </section>
 
         {/* Our History / Interactive Timeline */}
-        <section className="bg-cream-100 container-none py-24 md:py-40 border-t border-warm-200" aria-labelledby="timeline-heading">
+        <section className="bg-cream-100 container-none py-24 md:py-40 border-t border-brand-blue/10" aria-labelledby="timeline-heading">
           <div className="container mx-auto px-6 max-w-5xl">
             <AnimatedSection className="text-center mb-20 md:mb-32">
-              <span className="font-mono text-xs tracking-[0.3em] uppercase text-warm-500 mb-6 block">Our Journey</span>
+              <span className="font-mono text-xs tracking-[0.3em] uppercase text-brand-blue mb-6 block">Our Journey</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-charcoal-900">
-                Built on <span className="italic font-light text-warm-600">experience.</span>
+                Built on <span className="italic font-light text-brand-blue">experience.</span>
               </h2>
             </AnimatedSection>
             
-            <div className="relative space-y-24 md:space-y-32">
+            <div className="relative space-y-16 md:space-y-24 lg:space-y-32">
               {/* Central vertical line */}
-              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-warm-300 -translate-x-1/2" />
+              <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-brand-blue/20 -translate-x-1/2" />
               
               {[
                 { year: "Est.", title: "Founded in Florida", description: "DH Engineering & Consulting LLC was established with a clear mission: deliver accurate, code-compliant engineering services at competitive prices, with a focus on constructability." },
@@ -202,15 +202,15 @@ export default async function AboutPage() {
                 return (
                   <AnimatedSection key={item.year} delay={idx * 100} className="relative flex flex-col md:flex-row items-center md:justify-between group">
                     {/* Node */}
-                    <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-warm-500 border-4 border-cream-100 flex-shrink-0 -translate-x-1/2 group-hover:scale-150 transition-transform duration-500 z-10" />
+                    <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-brand-blue border-4 border-cream-100 flex-shrink-0 -translate-x-1/2 group-hover:scale-150 transition-transform duration-500 z-10" />
                     
-                    {/* Year background watermark (Mobile hidden) */}
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[150px] md:text-[250px] font-display text-warm-200/40 z-0 pointer-events-none transition-transform duration-1000 group-hover:scale-110">
+                    {/* Year background watermark — hidden on mobile, decorative on desktop only */}
+                    <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[250px] font-display text-brand-blue/20 z-0 pointer-events-none transition-transform duration-1000 group-hover:scale-110">
                        {item.year}
                     </div>
 
                     <div className={`pl-16 md:pl-0 md:w-5/12 z-10 ${isEven ? 'md:text-right md:pr-12' : 'md:text-left md:ml-auto md:pl-12'}`}>
-                      <span className="text-warm-500 font-mono tracking-widest text-sm mb-4 block transition-colors duration-500 group-hover:text-charcoal-900">{item.year}</span>
+                      <span className="text-brand-blue/50 font-mono tracking-widest text-sm mb-4 block transition-colors duration-500 group-hover:text-brand-blue">{item.year}</span>
                       <h3 className="font-display text-3xl md:text-4xl text-charcoal-900 mb-4">{item.title}</h3>
                       <p className="text-charcoal-600 leading-relaxed text-lg font-light">{item.description}</p>
                     </div>
@@ -226,13 +226,13 @@ export default async function AboutPage() {
 
         {/* Team Section (Luxury Upgrade) */}
         {team.length > 0 && (
-          <section className="bg-charcoal-900 py-32 md:py-48 px-6 border-t border-warm-800" aria-labelledby="team-heading">
+          <section className="bg-charcoal-900 py-16 md:py-32 lg:py-48 px-6 border-t border-brand-blue/20" aria-labelledby="team-heading">
             <div className="container mx-auto max-w-7xl">
-              <AnimatedSection className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-24">
+              <AnimatedSection className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 mb-12 md:mb-24">
                 <div>
-                  <span className="font-mono text-xs tracking-[0.3em] uppercase text-warm-500 mb-4 block">Our Team</span>
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-white">
-                    The engineers <br/><span className="italic font-light text-warm-200">behind your project.</span>
+                  <span className="font-mono text-xs tracking-[0.3em] uppercase text-brand-blue/80 mb-4 block">Our Team</span>
+                  <h2 className="text-3xl md:text-5xl lg:text-6xl font-display text-white">
+                    The engineers <br/><span className="italic font-light text-brand-blue/60">behind your project.</span>
                   </h2>
                 </div>
               </AnimatedSection>
@@ -266,13 +266,13 @@ export default async function AboutPage() {
                         </div>
                       </div>
                       
-                      <div className="flex items-start justify-between border-b border-warm-800/50 pb-4 group-hover:border-warm-500 transition-colors duration-500">
+                      <div className="flex items-start justify-between border-b border-warm-800/50 pb-4 group-hover:border-brand-blue transition-colors duration-500">
                         <div>
                           <h3 className="font-display text-xl text-white group-hover:text-warm-100 transition-colors">{member.name}</h3>
-                          <p className="text-xs font-mono uppercase tracking-[0.2em] text-warm-500 mt-2">{member.role}</p>
+                          <p className="text-xs font-mono uppercase tracking-[0.2em] text-brand-blue/60 mt-2">{member.role}</p>
                         </div>
                         {member.linkedIn && (
-                          <a href={member.linkedIn} target="_blank" rel="noopener noreferrer" aria-label={`${member.name} LinkedIn`} className="text-warm-500 hover:text-white transition-colors shrink-0 mt-1 cursor-none">
+                          <a href={member.linkedIn} target="_blank" rel="noopener noreferrer" aria-label={`${member.name} LinkedIn`} className="text-brand-blue/60 hover:text-brand-blue transition-colors shrink-0 mt-1 cursor-none">
                             <LinkedinIcon size={18} strokeWidth={1.5} />
                           </a>
                         )}
@@ -303,9 +303,9 @@ export default async function AboutPage() {
           <div className="absolute inset-0 bg-charcoal-900/60" />
           <div className="relative z-10 text-center px-6">
             <AnimatedSection>
-              <span className="font-mono text-xs tracking-[0.3em] uppercase text-warm-500 mb-6 block">Start a conversation</span>
+              <span className="font-mono text-xs tracking-[0.3em] uppercase text-brand-blue/80 mb-6 block">Start a conversation</span>
               <h2 className="text-display-lg md:text-7xl font-display text-white mb-12 leading-tight">
-                Ready to start your <span className="text-warm-300 italic font-light">project?</span>
+                Ready to start your <span className="text-brand-blue/70 italic font-light">project?</span>
               </h2>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
                 <Link href="/services" className="bg-white text-charcoal-900 px-10 py-5 uppercase tracking-[0.2em] text-xs font-mono hover:bg-warm-100 transition-colors w-full sm:w-auto text-center border border-white">

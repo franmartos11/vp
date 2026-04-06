@@ -19,11 +19,11 @@ function FAQItem({ question, answer }: { question: string; answer: string }) {
         className="w-full flex items-center justify-between py-8 md:py-10 text-left group"
         aria-expanded={open}
       >
-        <span className="font-display text-xl md:text-2xl text-charcoal-900 group-hover:text-warm-600 transition-colors duration-300 pr-8">
+        <span className="font-display text-xl md:text-2xl text-charcoal-900 group-hover:text-brand-blue transition-colors duration-300 pr-8">
           {question}
         </span>
-        <span className="shrink-0 text-warm-400 group-hover:text-warm-600 transition-colors duration-300">
-          <div className={`relative w-8 h-8 rounded-full border border-warm-300 flex items-center justify-center transition-all duration-500 ${open ? 'rotate-180 bg-warm-100 border-warm-400' : ''}`}>
+        <span className="shrink-0 text-brand-blue group-hover:text-brand-blue transition-colors duration-300">
+          <div className={`relative w-8 h-8 rounded-full border border-brand-blue/30 flex items-center justify-center transition-all duration-500 ${open ? 'rotate-180 bg-brand-blue/5 border-brand-blue' : ''}`}>
              <Plus size={16} strokeWidth={1.5} className={`absolute transition-opacity duration-300 ${open ? 'opacity-0' : 'opacity-100'}`} />
              <Minus size={16} strokeWidth={1.5} className={`absolute transition-opacity duration-300 ${open ? 'opacity-100' : 'opacity-0'}`} />
           </div>
@@ -54,7 +54,7 @@ export default function FAQSection() {
         <AnimatedSection className="mb-20">
           <div className="grid-swiss">
             <div className="col-span-12 md:col-span-8">
-              <span className="text-warm-500 font-mono text-xs tracking-widest uppercase mb-6 block">{t("eyebrow")}</span>
+              <span className="text-brand-blue font-mono text-xs tracking-widest uppercase mb-6 block">{t("eyebrow")}</span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-charcoal-900 mb-6 whitespace-pre-line">
                 {t("title")}
               </h2>

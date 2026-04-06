@@ -16,7 +16,7 @@ export default function Footer() {
 
   return (
     <footer className="bg-charcoal-900 text-cream-200 mt-auto" role="contentinfo">
-      <div className="container mx-auto py-16 md:py-20">
+      <div className="container mx-auto px-6 py-16 md:py-20">
         <div className="grid-swiss">
           {/* Brand col */}
           <div className="col-span-12 md:col-span-4 mb-12 md:mb-0">
@@ -52,7 +52,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
-                className="text-warm-500 hover:text-cream-100 transition-colors"
+                className="text-warm-500 hover:text-brand-blue transition-colors"
               >
                 <Linkedin size={18} />
               </a>
@@ -99,7 +99,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-charcoal-600 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="border-t border-brand-blue/10 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-4 text-center md:text-left">
           <div className="flex items-center gap-2">
             <p className="text-warm-400 text-xs">
               &copy; {year} DH Engineering & Consulting LLC. All rights reserved.

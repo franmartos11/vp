@@ -63,7 +63,7 @@ export default async function HomePage() {
         {/* Featured Portfolio */}
         {featuredProjects.length > 0 && (
           <section className="py-24 md:py-32 bg-cream-50" aria-labelledby="portfolio-heading">
-            <div className="container mx-auto">
+            <div className="container mx-auto px-6">
               <AnimatedSection className="flex items-end justify-between mb-12">
                 <SectionHeading
                   eyebrow="Selected Works"
@@ -71,7 +71,7 @@ export default async function HomePage() {
                 />
                 <Link
                   href="/portfolio"
-                  className="hidden md:flex items-center gap-2 text-sm text-warm-500 hover:text-charcoal-900 transition-colors"
+                  className="hidden md:flex items-center gap-2 text-sm text-brand-blue hover:text-brand-blue-dark transition-colors"
                 >
                   View all <ArrowRight size={14} />
                 </Link>
@@ -134,8 +134,8 @@ export default async function HomePage() {
                     light
                   />
                 </div>
-                <div className="col-span-12 md:col-span-4 md:col-start-9 mt-8 md:mt-0 flex justify-start md:justify-end">
-                  <Link href="/contact" className="btn-outline border-cream-100 text-cream-100 hover:bg-cream-100 hover:text-charcoal-900">
+                <div className="col-span-12 md:col-span-4 md:col-start-9 mt-6 md:mt-0 flex justify-start md:justify-end">
+                  <Link href="/contact" className="btn-outline border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white">
                     Contact us <ArrowRight size={14} />
                   </Link>
                 </div>

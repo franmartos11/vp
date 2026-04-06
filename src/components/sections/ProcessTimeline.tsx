@@ -27,7 +27,7 @@ export function ProcessTimeline() {
         </AnimatedSection>
 
         <div className="max-w-6xl mx-auto relative">
-          <div className="space-y-10 lg:space-y-24">
+          <div className="space-y-8 md:space-y-16 lg:space-y-24">
             {[0, 1, 2, 3].map((index) => {
               const num = t(`steps.${index}.num` as any);
               const title = t(`steps.${index}.title` as any);
@@ -36,7 +36,7 @@ export function ProcessTimeline() {
               return (
               <AnimatedSection 
                  key={index} 
-                 className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
+                 className={`flex flex-col md:flex-row items-start md:items-center gap-6 md:gap-12 lg:gap-16 ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
               >
                 {/* Visual Node / Image */}
                 <div className="w-full md:w-1/2 relative h-[250px] md:h-[450px] overflow-hidden group border border-warm-200 shadow-xl">
@@ -50,17 +50,17 @@ export function ProcessTimeline() {
                    />
                    <div className="absolute inset-0 bg-charcoal-900/10 mix-blend-multiply" />
                    {/* Number overlay */}
-                   <div className={`absolute bottom-0 bg-white/90 backdrop-blur-sm px-6 py-4 ${index % 2 === 0 ? 'right-0' : 'left-0'}`}>
-                      <span className="text-4xl md:text-5xl font-display text-charcoal-900 leading-none">{num}</span>
+                   <div className={`absolute bottom-0 bg-white/95 backdrop-blur-sm border-l-4 border-brand-blue px-6 py-4 ${index % 2 === 0 ? 'right-0' : 'left-0'}`}>
+                      <span className="text-3xl md:text-5xl font-display text-charcoal-900 leading-none">{num}</span>
                    </div>
                 </div>
                 
                 {/* Content */}
-                <div className="w-full md:w-1/2 relative bg-transparent p-6 md:p-8">
-                   <span className="text-xs tracking-widest uppercase text-charcoal-600 font-mono mb-4 block">Stage {num}</span>
+                <div className="w-full md:w-1/2 relative bg-transparent px-0 py-4 md:p-8">
+                   <span className="text-xs tracking-widest uppercase text-brand-blue font-mono mb-4 block">Stage {num}</span>
                    <h3 className="text-2xl md:text-4xl font-display text-charcoal-900 mb-6">{title}</h3>
                    <p className="text-charcoal-700 font-light leading-relaxed md:max-w-md text-lg">{desc}</p>
-                   <div className="mt-8 w-12 h-px bg-warm-300" />
+                   <div className="mt-8 w-12 h-px bg-brand-blue" />
                 </div>
               </AnimatedSection>
             )})}

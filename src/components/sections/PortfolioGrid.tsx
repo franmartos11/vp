@@ -53,8 +53,8 @@ export default function PortfolioGrid({ projects }: PortfolioGridProps) {
             aria-pressed={activeFilter === f}
             className={`px-4 py-2 text-xs tracking-widest uppercase transition-all duration-300 ${
               activeFilter === f
-                ? "bg-charcoal-900 text-cream-100"
-                : "bg-transparent border border-warm-200 text-warm-500 hover:border-charcoal-900 hover:text-charcoal-900"
+                ? "bg-brand-blue text-white"
+                : "bg-transparent border border-warm-200 text-warm-500 hover:border-brand-blue hover:text-brand-blue"
             }`}
           >
             {t(`filters.${f}` as any)}

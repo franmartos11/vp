@@ -44,7 +44,7 @@ export default function Nav() {
         }`}
         aria-label="Main navigation"
       >
-        <nav className="container mx-auto flex items-center justify-between h-16 md:h-20">
+        <nav className="container mx-auto px-5 md:px-6 flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link
             href="/"
@@ -67,7 +67,7 @@ export default function Nav() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`nav-link ${pathname.startsWith(link.href) ? "active text-brand-blue" : ""} ${!scrolled && isHome ? "text-white hover:text-white/80" : ""}`}
+                  className={`nav-link ${pathname.startsWith(link.href) ? "active text-brand-blue font-semibold" : ""} ${!scrolled && isHome ? "text-white hover:text-white/80" : ""}`}
                 >
                   {link.label}
                 </Link>
@@ -146,7 +146,7 @@ export default function Nav() {
                 animate={{ opacity: 1, y: 0, transition: { delay: 0.3, duration: 0.4, ease: [0.16, 1, 0.3, 1] } }}
                 className="mt-8 flex justify-center"
               >
-                <Link href="/contact" className="btn-primary w-full max-w-sm text-center bg-charcoal-900 text-white hover:bg-brand-blue transition-colors uppercase tracking-widest text-sm font-semibold py-4">
+                <Link href="/contact" className="btn-primary w-full max-w-sm text-center bg-brand-blue text-white hover:bg-brand-blue-dark border border-brand-blue transition-colors uppercase tracking-widest text-sm font-semibold py-4">
                   {t("start_project")}
                 </Link>
               </motion.div>
