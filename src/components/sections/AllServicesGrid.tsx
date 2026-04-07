@@ -128,7 +128,7 @@ export function AllServicesGrid() {
                 </span>
               </h2>
             </div>
-              <p className="text-charcoal-600 font-light text-base md:text-lg max-w-xs md:max-w-sm leading-relaxed md:text-right">
+              <p className="text-lg font-light text-charcoal-600 max-w-sm leading-relaxed md:text-right">
                 Comprehensive structural and MEP solutions — from design to
                 inspection — delivered under one firm.
             </p>

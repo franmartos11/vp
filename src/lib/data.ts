@@ -54,7 +54,7 @@ export const FALLBACK_SERVICES = [
     title: "STRUCTURAL ENGINEERING", 
     slug: { current: "structural-engineering" }, 
     shortDescription: "We provide comprehensive structural engineering services for residential and commercial projects, including single- and multi-family developments, as well as low- and mid-rise buildings.",
-    coverImageUrl: "https://images.unsplash.com/photo-1541888081198-bc4a7e9da1ca?w=1600&auto=format",
+    coverImageUrl: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&auto=format",
     keyDeliverables: ["Structural System Design", "Shop Drawings Preparation", "Code-Compliant Solutions", "Constructability Optimization"]
   },
   { 
@@ -72,7 +72,7 @@ export const FALLBACK_SERVICES = [
     title: "STRUCTURAL INSPECTIONS", 
     slug: { current: "structural-inspections" }, 
     shortDescription: "We provide structural inspection services throughout the construction process to verify that the work is performed in accordance with approved plans and applicable codes.",
-    coverImageUrl: "https://images.unsplash.com/photo-1502444330042-d1a1ddf971b1?w=1600&auto=format",
+    coverImageUrl: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1600&auto=format",
     keyDeliverables: ["Construction Phase Inspections", "Special Inspector Duties", "Threshold Building Inspections", "Certification Letters & Reports"]
   },
   { 

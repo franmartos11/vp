@@ -6,6 +6,16 @@ import { Save, Image as ImageIcon, Plus, Trash2, ArrowLeft } from "lucide-react"
 import Image from "next/image";
 import Link from "next/link";
 
+const ENGINEERING_SERVICES = [
+  { key: "structural-engineering", label: "Structural Engineering" },
+  { key: "mep-engineering", label: "MEP Engineering" },
+  { key: "building-recertifications", label: "Building Recertifications" },
+  { key: "structural-inspections", label: "Structural Inspections" },
+  { key: "shop-drawings", label: "Shop Drawings" },
+  { key: "permitting", label: "Permitting & Compliance" },
+  { key: "as-built", label: "As-Built Evaluations" },
+] as const;
+
 interface ProjectFormProps {
   initialData?: any;
 }
@@ -39,13 +49,10 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
   const uploadImage = async (e: React.ChangeEvent<HTMLInputElement>, type: 'cover' | 'gallery') => {
     const file = e.target.files?.[0];
     if (!file) return;
-
     const data = new FormData();
     data.append("file", file);
-
     const res = await fetch("/api/upload", { method: "POST", body: data });
     const { url } = await res.json();
-
     if (type === 'cover') {
       setFormData({ ...formData, coverImage: url });
     } else {
@@ -53,27 +60,24 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
     }
   };
 
-  const handleMaterialAdd = (lang: 'en'|'es') => {
-     if (lang === 'en') {
-       setFormData({ ...formData, materials: [...formData.materials, ""] });
-     } else {
-       setFormData({ ...formData, materialsEs: [...formData.materialsEs, ""] });
-     }
+  const toggleScope = (key: string) => {
+    const current: string[] = Array.isArray(formData.materials) ? formData.materials : [];
+    const updated = current.includes(key)
+      ? current.filter((k) => k !== key)
+      : [...current, key];
+    setFormData({ ...formData, materials: updated });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-
     const endpoint = initialData ? `/api/projects/${initialData.id}` : "/api/projects";
     const method = initialData ? "PUT" : "POST";
-
     const res = await fetch(endpoint, {
       method,
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     });
-
     if (res.ok) {
       router.push("/admin/projects");
       router.refresh();
@@ -144,12 +148,12 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
 
            <div className="grid grid-cols-2 gap-6">
              <div className="space-y-2">
-               <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700 block">Descripción Narrativa (Visión - EN)</label>
-               <textarea rows={6} value={formData.description} onChange={(e) => setFormData({...formData, description: e.target.value})} className="w-full border border-warm-200 p-4 outline-none focus:border-warm-500 text-sm text-charcoal-700 rounded-sm" placeholder="The architectural vision behind..." />
+               <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700 block">Descripción Narrativa (EN)</label>
+               <textarea rows={6} value={formData.description} onChange={(e) => setFormData({...formData, description: e.target.value})} className="w-full border border-warm-200 p-4 outline-none focus:border-warm-500 text-sm text-charcoal-700 rounded-sm" placeholder="Describe the engineering challenge, scope, and outcome..." />
              </div>
              <div className="space-y-2">
-               <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700 block">Descripción Narrativa (Visión - ES)</label>
-               <textarea rows={6} value={formData.descriptionEs} onChange={(e) => setFormData({...formData, descriptionEs: e.target.value})} className="w-full border border-warm-200 p-4 outline-none focus:border-warm-500 text-sm text-charcoal-700 rounded-sm" placeholder="La visión arquitectónica detrás del trabajo..." />
+               <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700 block">Descripción Narrativa (ES)</label>
+               <textarea rows={6} value={formData.descriptionEs} onChange={(e) => setFormData({...formData, descriptionEs: e.target.value})} className="w-full border border-warm-200 p-4 outline-none focus:border-warm-500 text-sm text-charcoal-700 rounded-sm" placeholder="Describe el desafío de ingeniería, alcance y resultado..." />
              </div>
            </div>
 
@@ -159,23 +163,21 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
            </label>
         </div>
 
-        {/* Right Col - Media & Misc */}
+        {/* Right Col - Media & Technical */}
         <div className="space-y-8">
-           
            <div className="bg-white p-8 rounded-xl shadow-sm border border-warm-200">
              <h2 className="text-sm font-mono tracking-widest uppercase text-warm-500 mb-6 border-b border-warm-100 pb-4 flex justify-between items-center">
                 2. Portada Principal
              </h2>
              <div className="relative aspect-[4/3] w-full bg-warm-100 border-2 border-dashed border-warm-300 rounded-lg overflow-hidden flex items-center justify-center hover:bg-warm-200 transition-colors group cursor-pointer">
                {formData.coverImage ? (
-                  <Image src={formData.coverImage} alt="Portad" fill className="object-cover" />
+                  <Image src={formData.coverImage} alt="Portada" fill className="object-cover" />
                ) : (
                   <div className="text-center text-warm-500 flex flex-col items-center">
                     <ImageIcon size={32} className="mb-2" />
                     <span className="font-mono text-[10px] uppercase tracking-widest">Click para Upload</span>
                   </div>
                )}
-               {/* Hover Overlay */}
                {formData.coverImage && (
                   <div className="absolute inset-0 bg-charcoal-900/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                      <span className="text-white font-mono text-xs tracking-widest uppercase bg-charcoal-900/80 px-4 py-2 border border-white/20">Cambiar Foto</span>
@@ -192,24 +194,25 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
 
            <div className="bg-white p-8 rounded-xl shadow-sm border border-warm-200">
              <h2 className="text-sm font-mono tracking-widest uppercase text-warm-500 mb-6 border-b border-warm-100 pb-4">
-                3. Technical Sheet (Detalles Laterales)
+                3. Project Data (Technical Sheet)
              </h2>
              <div className="grid grid-cols-2 gap-4">
-               <textarea rows={6} value={formData.technicalSheet} onChange={(e) => setFormData({...formData, technicalSheet: e.target.value})} className="w-full border border-warm-200 p-4 outline-none focus:border-warm-500 text-sm font-mono bg-warm-50 rounded-sm leading-relaxed" placeholder="Lot: 15,000 sq ft&#10;Living Area: 6,500 sq ft" />
-               <textarea rows={6} value={formData.technicalSheetEs} onChange={(e) => setFormData({...formData, technicalSheetEs: e.target.value})} className="w-full border border-warm-200 p-4 outline-none focus:border-warm-500 text-sm font-mono bg-warm-50 rounded-sm leading-relaxed" placeholder="Lote: 15,000 sq ft&#10;Área: 6,500 sq ft" />
+               <textarea rows={6} value={formData.technicalSheet} onChange={(e) => setFormData({...formData, technicalSheet: e.target.value})} className="w-full border border-warm-200 p-4 outline-none focus:border-warm-500 text-sm font-mono bg-warm-50 rounded-sm leading-relaxed" placeholder={"Structural System: Reinforced concrete\nArea: 6,500 sq ft\nStories: 3\nCode: FBC 2023"} />
+               <textarea rows={6} value={formData.technicalSheetEs} onChange={(e) => setFormData({...formData, technicalSheetEs: e.target.value})} className="w-full border border-warm-200 p-4 outline-none focus:border-warm-500 text-sm font-mono bg-warm-50 rounded-sm leading-relaxed" placeholder={"Sistema Estructural: Concreto reforzado\nÁrea: 6,500 sq ft\nPisos: 3\nCódigo: FBC 2023"} />
              </div>
-             <p className="text-[10px] text-warm-400 font-mono tracking-wide mt-2 uppercase">Usa un renglón para cada dato (EN / ES).</p>
+             <p className="text-[10px] text-warm-400 font-mono tracking-wide mt-2 uppercase">Formato: Etiqueta: Valor (un dato por línea). EN / ES.</p>
            </div>
         </div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        {/* Testimonial & Materials */}
+        {/* Engineering Scope + Testimonial */}
         <div className="bg-white p-8 rounded-xl shadow-sm border border-warm-200">
           <h2 className="text-sm font-mono tracking-widest uppercase text-warm-500 mb-6 border-b border-warm-100 pb-4">
-             4. Relato (Materiales y Testimonio)
+             4. Engineering Scope & Testimonio
           </h2>
           
+          {/* Testimonials */}
           <div className="grid grid-cols-2 gap-6 mb-10">
              <div className="space-y-6">
                <div>
@@ -217,8 +220,8 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
                  <textarea rows={3} value={formData.testimonial.quote} onChange={(e) => setFormData({...formData, testimonial: {...formData.testimonial, quote: e.target.value}})} className="w-full border border-warm-200 p-4 outline-none focus:border-warm-500 text-sm font-serif italic text-charcoal-700 rounded-sm" placeholder="The execution level was beyond words..." />
                </div>
                <div>
-                 <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700 mb-2 block">Autor de Cita (EN)</label>
-                 <input type="text" value={formData.testimonial.author} onChange={(e) => setFormData({...formData, testimonial: {...formData.testimonial, author: e.target.value}})} className="w-full border-b border-warm-300 p-2 outline-none focus:border-warm-500 text-sm font-mono" placeholder="Sarah J. - Homeowner" />
+                 <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700 mb-2 block">Autor (EN)</label>
+                 <input type="text" value={formData.testimonial.author} onChange={(e) => setFormData({...formData, testimonial: {...formData.testimonial, author: e.target.value}})} className="w-full border-b border-warm-300 p-2 outline-none focus:border-warm-500 text-sm font-mono" placeholder="John D. — Property Owner" />
                </div>
              </div>
              
@@ -228,68 +231,44 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
                  <textarea rows={3} value={formData.testimonialEs?.quote || ""} onChange={(e) => setFormData({...formData, testimonialEs: {...(formData.testimonialEs || {quote:"", author:""}), quote: e.target.value}})} className="w-full border border-warm-200 p-4 outline-none focus:border-warm-500 text-sm font-serif italic text-charcoal-700 rounded-sm" placeholder="El nivel de ejecución superó nuestras expectativas..." />
                </div>
                <div>
-                 <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700 mb-2 block">Autor de Cita (ES)</label>
-                 <input type="text" value={formData.testimonialEs?.author || ""} onChange={(e) => setFormData({...formData, testimonialEs: {...(formData.testimonialEs || {quote:"", author:""}), author: e.target.value}})} className="w-full border-b border-warm-300 p-2 outline-none focus:border-warm-500 text-sm font-mono" placeholder="Sarah J. - Propietaria" />
+                 <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700 mb-2 block">Autor (ES)</label>
+                 <input type="text" value={formData.testimonialEs?.author || ""} onChange={(e) => setFormData({...formData, testimonialEs: {...(formData.testimonialEs || {quote:"", author:""}), author: e.target.value}})} className="w-full border-b border-warm-300 p-2 outline-none focus:border-warm-500 text-sm font-mono" placeholder="Juan D. — Propietario" />
                </div>
              </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
-            <div>
-               <div className="flex justify-between items-center mb-4">
-                 <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700">Materiales Clave (EN)</label>
-                 <button type="button" onClick={() => handleMaterialAdd("en")} className="text-xs uppercase tracking-widest font-mono text-warm-500 hover:text-charcoal-900 border border-warm-300 px-3 py-1 rounded-full flex items-center gap-1 transition-colors">
-                    <Plus size={10} /> Añadir
-                 </button>
-               </div>
-               <div className="space-y-2">
-                 {formData.materials.map((mat: string, idx: number) => (
-                   <div key={idx} className="flex gap-2">
-                     <input type="text" value={mat} onChange={(e) => {
-                       const newMats = [...formData.materials];
-                       newMats[idx] = e.target.value;
-                       setFormData({...formData, materials: newMats});
-                     }} className="flex-1 border-b border-warm-200 p-2 outline-none focus:border-warm-500 text-sm font-mono bg-warm-50" placeholder="Ex: Carrara Marble" />
-                     <button type="button" onClick={() => {
-                       const newMats = [...formData.materials];
-                       newMats.splice(idx, 1);
-                       setFormData({...formData, materials: newMats});
-                     }} className="p-2 text-warm-300 hover:text-red-500 transition-colors">
-                       <Trash2 size={16} />
-                     </button>
-                   </div>
-                 ))}
-                 {formData.materials.length === 0 && <p className="text-xs text-warm-400 italic font-mono uppercase">Sin materiales declarados.</p>}
-               </div>
+          {/* Engineering Scope checkboxes */}
+          <div>
+            <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700 block mb-4">
+              Engineering Scope — Servicios de Ingeniería Aplicados
+            </label>
+            <div className="grid grid-cols-2 gap-3">
+              {ENGINEERING_SERVICES.map(({ key, label }) => {
+                const current: string[] = Array.isArray(formData.materials) ? formData.materials : [];
+                const isChecked = current.includes(key);
+                return (
+                  <label
+                    key={key}
+                    className={`flex items-center gap-3 cursor-pointer p-3 border rounded-md transition-all duration-200 ${
+                      isChecked
+                        ? "border-brand-blue bg-brand-blue/5 text-charcoal-900"
+                        : "border-warm-200 text-warm-500 hover:border-warm-400"
+                    }`}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={isChecked}
+                      onChange={() => toggleScope(key)}
+                      className="w-4 h-4"
+                    />
+                    <span className="text-xs font-mono">{label}</span>
+                  </label>
+                );
+              })}
             </div>
-            
-            <div>
-               <div className="flex justify-between items-center mb-4">
-                 <label className="text-xs uppercase tracking-widest font-mono text-charcoal-700">Materiales Clave (ES)</label>
-                 <button type="button" onClick={() => handleMaterialAdd("es")} className="text-xs uppercase tracking-widest font-mono text-warm-500 hover:text-charcoal-900 border border-warm-300 px-3 py-1 rounded-full flex items-center gap-1 transition-colors">
-                    <Plus size={10} /> Añadir
-                 </button>
-               </div>
-               <div className="space-y-2">
-                 {formData.materialsEs.map((mat: string, idx: number) => (
-                   <div key={idx} className="flex gap-2">
-                     <input type="text" value={mat} onChange={(e) => {
-                       const newMats = [...formData.materialsEs];
-                       newMats[idx] = e.target.value;
-                       setFormData({...formData, materialsEs: newMats});
-                     }} className="flex-1 border-b border-warm-200 p-2 outline-none focus:border-warm-500 text-sm font-mono bg-warm-50" placeholder="Ej: Mármol Carrara" />
-                     <button type="button" onClick={() => {
-                       const newMats = [...formData.materialsEs];
-                       newMats.splice(idx, 1);
-                       setFormData({...formData, materialsEs: newMats});
-                     }} className="p-2 text-warm-300 hover:text-red-500 transition-colors">
-                       <Trash2 size={16} />
-                     </button>
-                   </div>
-                 ))}
-                 {formData.materialsEs.length === 0 && <p className="text-xs text-warm-400 italic font-mono uppercase">Sin materiales declarados.</p>}
-               </div>
-            </div>
+            <p className="text-[10px] text-warm-400 font-mono mt-4 uppercase tracking-wide">
+              Selecciona todos los servicios aplicados en este proyecto.
+            </p>
           </div>
         </div>
 
@@ -325,7 +304,7 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
              ))}
              {formData.gallery.length === 0 && (
                <div className="col-span-full py-12 text-center text-warm-400 font-mono text-xs uppercase tracking-wide border-2 border-dashed border-warm-200 rounded-lg">
-                 Agrega fotos para construir el layout visual.
+                 Agrega fotos del proyecto terminado.
                </div>
              )}
           </div>
@@ -337,7 +316,7 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
           <ArrowLeft size={14} /> Cancelar y Volver
         </Link>
         <button type="submit" disabled={loading} className="px-10 py-4 bg-warm-500 text-charcoal-900 font-mono tracking-[0.2em] text-xs uppercase hover:bg-white transition-colors flex items-center gap-2 disabled:opacity-50">
-          {loading ? "Guardando Integridad..." : <><Save size={16} /> Publicar Proyecto</>}
+          {loading ? "Guardando..." : <><Save size={16} /> Publicar Proyecto</>}
         </button>
       </div>
 

@@ -15,6 +15,7 @@ interface ProjectCardProps {
     projectType: string;
     completionYear?: number | null;
     location?: string | null;
+    description?: string | null;
     coverImageUrl?: string | null;
     coverImage?: string | null;
   };
@@ -29,7 +30,7 @@ const TYPE_LABELS: Record<string, string> = {
 };
 
 export default function ProjectCard({ project, priority = false }: ProjectCardProps) {
-  const imageUrl = project.coverImage || project.coverImageUrl || "https://images.unsplash.com/photo-1600607687920-4e4d3e45c1b1?w=900&auto=format";
+  const imageUrl = project.coverImage || project.coverImageUrl || "https://images.unsplash.com/photo-1581092335397-9fa73b1e5e6a?w=900&auto=format";
   const slugTarget = typeof project.slug === 'string' ? project.slug : project.slug.current;
 
   return (
@@ -68,9 +69,14 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
             variants={textSlideUp}
             className="absolute bottom-0 left-0 right-0 p-5 text-cream-100"
           >
-            <p className="flex items-center gap-2 text-xs tracking-wide uppercase text-warm-300 mb-1">
+            <p className="flex items-center gap-2 text-xs tracking-wide uppercase text-warm-300 mb-2">
               View project <ArrowRight size={12} />
             </p>
+            {project.description && (
+              <p className="text-xs text-warm-100/80 font-light leading-relaxed line-clamp-2">
+                {project.description.slice(0, 100)}{project.description.length > 100 ? "…" : ""}
+              </p>
+            )}
           </motion.div>
         </div>
 

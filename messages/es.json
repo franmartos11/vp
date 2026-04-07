@@ -47,26 +47,30 @@
   "ProcessTimeline": {
     "eyebrow": "Cómo Trabajamos",
     "title": "Un proceso fluido, cada vez.",
+    "intro": "Cada proyecto de ingeniería exitoso comienza con un proceso claro y estructurado. En DH Engineering & Consulting, seguimos una metodología de cuatro etapas — desde la definición inicial del proyecto hasta el soporte activo en la construcción — garantizando precisión, cumplimiento de códigos y entregas a tiempo en toda Florida.",
+    "stage_label": "Etapa",
+    "cta_text": "¿Listo para empezar su proyecto?",
+    "cta_link_label": "Solicitar una Consulta",
     "steps": [
       {
         "num": "01",
         "title": "Consulta Inicial",
-        "desc": "Comenzamos con un entendimiento profundo del alcance del proyecto, condiciones del sitio, códigos locales y parámetros de presupuesto para definir una hoja de ruta clara."
+        "desc": "Comenzamos con un entendimiento profundo del alcance del proyecto, condiciones del sitio, códigos locales y parámetros de presupuesto para definir una hoja de ruta clara. Esta fase de descubrimiento nos permite identificar posibles conflictos de código desde temprano, alinear la ingeniería con la intención arquitectónica y proporcionar un cronograma y proyecciones de costos precisos desde el primer día."
       },
       {
         "num": "02",
         "title": "Diseño Estructural y MEP",
-        "desc": "Desarrollamos diseños precisos y conformes al código, coordinando todas las disciplinas bajo una sola firma para eliminar conflictos y revisiones costosas."
+        "desc": "Desarrollamos diseños precisos y conformes al código, coordinando todas las disciplinas bajo una sola firma para eliminar conflictos y revisiones costosas. Trabajando bajo el Florida Building Code, producimos planos sellados listos para la presentación de permisos, incluyendo cálculos estructurales completos y diseños MEP coordinados."
       },
       {
         "num": "03",
         "title": "Permisos y Cumplimiento",
-        "desc": "Preparamos y presentamos toda la documentación requerida ante el municipio, gestionando el proceso de permisos para que tu proyecto se mantenga en cronograma."
+        "desc": "Preparamos y presentamos toda la documentación requerida ante el municipio, gestionando el proceso de permisos para que el proyecto se mantenga en cronograma. Nuestro equipo tiene amplia experiencia navegando las oficinas de permisos en Florida, reduciendo ciclos de revisión y asegurando que tu proyecto pase a construcción sin demoras."
       },
       {
         "num": "04",
         "title": "Soporte de Construcción",
-        "desc": "Permanecemos involucrados durante la construcción, brindando respuestas a RFIs, inspecciones de campo y evaluaciones de as-built para garantizar la fiel ejecución."
+        "desc": "Permanecemos involucrados durante la construcción, brindando respuestas a RFIs, inspecciones de campo y evaluaciones de as-built para garantizar la fiel ejecución de la ingeniería. Nuestra participación no termina con la aprobación del permiso — proporcionamos la supervisión necesaria para asegurar que lo construido coincida con lo diseñado."
       }
     ]
   },
@@ -158,11 +162,15 @@
     "back": "Volver al Portafolio",
     "vision": "La Visión",
     "dossier": "Dossier del Proyecto",
-    "type_label": "Tipo",
-    "materials_label": "Materiales Clave",
+    "type_label": "Tipo de Proyecto",
+    "scope_label": "Alcance de Ingeniería",
+    "location_label": "Ubicación",
+    "year_label": "Año de Entrega",
     "inquire": "Consultar Sobre el Proyecto",
     "continue": "Continuar Explorando",
     "view_all": "Ver Todos los Proyectos",
+    "prev_project": "Proyecto Anterior",
+    "next_project": "Proyecto Siguiente",
     "types": {
       "residential": "Residencial",
       "commercial": "Comercial",

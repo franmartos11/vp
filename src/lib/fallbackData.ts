@@ -66,7 +66,7 @@ export const FALLBACK_PROJECTS = [
     projectType: 'interior', 
     completionYear: 2024, 
     location: 'Miami, FL', 
-    coverImageUrl: 'https://images.unsplash.com/photo-1600607687920-4e4d3e45c1b1?w=900&auto=format' 
+    coverImageUrl: 'https://images.unsplash.com/photo-1581092335397-9fa73b1e5e6a?w=900&auto=format' 
   },
 ];
 

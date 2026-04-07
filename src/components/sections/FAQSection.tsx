@@ -51,18 +51,12 @@ export default function FAQSection() {
   return (
     <section className="bg-cream-50 py-24 md:py-32" aria-label="Frequently asked questions">
       <div className="container mx-auto px-6">
-        <AnimatedSection className="mb-20">
-          <div className="grid-swiss">
-            <div className="col-span-12 md:col-span-8">
-              <span className="text-brand-blue font-mono text-xs tracking-widest uppercase mb-6 block">{t("eyebrow")}</span>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-charcoal-900 mb-6 whitespace-pre-line">
-                {t("title")}
-              </h2>
-              <p className="text-xl font-light text-charcoal-600 max-w-2xl">
-                {t("subtitle")}
-              </p>
-            </div>
-          </div>
+        <AnimatedSection className="max-w-3xl mb-20">
+          <SectionHeading
+            eyebrow={t("eyebrow")}
+            title={t("title")}
+            subtitle={t("subtitle")}
+          />
         </AnimatedSection>
 
         <AnimatedSection>

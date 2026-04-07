@@ -21,6 +21,7 @@ type Project = {
   projectType: string;
   completionYear?: number | null;
   location?: string | null;
+  description?: string | null;
   coverImage?: string | null;
   coverImageUrl?: string | null;
 };

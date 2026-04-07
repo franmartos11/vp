@@ -47,26 +47,30 @@
   "ProcessTimeline": {
     "eyebrow": "How We Work",
     "title": "A seamless process, every time.",
+    "intro": "Every successful engineering project starts with a clear, structured process. At DH Engineering & Consulting, we follow a four-stage methodology — from initial project scoping to active construction support — ensuring precision, code compliance, and on-time delivery across Florida.",
+    "stage_label": "Stage",
+    "cta_text": "Ready to start your project?",
+    "cta_link_label": "Request a Consultation",
     "steps": [
       {
         "num": "01",
         "title": "Project Intake",
-        "desc": "We start with a thorough understanding of your project scope, site conditions, local codes, and budget parameters to define a clear engineering roadmap."
+        "desc": "We start with a thorough understanding of your project scope, site conditions, local codes, and budget parameters to define a clear engineering roadmap. This discovery phase allows us to identify potential code conflicts early, align engineering with architectural intent, and provide accurate timeline and cost projections from day one."
       },
       {
         "num": "02",
         "title": "Structural & MEP Design",
-        "desc": "Our team develops accurate, code-compliant structural and MEP designs, coordinating all disciplines under one roof to eliminate conflicts and costly revisions."
+        "desc": "Our team develops accurate, code-compliant structural and MEP designs, coordinating all disciplines under one roof to eliminate conflicts and costly revisions. Working under the Florida Building Code, we produce stamped drawings ready for permit submission, including full structural calculations and coordinated MEP layouts."
       },
       {
         "num": "03",
         "title": "Permitting & Compliance",
-        "desc": "We prepare and submit all required documentation to the local municipality, managing the entire permitting process so your project stays on schedule."
+        "desc": "We prepare and submit all required documentation to the local municipality, managing the entire permitting process so your project stays on schedule. Our team has extensive experience navigating Florida's permitting offices, reducing revision cycles and ensuring your project moves to construction without delays."
       },
       {
         "num": "04",
         "title": "Construction Support",
-        "desc": "We remain engaged through construction, providing RFI responses, field inspections, and as-built evaluations to ensure faithful execution of the engineering design."
+        "desc": "We remain engaged through construction, providing RFI responses, field inspections, and as-built evaluations to ensure faithful execution of the engineering design. Our involvement doesn't stop at permit approval — we provide the engineering oversight needed to ensure what's built matches what was designed."
       }
     ]
   },
@@ -158,11 +162,15 @@
     "back": "Back to Portfolio",
     "vision": "The Vision",
     "dossier": "Project Dossier",
-    "type_label": "Type",
-    "materials_label": "Key Materials",
+    "type_label": "Project Type",
+    "scope_label": "Engineering Scope",
+    "location_label": "Location",
+    "year_label": "Completion Year",
     "inquire": "Inquire About Project",
     "continue": "Continue Exploring",
     "view_all": "View All Projects",
+    "prev_project": "Previous Project",
+    "next_project": "Next Project",
     "types": {
       "residential": "Residential",
       "commercial": "Commercial",

@@ -95,7 +95,7 @@ export default async function ServiceDetailPage({ params }: Props) {
 
   const coverUrl =
     service.coverImage ||
-    "https://images.unsplash.com/photo-1600607687920-4e4d3e45c1b1?w=2000&auto=format";
+    "https://images.unsplash.com/photo-1581092335397-9fa73b1e5e6a?w=2000&auto=format";
 
   const rawGallery = service.gallery ? JSON.parse(service.gallery) : [];
   const galleryImages =
@@ -320,7 +320,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                         <Image
                           src={
                             project.coverImage ||
-                            "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200"
+                            "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=1200"
                           }
                           alt={project.title}
                           fill

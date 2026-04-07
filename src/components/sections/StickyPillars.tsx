@@ -10,7 +10,7 @@ import { useTranslations } from "next-intl";
 
 const images = [
   "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&auto=format",
-  "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1600&auto=format",
+  "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=1600&auto=format",
   "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&auto=format",
 ];
 

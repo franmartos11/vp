@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -11,6 +11,7 @@ interface LightboxProps {
 export default function GalleryLightbox({ images }: LightboxProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
 
   useEffect(() => {
     if (isOpen) {
@@ -40,6 +41,18 @@ export default function GalleryLightbox({ images }: LightboxProps) {
   const nextImage = (e: React.MouseEvent) => {
     e.stopPropagation();
     setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX.current === null) return;
+    const delta = e.changedTouches[0].clientX - touchStartX.current;
+    if (delta > 50) setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+    else if (delta < -50) setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+    touchStartX.current = null;
   };
 
   return (
@@ -72,6 +85,8 @@ export default function GalleryLightbox({ images }: LightboxProps) {
         <div 
           className="fixed inset-0 z-[100] bg-charcoal-900/98 flex items-center justify-center backdrop-blur-md"
           onClick={closeLightbox}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           <button 
             className="absolute top-6 right-6 text-warm-300 hover:text-white transition-colors z-[110]"

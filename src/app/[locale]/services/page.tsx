@@ -89,7 +89,7 @@ export default async function ServicesPage() {
             const isEven = i % 2 !== 0; // Alternating logic
             const imageUrl =
               service.coverImage ||
-              "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&auto=format";
+              "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=1200&auto=format";
 
             return (
               <AnimatedSection key={service.id} delay={i * 100}>
@@ -149,7 +149,7 @@ export default async function ServicesPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
                 <div className="order-2 lg:order-1 relative aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1542621334-a254cf47733d?q=80&w=2070&auto=format&fit=crop"
+                    src="https://images.unsplash.com/photo-1636690598890-e5e52e4a26c8?q=80&w=2070&auto=format&fit=crop"
                     alt="Technology and blueprint review"
                     fill
                     className="object-cover opacity-80"
@@ -262,7 +262,7 @@ export default async function ServicesPage() {
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-charcoal-900/90 z-10" />
             <Image
-              src="https://images.unsplash.com/photo-1600607686527-6fb886090705?w=2000&auto=format"
+              src="https://images.unsplash.com/photo-1590650213165-c1fef80648c4?w=2000&auto=format"
               alt="Luxury interior"
               fill
               className="object-cover mix-blend-overlay opacity-30 grayscale"
