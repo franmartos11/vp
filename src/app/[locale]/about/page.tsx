@@ -167,11 +167,12 @@ export default async function AboutPage() {
                     {/* Floating secondary image */}
                     <div className="absolute -bottom-10 -left-10 w-2/3 aspect-[4/3] border-4 border-charcoal-900 shadow-2xl hidden md:block">
                        <Image 
-                         src="https://images.unsplash.com/photo-1636690598890-e5e52e4a26c8?q=80&w=2070" 
+                         src="/services/tech-blueprint.png" 
                          alt="Blueprint detailing"
                          fill
-                         className="object-cover"
+                         className="object-cover opacity-80"
                        />
+                       <div className="absolute inset-0 bg-charcoal-900/20" />
                     </div>
                  </div>
               </div>

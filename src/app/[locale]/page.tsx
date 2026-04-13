@@ -28,13 +28,13 @@ export default async function HomePage() {
   let featuredProjects = await db.project.findMany({
     where: { featured: true },
     orderBy: { order: "asc" },
-    take: 3
+    take: 3,
   });
 
   if (featuredProjects.length === 0) {
     featuredProjects = await db.project.findMany({
       orderBy: { order: "asc" },
-      take: 3
+      take: 3,
     });
   }
 
@@ -42,25 +42,16 @@ export default async function HomePage() {
     <>
       <Nav />
       <main>
-        {/* Hero */}
-        <HeroSection />
 
+        <HeroSection />
+        <AllServicesGrid />
         <InfiniteMarquee />
         <MakersStory />
-
-        {/* Pillars */}
         <StickyPillars />
-
-        {/* All Services Grid */}
-        <AllServicesGrid />
-
-        {/* Stats */}
         <StatsSection />
-        
         <TrustedPartners />
         <ParallaxSeparator />
 
-        {/* Featured Portfolio */}
         {featuredProjects.length > 0 && (
           <section className="py-24 md:py-32 bg-cream-50" aria-labelledby="portfolio-heading">
             <div className="container mx-auto px-6">
@@ -114,8 +105,6 @@ export default async function HomePage() {
         )}
 
         <ProcessTimeline />
-
-        {/* Testimonials */}
         <TestimonialsSection />
 
         {/* CTA Band */}

@@ -7,6 +7,7 @@ import Nav from "@/components/layout/Nav";
 import Footer from "@/components/layout/Footer";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import GalleryLightbox from "@/components/ui/GalleryLightbox";
+import { ServiceContactSection } from "@/components/sections/ServiceContactSection";
 import { db } from "@/lib/db";
 import { getLocale, getTranslations } from "next-intl/server";
 
@@ -145,7 +146,20 @@ export default async function ServiceDetailPage({ params }: Props) {
                 ENGINEERING SERVICES
               </span>
               <h1 className="text-3xl sm:text-4xl md:text-display-lg lg:text-[7rem] font-display text-white mb-6 md:mb-8 leading-[0.95] md:leading-[0.9] drop-shadow-xl max-w-6xl">
-                {service.title}
+                {(() => {
+                  if (!service.title) return null;
+                  const words = service.title.split(' ');
+                  if (words.length <= 1) return service.title;
+                  const half = Math.ceil(words.length / 2);
+                  const firstHalf = words.slice(0, half).join(' ');
+                  const secondHalf = words.slice(half).join(' ');
+                  return (
+                    <>
+                      {firstHalf} <br className="hidden md:block" />
+                      <span className="text-brand-blue italic">{secondHalf}</span>
+                    </>
+                  );
+                })()}
               </h1>
               <p className="text-warm-100/80 text-base md:text-xl lg:text-2xl font-light max-w-3xl leading-relaxed">
                 {service.shortDescription}
@@ -389,34 +403,8 @@ export default async function ServiceDetailPage({ params }: Props) {
           </div>
         </section>
 
-        {/* FINAL CTA */}
-        <section className="bg-brand-blue py-16 md:py-32 lg:py-48 text-center px-6 relative overflow-hidden text-white">
-          {/* Abstract dark texture */}
-          <div className="absolute inset-0 opacity-10 mix-blend-overlay pointer-events-none">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.1)_0,transparent_100%)]" />
-          </div>
-
-          <AnimatedSection className="relative z-10">
-            <span className="font-mono text-xs tracking-[0.3em] uppercase text-white/60 mb-6 block">
-              {t("next_step")}
-            </span>
-            <h2 className="text-3xl md:text-6xl lg:text-7xl font-display text-white mb-6 md:mb-8 leading-tight">
-              {t("ready")}{" "}
-              <span className="italic font-light text-white/70">
-                {t("project")}
-              </span>
-            </h2>
-            <p className="text-white/80 text-base md:text-xl lg:text-2xl mb-10 md:mb-16 max-w-2xl mx-auto font-light leading-relaxed">
-              {t("schedule", { service: service.title.toLowerCase() })}
-            </p>
-            <Link
-              href="/contact"
-              className="inline-flex py-6 px-12 bg-white text-brand-blue font-mono text-sm uppercase tracking-[0.2em] hover:bg-cream-100 transition-colors duration-500 items-center justify-center min-w-[280px]"
-            >
-              {t("inquire")}
-            </Link>
-          </AnimatedSection>
-        </section>
+        {/* FINAL CTA COMPONENT */}
+        <ServiceContactSection />
       </main>
       <Footer />
     </>

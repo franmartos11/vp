@@ -5,7 +5,7 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import { useTranslations } from "next-intl";
 
 const STATS = [
-  { value: 120, suffix: "+", labelKey: "projects_completed" },
+  { value: 580, suffix: "+", labelKey: "projects_completed" },
   { value: 15, suffix: "+", labelKey: "years_experience" },
   { value: 98, suffix: "%", labelKey: "client_satisfaction" },
   { value: 40, suffix: "+", labelKey: "awards" },

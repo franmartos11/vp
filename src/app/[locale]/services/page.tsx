@@ -63,7 +63,7 @@ export default async function ServicesPage() {
                 </span>
                 <h1 className="text-4xl sm:text-5xl md:text-[5.5rem] lg:text-[7rem] font-display text-white leading-[0.9] mb-6 md:mb-8 drop-shadow-2xl">
                   {t("hero_title_1")} <br />
-                  <span className="text-brand-blue/70 italic font-light">
+                  <span className="text-brand-blue italic">
                     {t("hero_title_2")}
                   </span>
                 </h1>
@@ -149,7 +149,7 @@ export default async function ServicesPage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
                 <div className="order-2 lg:order-1 relative aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
                   <Image
-                    src="https://images.unsplash.com/photo-1636690598890-e5e52e4a26c8?q=80&w=2070&auto=format&fit=crop"
+                    src="/services/tech-blueprint.png"
                     alt="Technology and blueprint review"
                     fill
                     className="object-cover opacity-80"

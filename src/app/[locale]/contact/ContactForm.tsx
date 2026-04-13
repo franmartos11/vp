@@ -179,29 +179,6 @@ export function ContactForm() {
               </div>
             </div>
 
-            {/* Budget Pills */}
-            <div>
-              <label className="text-xs tracking-widest uppercase font-mono text-warm-500 mb-4 block">
-                {t("budget_label")}
-              </label>
-              <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2 sm:gap-3">
-                {BUDGET_RANGES.map((range) => (
-                  <button
-                    key={range.value}
-                    type="button"
-                    onClick={() => setBudget(range.value)}
-                    className={`px-3 py-2.5 border text-xs sm:text-sm font-mono tracking-wide transition-all duration-300 text-left sm:text-center ${
-                      budget === range.value
-                        ? "bg-brand-blue border-brand-blue text-white shadow-xl shadow-brand-blue/20"
-                        : "bg-transparent border-warm-300 text-warm-500 hover:border-brand-blue hover:text-brand-blue hover:shadow-md"
-                    }`}
-                  >
-                    {range.label}
-                  </button>
-                ))}
-              </div>
-            </div>
-
             {/* Message */}
             <div className="group">
               <label

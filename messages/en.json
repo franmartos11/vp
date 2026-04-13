@@ -16,7 +16,7 @@
     "headline_trends": "last.",
     "description": "Comprehensive structural and MEP engineering services across Florida. Code-compliant designs with a strong focus on constructability and cost-efficiency.",
     "view_work": "View our services",
-    "start_project": "Start a project",
+    "start_project": "Contact Us",
     "scroll": "Scroll"
   },
   "StickyPillars": {
@@ -65,7 +65,7 @@
       {
         "num": "03",
         "title": "Permitting & Compliance",
-        "desc": "We prepare and submit all required documentation to the local municipality, managing the entire permitting process so your project stays on schedule. Our team has extensive experience navigating Florida's permitting offices, reducing revision cycles and ensuring your project moves to construction without delays."
+        "desc": "We prepare all required documentation for the local municipality, managing the entire permitting process so your project stays on schedule. Our team has extensive experience navigating Florida's permitting offices, reducing revision cycles and ensuring your project moves to construction without delays."
       },
       {
         "num": "04",
@@ -140,8 +140,8 @@
       "all": "All",
       "residential": "Residential",
       "commercial": "Commercial",
-      "renovation": "Renovation",
-      "interior": "Interior"
+      "mid-rise": "Mid-Rise",
+      "shop-drawing": "Shop Drawing"
     },
     "no_projects": "No projects in this category yet."
   },
@@ -174,8 +174,8 @@
     "types": {
       "residential": "Residential",
       "commercial": "Commercial",
-      "renovation": "Renovation",
-      "interior": "Interior Design"
+      "mid-rise": "Mid-Rise",
+      "shop-drawing": "Shop Drawing"
     }
   },
   "ServicesPage": {

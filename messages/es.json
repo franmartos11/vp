@@ -16,7 +16,7 @@
     "headline_trends": "perduran.",
     "description": "Servicios integrales de ingeniería estructural y MEP en Florida. Diseños precisos y conformes al código con enfoque en constructabilidad y eficiencia de costos.",
     "view_work": "Ver nuestros servicios",
-    "start_project": "Iniciar proyecto",
+    "start_project": "Contáctanos",
     "scroll": "Bajar"
   },
   "StickyPillars": {
@@ -65,7 +65,7 @@
       {
         "num": "03",
         "title": "Permisos y Cumplimiento",
-        "desc": "Preparamos y presentamos toda la documentación requerida ante el municipio, gestionando el proceso de permisos para que el proyecto se mantenga en cronograma. Nuestro equipo tiene amplia experiencia navegando las oficinas de permisos en Florida, reduciendo ciclos de revisión y asegurando que tu proyecto pase a construcción sin demoras."
+        "desc": "Preparamos toda la documentación requerida para el municipio, gestionando el proceso de permisos para que el proyecto se mantenga en cronograma. Nuestro equipo tiene amplia experiencia navegando las oficinas de permisos en Florida, reduciendo ciclos de revisión y asegurando que tu proyecto pase a construcción sin demoras."
       },
       {
         "num": "04",
@@ -140,8 +140,8 @@
       "all": "Todos",
       "residential": "Residencial",
       "commercial": "Comercial",
-      "renovation": "Renovación",
-      "interior": "Interiores"
+      "mid-rise": "Mid-Rise",
+      "shop-drawing": "Shop Drawing"
     },
     "no_projects": "Aún no hay proyectos en esta categoría."
   },
@@ -174,8 +174,8 @@
     "types": {
       "residential": "Residencial",
       "commercial": "Comercial",
-      "renovation": "Renovación",
-      "interior": "Diseño de Interiores"
+      "mid-rise": "Mid-Rise",
+      "shop-drawing": "Shop Drawing"
     }
   },
   "ServicesPage": {

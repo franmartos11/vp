@@ -15,6 +15,7 @@ export default function Nav() {
   const pathname = usePathname();
 
   const navLinks = [
+    { href: "/", label: t("home") },
     { href: "/about", label: t("about") },
     { href: "/services", label: t("services") },
     { href: "/portfolio", label: t("portfolio") },
@@ -63,17 +64,19 @@ export default function Nav() {
 
           {/* Desktop nav */}
           <ul className="hidden md:flex items-center gap-8" role="list">
-            {navLinks.map((link) => (
+            {navLinks.map((link) => {
+              const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+              return (
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className={`nav-link ${pathname.startsWith(link.href) ? "active text-brand-blue font-semibold" : ""} ${!scrolled && isHome ? "text-white hover:text-white/80" : ""}`}
+                  className={`nav-link ${isActive ? "active text-brand-blue font-semibold" : ""} ${!scrolled && isHome ? "text-white hover:text-white/80" : ""}`}
                 >
                   {link.label}
                 </Link>
               </li>
-            ))}
-            <li>
+            )})}
+            <li className={`ml-4 pl-8 border-l ${!scrolled && isHome ? "border-white/30" : "border-charcoal-900/10"}`}>
               <div className={`${!scrolled && isHome ? "text-white" : "text-charcoal-900"}`}>
                 <LanguageSwitcher />
               </div>
@@ -127,7 +130,9 @@ export default function Nav() {
               <div className="flex justify-center mb-4">
                 <LanguageSwitcher />
               </div>
-              {navLinks.map((link, i) => (
+              {navLinks.map((link, i) => {
+                const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
+                return (
                 <motion.div
                   key={link.href}
                   initial={{ opacity: 0, x: -20 }}
@@ -135,12 +140,12 @@ export default function Nav() {
                 >
                   <Link
                     href={link.href}
-                    className="text-4xl md:text-5xl font-display text-charcoal-900 hover:text-brand-blue transition-colors"
+                    className={`text-4xl md:text-5xl font-display transition-colors ${isActive ? "text-brand-blue" : "text-charcoal-900 hover:text-brand-blue"}`}
                   >
                     {link.label}
                   </Link>
                 </motion.div>
-              ))}
+              )})}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0, transition: { delay: 0.3, duration: 0.4, ease: [0.16, 1, 0.3, 1] } }}

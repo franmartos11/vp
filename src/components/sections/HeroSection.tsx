@@ -5,10 +5,11 @@ import { Link } from "@/i18n/routing";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { heroReveal, fadeInUp, staggerFast } from "@/lib/animations";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 
 export function HeroSection() {
   const t = useTranslations("Hero");
+  const locale = useLocale();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -55,25 +56,29 @@ export function HeroSection() {
           animate="visible"
           className="max-w-4xl"
         >
-          <motion.p
-            variants={fadeInUp}
-            className="text-xs tracking-widest uppercase text-brand-blue mb-6 font-mono"
-          >
-            {t("eyebrow")}
-          </motion.p>
-          <h1 className="text-4xl sm:text-5xl md:text-[5.5rem] lg:text-[7rem] font-display text-white leading-[0.9] mb-8 drop-shadow-2xl flex flex-wrap gap-x-3 gap-y-1 md:gap-x-4 md:gap-y-2">
-            {[t("headline_building"), t("headline_spaces"), t("headline_that"), t("headline_outlast"), t("headline_trends")].map((word, i) => (
-              <span key={i} className="overflow-hidden block">
+          <motion.div variants={fadeInUp} className="mb-8">
+            <p className="inline-block text-[10px] sm:text-xs tracking-widest uppercase text-white bg-black/40 backdrop-blur-md px-4 py-2 border border-white/20 rounded-sm font-mono shadow-xl">
+              {t("eyebrow")}
+            </p>
+          </motion.div>
+          <h1 className="text-4xl sm:text-5xl md:text-[5.5rem] lg:text-[7rem] font-display text-white leading-[0.9] mb-8 flex flex-wrap gap-x-3 gap-y-1 md:gap-x-4 md:gap-y-2 relative z-10" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.5))" }}>
+            {[t("headline_building"), t("headline_spaces"), t("headline_that"), t("headline_outlast"), t("headline_trends")].map((word, i) => {
+              const isHighlightEn = locale === 'en' && i >= 2;
+              const isHighlightEs = locale === 'es' && i >= 3;
+              const isHighlight = isHighlightEn || isHighlightEs;
+              
+              return (
+              <span key={i} className={`overflow-hidden block ${isHighlight ? 'pr-2' : ''}`}>
                 <motion.span
                   initial={{ y: "100%", rotate: 2 }}
                   animate={{ y: 0, rotate: 0 }}
                   transition={{ duration: 1, delay: i * 0.15 + 0.3, ease: [0.16, 1, 0.3, 1] }}
-                  className="block origin-bottom-left"
+                  className={`block origin-bottom-left ${isHighlight ? 'text-brand-blue italic' : ''}`}
                 >
                   {word}
                 </motion.span>
               </span>
-            ))}
+            )})}
           </h1>
           <motion.p
             variants={fadeInUp}

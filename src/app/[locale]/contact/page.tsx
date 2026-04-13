@@ -82,33 +82,33 @@ export default async function ContactPage() {
                           className="text-brand-blue shrink-0 mt-0.5"
                         />
                         <span>
-                          100 Brickell Ave, Suite 1200
+                          13951 SW 122th Ave, #206
                           <br />
-                          Miami, FL 33131
+                          Miami, FL 33186
                         </span>
                       </p>
                     </address>
 
                     <a
-                      href="tel:+13050000000"
+                      href="tel:+13526593636"
                       className="flex items-center gap-4 text-charcoal-700 text-sm md:text-base hover:text-brand-blue transition-colors group/link"
                     >
                       <Phone
                         size={20}
                         className="text-brand-blue shrink-0 group-hover/link:scale-110 transition-transform"
                       />
-                      +1 (305) 000-0000
+                      +1 (352) 659-3636
                     </a>
 
                     <a
-                      href="mailto:hello@vertexbuildgroup.com"
+                      href="mailto:info@dhengconsulting.com"
                       className="flex items-center gap-4 text-charcoal-700 text-sm md:text-base hover:text-brand-blue transition-colors group/link"
                     >
                       <Mail
                         size={20}
                         className="text-brand-blue shrink-0 group-hover/link:scale-110 transition-transform"
                       />
-                      hello@vertexbuildgroup.com
+                      info@dhengconsulting.com
                     </a>
 
                     <div className="flex items-start gap-4 text-charcoal-700 text-sm md:text-base pt-4 border-t border-brand-blue/10 border-dashed">
@@ -117,10 +117,7 @@ export default async function ContactPage() {
                         className="text-brand-blue shrink-0 mt-0.5"
                       />
                       <div>
-                        <p>{t("hours_week")}</p>
-                        <p className="text-warm-500 mt-1">
-                          {t("hours_weekend")}
-                        </p>
+                        <p>Mon-Fr. 8:00am - 6:00 pm</p>
                       </div>
                     </div>
                   </div>
@@ -131,10 +128,10 @@ export default async function ContactPage() {
         </div>
 
         {/* Dedicated Calendly Section */}
+        {/*
         <div className="bg-charcoal-900 text-cream-100 py-14 md:py-24 lg:py-32 border-t border-brand-blue/20">
           <div className="container mx-auto px-6 md:px-12">
             <AnimatedSection className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 lg:gap-24 items-center">
-              {/* Text Context */}
               <div className="order-2 lg:order-1">
                 <span className="text-xs tracking-widest uppercase font-mono text-brand-blue/80 mb-6 block">
                   {t("book")}
@@ -152,10 +149,8 @@ export default async function ContactPage() {
                 </div>
               </div>
 
-              {/* Calendly Inline Widget Embed */}
               <div className="order-1 lg:order-2 h-[500px] md:h-[650px] w-full rounded-sm overflow-hidden bg-white/5 border border-brand-blue/20 shadow-2xl relative group/cal">
                 <div className="absolute inset-0 bg-charcoal-900/50 flex items-center justify-center opacity-0 group-hover/cal:opacity-100 transition-opacity pointer-events-none z-10 duration-500">
-                  {/* Optional interaction overlay */}
                 </div>
                 <iframe
                   src="https://calendly.com/sales/15min"
@@ -168,6 +163,7 @@ export default async function ContactPage() {
             </AnimatedSection>
           </div>
         </div>
+        */}
       </main>
       <Footer />
     </>
