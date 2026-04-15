@@ -238,49 +238,23 @@ export default async function AboutPage() {
                 </div>
               </AnimatedSection>
 
-              <AnimatedSection stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-16">
-                {team.map((member: any) => {
-                  const photoUrl = member.photoUrl;
-                  return (
-                    <article key={member._id} className="group cursor-pointer">
-                      <div className="relative aspect-[3/4] overflow-hidden bg-charcoal-800 mb-6">
-                        {photoUrl ? (
-                          <Image
-                            src={photoUrl}
-                            alt={member.name}
-                            fill
-                            className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 mix-blend-luminosity hover:mix-blend-normal opacity-80 hover:opacity-100"
-                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                          />
-                        ) : (
-                          <div className="absolute inset-0 bg-gradient-to-tr from-charcoal-800 to-charcoal-700 flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity duration-700">
-                            {/* Abstract pattern for missing photos */}
-                            <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.8)_0,transparent_100%)]" />
-                            <span className="text-warm-500/50 text-xs font-mono uppercase tracking-widest">{member.name.split(' ')[0]}</span>
-                          </div>
-                        )}
-                        <div className="absolute inset-0 bg-charcoal-900/10 group-hover:bg-transparent transition-colors duration-700" />
-                        
-                        {/* Overlay Role on Hover */}
-                        <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-charcoal-900/90 to-transparent translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                           <p className="text-warm-200 font-light text-sm line-clamp-2">{member.bio || "Integral member of our execution and design strategy team."}</p>
-                        </div>
-                      </div>
-                      
-                      <div className="flex items-start justify-between border-b border-warm-800/50 pb-4 group-hover:border-brand-blue transition-colors duration-500">
-                        <div>
-                          <h3 className="font-display text-xl text-white group-hover:text-warm-100 transition-colors">{member.name}</h3>
-                          <p className="text-xs font-mono uppercase tracking-[0.2em] text-brand-blue/60 mt-2">{member.role}</p>
-                        </div>
-                        {member.linkedIn && (
-                          <a href={member.linkedIn} target="_blank" rel="noopener noreferrer" aria-label={`${member.name} LinkedIn`} className="text-brand-blue/60 hover:text-brand-blue transition-colors shrink-0 mt-1 cursor-none">
-                            <LinkedinIcon size={18} strokeWidth={1.5} />
-                          </a>
-                        )}
-                      </div>
-                    </article>
-                  );
-                })}
+              <AnimatedSection className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden group">
+                <Image
+                  src="/portfolio/team-group.png"
+                  alt="Our engineering team"
+                  fill
+                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-[1500ms] ease-out opacity-80"
+                  sizes="100vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-charcoal-900/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-1000" />
+                <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12 max-w-lg">
+                  <p className="font-mono text-sm tracking-widest text-brand-blue uppercase mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out delay-100">
+                    Collaborative approach
+                  </p>
+                  <p className="text-warm-100/90 font-light text-base md:text-xl leading-relaxed translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 ease-out delay-200">
+                    Our diverse team of structural engineers, architects, and detailers working together to bring your vision to reality.
+                  </p>
+                </div>
               </AnimatedSection>
             </div>
           </section>
