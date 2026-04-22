@@ -10,11 +10,15 @@ export async function POST(req: Request) {
     const service = await db.service.create({
       data: {
         title: data.title,
+        titleEs: data.titleEs,
         slug,
         shortDescription: data.shortDescription,
+        shortDescriptionEs: data.shortDescriptionEs,
         fullDescription: data.fullDescription,
-        coverImage: data.coverImageUrl,
+        fullDescriptionEs: data.fullDescriptionEs,
+        coverImage: data.coverImage,
         keyDeliverables: data.keyDeliverables ? JSON.stringify(data.keyDeliverables) : null,
+        keyDeliverablesEs: data.keyDeliverablesEs ? JSON.stringify(data.keyDeliverablesEs) : null,
         gallery: data.gallery ? JSON.stringify(data.gallery) : null,
         order: data.order || 0,
       },

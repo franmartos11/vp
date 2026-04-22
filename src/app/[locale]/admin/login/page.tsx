@@ -24,8 +24,8 @@ export default function AdminLoginPage() {
       });
 
       if (res.ok) {
-        router.push("/admin");
-        router.refresh();
+        // Full navigation so the new cookie is sent with the next request
+        window.location.href = "/admin";
       } else {
         const data = await res.json();
         setError(data.error || "Clave incorrecta.");

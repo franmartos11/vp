@@ -24,6 +24,7 @@ export default async function EditServicePage({
   const parsedService = service ? {
     ...service,
     keyDeliverables: service.keyDeliverables ? JSON.parse(service.keyDeliverables) : [],
+    keyDeliverablesEs: (service as any).keyDeliverablesEs ? JSON.parse((service as any).keyDeliverablesEs) : [],
     gallery: service.gallery ? JSON.parse(service.gallery) : [],
   } : null;
 

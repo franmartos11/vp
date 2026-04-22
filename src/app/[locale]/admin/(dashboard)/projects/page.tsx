@@ -2,11 +2,13 @@ import { db } from "@/lib/db";
 import Link from "next/link";
 import { Plus, Edit2, Trash2, Eye } from "lucide-react";
 import Image from "next/image";
+import { getLocale } from "next-intl/server";
 
 // Deshabilita el caching estático en el panel
 export const dynamic = 'force-dynamic';
 
 export default async function AdminProjectsPage() {
+  const locale = await getLocale();
   const projects = await db.project.findMany({
     orderBy: { createdAt: "desc" },
   });
@@ -21,7 +23,7 @@ export default async function AdminProjectsPage() {
           </p>
         </div>
         <Link 
-          href="/admin/projects/new" 
+          href={`/${locale}/admin/projects/new`} 
           className="inline-flex items-center justify-center gap-2 bg-charcoal-900 text-cream-100 px-8 py-4 rounded-md font-mono text-xs uppercase tracking-widest hover:bg-warm-500 hover:text-charcoal-900 transition-colors"
         >
           <Plus size={16} /> Nuevo Proyecto
@@ -31,7 +33,7 @@ export default async function AdminProjectsPage() {
       {projects.length === 0 ? (
         <div className="bg-white p-12 text-center rounded-xl border border-warm-200 border-dashed">
           <p className="text-warm-500 font-mono uppercase tracking-widest text-sm mb-4">No hay proyectos todavía</p>
-          <Link href="/admin/projects/new" className="text-charcoal-900 underline underline-offset-4 hover:text-warm-500 transition-colors">
+          <Link href={`/${locale}/admin/projects/new`} className="text-charcoal-900 underline underline-offset-4 hover:text-warm-500 transition-colors">
             Crea tu primer proyecto aquí
           </Link>
         </div>
@@ -86,7 +88,7 @@ export default async function AdminProjectsPage() {
 
                   <td className="px-6 py-4 text-right space-x-2">
                      <Link 
-                       href={`/portfolio/${project.slug}`} 
+                       href={`/${locale}/portfolio/${project.slug}`} 
                        target="_blank"
                        className="inline-flex p-2 text-warm-500 hover:text-charcoal-900 hover:bg-warm-100 rounded-md transition-all"
                        title="Ver en la web"
@@ -94,7 +96,7 @@ export default async function AdminProjectsPage() {
                        <Eye size={18} />
                      </Link>
                      <Link 
-                       href={`/admin/projects/${project.id}`} 
+                       href={`/${locale}/admin/projects/${project.id}`} 
                        className="inline-flex p-2 text-warm-500 hover:text-charcoal-900 hover:bg-warm-100 rounded-md transition-all"
                        title="Editar"
                      >

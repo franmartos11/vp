@@ -8,8 +8,7 @@ export default function LogoutButton({ mobile = false }: { mobile?: boolean }) {
 
   const handleLogout = async () => {
     await fetch("/api/auth/logout", { method: "POST" });
-    router.push("/admin/login");
-    router.refresh(); // Clear client state
+    window.location.href = "/admin/login";
   };
 
   if (mobile) {

@@ -6,41 +6,76 @@ import { routing } from "@/i18n/routing";
 
 const intlMiddleware = createMiddleware(routing);
 
+/**
+ * Next.js 16 Proxy (renamed from middleware).
+ *
+ * Routing config: localePrefix = 'as-needed'
+ *   - English (default): no prefix → /admin/login, /admin, /portfolio, etc.
+ *   - Spanish: /es prefix → /es/admin/login, /es/admin, /es/portfolio, etc.
+ *
+ * Admin routes live in the filesystem at src/app/[locale]/admin/...
+ * next-intl does NOT automatically rewrite /admin/... to /en/admin/... for the
+ * app router — we must do that rewrite manually for admin paths.
+ */
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // 1. Admin Auth Logic
-  if (pathname.startsWith("/admin")) {
-    if (pathname === "/admin/login") {
-      return NextResponse.next();
-    }
+  // ── Detect admin routes ────────────────────────────────────────────────────
+  // Matches: /admin, /admin/*, /es/admin, /es/admin/*
+  const adminMatch = pathname.match(/^(?:\/(es))?(\/admin(?:\/.*)?)?$/);
+  const isAdminRoute =
+    adminMatch !== null &&
+    adminMatch[2] !== undefined &&
+    adminMatch[2].startsWith("/admin");
 
+  if (!isAdminRoute) {
+    // Regular public routes — delegate entirely to next-intl
+    return intlMiddleware(request);
+  }
+
+  // ── Admin route detected ───────────────────────────────────────────────────
+  const localeInPath = adminMatch[1]; // "es" | undefined
+  const locale = localeInPath ?? "en"; // actual locale
+  const subpath = adminMatch[2]; // e.g. "/admin/login", "/admin/projects"
+
+  const loginSubpath = "/admin/login";
+  const isLoginPage = subpath === loginSubpath;
+
+  // ── Check auth (skip for login page) ─────────────────────────────────────
+  if (!isLoginPage) {
     const token = request.cookies.get("vertex_admin_session")?.value;
 
     if (!token) {
-      const url = request.nextUrl.clone();
-      url.pathname = "/admin/login";
-      return NextResponse.redirect(url);
+      const loginUrl = request.nextUrl.clone();
+      loginUrl.pathname = localeInPath ? `/${localeInPath}/admin/login` : "/admin/login";
+      return NextResponse.redirect(loginUrl);
     }
 
     const payload = await verifyToken(token);
     if (!payload) {
-      const url = request.nextUrl.clone();
-      url.pathname = "/admin/login";
-      const response = NextResponse.redirect(url);
+      const loginUrl = request.nextUrl.clone();
+      loginUrl.pathname = localeInPath ? `/${localeInPath}/admin/login` : "/admin/login";
+      const response = NextResponse.redirect(loginUrl);
       response.cookies.delete("vertex_admin_session");
       return response;
     }
-
-    return NextResponse.next();
   }
 
-  // 2. Default Next-Intl I18n Middleware
-  return intlMiddleware(request);
+  // ── Rewrite to the [locale] segment in the filesystem ────────────────────
+  // The app router file is at src/app/[locale]/admin/...
+  // We need to rewrite /admin/... → /en/admin/... (internally)
+  // and /es/admin/... → /es/admin/... (already correct)
+  const rewriteUrl = request.nextUrl.clone();
+  rewriteUrl.pathname = `/${locale}${subpath}`;
+
+  const response = NextResponse.rewrite(rewriteUrl);
+
+  // Inject x-next-intl-locale header so Server Components know the locale
+  response.headers.set("x-next-intl-locale", locale);
+
+  return response;
 }
 
 export const config = {
-  // Match everything except api, static assets, and internal next paths
-  matcher: ['/((?!api|_next|_vercel|.*\\..*).*)'],
+  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
 };
-
