@@ -87,7 +87,46 @@ export const FALLBACK_SERVICES = [
 ];
 
 export const FALLBACK_TEAM = [
-  { _id: '1', name: 'James Vertex', role: 'Principal Architect', bio: 'With over 20 years of experience designing luxury spaces, James leads the firm\'s creative vision.', linkedIn: 'https://linkedin.com', photoUrl: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80' },
-  { _id: '2', name: 'Sarah Miller', role: 'Director of Construction', bio: 'Sarah ensures every line on the blueprint translates perfectly into reality with uncompromising quality.', linkedIn: 'https://linkedin.com', photoUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80' },
-  { _id: '3', name: 'David Chen', role: 'Lead Interior Designer', bio: 'David brings spaces to life with curated materials, bespoke furniture, and an eye for light.', linkedIn: 'https://linkedin.com', photoUrl: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80' },
+  {
+    _id: '1',
+    name: 'Darian Huerta',
+    role: 'President & Founder',
+    bio: 'Leads the firm\'s vision, focusing on strategic management, operations, while bringing innovation and creativity to every project.',
+    photoUrl: '/employee/1. Darian Huerta.png',
+  },
+  {
+    _id: '2',
+    name: 'Rene Fernandez Jover',
+    role: 'Professional Engineer',
+    bio: 'Provides professional engineering services in MEP systems, bringing over 20 years of experience and ensuring quality, compliance, and reliable design solutions.',
+    photoUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80',
+  },
+  {
+    _id: '3',
+    name: 'Liliana Araujo',
+    role: 'Senior Drafter',
+    bio: 'Responsible for drafting coordination, delivering clear, precise, and well-structured drawings for all projects, ensuring quality and attention to detail.',
+    photoUrl: '/employee/3. Liliana Araujo.png',
+  },
+  {
+    _id: '4',
+    name: 'Ivan Rodriguez',
+    role: 'Senior Structural Inspector',
+    bio: 'Performs structural inspections, leveraging extensive field experience as a General Contractor to ensure quality and code compliance.',
+    photoUrl: '/employee/4. Ivan Rodriguez.png',
+  },
+  {
+    _id: '5',
+    name: 'Jesus Gonzalez',
+    role: 'Senior Structural Designer',
+    bio: 'Focused on structural analysis and design, applying solid technical expertise to support safe and efficient project solutions.',
+    photoUrl: '/employee/5. Jesus Gonzalez.png',
+  },
+  {
+    _id: '6',
+    name: 'Marlon Cruz',
+    role: 'Structural Designer',
+    bio: 'Involved in structural design and analysis, utilizing solid technical skills to support safe and efficient project outcomes.',
+    photoUrl: '/employee/6. Marlon Cruz.png',
+  },
 ];

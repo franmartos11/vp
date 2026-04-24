@@ -1,3 +1,4 @@
+require('dotenv').config();
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
@@ -23,22 +24,22 @@ async function main() {
 
     // Top 3
     await prisma.project.update({
-      where: { slug: "high-end-custom-residence-miami" }, // Left image (luxury residence)
+      where: { slug: "custom-single-family-residence-mep" }, // Left image
       data: { order: 1 }
     });
-    console.log("Promoted: high-end-custom-residence-miami");
+    console.log("Promoted: custom-single-family-residence-mep");
 
     await prisma.project.update({
-      where: { slug: "two-story-luxury-residence" }, // Center image (two story residence)
+      where: { slug: "multi-family-residential-development" }, // Center image
       data: { order: 2 }
     });
-    console.log("Promoted: two-story-luxury-residence");
+    console.log("Promoted: multi-family-residential-development");
 
     await prisma.project.update({
-      where: { slug: "custom-single-family-residence-mep" }, // Right image (single family miami)
+      where: { slug: "High-End-Custom-Residence " }, // Right image
       data: { order: 3 }
     });
-    console.log("Promoted: custom-single-family-residence-mep");
+    console.log("Promoted: High-End-Custom-Residence");
 
     console.log("Database update completed!");
 

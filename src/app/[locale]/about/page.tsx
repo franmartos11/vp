@@ -23,6 +23,7 @@ type TeamMember = {
   role: string;
   bio?: string;
   photo?: { asset: { _ref: string }; alt?: string };
+  photoUrl?: string;
   linkedIn?: string;
 };
 
@@ -238,24 +239,67 @@ export default async function AboutPage() {
                 </div>
               </AnimatedSection>
 
-              <AnimatedSection className="relative w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden group">
-                <Image
-                  src="/portfolio/team-group.png"
-                  alt="Our engineering team"
-                  fill
-                  className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-[1500ms] ease-out opacity-80"
-                  sizes="100vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-charcoal-900/80 via-transparent to-transparent opacity-80 group-hover:opacity-60 transition-opacity duration-1000" />
-                <div className="absolute bottom-6 left-6 md:bottom-12 md:left-12 max-w-lg">
-                  <p className="font-mono text-sm tracking-widest text-brand-blue uppercase mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out delay-100">
-                    Collaborative approach
-                  </p>
-                  <p className="text-warm-100/90 font-light text-base md:text-xl leading-relaxed translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-700 ease-out delay-200">
-                    Our diverse team of structural engineers, architects, and detailers working together to bring your vision to reality.
-                  </p>
-                </div>
-              </AnimatedSection>
+              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-px bg-brand-blue/10">
+                {team.map((member, idx) => {
+                  const indexLabel = `#${String(idx + 1).padStart(2, '0')}`;
+                  return (
+                    <AnimatedSection
+                      key={member._id}
+                      delay={idx * 80}
+                      className="group relative bg-charcoal-900 overflow-hidden cursor-default"
+                    >
+                      {/* Photo */}
+                      <div className="relative aspect-[3/4] w-full overflow-hidden">
+                        <Image
+                          src={member.photoUrl ?? '/portfolio/team-group.png'}
+                          alt={member.name}
+                          fill
+                          className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out opacity-70 group-hover:opacity-100"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 20vw"
+                        />
+                        {/* Dark gradient bottom */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/20 to-transparent" />
+
+                        {/* Index number overlay */}
+                        <span className="absolute top-4 right-4 font-mono text-[10px] tracking-[0.3em] text-white/30 group-hover:text-brand-blue/80 transition-colors duration-500">
+                          {indexLabel}
+                        </span>
+
+                        {/* LinkedIn — fade in on hover */}
+                        {member.linkedIn && (
+                          <a
+                            href={member.linkedIn}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`LinkedIn de ${member.name}`}
+                            className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 text-white hover:text-brand-blue"
+                          >
+                            <LinkedinIcon size={16} strokeWidth={1.5} />
+                          </a>
+                        )}
+                      </div>
+
+                      {/* Info */}
+                      <div className="px-5 py-6">
+                        <h3 className="font-display text-xl text-white mb-1 leading-tight">
+                          {member.name}
+                        </h3>
+                        <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-brand-blue/60 mb-3">
+                          {member.role}
+                        </p>
+                        {member.bio && (
+                          <p className="text-warm-100/50 text-xs font-light leading-relaxed line-clamp-3 group-hover:text-warm-100/70 transition-colors duration-500">
+                            {member.bio}
+                          </p>
+                        )}
+                      </div>
+
+                      {/* Bottom accent line */}
+                      <div className="absolute bottom-0 left-0 right-0 h-px bg-brand-blue/0 group-hover:bg-brand-blue/40 transition-colors duration-500" />
+                    </AnimatedSection>
+                  );
+                })}
+              </div>
             </div>
           </section>
         )}
