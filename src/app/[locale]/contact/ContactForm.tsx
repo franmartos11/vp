@@ -150,7 +150,7 @@ export function ContactForm() {
                   name="phone"
                   type="tel"
                   autoComplete="tel"
-                  placeholder="+1 (305) 000-0000"
+                  placeholder="+1 (352) 659-3636"
                   className="w-full bg-transparent border-b border-warm-300 py-3 text-charcoal-900 placeholder:text-warm-300 focus:outline-none focus:border-brand-blue transition-colors text-lg"
                 />
               </div>

@@ -80,19 +80,19 @@ export default function Footer() {
           <div className="col-span-6 md:col-span-4 md:col-start-9">
             <p className="eyebrow text-warm-400 mb-4">Contact</p>
             <address className="not-italic text-warm-300 text-sm space-y-2">
-              <p>100 Brickell Ave, Suite 1200</p>
-              <p>Miami, FL 33131</p>
+              <p>13951 SW 122th Ave, #206</p>
+              <p>Miami, FL 33186</p>
               <a
-                href="tel:+13050000000"
+                href="tel:+13526593636"
                 className="block hover:text-cream-100 transition-colors"
               >
-                +1 (305) 000-0000
+                +1 (352) 659-3636
               </a>
               <a
-                href="mailto:info@dhengineering.com"
+                href="mailto:info@dhengconsulting.com"
                 className="block hover:text-cream-100 transition-colors"
               >
-                info@dhengineering.com
+                info@dhengconsulting.com
               </a>
             </address>
           </div>

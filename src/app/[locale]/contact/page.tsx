@@ -17,7 +17,7 @@ export default async function ContactPage() {
   const t = await getTranslations("ContactPage");
   const mapsEmbedUrl =
     process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED ||
-    "https://maps.google.com/maps?q=100+Brickell+Ave+Miami+FL&output=embed";
+    "https://maps.google.com/maps?q=13951+SW+122th+Ave+#206+Miami+FL+33186&output=embed";
 
   return (
     <>

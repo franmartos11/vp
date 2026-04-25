@@ -86,7 +86,7 @@ const organizationJsonLd = {
       },
       contactPoint: {
         "@type": "ContactPoint",
-        telephone: "+1-305-000-0000",
+        telephone: "+1-352-659-3636",
         contactType: "customer service",
         areaServed: "US",
         availableLanguage: "English",
@@ -103,14 +103,14 @@ const organizationJsonLd = {
       description:
         "Award-winning luxury architecture and construction firm based in the United States.",
       url: SITE_URL,
-      telephone: "+1-305-000-0000",
-      email: "hello@vertexbuildgroup.com",
+      telephone: "+1-352-659-3636",
+      email: "info@dhengconsulting.com",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "100 Brickell Ave, Suite 1200",
+        streetAddress: "13951 SW 122th Ave, #206",
         addressLocality: "Miami",
         addressRegion: "FL",
-        postalCode: "33131",
+        postalCode: "33186",
         addressCountry: "US",
       },
       geo: {
@@ -122,7 +122,7 @@ const organizationJsonLd = {
         {
           "@type": "OpeningHoursSpecification",
           dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          opens: "09:00",
+          opens: "08:00",
           closes: "18:00",
         },
       ],
