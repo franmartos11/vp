@@ -162,18 +162,16 @@ export default async function AboutPage() {
                       src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200" 
                       alt="Architecture Studio" 
                       fill 
-                      className="object-cover opacity-80" 
+                      className="object-cover" 
                     />
-                    <div className="absolute inset-0 bg-charcoal-900/20" />
                     {/* Floating secondary image */}
-                    <div className="absolute -bottom-10 -left-10 w-2/3 aspect-[4/3] border-4 border-charcoal-900 shadow-2xl hidden md:block">
+                    <div className="absolute -bottom-6 -left-12 w-2/3 aspect-[4/3] border-4 border-charcoal-900 shadow-2xl hidden md:block z-20">
                        <Image 
                          src="/services/tech-blueprint.png" 
                          alt="Blueprint detailing"
                          fill
-                         className="object-cover opacity-80"
+                         className="object-cover"
                        />
-                       <div className="absolute inset-0 bg-charcoal-900/20" />
                     </div>
                  </div>
               </div>
