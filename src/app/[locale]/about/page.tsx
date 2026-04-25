@@ -28,7 +28,7 @@ type TeamMember = {
 };
 
 export default async function AboutPage() {
-  const team = FALLBACK_TEAM;
+  const team: TeamMember[] = FALLBACK_TEAM;
 
   return (
     <>
