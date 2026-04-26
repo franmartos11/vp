@@ -34,7 +34,7 @@ export default async function AboutPage() {
     <>
       <Nav />
       <main className="bg-cream-50 pt-16">
-        
+
         {/* Dark Immersive Hero */}
         <section className="relative h-[70vh] md:h-[85vh] w-full overflow-hidden bg-charcoal-900 group">
           {/* Background Texture */}
@@ -49,7 +49,7 @@ export default async function AboutPage() {
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/40 to-transparent" />
-          
+
           {/* Content Wrapper */}
           <div className="absolute inset-0 flex flex-col justify-end pb-24 md:pb-32 container mx-auto px-6 z-10 transition-all">
             <AnimatedSection>
@@ -74,16 +74,16 @@ export default async function AboutPage() {
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-brand-blue/20 font-mono tracking-widest uppercase text-xs">
               <div className="py-6 md:py-10 md:px-10 flex flex-col gap-2 justify-center items-center text-center">
-                 <span className="text-4xl lg:text-5xl font-display text-white mb-1 md:mb-2">100+</span>
-                 <span className="text-brand-blue/60 text-[10px]">Completed Projects</span>
+                <span className="text-4xl lg:text-5xl font-display text-white mb-1 md:mb-2">100+</span>
+                <span className="text-brand-blue/60 text-[10px]">Completed Projects</span>
               </div>
               <div className="py-6 md:py-10 md:px-10 flex flex-col gap-2 justify-center items-center text-center">
-                 <span className="text-4xl lg:text-5xl font-display text-white mb-1 md:mb-2">FBC</span>
-                 <span className="text-brand-blue/60 text-[10px]">Florida Building Code Experts</span>
+                <span className="text-4xl lg:text-5xl font-display text-white mb-1 md:mb-2">FBC</span>
+                <span className="text-brand-blue/60 text-[10px]">Florida Building Code Experts</span>
               </div>
               <div className="py-6 md:py-10 md:px-10 flex flex-col gap-2 justify-center items-center text-center">
-                 <span className="text-4xl lg:text-5xl font-display text-white mb-1 md:mb-2">4</span>
-                 <span className="text-brand-blue/60 text-[10px]">Core Engineering Disciplines</span>
+                <span className="text-4xl lg:text-5xl font-display text-white mb-1 md:mb-2">4</span>
+                <span className="text-brand-blue/60 text-[10px]">Core Engineering Disciplines</span>
               </div>
             </div>
           </div>
@@ -102,19 +102,19 @@ export default async function AboutPage() {
                   className="object-cover opacity-90 group-hover:opacity-100 transition-all duration-1000"
                 />
                 <div className="absolute inset-0 bg-brand-blue/10 group-hover:bg-transparent transition-colors duration-1000" />
-                
+
                 {/* Decorative Elements */}
                 <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-blue/10 -z-10" />
                 <div className="absolute -top-6 -left-6 w-32 h-32 border border-brand-blue/20 -z-10" />
               </div>
-              
+
               {/* Text side */}
               <div className="col-span-1 lg:col-span-6 lg:col-start-7 flex flex-col justify-center py-8">
                 <span className="text-brand-blue font-mono text-xs tracking-widest uppercase mb-6 block">Our Mission</span>
                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-display text-charcoal-900 mb-12 leading-tight">
                   Engineering that serves <span className="italic font-light text-brand-blue">your vision.</span>
                 </h2>
-                
+
                 <div className="prose prose-stone prose-base md:prose-lg max-w-none text-charcoal-700 leading-relaxed font-light md:first-letter:text-7xl md:first-letter:font-display md:first-letter:text-charcoal-900 md:first-letter:float-left md:first-letter:mr-6 md:first-letter:-mt-2 md:first-letter:leading-none">
                   <p className="mb-8">
                     At DH Engineering & Consulting LLC, we provide comprehensive engineering services by combining structural expertise with a practical understanding of construction and permitting processes. We specialize in structural design for residential and commercial projects, along with MEP coordination — delivering efficient and fully integrated solutions under one firm.
@@ -123,7 +123,7 @@ export default async function AboutPage() {
                     With extensive experience under the Florida Building Code, we produce accurate, code-compliant designs with a strong focus on constructability and cost-efficiency. We also offer building recertifications, structural inspections, and as-built evaluations, supporting clients throughout every stage of their projects.
                   </p>
                 </div>
-                
+
                 {/* Signature element */}
                 <div className="flex items-center gap-6 mt-4">
                   <div className="w-16 h-px bg-brand-blue/40" />
@@ -139,43 +139,43 @@ export default async function AboutPage() {
 
         {/* Culture / Studio Behind the Scenes */}
         <section className="bg-charcoal-900 text-white py-16 md:py-32 overflow-hidden border-t border-brand-blue/20">
-           <div className="container mx-auto px-6">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
-                 <div className="order-2 lg:order-1">
-                    <span className="font-mono text-xs tracking-[0.3em] uppercase text-brand-blue/80 mb-4 md:mb-6 block">How We Work</span>
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl font-display leading-tight mb-6 md:mb-8">
-                       Precision at every <br/><span className="text-brand-blue/60 italic font-light">phase.</span>
-                    </h2>
-                    <p className="text-warm-100/70 font-light text-lg lg:text-xl leading-relaxed max-w-lg mb-12">
-                       We take pride in providing reliable, high-quality engineering services at competitive prices — meeting deadlines and supporting our clients with clear communication at every step of the process.
-                    </p>
-                    <ul className="space-y-6">
-                       {['Code-compliant structural design', 'Integrated MEP coordination', 'Permitting & code compliance support', 'Construction-phase engineering support'].map((item, i) => (
-                           <li key={i} className="flex items-center gap-4 text-warm-50 font-light">
-                             <div className="w-1.5 h-1.5 bg-brand-blue rounded-full" /> {item}
-                           </li>
-                       ))}
-                    </ul>
-                 </div>
-                 <div className="order-1 lg:order-2 relative aspect-square lg:aspect-[4/5]">
-                    <Image 
-                      src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200" 
-                      alt="Architecture Studio" 
-                      fill 
-                      className="object-cover" 
-                    />
-                    {/* Floating secondary image */}
-                    <div className="absolute -bottom-6 -left-12 w-2/3 aspect-[4/3] border-4 border-charcoal-900 shadow-2xl hidden md:block z-20">
-                       <Image 
-                         src="/services/tech-blueprint.png" 
-                         alt="Blueprint detailing"
-                         fill
-                         className="object-cover"
-                       />
-                    </div>
-                 </div>
+          <div className="container mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
+              <div className="order-2 lg:order-1">
+                <span className="font-mono text-xs tracking-[0.3em] uppercase text-brand-blue/80 mb-4 md:mb-6 block">How We Work</span>
+                <h2 className="text-3xl md:text-5xl lg:text-6xl font-display leading-tight mb-6 md:mb-8">
+                  Precision at every <br /><span className="text-brand-blue/60 italic font-light">phase.</span>
+                </h2>
+                <p className="text-warm-100/70 font-light text-lg lg:text-xl leading-relaxed max-w-lg mb-12">
+                  We take pride in providing reliable, high-quality engineering services at competitive prices — meeting deadlines and supporting our clients with clear communication at every step of the process.
+                </p>
+                <ul className="space-y-6">
+                  {['Code-compliant structural design', 'Integrated MEP coordination', 'Permitting & code compliance support', 'Construction-phase engineering support'].map((item, i) => (
+                    <li key={i} className="flex items-center gap-4 text-warm-50 font-light">
+                      <div className="w-1.5 h-1.5 bg-brand-blue rounded-full" /> {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-           </div>
+              <div className="order-1 lg:order-2 relative aspect-square lg:aspect-[4/5]">
+                <Image
+                  src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200"
+                  alt="Architecture Studio"
+                  fill
+                  className="object-cover"
+                />
+                {/* Floating secondary image */}
+                <div className="absolute -bottom-6 -left-12 w-2/3 aspect-[4/3] border-4 border-charcoal-900 shadow-2xl hidden md:block z-20">
+                  <Image
+                    src="/services/tech-blueprint.png"
+                    alt="Blueprint detailing"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* Our History / Interactive Timeline */}
@@ -187,11 +187,11 @@ export default async function AboutPage() {
                 Built on <span className="italic font-light text-brand-blue">experience.</span>
               </h2>
             </AnimatedSection>
-            
+
             <div className="relative space-y-16 md:space-y-24 lg:space-y-32">
               {/* Central vertical line */}
               <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-brand-blue/20 -translate-x-1/2" />
-              
+
               {[
                 { year: "Est.", title: "Founded in Florida", description: "DH Engineering & Consulting LLC was established with a clear mission: deliver accurate, code-compliant engineering services at competitive prices, with a focus on constructability." },
                 { year: "Core", title: "Structural Design", description: "Developed a strong foundation in residential and commercial structural design under the Florida Building Code — from single-family homes to mid-rise buildings." },
@@ -203,10 +203,10 @@ export default async function AboutPage() {
                   <AnimatedSection key={item.year} delay={idx * 100} className="relative flex flex-col md:flex-row items-center md:justify-between group">
                     {/* Node */}
                     <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-brand-blue border-4 border-cream-100 flex-shrink-0 -translate-x-1/2 group-hover:scale-150 transition-transform duration-500 z-10" />
-                    
+
                     {/* Year background watermark — hidden on mobile, decorative on desktop only */}
                     <div className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[250px] font-display text-brand-blue/20 z-0 pointer-events-none transition-transform duration-1000 group-hover:scale-110">
-                       {item.year}
+                      {item.year}
                     </div>
 
                     <div className={`pl-16 md:pl-0 md:w-5/12 z-10 ${isEven ? 'md:text-right md:pr-12' : 'md:text-left md:ml-auto md:pl-12'}`}>
@@ -232,72 +232,55 @@ export default async function AboutPage() {
                 <div>
                   <span className="font-mono text-xs tracking-[0.3em] uppercase text-brand-blue/80 mb-4 block">Our Team</span>
                   <h2 className="text-3xl md:text-5xl lg:text-6xl font-display text-white">
-                    The engineers <br/><span className="italic font-light text-brand-blue/60">behind your project.</span>
+                    The engineers <br /><span className="italic font-light text-brand-blue/60">behind your project.</span>
                   </h2>
                 </div>
               </AnimatedSection>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-px bg-brand-blue/10">
-                {team.map((member, idx) => {
-                  const indexLabel = `#${String(idx + 1).padStart(2, '0')}`;
+              <AnimatedSection stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-16">
+                {team.map((member: any) => {
+                  const photoUrl = member.photoUrl;
                   return (
-                    <AnimatedSection
-                      key={member._id}
-                      delay={idx * 80}
-                      className="group relative bg-charcoal-900 overflow-hidden cursor-default"
-                    >
-                      {/* Photo */}
-                      <div className="relative aspect-[3/4] w-full overflow-hidden">
-                        <Image
-                          src={member.photoUrl ?? '/portfolio/team-group.png'}
-                          alt={member.name}
-                          fill
-                          className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 ease-out opacity-70 group-hover:opacity-100"
-                          sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 20vw"
-                        />
-                        {/* Dark gradient bottom */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/20 to-transparent" />
+                    <article key={member._id} className="group cursor-pointer">
+                      <div className="relative aspect-[3/4] overflow-hidden bg-charcoal-800 mb-6">
+                        {photoUrl ? (
+                          <Image
+                            src={photoUrl}
+                            alt={member.name}
+                            fill
+                            className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 mix-blend-luminosity hover:mix-blend-normal opacity-80 hover:opacity-100"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                          />
+                        ) : (
+                          <div className="absolute inset-0 bg-gradient-to-tr from-charcoal-800 to-charcoal-700 flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity duration-700">
+                            {/* Abstract pattern for missing photos */}
+                            <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.8)_0,transparent_100%)]" />
+                            <span className="text-warm-500/50 text-xs font-mono uppercase tracking-widest">{member.name.split(' ')[0]}</span>
+                          </div>
+                        )}
+                        <div className="absolute inset-0 bg-charcoal-900/10 group-hover:bg-transparent transition-colors duration-700" />
 
-                        {/* Index number overlay */}
-                        <span className="absolute top-4 right-4 font-mono text-[10px] tracking-[0.3em] text-white/30 group-hover:text-brand-blue/80 transition-colors duration-500">
-                          {indexLabel}
-                        </span>
+                        {/* Overlay Role on Hover */}
+                        <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-charcoal-900/90 to-transparent translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+                          <p className="text-warm-200 font-light text-sm line-clamp-2">{member.bio || "Integral member of our execution and design strategy team."}</p>
+                        </div>
+                      </div>
 
-                        {/* LinkedIn — fade in on hover */}
+                      <div className="flex items-start justify-between border-b border-warm-800/50 pb-4 group-hover:border-brand-blue transition-colors duration-500">
+                        <div>
+                          <h3 className="font-display text-xl text-white group-hover:text-warm-100 transition-colors">{member.name}</h3>
+                          <p className="text-xs font-mono uppercase tracking-[0.2em] text-warm-400 mt-2">{member.role}</p>
+                        </div>
                         {member.linkedIn && (
-                          <a
-                            href={member.linkedIn}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label={`LinkedIn de ${member.name}`}
-                            className="absolute top-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 text-white hover:text-brand-blue"
-                          >
-                            <LinkedinIcon size={16} strokeWidth={1.5} />
+                          <a href={member.linkedIn} target="_blank" rel="noopener noreferrer" aria-label={`${member.name} LinkedIn`} className="text-brand-blue/60 hover:text-brand-blue transition-colors shrink-0 mt-1 cursor-none">
+                            <LinkedinIcon size={18} strokeWidth={1.5} />
                           </a>
                         )}
                       </div>
-
-                      {/* Info */}
-                      <div className="px-5 py-6">
-                        <h3 className="font-display text-xl text-white mb-1 leading-tight">
-                          {member.name}
-                        </h3>
-                        <p className="font-mono text-[10px] tracking-[0.2em] uppercase text-brand-blue/60 mb-3">
-                          {member.role}
-                        </p>
-                        {member.bio && (
-                          <p className="text-warm-100/50 text-xs font-light leading-relaxed line-clamp-3 group-hover:text-warm-100/70 transition-colors duration-500">
-                            {member.bio}
-                          </p>
-                        )}
-                      </div>
-
-                      {/* Bottom accent line */}
-                      <div className="absolute bottom-0 left-0 right-0 h-px bg-brand-blue/0 group-hover:bg-brand-blue/40 transition-colors duration-500" />
-                    </AnimatedSection>
+                    </article>
                   );
                 })}
-              </div>
+              </AnimatedSection>
             </div>
           </section>
         )}

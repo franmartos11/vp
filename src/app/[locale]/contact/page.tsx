@@ -117,7 +117,7 @@ export default async function ContactPage() {
                         className="text-brand-blue shrink-0 mt-0.5"
                       />
                       <div>
-                        <p>Mon-Fr. 8:00am - 6:00 pm</p>
+                        <p>Monday - Friday 8:00am - 6:00 pm</p>
                       </div>
                     </div>
                   </div>
