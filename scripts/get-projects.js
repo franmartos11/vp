@@ -1,20 +1,15 @@
-require('dotenv').config();
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 async function main() {
-  const projects = await prisma.project.findMany();
-  console.log(JSON.stringify(projects.map(p => ({
-    title: p.title,
-    slug: p.slug,
-    projectType: p.projectType,
-    location: p.location,
-    order: p.order
-  })), null, 2));
+  const projects = await prisma.project.findMany({
+    orderBy: { order: 'asc' }
+  });
+  console.log(JSON.stringify(projects, null, 2));
 }
 
 main()
-  .catch((e) => {
+  .catch(e => {
     console.error(e);
     process.exit(1);
   })
