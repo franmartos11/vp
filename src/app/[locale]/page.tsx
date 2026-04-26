@@ -44,10 +44,11 @@ export default async function HomePage() {
       <main>
 
         <HeroSection />
-        <AllServicesGrid />
         <InfiniteMarquee />
-        <MakersStory />
+        <AllServicesGrid />
         <StickyPillars />
+        <MakersStory />
+
         <StatsSection />
         <TrustedPartners />
         <ParallaxSeparator />

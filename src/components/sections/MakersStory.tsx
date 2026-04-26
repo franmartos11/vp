@@ -14,7 +14,7 @@ export function MakersStory() {
           {/* Image */}
           <div className="lg:col-span-5 relative h-[300px] md:h-[420px] lg:h-[700px] w-full">
             <Image
-              src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&auto=format"
+              src="personaplano.png"
               alt="Architect drafting plans"
               fill
               unoptimized
@@ -22,7 +22,7 @@ export function MakersStory() {
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-charcoal-900/10 mix-blend-multiply" />
-            
+
             {/* Aesthetic offset frame */}
             <div className="hidden lg:block absolute -inset-6 bg-transparent border border-brand-blue/20 -z-10 translate-x-3 translate-y-3" />
           </div>
