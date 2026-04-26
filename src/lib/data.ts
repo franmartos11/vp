@@ -63,7 +63,7 @@ export const FALLBACK_SERVICES = [
     title: "BUILDING RECERTIFICATIONS", 
     slug: { current: "building-recertifications" }, 
     shortDescription: "Building recertifications are required to ensure that existing structures remain safe for continued occupancy and comply with current regulations.",
-    coverImageUrl: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&auto=format",
+    coverImageUrl: "/services/recertifications.png",
     keyDeliverables: ["Structural & Electrical Inspections", "Photometric & Thermographic Studies", "Drone Facade/Roof Inspections", "Code-Compliant Reporting"]
   },
   { 

@@ -248,7 +248,7 @@ export default async function AboutPage() {
                             src={photoUrl}
                             alt={member.name}
                             fill
-                            className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 mix-blend-luminosity hover:mix-blend-normal opacity-80 hover:opacity-100"
+                            className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 mix-blend-luminosity hover:mix-blend-normal opacity-80 hover:opacity-100"
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           />
                         ) : (
