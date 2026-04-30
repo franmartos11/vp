@@ -19,7 +19,6 @@ interface Props {
 
 export const revalidate = 60;
 
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug, locale } = await params;
   const service = (await db.service.findUnique({ where: { slug } })) as any;
@@ -389,7 +388,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 const a = getT(`faqs.${i}.a`);
                 return (
                   <AnimatedSection key={i} delay={i * 100} className="border-b border-brand-blue/10 pb-12 mb-12 last:border-0 last:mb-0">
-                    <span className="text-brand-blue/50 font-mono text-xs tracking-widest block mb-3">0{i+1}</span>
+                    <span className="text-brand-blue/50 font-mono text-xs tracking-widest block mb-3">0{i + 1}</span>
                     <h4 className="text-2xl font-display text-charcoal-900 mb-4">
                       {q}
                     </h4>
