@@ -22,15 +22,15 @@ export function ParallaxSeparator() {
          style={{ y }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1510257007550-618e59add57b?w=1600&auto=format"
-          alt="Architectural concrete detail"
+          src="/portfolio/mid-rise-residential.jpg"
+          alt="Architectural detail"
           fill
-          unoptimized
           className="object-cover grayscale"
           sizes="100vw"
+          priority
         />
       </motion.div>
-      <div className="absolute inset-0 bg-charcoal-900/60 mix-blend-multiply" />
+      <div className="absolute inset-0 bg-charcoal-900/50" />
       
       <div className="relative z-10 px-6 max-w-4xl mx-auto text-center">
         <h2 className="text-3xl md:text-5xl lg:text-5xl font-display text-white italic drop-shadow-[0_4px_12px_rgba(0,0,0,1)] leading-tight">
