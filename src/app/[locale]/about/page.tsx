@@ -294,8 +294,8 @@ export default async function AboutPage() {
         {/* Final CTA Overlay */}
         <section className="relative h-[60vh] md:h-[70vh] w-full flex items-center justify-center overflow-hidden group">
           <Image
-            src="https://images.unsplash.com/photo-1614624532983-4ce03382d63d?w=2000&auto=format"
-            alt="Vertex Build Group studio workspace"
+            src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=2000&auto=format"
+            alt="Engineering blueprint and construction details"
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-[20s] ease-out brightness-[0.3]"
             sizes="100vw"
