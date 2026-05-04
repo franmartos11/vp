@@ -98,8 +98,8 @@ export const FALLBACK_TEAM = [
     _id: '2',
     name: 'Rene Fernandez Jover',
     role: 'Professional Engineer',
-    bio: 'Provides professional engineering services in MEP systems, bringing over 20 years of experience and ensuring quality, compliance, and reliable design solutions.',
-    photoUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80',
+    bio: 'Provides professional engineering services in MEP systems, delivering high-quality, code-compliant, and reliable design solutions.',
+    photoUrl: '/employee/2. Rene Fernandez Jover.png',
   },
   {
     _id: '3',
