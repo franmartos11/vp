@@ -78,16 +78,6 @@ export default function TestimonialsSection() {
               
               {/* Profile Image / Info */}
               <div className="flex flex-col items-center">
-                 <div className="w-16 h-16 relative rounded-full overflow-hidden mb-4 border-2 border-brand-blue/30">
-                   <Image 
-                     src={TESTIMONIALS_IMAGES[current]}
-                     alt={t(`list.${current}.author` as any)}
-                     fill
-                     unoptimized
-                     className="object-cover"
-                     sizes="64px"
-                   />
-                 </div>
                  <footer>
                    <p className="text-cream-100 font-medium tracking-wide text-lg">{t(`list.${current}.author` as any)}</p>
                    <p className="text-warm-300 text-sm mt-1 uppercase tracking-widest font-mono">{t(`list.${current}.role` as any)}</p>

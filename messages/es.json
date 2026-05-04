@@ -42,7 +42,7 @@
     "projects_completed": "Proyectos Completados",
     "years_experience": "Años de Experiencia",
     "client_satisfaction": "Satisfacción del Cliente",
-    "awards": "Premios & Reconocimientos"
+    "awards": "Recertificaciones Completadas"
   },
   "ProcessTimeline": {
     "eyebrow": "Cómo Trabajamos",
@@ -84,10 +84,6 @@
         "a": "Nos especializamos en diseño estructural para proyectos residenciales y comerciales — desde viviendas unifamiliares y multifamiliares hasta edificios de baja y media altura. También ofrecemos coordinación MEP, recertificaciones de edificios, inspecciones estructurales y evaluaciones de as-built."
       },
       {
-        "q": "¿Trabajan bajo el Florida Building Code?",
-        "a": "Sí. Tenemos amplia experiencia bajo el Florida Building Code y garantizamos que todos nuestros diseños sean precisos, conformes al código y revisados cuidadosamente con foco en constructabilidad y eficiencia de costos."
-      },
-      {
         "q": "¿Pueden ayudar con el proceso de permisos?",
         "a": "Absolutamente. Preparamos toda la documentación de ingeniería necesaria y coordinamos directamente con los municipios locales para garantizar una experiencia de permisos fluida y oportuna."
       },
@@ -100,8 +96,20 @@
         "a": "Sí. Elaboramos planos de taller de alta calidad para escaleras, barandas, terrazas, pérgolas, celosias, cercas, canopies y otros componentes estructurales como parte de nuestro alcance de ingeniería estructural."
       },
       {
-        "q": "¿Cómo mantienen los proyectos dentro del presupuesto?",
-        "a": "Abordamos cada proyecto con un fuerte enfoque en la constructabilidad y eficiencia de costos. Comunicamos claramente durante todo el proceso, ayudándote a entender los costos y las decisiones antes de que sean definitivas."
+        "q": "¿Están incluidas las visitas al sitio y las reuniones en sus tarifas?",
+        "a": "Sí. Las visitas al sitio y reuniones de coordinación están incluidas en nuestra propuesta inicial. Se pueden aplicar servicios adicionales solo si hay cambios significativos en el alcance."
+      },
+      {
+        "q": "¿Cuánto dura un proyecto típico?",
+        "a": "Los plazos de los proyectos suelen oscilar entre 1 y 4 semanas, dependiendo del alcance, tamaño y complejidad. Los proyectos más grandes o especializados pueden requerir tiempo adicional."
+      },
+      {
+        "q": "¿Coordinan todas las disciplinas involucradas en el proyecto?",
+        "a": "Sí. Manejamos la coordinación completa entre todas las disciplinas involucradas, incluyendo arquitectura, MEP y consultores externos, asegurando un proceso de diseño y obtención de permisos fluido y eficiente."
+      },
+      {
+        "q": "¿Pueden ayudar con estructuras existentes o evaluaciones as-built?",
+        "a": "Sí. Evaluamos estructuras existentes y proporcionamos certificaciones as-built, incluyendo evaluaciones para legalizaciones, modificaciones o verificación de seguridad estructural."
       }
     ]
   },
@@ -119,19 +127,19 @@
     "title": "Lo que dicen nuestros clientes.",
     "list": [
       {
-        "quote": "Trabajar con este equipo fue distinto a cualquier experiencia de construcción que haya tenido. Cada detalle fue considerado y cada plazo cumplido. El resultado superó nuestras expectativas por un amplio margen.",
-        "author": "Jonathan M.",
-        "role": "Cliente Residencial Privado — Miami, FL"
+        "quote": "TRABAJAR CON ESTE EQUIPO FUE DISTINTO A CUALQUIER EXPERIENCIA DE CONSTRUCCIÓN QUE HAYA TENIDO. CADA DETALLE FUE CONSIDERADO Y CADA PLAZO CUMPLIDO. EL RESULTADO SUPERÓ NUESTRAS EXPECTATIVAS POR UN AMPLIO MARGEN.",
+        "author": "JONATHAN MILLER",
+        "role": "CLIENTE RESIDENCIAL PRIVADO — PINECREST, FL"
       },
       {
-        "quote": "Tomaron un brief comercial complejo y lo convirtieron en algo que ahora define a nuestra marca. Tanto la inteligencia en el diseño como la ejecución en obra fueron de primer nivel mundial.",
-        "author": "Sarah K.",
-        "role": "CEO, Horizon Capital Group — Nueva York, NY"
+        "quote": "TOMARON UN BRIEF COMERCIAL COMPLEJO Y LO CONVIRTIERON EN ALGO QUE AHORA DEFINE A NUESTRA MARCA. TANTO LA INTELIGENCIA EN EL DISEÑO COMO LA EJECUCIÓN EN OBRA FUERON DE PRIMER NIVEL MUNDIAL.",
+        "author": "SARAH COLLINS",
+        "role": "CLIENTE RESIDENCIAL PRIVADO — PINECREST, FL"
       },
       {
-        "quote": "Desde la primera conversación hasta el recorrido final, la comunicación fue transparente y proactiva. Eso es algo raro. La destreza artesanal es sencillamente excepcional.",
-        "author": "David L.",
-        "role": "Desarrollador de Bienes Raíces — Charlotte, NC"
+        "quote": "DESDE LA PRIMERA CONVERSACIÓN HASTA EL RECORRIDO FINAL, LA COMUNICACIÓN FUE TRANSPARENTE Y PROACTIVA. ESO ES ALGO RARO. LA DESTREZA ARTESANAL ES SENCILLAMENTE EXCEPCIONAL.",
+        "author": "DAVID L.",
+        "role": "DESARROLLADOR DE BIENES RAÍCES — FLORIDA"
       }
     ]
   },
@@ -283,9 +291,9 @@
     "schedule": "Programa una fase de descubrimiento con nuestros especialistas de {service}.",
     "inquire": "Consultar Ahora",
     "structural-engineering": {
-      "timeline_val": "2 - 8 Semanas",
+      "timeline_val": "1-4 semanas",
       "investment_val": "Por Metro Cuadrado / Complejidad",
-      "ideal_val": "Nuevas Obras y Ampliaciones Mayores",
+      "ideal_val": "Proyectos Residenciales y Comerciales",
       "phases": [
         {
           "phase": "Fase 1",
@@ -320,9 +328,9 @@
       ]
     },
     "building-recertifications": {
-      "timeline_val": "3 - 6 Semanas",
+      "timeline_val": "1-2 semanas",
       "investment_val": "Por Tamaño y Antigüedad",
-      "ideal_val": "Inspecciones de 25, 30 y 40 años",
+      "ideal_val": "Para edificios de 25, 30, 40 y 50+ años",
       "phases": [
         {
           "phase": "Fase 1",
@@ -357,8 +365,8 @@
       ]
     },
     "structural-inspections": {
-      "timeline_val": "1 - 3 Semanas",
-      "investment_val": "Según el Alcance",
+      "timeline_val": "1-3 días",
+      "investment_val": "Según el alcance y ubicación",
       "ideal_val": "Transacciones Inmobiliarias y Seguridad",
       "phases": [
         {
@@ -394,9 +402,9 @@
       ]
     },
     "mep-engineering": {
-      "timeline_val": "4 - 8 Semanas",
+      "timeline_val": "1-4 semanas",
       "investment_val": "Según Complejidad del Sistema",
-      "ideal_val": "Desarrollos Comerciales y Nuevas Obras",
+      "ideal_val": "Proyectos Residenciales y Comerciales",
       "phases": [
         {
           "phase": "Fase 1",

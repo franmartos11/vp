@@ -42,7 +42,7 @@
     "projects_completed": "Projects Completed",
     "years_experience": "Years of Experience",
     "client_satisfaction": "Client Satisfaction",
-    "awards": "Awards & Recognitions"
+    "awards": "Recertifications Completed"
   },
   "ProcessTimeline": {
     "eyebrow": "How We Work",
@@ -84,10 +84,6 @@
         "a": "We specialize in structural design for residential and commercial projects — from single and multi-family developments to low- and mid-rise buildings. We also provide MEP coordination, building recertifications, structural inspections, and as-built evaluations."
       },
       {
-        "q": "Do you work under the Florida Building Code?",
-        "a": "Yes. We have extensive experience under the Florida Building Code and ensure all our designs are accurate, code-compliant, and thoroughly reviewed for constructability and cost-efficiency."
-      },
-      {
         "q": "Can you assist with the permitting process?",
         "a": "Absolutely. We prepare all required engineering documentation and coordinate directly with local municipalities to ensure a smooth and timely permitting experience."
       },
@@ -100,8 +96,20 @@
         "a": "Yes. We prepare high-quality shop drawings for stairs, railings, terraces, pergolas, trellis, fences, canopies, and other structural components as part of our structural engineering scope."
       },
       {
-        "q": "How do you keep projects on budget?",
-        "a": "We approach every project with a strong focus on constructability and cost-efficiency. We communicate clearly throughout the process, helping you understand costs and trade-offs before decisions are made."
+        "q": "Are site visits and meetings included in your fees?",
+        "a": "Yes. Site visits and coordination meetings are included in our initial proposal. Additional services may apply only if there are significant scope changes."
+      },
+      {
+        "q": "How long does a typical project take?",
+        "a": "Project timelines typically range from 1 to 4 weeks, depending on the scope, size, and complexity. Larger or more specialized projects may require additional time."
+      },
+      {
+        "q": "Do you coordinate all disciplines involved in the project?",
+        "a": "Yes. We handle full coordination between all disciplines involved, including architecture, MEP, and any external consultants, ensuring a smooth and efficient design and permitting process."
+      },
+      {
+        "q": "Can you assist with existing structures or as-built evaluations?",
+        "a": "Yes. We evaluate existing structures and provide as-built certifications, including assessments for legalizations, modifications, or structural safety verification."
       }
     ]
   },
@@ -119,19 +127,19 @@
     "title": "What our clients say.",
     "list": [
       {
-        "quote": "Working with this team was unlike any construction experience I've had. Every detail was considered, every deadline met. The final result exceeded our expectations by a wide margin.",
-        "author": "Jonathan M.",
-        "role": "Private Residential Client — Miami, FL"
+        "quote": "WORKING WITH THIS TEAM WAS UNLIKE ANY CONSTRUCTION EXPERIENCE I'VE HAD. EVERY DETAIL WAS CONSIDERED, EVERY DEADLINE MET. THE FINAL RESULT EXCEEDED OUR EXPECTATIONS BY A WIDE MARGIN.",
+        "author": "JONATHAN MILLER",
+        "role": "PRIVATE RESIDENTIAL CLIENT — PINECREST, FL"
       },
       {
-        "quote": "They took a complex commercial brief and turned it into something that now defines our brand. The design intelligence and on-site execution were both world-class.",
-        "author": "Sarah K.",
-        "role": "CEO, Horizon Capital Group — New York, NY"
+        "quote": "THEY TOOK A COMPLEX COMMERCIAL BRIEF AND TURNED IT INTO SOMETHING THAT NOW DEFINES OUR BRAND. THE DESIGN INTELLIGENCE AND ON-SITE EXECUTION WERE BOTH WORLD-CLASS.",
+        "author": "SARAH COLLINS",
+        "role": "PRIVATE RESIDENTIAL CLIENT — PINECREST, FL"
       },
       {
-        "quote": "From the first conversation to the final walkthrough, the communication was transparent and proactive. That's rare. The craftsmanship is simply exceptional.",
-        "author": "David L.",
-        "role": "Real Estate Developer — Charlotte, NC"
+        "quote": "FROM THE FIRST CONVERSATION TO THE FINAL WALKTHROUGH, THE COMMUNICATION WAS TRANSPARENT AND PROACTIVE. THAT'S RARE. THE CRAFTSMANSHIP IS SIMPLY EXCEPTIONAL.",
+        "author": "DAVID L.",
+        "role": "REAL ESTATE DEVELOPER — FLORIDA"
       }
     ]
   },
@@ -283,9 +291,9 @@
     "schedule": "Schedule a discovery phase with our {service} specialists.",
     "inquire": "Inquire Now",
     "structural-engineering": {
-      "timeline_val": "2 - 8 Weeks",
+      "timeline_val": "1-4 weeks",
       "investment_val": "Per Square Foot / Complexity",
-      "ideal_val": "New Builds & Major Additions",
+      "ideal_val": "Residential & Commercial Projects",
       "phases": [
         {
           "phase": "Phase 1",
@@ -320,9 +328,9 @@
       ]
     },
     "building-recertifications": {
-      "timeline_val": "3 - 6 Weeks",
+      "timeline_val": "1-2 weeks",
       "investment_val": "Per Building Size & Age",
-      "ideal_val": "25, 30, and 40-year Milestones",
+      "ideal_val": "For buildings 25, 30, 40, and 50+ years old",
       "phases": [
         {
           "phase": "Phase 1",
@@ -357,8 +365,8 @@
       ]
     },
     "structural-inspections": {
-      "timeline_val": "1 - 3 Weeks",
-      "investment_val": "Per Scope of Inspection",
+      "timeline_val": "1-3 days",
+      "investment_val": "Per scope of inspection and location",
       "ideal_val": "Real Estate Transactions & Safety",
       "phases": [
         {
@@ -394,9 +402,9 @@
       ]
     },
     "mep-engineering": {
-      "timeline_val": "4 - 8 Weeks",
+      "timeline_val": "1-4 weeks",
       "investment_val": "Based on System Complexity",
-      "ideal_val": "Commercial Fit-outs & New Developments",
+      "ideal_val": "Residential & Commercial Projects",
       "phases": [
         {
           "phase": "Phase 1",

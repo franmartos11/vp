@@ -89,9 +89,6 @@ export default async function PortfolioPage() {
           <AnimatedSection>
             <div className="flex flex-col sm:flex-row justify-between sm:items-end border-b border-brand-blue/15 pb-6 md:pb-8 mb-8 md:mb-12 gap-2">
               <h2 className="text-2xl md:text-3xl font-display text-charcoal-900">{t("explore")}</h2>
-              <p className="text-xs text-brand-blue font-mono tracking-widest uppercase">
-                {projects.length > 0 ? `${projects.length} projects` : ""}
-              </p>
             </div>
           </AnimatedSection>
 

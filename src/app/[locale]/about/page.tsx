@@ -232,7 +232,7 @@ export default async function AboutPage() {
                 <div>
                   <span className="font-mono text-xs tracking-[0.3em] uppercase text-brand-blue/80 mb-4 block">Our Team</span>
                   <h2 className="text-3xl md:text-5xl lg:text-6xl font-display text-white">
-                    The engineers <br /><span className="italic font-light text-brand-blue/60">behind your project.</span>
+                    The professionals <br /><span className="italic font-light text-brand-blue/60">behind your project.</span>
                   </h2>
                 </div>
               </AnimatedSection>
@@ -262,7 +262,7 @@ export default async function AboutPage() {
 
                         {/* Overlay Role on Hover */}
                         <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-charcoal-900/90 to-transparent translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                          <p className="text-warm-200 font-light text-sm line-clamp-2">{member.bio || "Integral member of our execution and design strategy team."}</p>
+                          <p className="text-warm-200 font-light text-sm">{member.bio || "Integral member of our execution and design strategy team."}</p>
                         </div>
                       </div>
 

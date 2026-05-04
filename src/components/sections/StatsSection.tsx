@@ -6,9 +6,9 @@ import { useTranslations } from "next-intl";
 
 const STATS = [
   { value: 580, suffix: "+", labelKey: "projects_completed" },
-  { value: 15, suffix: "+", labelKey: "years_experience" },
+  { value: 7, suffix: "+", labelKey: "years_experience" },
   { value: 98, suffix: "%", labelKey: "client_satisfaction" },
-  { value: 40, suffix: "+", labelKey: "awards" },
+  { value: 350, suffix: "+", labelKey: "awards" },
 ] as const;
 
 function CountUp({ target, suffix }: { target: number; suffix: string }) {
