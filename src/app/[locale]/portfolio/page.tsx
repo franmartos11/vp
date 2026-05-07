@@ -30,7 +30,7 @@ export default async function PortfolioPage() {
     ...p,
     title: locale === 'es' && p.titleEs ? p.titleEs : p.title,
     description: locale === 'es' && p.descriptionEs ? p.descriptionEs : p.description,
-    projectType: locale === 'es' && p.projectTypeEs ? p.projectTypeEs : p.projectType,
+    // projectType should remain the logic slug for filtering
     location: locale === 'es' && p.locationEs ? p.locationEs : p.location,
     technicalSheet: locale === 'es' && p.technicalSheetEs ? p.technicalSheetEs : p.technicalSheet,
     materials: locale === 'es' && p.materialsEs ? p.materialsEs : p.materials,

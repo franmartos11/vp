@@ -81,7 +81,7 @@ export default async function ProjectDetailPage({ params }: Props) {
     ...projectRecord,
     title: locale === "es" && rawProject.titleEs ? rawProject.titleEs : rawProject.title,
     description: locale === "es" && rawProject.descriptionEs ? rawProject.descriptionEs : rawProject.description,
-    projectType: locale === "es" && rawProject.projectTypeEs ? rawProject.projectTypeEs : rawProject.projectType,
+    // projectType remains the logic slug
     location: locale === "es" && rawProject.locationEs ? rawProject.locationEs : rawProject.location,
     technicalSheet: locale === "es" && rawProject.technicalSheetEs ? rawProject.technicalSheetEs : rawProject.technicalSheet,
     materials: locale === "es" && rawProject.materialsEs ? rawProject.materialsEs : rawProject.materials,
@@ -137,11 +137,10 @@ export default async function ProjectDetailPage({ params }: Props) {
     ? project.technicalSheet.split("\n").map((l: string) => l.trim()).filter(Boolean)
     : [];
 
-  const TYPE_LABELS: Record<string, string> = {
-    residential: t("types.residential"),
-    commercial: t("types.commercial"),
-    renovation: t("types.renovation"),
-    interior: t("types.interior"),
+  // Use t.has to check for existence
+  const translateType = (key: string) => {
+    const normalized = key?.toLowerCase().replace(/\s+/g, '-');
+    return t.has(`types.${normalized}` as any) ? t(`types.${normalized}` as any) : key;
   };
 
   return (
@@ -191,7 +190,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 )}
                 {project.projectType && (
                   <span className="text-[10px] font-mono uppercase tracking-widest text-brand-blue bg-brand-blue/15 border border-brand-blue/30 px-3 py-1">
-                    {TYPE_LABELS[rawProject.projectType] || rawProject.projectType}
+                    {translateType(projectRecord.projectType)}
                   </span>
                 )}
               </div>
@@ -270,7 +269,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                       {rawProject.projectType && (
                         <div>
                           <dt className="text-[10px] text-brand-blue/40 uppercase tracking-widest mb-1 font-mono">{t("type_label")}</dt>
-                          <dd className="text-sm text-cream-100">{TYPE_LABELS[rawProject.projectType] || rawProject.projectType}</dd>
+                          <dd className="text-sm text-cream-100">{translateType(projectRecord.projectType)}</dd>
                         </div>
                       )}
 

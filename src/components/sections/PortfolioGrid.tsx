@@ -11,7 +11,9 @@ const FILTERS = [
   "residential",
   "commercial",
   "mid-rise",
-  "shop-drawing"
+  "shop-drawing",
+  "renovation",
+  "interior"
 ] as const;
 
 type Project = {

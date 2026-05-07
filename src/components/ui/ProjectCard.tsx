@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { cardHover, imageOverlay, textSlideUp } from "@/lib/animations";
+import { useTranslations } from "next-intl";
 
 interface ProjectCardProps {
   project: {
@@ -22,16 +23,15 @@ interface ProjectCardProps {
   priority?: boolean;
 }
 
-const TYPE_LABELS: Record<string, string> = {
-  residential: "Residential",
-  commercial: "Commercial",
-  renovation: "Renovation",
-  interior: "Interior Design",
-};
+// Removed hardcoded TYPE_LABELS
 
 export default function ProjectCard({ project, priority = false }: ProjectCardProps) {
+  const t = useTranslations("ProjectDetail.types");
   const imageUrl = project.coverImage || project.coverImageUrl || "https://images.unsplash.com/photo-1581092335397-9fa73b1e5e6a?w=900&auto=format";
   const slugTarget = typeof project.slug === 'string' ? project.slug : project.slug.current;
+  
+  // Normalize project type key for translation
+  const typeKey = project.projectType?.toLowerCase().replace(/\s+/g, '-');
 
   return (
     <motion.article
@@ -96,7 +96,7 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
                 <span className="text-xs text-warm-500">{project.completionYear}</span>
               )}
               <span className="text-2xs tracking-widest uppercase text-warm-400 bg-cream-200 px-2 py-0.5">
-                {TYPE_LABELS[project.projectType] || project.projectType}
+                {t.has(typeKey as any) ? t(typeKey as any) : project.projectType}
               </span>
             </div>
           </div>

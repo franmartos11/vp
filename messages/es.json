@@ -149,7 +149,9 @@
       "residential": "Residencial",
       "commercial": "Comercial",
       "mid-rise": "Mid-Rise",
-      "shop-drawing": "Shop Drawing"
+      "shop-drawing": "Shop Drawing",
+      "renovation": "Renovación",
+      "interior": "Diseño de Interiores"
     },
     "no_projects": "Aún no hay proyectos en esta categoría."
   },
@@ -183,7 +185,9 @@
       "residential": "Residencial",
       "commercial": "Comercial",
       "mid-rise": "Mid-Rise",
-      "shop-drawing": "Shop Drawing"
+      "shop-drawing": "Shop Drawing",
+      "renovation": "Renovación",
+      "interior": "Diseño de Interiores"
     }
   },
   "ServicesPage": {
