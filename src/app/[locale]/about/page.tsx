@@ -238,27 +238,36 @@ export default async function AboutPage() {
               </AnimatedSection>
 
               <AnimatedSection stagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-16">
-                {team.map((member: any) => {
-                  const photoUrl = member.photoUrl;
+                {(() => {
+                  // Ensure Darian is in the second position (index 1) for a 3-column layout
+                  const orderedTeam = [...team];
+                  const darianIndex = orderedTeam.findIndex(m => m.name === "Darian Huerta");
+                  if (darianIndex !== -1 && darianIndex !== 1) {
+                    const [darian] = orderedTeam.splice(darianIndex, 1);
+                    orderedTeam.splice(1, 0, darian);
+                  }
+
+                  return orderedTeam.map((member: any) => {
+                    const isFounder = member.name === "Darian Huerta" || member.role.toLowerCase().includes("founder");
+                    const photoUrl = member.photoUrl;
                   return (
-                    <article key={member._id} className="group cursor-pointer">
-                      <div className="relative aspect-[3/4] overflow-hidden bg-charcoal-800 mb-6">
+                    <article key={member._id} className={`group cursor-pointer ${isFounder ? "relative z-10" : ""}`}>
+                      <div className={`relative aspect-[3/4] overflow-hidden bg-charcoal-800 mb-6 transition-all duration-500 ${isFounder ? "ring-2 ring-brand-blue ring-offset-4 ring-offset-charcoal-900 scale-[1.02] shadow-2xl shadow-brand-blue/20" : ""}`}>
                         {photoUrl ? (
                           <Image
                             src={photoUrl}
                             alt={member.name}
                             fill
-                            className="object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 mix-blend-luminosity hover:mix-blend-normal opacity-80 hover:opacity-100"
+                            className={`object-cover object-top grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700 mix-blend-luminosity hover:mix-blend-normal ${isFounder ? "opacity-100 grayscale-0" : "opacity-80 hover:opacity-100"}`}
                             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                           />
                         ) : (
                           <div className="absolute inset-0 bg-gradient-to-tr from-charcoal-800 to-charcoal-700 flex items-center justify-center opacity-80 group-hover:opacity-100 transition-opacity duration-700">
-                            {/* Abstract pattern for missing photos */}
                             <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.8)_0,transparent_100%)]" />
                             <span className="text-warm-500/50 text-xs font-mono uppercase tracking-widest">{member.name.split(' ')[0]}</span>
                           </div>
                         )}
-                        <div className="absolute inset-0 bg-charcoal-900/10 group-hover:bg-transparent transition-colors duration-700" />
+                        <div className={`absolute inset-0 bg-charcoal-900/10 group-hover:bg-transparent transition-colors duration-700 ${isFounder ? "bg-transparent" : ""}`} />
 
                         {/* Overlay Role on Hover */}
                         <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-charcoal-900/90 to-transparent translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
@@ -266,20 +275,21 @@ export default async function AboutPage() {
                         </div>
                       </div>
 
-                      <div className="flex items-start justify-between border-b border-warm-800/50 pb-4 group-hover:border-brand-blue transition-colors duration-500">
+                      <div className={`flex items-start justify-between border-b pb-4 transition-colors duration-500 ${isFounder ? "border-brand-blue" : "border-warm-800/50 group-hover:border-brand-blue"}`}>
                         <div>
-                          <h3 className="font-display text-xl text-white group-hover:text-warm-100 transition-colors">{member.name}</h3>
-                          <p className="text-xs font-mono uppercase tracking-[0.2em] text-warm-400 mt-2">{member.role}</p>
+                          <h3 className={`font-display text-white group-hover:text-warm-100 transition-colors ${isFounder ? "text-2xl md:text-3xl" : "text-xl"}`}>{member.name}</h3>
+                          <p className={`font-mono uppercase tracking-[0.2em] mt-2 ${isFounder ? "text-brand-blue text-xs font-bold" : "text-warm-400 text-[10px]"}`}>{member.role}</p>
                         </div>
                         {member.linkedIn && (
                           <a href={member.linkedIn} target="_blank" rel="noopener noreferrer" aria-label={`${member.name} LinkedIn`} className="text-brand-blue/60 hover:text-brand-blue transition-colors shrink-0 mt-1 cursor-none">
-                            <LinkedinIcon size={18} strokeWidth={1.5} />
+                            <LinkedinIcon size={isFounder ? 22 : 18} strokeWidth={1.5} />
                           </a>
                         )}
                       </div>
                     </article>
                   );
-                })}
+                });
+              })()}
               </AnimatedSection>
             </div>
           </section>

@@ -21,14 +21,13 @@ export const metadata: Metadata = {
     template: "%s | Vertex Build Group",
   },
   description:
-    "Award-winning luxury architecture and construction firm based in the United States. Residential, commercial, and interior design projects crafted with precision.",
+    "Award-winning luxury architecture and construction firm based in the United States. High-end residential and commercial projects crafted with precision.",
   keywords: [
     "luxury architect",
     "luxury construction",
     "custom home builder",
     "residential architect",
     "commercial construction",
-    "interior design",
     "architecture firm",
   ],
   openGraph: {

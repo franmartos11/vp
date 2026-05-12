@@ -14,8 +14,6 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://yourfirm.com";
 const TYPE_LABELS: Record<string, string> = {
   residential: "Residential",
   commercial: "Commercial",
-  renovation: "Renovation",
-  interior: "Interior Design",
 };
 
 interface Props {

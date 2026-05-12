@@ -149,9 +149,7 @@
       "residential": "Residential",
       "commercial": "Commercial",
       "mid-rise": "Mid-Rise",
-      "shop-drawing": "Shop Drawing",
-      "renovation": "Renovation",
-      "interior": "Interior Design"
+      "shop-drawing": "Shop Drawing"
     },
     "no_projects": "No projects in this category yet."
   },
@@ -163,7 +161,7 @@
     "our_work": "Our Work",
     "title_1": "Selected",
     "title_2": "projects.",
-    "subtitle": "A curated selection of our residential, commercial, renovation, and interior design work across the United States.",
+    "subtitle": "A curated selection of our residential, commercial, mid-rise, and shop drawing work across the United States.",
     "discover": "Discover",
     "explore": "Explore our portfolio",
     "empty": "Portfolio projects are being added. Please check back soon."
@@ -185,9 +183,7 @@
       "residential": "Residential",
       "commercial": "Commercial",
       "mid-rise": "Mid-Rise",
-      "shop-drawing": "Shop Drawing",
-      "renovation": "Renovation",
-      "interior": "Interior Design"
+      "shop-drawing": "Shop Drawing"
     }
   },
   "ServicesPage": {
@@ -459,9 +455,7 @@
   "ContactForm": {
     "types": {
       "res_new": "Residential — New Build",
-      "res_ren": "Residential — Renovation",
       "com_new": "Commercial — New Build",
-      "interior": "Interior Design",
       "other": "Other"
     },
     "budgets": {

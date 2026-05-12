@@ -88,18 +88,18 @@ export const FALLBACK_SERVICES = [
 
 export const FALLBACK_TEAM = [
   {
-    _id: '1',
-    name: 'Darian Huerta',
-    role: 'President & Founder',
-    bio: 'Leads the firm\'s vision, focusing on strategic management, operations, while bringing innovation and creativity to every project.',
-    photoUrl: '/employee/1. Darian Huerta.png',
-  },
-  {
     _id: '2',
     name: 'Rene Fernandez Jover',
     role: 'Professional Engineer',
     bio: 'Provides professional engineering services in MEP systems, delivering high-quality, code-compliant, and reliable design solutions.',
     photoUrl: '/employee/2. Rene Fernandez Jover.png',
+  },
+  {
+    _id: '1',
+    name: 'Darian Huerta',
+    role: 'President & Founder',
+    bio: 'Leads the firm\'s vision, focusing on strategic management, operations, while bringing innovation and creativity to every project.',
+    photoUrl: '/employee/1. Darian Huerta.png',
   },
   {
     _id: '3',

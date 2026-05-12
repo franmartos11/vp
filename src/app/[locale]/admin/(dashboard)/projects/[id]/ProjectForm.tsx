@@ -121,16 +121,12 @@ export default function ProjectForm({ initialData }: ProjectFormProps) {
                    <option value="commercial">Commercial</option>
                    <option value="mid-rise">Mid-Rise</option>
                    <option value="shop-drawing">Shop Drawing</option>
-                   <option value="renovation">Renovation</option>
-                   <option value="interior">Interior</option>
                  </select>
                  <select value={formData.projectTypeEs} onChange={(e) => setFormData({...formData, projectTypeEs: e.target.value})} className="w-full border-b border-warm-300 p-2 outline-none focus:border-warm-500 bg-transparent text-sm font-mono">
                    <option value="residential">Residencial</option>
                    <option value="commercial">Comercial</option>
                    <option value="mid-rise">Mid-Rise</option>
                    <option value="shop-drawing">Shop Drawing</option>
-                   <option value="renovation">Renovación</option>
-                   <option value="interior">Interior</option>
                  </select>
                </div>
              </div>

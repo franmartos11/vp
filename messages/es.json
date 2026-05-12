@@ -149,9 +149,7 @@
       "residential": "Residencial",
       "commercial": "Comercial",
       "mid-rise": "Mid-Rise",
-      "shop-drawing": "Shop Drawing",
-      "renovation": "Renovación",
-      "interior": "Diseño de Interiores"
+      "shop-drawing": "Shop Drawing"
     },
     "no_projects": "Aún no hay proyectos en esta categoría."
   },
@@ -163,7 +161,7 @@
     "our_work": "Nuestro Trabajo",
     "title_1": "Proyectos",
     "title_2": "seleccionados.",
-    "subtitle": "Una selección curada de nuestro trabajo residencial, comercial, de renovación y diseño de interiores en Estados Unidos.",
+    "subtitle": "Una selección curada de nuestro trabajo residencial, comercial, mid-rise y de shop drawings en Estados Unidos.",
     "discover": "Descubrir",
     "explore": "Explora nuestro portafolio",
     "empty": "Se están agregando proyectos al portafolio. Vuelve pronto."
@@ -185,9 +183,7 @@
       "residential": "Residencial",
       "commercial": "Comercial",
       "mid-rise": "Mid-Rise",
-      "shop-drawing": "Shop Drawing",
-      "renovation": "Renovación",
-      "interior": "Diseño de Interiores"
+      "shop-drawing": "Shop Drawing"
     }
   },
   "ServicesPage": {
@@ -459,9 +455,7 @@
   "ContactForm": {
     "types": {
       "res_new": "Residencial — Obra Nueva",
-      "res_ren": "Residencial — Renovación",
       "com_new": "Comercial — Obra Nueva",
-      "interior": "Diseño de Interiores",
       "other": "Otro"
     },
     "budgets": {

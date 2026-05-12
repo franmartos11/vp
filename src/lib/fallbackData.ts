@@ -40,17 +40,6 @@ export const FALLBACK_PROJECTS = [
     gallery: []
   },
   { 
-    _id: '3', 
-    title: 'Villa Blanca', 
-    slug: { current: 'villa-blanca' }, 
-    projectType: 'renovation', 
-    completionYear: 2025, 
-    location: 'Palm Beach, FL', 
-    coverImageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=900&auto=format',
-    seoDescription: 'High-end surgical renovation of a classic Palm Beach property.',
-    gallery: []
-  },
-  { 
     _id: '4', 
     title: 'Silicon Hub', 
     slug: { current: 'silicon-hub' }, 
@@ -59,19 +48,9 @@ export const FALLBACK_PROJECTS = [
     location: 'Austin, TX', 
     coverImageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&auto=format' 
   },
-  { 
-    _id: '5', 
-    title: 'Oceanfront Penthouse', 
-    slug: { current: 'oceanfront' }, 
-    projectType: 'interior', 
-    completionYear: 2024, 
-    location: 'Miami, FL', 
-    coverImageUrl: 'https://images.unsplash.com/photo-1581092335397-9fa73b1e5e6a?w=900&auto=format' 
-  },
 ];
 
 export const FALLBACK_TEAM = [
   { _id: '1', name: 'James Vertex', role: 'Principal Architect', bio: 'With over 20 years of experience designing luxury spaces, James leads the firm\'s creative vision.', linkedIn: 'https://linkedin.com', photoUrl: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80' },
   { _id: '2', name: 'Sarah Miller', role: 'Director of Construction', bio: 'Sarah ensures every line on the blueprint translates perfectly into reality with uncompromising quality.', linkedIn: 'https://linkedin.com', photoUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80' },
-  { _id: '3', name: 'David Chen', role: 'Lead Interior Designer', bio: 'David brings spaces to life with curated materials, bespoke furniture, and an eye for light.', linkedIn: 'https://linkedin.com', photoUrl: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&q=80' },
 ];

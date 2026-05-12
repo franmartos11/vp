@@ -10,7 +10,7 @@ import { getTranslations } from "next-intl/server";
 export const metadata: Metadata = {
   title: "Contact Us",
   description:
-    "Get in touch with Vertex Build Group. Tell us about your project — residential, commercial, or interior design. We respond within 24 hours.",
+    "Get in touch with Vertex Build Group. Tell us about your project — residential or commercial. We respond within 24 hours.",
 };
 
 export default async function ContactPage() {

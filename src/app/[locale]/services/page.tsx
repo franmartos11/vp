@@ -12,7 +12,7 @@ import { getLocale, getTranslations } from "next-intl/server";
 export const metadata: Metadata = {
   title: "Services",
   description:
-    "Vertex Build Group offers end-to-end luxury architecture, construction management, renovation, and interior design services across the United States.",
+    "Vertex Build Group offers end-to-end luxury architecture, structural engineering, and construction management services across the United States.",
 };
 
 export default async function ServicesPage() {
