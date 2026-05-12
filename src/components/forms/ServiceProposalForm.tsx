@@ -2,8 +2,43 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 
-export function ServiceProposalForm() {
+interface ServiceProposalFormProps {
+  translations?: {
+    success_title: string;
+    success_message: string;
+    label_first_name: string;
+    label_last_name: string;
+    label_email: string;
+    label_phone: string;
+    label_project_info: string;
+    label_address: string;
+    label_city: string;
+    label_state: string;
+    label_zip: string;
+    btn_submit: string;
+  };
+}
+
+export function ServiceProposalForm({ translations }: ServiceProposalFormProps) {
+  // Fallback if translations are not provided (e.g. while refactoring other pages)
+  const defaultT = {
+    success_title: "Request Sent.",
+    success_message: "Our engineering team will get back to you shortly.",
+    label_first_name: "First Name",
+    label_last_name: "Last Name",
+    label_email: "Email",
+    label_phone: "Phone Number",
+    label_project_info: "Project Information",
+    label_address: "Address",
+    label_city: "City",
+    label_state: "State",
+    label_zip: "Zip Code",
+    btn_submit: "Submit Request"
+  };
+
+  const t = translations || defaultT;
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -27,15 +62,15 @@ export function ServiceProposalForm() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h3 className="text-3xl font-display text-white mb-2">Request Sent.</h3>
-          <p className="text-white/70 text-lg font-light">Our engineering team will get back to you shortly.</p>
+          <h3 className="text-3xl font-display text-white mb-2">{t.success_title}</h3>
+          <p className="text-white/70 text-lg font-light">{t.success_message}</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div className="group">
               <label className="text-xs tracking-widest uppercase font-mono text-white/50 mb-2 block group-focus-within:text-brand-blue transition-colors">
-                First Name
+                {t.label_first_name}
               </label>
               <input
                 type="text"
@@ -46,7 +81,7 @@ export function ServiceProposalForm() {
             </div>
             <div className="group">
               <label className="text-xs tracking-widest uppercase font-mono text-white/50 mb-2 block group-focus-within:text-brand-blue transition-colors">
-                Last Name
+                {t.label_last_name}
               </label>
               <input
                 type="text"
@@ -60,7 +95,7 @@ export function ServiceProposalForm() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div className="group">
               <label className="text-xs tracking-widest uppercase font-mono text-white/50 mb-2 block group-focus-within:text-brand-blue transition-colors">
-                Email
+                {t.label_email}
               </label>
               <input
                 type="email"
@@ -71,7 +106,7 @@ export function ServiceProposalForm() {
             </div>
             <div className="group">
               <label className="text-xs tracking-widest uppercase font-mono text-white/50 mb-2 block group-focus-within:text-brand-blue transition-colors">
-                Phone Number
+                {t.label_phone}
               </label>
               <input
                 type="tel"
@@ -82,11 +117,11 @@ export function ServiceProposalForm() {
           </div>
 
           <div className="pt-6">
-            <h4 className="text-xs tracking-widest uppercase font-mono text-brand-blue mb-6">Project Information</h4>
+            <h4 className="text-xs tracking-widest uppercase font-mono text-brand-blue mb-6">{t.label_project_info}</h4>
             <div className="space-y-8">
               <div className="group">
                 <label className="text-xs tracking-widest uppercase font-mono text-white/50 mb-2 block group-focus-within:text-brand-blue transition-colors">
-                  Address
+                  {t.label_address}
                 </label>
                 <input
                   type="text"
@@ -98,17 +133,17 @@ export function ServiceProposalForm() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
                 <div className="group">
                   <label className="text-xs tracking-widest uppercase font-mono text-white/50 mb-2 block group-focus-within:text-brand-blue transition-colors">
-                    City
+                    {t.label_city}
                   </label>
                   <input
                     type="text"
                     placeholder="Miami"
-                    className="w-full bg-transparent border-b border-white/20 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-brand-blue transition-colors text-lg"
+                    className="text-lg w-full bg-transparent border-b border-white/20 py-3 text-white placeholder:text-white/20 focus:outline-none focus:border-brand-blue transition-colors"
                   />
                 </div>
                 <div className="group">
                   <label className="text-xs tracking-widest uppercase font-mono text-white/50 mb-2 block group-focus-within:text-brand-blue transition-colors">
-                    State
+                    {t.label_state}
                   </label>
                   <input
                     type="text"
@@ -118,7 +153,7 @@ export function ServiceProposalForm() {
                 </div>
                 <div className="group">
                   <label className="text-xs tracking-widest uppercase font-mono text-white/50 mb-2 block group-focus-within:text-brand-blue transition-colors">
-                    Zip Code
+                    {t.label_zip}
                   </label>
                   <input
                     type="text"
@@ -135,7 +170,7 @@ export function ServiceProposalForm() {
               type="submit"
               className="group relative w-full sm:w-auto overflow-hidden bg-brand-blue text-white px-12 py-5 font-mono uppercase tracking-widest text-sm transition-all hover:bg-brand-blue-dark flex items-center justify-center gap-4"
             >
-              Submit Request
+              {t.btn_submit}
               <span className="group-hover:translate-x-1 transition-transform">→</span>
             </button>
           </div>

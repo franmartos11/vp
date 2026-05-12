@@ -7,6 +7,7 @@ import { useTranslations } from "next-intl";
 
 export function MakersStory() {
   const t = useTranslations("MakersStory");
+  
   return (
     <section className="py-24 md:py-32 bg-cream-50 overflow-hidden" aria-labelledby="manifesto-heading">
       <div className="container mx-auto px-6 md:px-12">
@@ -14,7 +15,7 @@ export function MakersStory() {
           {/* Image */}
           <div className="lg:col-span-5 relative h-[300px] md:h-[420px] lg:h-[700px] w-full">
             <Image
-              src="personaplano.png"
+              src="/personaplano.png"
               alt="Architect drafting plans"
               fill
               unoptimized

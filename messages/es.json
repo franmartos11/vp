@@ -1,4 +1,45 @@
 {
+  "ServiceProposalForm": {
+    "success_title": "Solicitud Enviada.",
+    "success_message": "Nuestro equipo de ingeniería se pondrá en contacto con usted en breve.",
+    "label_first_name": "Nombre",
+    "label_last_name": "Apellido",
+    "label_email": "Correo Electrónico",
+    "label_phone": "Número de Teléfono",
+    "label_project_info": "Información del Proyecto",
+    "label_address": "Dirección",
+    "label_city": "Ciudad",
+    "label_state": "Estado",
+    "label_zip": "Código Postal",
+    "btn_submit": "Enviar Solicitud"
+  },
+  "ServiceContactSection": {
+    "eyebrow": "¿LISTO PARA COMENZAR?",
+    "title_1": "Diseñemos",
+    "title_2": "su visión.",
+    "description": "Complete el formulario para solicitar una propuesta detallada para su proyecto específico. Nuestro equipo de ingeniería revisará sus requisitos y se pondrá en contacto con usted en un plazo de 24 horas."
+  },
+  "PortfolioGrid": {
+    "filters": {
+      "all": "Todos",
+      "residential": "Residencial",
+      "commercial": "Comercial",
+      "mid-rise": "Mediana altura",
+      "shop-drawing": "Planos de taller"
+    },
+    "no_projects": "Aún no hay proyectos en esta categoría.",
+    "view_project": "Ver Proyecto"
+  },
+  "PortfolioPage": {
+    "our_work": "Nuestro Trabajo",
+    "title_1": "Proyectos",
+    "title_2": "seleccionados.",
+    "subtitle": "Una selección curada de nuestro trabajo residencial, comercial, mid-rise y de shop drawings en Estados Unidos.",
+    "discover": "Descubrir",
+    "explore": "Explora nuestro portafolio",
+    "empty": "Se están agregando proyectos al portafolio. Vuelve pronto.",
+    "view_project": "Ver Proyecto"
+  },
   "Metadata": {
     "title": "DH Engineering & Consulting LLC | Servicios de Ingeniería Especializados",
     "description": "Firma de ingeniería especializada que ofrece diseño estructural, coordinación MEP, recertificaciones de edificios e inspecciones en Florida.",
@@ -219,7 +260,9 @@
     "licensed": "Firma de Ingeniería Licenciada · Estado de Florida"
   },
   "TrustedPartners": {
-    "heading": "Nuestros Aliados y Colaboradores"
+    "heading": "Nuestros Aliados y Colaboradores",
+    "headline_1": "Firmas que",
+    "headline_2": "confían en nosotros."
   },
   "Testimonials": {
     "eyebrow": "Testimonios",
@@ -242,28 +285,9 @@
       }
     ]
   },
-  "PortfolioGrid": {
-    "filters": {
-      "all": "Todos",
-      "residential": "Residencial",
-      "commercial": "Comercial",
-      "mid-rise": "Mid-Rise",
-      "shop-drawing": "Shop Drawing"
-    },
-    "no_projects": "Aún no hay proyectos en esta categoría."
-  },
   "ParallaxSeparator": {
     "quote": "La ingeniería confiable no se trata solo de cálculos - se trata de confianza, claridad y resultados que resisten la prueba del tiempo.",
     "caption": "El Estándar DH Engineering"
-  },
-  "PortfolioPage": {
-    "our_work": "Nuestro Trabajo",
-    "title_1": "Proyectos",
-    "title_2": "seleccionados.",
-    "subtitle": "Una selección curada de nuestro trabajo residencial, comercial, mid-rise y de shop drawings en Estados Unidos.",
-    "discover": "Descubrir",
-    "explore": "Explora nuestro portafolio",
-    "empty": "Se están agregando proyectos al portafolio. Vuelve pronto."
   },
   "ProjectDetail": {
     "back": "Volver al Portafolio",
@@ -563,7 +587,12 @@
   "ContactForm": {
     "types": {
       "res_new": "Residencial — Obra Nueva",
+      "res_ren": "Residencial — Renovación",
       "com_new": "Comercial — Obra Nueva",
+      "structural_insp": "Inspección Estructural",
+      "recertification": "Recertificación de Edificios",
+      "mep_eng": "Ingeniería MEP",
+      "interior": "Diseño de Interiores",
       "other": "Otro"
     },
     "budgets": {
@@ -616,6 +645,42 @@
         "role": "Diseñador Estructural",
         "bio": "Involucrado en el diseño y análisis estructural, utilizando sólidas habilidades técnicas para apoyar resultados de proyectos seguros y eficientes."
       }
-    }
+    },
+    "hero_eyebrow": "Nuestra Firma",
+    "hero_title_1": "Ingeniería",
+    "hero_title_2": "hecha para durar.",
+    "hero_description": "DH Engineering & Consulting LLC ofrece servicios integrales de ingeniería estructural y MEP, combinando experiencia técnica con una comprensión práctica de la construcción y los permisos en Florida.",
+    "stats_projects": "Proyectos Completados",
+    "stats_fbc": "Expertos en Florida Building Code",
+    "stats_disciplines": "Disciplinas de Ingeniería",
+    "mission_eyebrow": "Nuestra Misión",
+    "mission_title_1": "Ingeniería al servicio de",
+    "mission_title_2": "su visión.",
+    "mission_p1": "En DH Engineering & Consulting LLC, brindamos servicios integrales de ingeniería combinando la experiencia estructural con una comprensión práctica de los procesos de construcción y obtención de permisos. Nos especializamos en diseño estructural para proyectos residenciales y comerciales, junto con la coordinación MEP, entregando soluciones eficientes y totalmente integradas bajo una sola firma.",
+    "mission_p2": "Con amplia experiencia bajo el Código de Construcción de Florida, producimos diseños precisos y conformes a los códigos con un fuerte enfoque en la constructibilidad y la eficiencia de costos. También ofrecemos recertificaciones de edificios, inspecciones estructurales y evaluaciones as-built, apoyando a los clientes en cada etapa de sus proyectos.",
+    "work_eyebrow": "Cómo Trabajamos",
+    "work_title_1": "Precisión en cada",
+    "work_title_2": "fase.",
+    "work_description": "Nos enorgullecemos de brindar servicios de ingeniería confiables y de alta calidad a precios competitivos, cumpliendo con los plazos y apoyando a nuestros clientes con una comunicación clara en cada paso del proceso.",
+    "work_items": [
+      "Diseño estructural conforme al código",
+      "Coordinación MEP integrada",
+      "Soporte de permisos y cumplimiento",
+      "Soporte de ingeniería en fase de construcción"
+    ],
+    "journey_eyebrow": "Nuestra Trayectoria",
+    "journey_title_1": "Basado en la",
+    "journey_title_2": "experiencia.",
+    "journey_items": [
+      { "year": "Est.", "title": "Fundada en Florida", "description": "DH Engineering & Consulting LLC se estableció con una misión clara: ofrecer servicios de ingeniería precisos y conformes a los códigos a precios competitivos, con un enfoque en la constructibilidad." },
+      { "year": "Base", "title": "Diseño Estructural", "description": "Desarrollamos una base sólida en el diseño estructural residencial y comercial bajo el Florida Building Code, desde viviendas unifamiliares hasta edificios de mediana altura." },
+      { "year": "Exp.", "title": "Integración MEP", "description": "Expandimos los servicios para incluir la coordinación MEP, permitiendo una solución de ingeniería totalmente integrada bajo una sola firma y eliminando brechas interdisciplinarias costosas." },
+      { "year": "Hoy", "title": "Ingeniería de Servicio Completo", "description": "Hoy ofrecemos inspecciones estructurales, recertificaciones de edificios, evaluaciones as-built y planos de taller, apoyando a los clientes en cada fase de su proyecto." }
+    ],
+    "cta_eyebrow": "Inicie una conversación",
+    "cta_title_1": "¿Listo para comenzar su",
+    "cta_title_2": "proyecto?",
+    "cta_btn_services": "Nuestros Servicios",
+    "cta_btn_contact": "Contáctenos"
   }
 }

@@ -9,7 +9,7 @@ import { useTranslations } from "next-intl";
 
 const STEPS_IMAGES = [
   "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1000&auto=format",
-  "personaplano.png",
+  "/personaplano.png",
   "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1000&auto=format",
   "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1000&auto=format"
 ];

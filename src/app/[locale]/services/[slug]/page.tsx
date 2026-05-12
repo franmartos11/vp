@@ -403,7 +403,28 @@ export default async function ServiceDetailPage({ params }: Props) {
         </section>
 
         {/* FINAL CTA COMPONENT */}
-        <ServiceContactSection />
+        <ServiceContactSection 
+          translations={{
+            eyebrow: (await getTranslations("ServiceContactSection"))("eyebrow"),
+            title_1: (await getTranslations("ServiceContactSection"))("title_1"),
+            title_2: (await getTranslations("ServiceContactSection"))("title_2"),
+            description: (await getTranslations("ServiceContactSection"))("description"),
+          }}
+          formTranslations={{
+            success_title: (await getTranslations("ServiceProposalForm"))("success_title"),
+            success_message: (await getTranslations("ServiceProposalForm"))("success_message"),
+            label_first_name: (await getTranslations("ServiceProposalForm"))("label_first_name"),
+            label_last_name: (await getTranslations("ServiceProposalForm"))("label_last_name"),
+            label_email: (await getTranslations("ServiceProposalForm"))("label_email"),
+            label_phone: (await getTranslations("ServiceProposalForm"))("label_phone"),
+            label_project_info: (await getTranslations("ServiceProposalForm"))("label_project_info"),
+            label_address: (await getTranslations("ServiceProposalForm"))("label_address"),
+            label_city: (await getTranslations("ServiceProposalForm"))("label_city"),
+            label_state: (await getTranslations("ServiceProposalForm"))("label_state"),
+            label_zip: (await getTranslations("ServiceProposalForm"))("label_zip"),
+            btn_submit: (await getTranslations("ServiceProposalForm"))("btn_submit"),
+          }}
+        />
       </main>
       <Footer />
     </>

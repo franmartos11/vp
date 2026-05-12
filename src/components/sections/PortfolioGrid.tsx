@@ -28,10 +28,15 @@ type Project = {
 
 interface PortfolioGridProps {
   projects: Project[];
+  translations: {
+    filters: Record<string, string>;
+    no_projects: string;
+    view_project: string;
+  };
+  typeLabels: Record<string, string>;
 }
 
-export default function PortfolioGrid({ projects }: PortfolioGridProps) {
-  const t = useTranslations("PortfolioGrid");
+export default function PortfolioGrid({ projects, translations, typeLabels }: PortfolioGridProps) {
   const [activeFilter, setActiveFilter] = useState("all");
 
   const filtered =
@@ -58,7 +63,7 @@ export default function PortfolioGrid({ projects }: PortfolioGridProps) {
                 : "bg-transparent border border-warm-200 text-warm-500 hover:border-brand-blue hover:text-brand-blue"
             }`}
           >
-            {t(`filters.${f}` as any)}
+            {translations.filters[f] || f}
           </button>
         ))}
       </div>
@@ -76,7 +81,12 @@ export default function PortfolioGrid({ projects }: PortfolioGridProps) {
           {filtered.length > 0 ? (
             filtered.map((project, i) => (
               <motion.div key={project.id} variants={fadeInUp}>
-                <ProjectCard project={project as any} priority={i < 3} />
+                <ProjectCard 
+                  project={project as any} 
+                  priority={i < 3} 
+                  translations={{ view_project: translations.view_project }}
+                  typeLabel={typeLabels[project.projectType]}
+                />
               </motion.div>
             ))
           ) : (
@@ -84,7 +94,7 @@ export default function PortfolioGrid({ projects }: PortfolioGridProps) {
               variants={fadeInUp}
               className="col-span-3 text-warm-500 text-sm py-16 text-center"
             >
-              {t('no_projects')}
+              {translations.no_projects}
             </motion.p>
           )}
         </motion.div>

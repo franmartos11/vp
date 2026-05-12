@@ -27,9 +27,9 @@ export function TrustedPartners() {
             {t("heading")}
           </span>
           <h2 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-charcoal-900 leading-tight max-w-3xl">
-            Firms that{" "}
+            {t("headline_1")}{" "}
             <span className="text-brand-blue italic font-light">
-              trust us.
+              {t("headline_2")}
             </span>
           </h2>
         </AnimatedSection>

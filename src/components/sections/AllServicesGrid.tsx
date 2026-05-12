@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
 import { ArrowUpRight, ExternalLink } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import { useTranslations } from "next-intl";
 
 type Service = {
   id: number;
@@ -29,7 +30,7 @@ const cardVariants: Variants = {
 export function AllServicesGrid() {
   const t = useTranslations("AllServicesGrid");
 
-  const primaryServices = [
+  const primaryServices: Service[] = [
     {
       id: 1,
       title: t("primary.structural.title"),
@@ -64,7 +65,7 @@ export function AllServicesGrid() {
     },
   ];
 
-  const additionalServices = [
+  const additionalServices: Service[] = [
     {
       id: 5,
       title: t("additional.residential.title"),
@@ -98,144 +99,125 @@ export function AllServicesGrid() {
   ];
 
   return (
-    <section
-      className="py-20 md:py-28 bg-white border-t border-brand-blue"
-      aria-labelledby="all-services-heading"
-    >
-      <div className="container mx-auto px-6">
-        {/* Header */}
-        <AnimatedSection className="mb-16">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-8">
-            <div>
-              <span className="font-mono text-xs tracking-[0.3em] uppercase text-brand-blue mb-5 block flex items-center gap-3">
-                <span className="w-6 h-px bg-brand-blue inline-block" />
-                {t("eyebrow")}
-              </span>
-              <h2
-                id="all-services-heading"
-                className="text-4xl md:text-5xl lg:text-6xl font-display text-charcoal-900 leading-tight"
-              >
-                {t("title_1")}{" "}
-                <span className="italic font-light text-brand-blue">
-                  {t("title_2")}
-                </span>
-              </h2>
-            </div>
-              <p className="text-lg font-light text-charcoal-600 max-w-sm leading-relaxed md:text-right">
-                {t("description")}
-            </p>
-          </div>
-        </AnimatedSection>
-
-        {/* Primary Services — Grid 2x2 */}
-        <AnimatedSection className="mb-6">
-          <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-charcoal-400 block mb-4">
-            — {t("disciplines_label")}
+    <section className="py-24 bg-white" id="services">
+      <div className="container mx-auto px-6 md:px-12">
+        <AnimatedSection className="max-w-3xl mb-20">
+          <span className="text-xs font-mono tracking-widest text-brand-blue uppercase mb-4 block">
+            {t("eyebrow")}
           </span>
+          <h2 className="text-4xl md:text-6xl font-display text-charcoal-900 mb-6 leading-tight">
+            {t("title_1")} <span className="italic text-brand-blue">{t("title_2")}</span>
+          </h2>
+          <p className="text-lg text-warm-500 font-light leading-relaxed">
+            {t("description")}
+          </p>
         </AnimatedSection>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12"
-        >
-          {primaryServices.map((service) => (
-            <motion.div key={service.id} variants={cardVariants} transition={{ duration: 0.6, ease: "easeOut" }}>
-              <Link
-                href={`/services/${service.slug}`}
-                className="group relative flex flex-col h-full bg-white border border-warm-200 border-t-[3px] border-t-brand-blue hover:border-brand-blue/50 rounded-lg p-6 md:p-8 transition-all duration-500 hover:shadow-lg hover:shadow-brand-blue/10 overflow-hidden"
+        {/* Primary Services - Large Cards */}
+        <div className="mb-20">
+          <div className="flex items-center gap-4 mb-8">
+            <h3 className="text-sm font-mono tracking-widest text-warm-400 uppercase">
+              {t("disciplines_label")}
+            </h3>
+            <div className="h-px flex-1 bg-warm-200" />
+          </div>
+
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          >
+            {primaryServices.map((service) => (
+              <motion.div
+                key={service.id}
+                variants={cardVariants}
+                className="group relative bg-warm-50 p-8 md:p-12 border border-warm-200 hover:border-brand-blue transition-all duration-500 hover:shadow-2xl hover:shadow-brand-blue/5"
               >
-                {/* Tag and Arrow */}
-                <div className="flex items-center justify-between mb-8 relative z-10">
-                  <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-brand-blue bg-brand-blue/5 border border-brand-blue/20 px-3 py-1.5 rounded-sm">
+                <div className="flex justify-between items-start mb-12">
+                  <span className="text-xs font-mono tracking-tighter text-brand-blue/60 border border-brand-blue/20 px-2 py-1">
                     {service.tag}
                   </span>
                   <ArrowUpRight
-                    size={20}
-                    className="text-charcoal-300 group-hover:text-brand-blue group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300"
+                    size={24}
+                    className="text-warm-300 group-hover:text-brand-blue group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300"
                   />
                 </div>
 
-                {/* Number */}
-                <span className="font-mono text-[12px] text-brand-blue mb-4 tracking-widest relative z-10 transition-colors duration-300 font-semibold">
-                  {String(service.id).padStart(2, "0")}
-                </span>
-
-                {/* Title */}
-                <h3 className="font-display text-2xl lg:text-3xl text-charcoal-900 group-hover:text-brand-blue transition-colors duration-300 leading-tight mb-4 flex-1 relative z-10">
+                <h4 className="text-2xl md:text-3xl font-display text-charcoal-900 mb-4">
                   {service.title}
-                </h3>
-
-                {/* Description - FULL, not truncated */}
-                <p className="text-charcoal-600 group-hover:text-charcoal-800 text-sm font-light leading-relaxed transition-colors duration-300 relative z-10">
+                </h4>
+                <p className="text-warm-500 font-light leading-relaxed mb-10 max-w-sm">
                   {service.description}
                 </p>
 
-                {/* Bottom bar */}
-                <div className="mt-8 pt-5 border-t border-warm-100 group-hover:border-brand-blue/20 transition-colors duration-500 relative z-10">
-                  <span className="text-[11px] font-mono uppercase tracking-widest text-charcoal-500 group-hover:text-brand-blue transition-colors duration-300 flex items-center gap-2">
-                    {t("view_details")} <ExternalLink size={12} />
-                  </span>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </motion.div>
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-charcoal-900 group-hover:text-brand-blue transition-colors"
+                >
+                  {t("view_details")}
+                  <div className="w-8 h-px bg-charcoal-900 group-hover:bg-brand-blue group-hover:w-12 transition-all duration-300" />
+                </Link>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
 
-        {/* Additional Services — row of 5 */}
-        <AnimatedSection className="mb-4">
-          <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-charcoal-400 block mb-4">
-            — {t("additional_label")}
-          </span>
-        </AnimatedSection>
+        {/* Additional Services - Smaller Grid */}
+        <div>
+          <div className="flex items-center gap-4 mb-8">
+            <h3 className="text-sm font-mono tracking-widest text-warm-400 uppercase">
+              {t("additional_label")}
+            </h3>
+            <div className="h-px flex-1 bg-warm-200" />
+          </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-60px" }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
-        >
-          {additionalServices.map((service) => (
-            <motion.div key={service.id} variants={cardVariants} transition={{ duration: 0.6, ease: "easeOut" }}>
-              <div className="group relative flex flex-col h-full bg-cream-100 border-l-[3px] border-l-brand-blue border-y border-r border-transparent hover:border-warm-200 rounded-lg p-5 transition-all duration-300 hover:shadow-sm">
-                
-                {/* Tag */}
-                <div className="mb-3 relative z-10">
-                  <span className="text-[9px] font-mono uppercase tracking-[0.2em] text-brand-blue">
+          <motion.div
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {additionalServices.map((service) => (
+              <motion.div
+                key={service.id}
+                variants={cardVariants}
+                className="p-6 md:p-8 border border-warm-100 hover:border-brand-blue/30 transition-all duration-300 bg-white group"
+              >
+                <div className="flex items-center justify-between mb-6">
+                  <span className="text-[10px] font-mono tracking-widest text-warm-400 uppercase">
                     {service.tag}
                   </span>
+                  <ExternalLink size={14} className="text-warm-200 group-hover:text-brand-blue transition-colors" />
                 </div>
-
-                {/* Title */}
-                <h3 className="font-display text-base text-charcoal-900 leading-snug mb-2 relative z-10 font-medium">
-                  <span className="text-[10px] font-mono text-warm-500 mr-2">{String(service.id).padStart(2, "0")}</span>
+                <h4 className="text-lg font-display text-charcoal-900 mb-3 group-hover:text-brand-blue transition-colors">
                   {service.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-charcoal-600 text-xs font-light leading-relaxed relative z-10">
+                </h4>
+                <p className="text-sm text-warm-500 font-light leading-relaxed">
                   {service.description}
                 </p>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+              </motion.div>
+            ))}
 
-        {/* Bottom CTA */}
-        <AnimatedSection className="mt-16 pt-10 border-t border-warm-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <p className="text-charcoal-600 font-light text-sm max-w-md">
-            {t("cta_desc")}
-          </p>
-          <Link
-            href="/contact"
-            className="btn-primary"
-          >
-            {t("cta_btn")} <ArrowUpRight size={14} className="ml-1" />
-          </Link>
-        </AnimatedSection>
+            {/* CTA Card */}
+            <motion.div
+              variants={cardVariants}
+              className="p-6 md:p-8 bg-brand-blue text-white flex flex-col justify-between"
+            >
+              <p className="text-sm font-light leading-relaxed mb-8 opacity-90">
+                {t("cta_desc")}
+              </p>
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-3 text-xs font-mono tracking-widest uppercase hover:gap-5 transition-all duration-300"
+              >
+                {t("cta_btn")} <ArrowUpRight size={16} />
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

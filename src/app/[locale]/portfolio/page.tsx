@@ -17,9 +17,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function PortfolioPage() {
+export default async function PortfolioPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   const t = await getTranslations("PortfolioPage");
-  const locale = await getLocale();
+  const tGrid = await getTranslations("PortfolioGrid");
+  const tTypes = await getTranslations("ProjectDetail.types");
 
   const rawProjects = await db.project.findMany({
     orderBy: { order: "asc" }
@@ -30,7 +32,6 @@ export default async function PortfolioPage() {
     ...p,
     title: locale === 'es' && p.titleEs ? p.titleEs : p.title,
     description: locale === 'es' && p.descriptionEs ? p.descriptionEs : p.description,
-    // projectType should remain the logic slug for filtering
     location: locale === 'es' && p.locationEs ? p.locationEs : p.location,
     technicalSheet: locale === 'es' && p.technicalSheetEs ? p.technicalSheetEs : p.technicalSheet,
     materials: locale === 'es' && p.materialsEs ? p.materialsEs : p.materials,
@@ -44,7 +45,6 @@ export default async function PortfolioPage() {
         
         {/* Dark Immersive Hero */}
         <section className="relative h-[80vh] md:h-[85vh] w-full overflow-hidden bg-charcoal-900 group mb-12 md:mb-24">
-          {/* Background Texture */}
           <div className="absolute inset-0">
             <Image
               src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=2000&auto=format"
@@ -55,11 +55,9 @@ export default async function PortfolioPage() {
               sizes="100vw"
             />
           </div>
-          {/* Gradients for text legibility and mood */}
           <div className="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/40 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-r from-charcoal-900/80 to-transparent" />
           
-          {/* Content Wrapper */}
           <div className="absolute inset-0 flex flex-col justify-end pb-16 md:pb-24 lg:pb-32 container mx-auto px-6 z-10">
             <AnimatedSection>
               <div className="max-w-4xl">
@@ -77,14 +75,12 @@ export default async function PortfolioPage() {
             </AnimatedSection>
           </div>
           
-          {/* Scroll Indicator — hidden on mobile to avoid overlap with content */}
           <div className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 text-brand-blue/40 flex-col items-center gap-3 animate-bounce">
             <span className="font-mono text-[10px] uppercase tracking-[0.3em] rotate-90 translate-y-2 mb-4">{t("discover")}</span>
             <div className="w-px h-16 bg-gradient-to-b from-brand-blue/50 to-transparent" />
           </div>
         </section>
 
-        {/* Portfolio Content */}
         <section className="container mx-auto px-6 pb-16 md:pb-20">
           <AnimatedSection>
             <div className="flex flex-col sm:flex-row justify-between sm:items-end border-b border-brand-blue/15 pb-6 md:pb-8 mb-8 md:mb-12 gap-2">
@@ -92,10 +88,27 @@ export default async function PortfolioPage() {
             </div>
           </AnimatedSection>
 
-          {/* Portfolio grid with filter */}
-          <PortfolioGrid projects={projects} />
+          <PortfolioGrid 
+            projects={projects} 
+            translations={{
+              filters: {
+                all: tGrid("filters.all"),
+                residential: tGrid("filters.residential"),
+                commercial: tGrid("filters.commercial"),
+                "mid-rise": tGrid("filters.mid-rise"),
+                "shop-drawing": tGrid("filters.shop-drawing"),
+              },
+              no_projects: tGrid("no_projects"),
+              view_project: tGrid("view_project") || (locale === "es" ? "Ver Proyecto" : "View Project"),
+            }}
+            typeLabels={{
+              residential: tTypes("residential"),
+              commercial: tTypes("commercial"),
+              "mid-rise": tTypes("mid-rise"),
+              "shop-drawing": tTypes("shop-drawing"),
+            }}
+          />
 
-          {/* Empty state */}
           {projects.length === 0 && (
             <div className="py-24 text-center">
               <p className="text-warm-500 text-sm">

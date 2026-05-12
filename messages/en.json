@@ -1,4 +1,45 @@
 {
+  "ServiceProposalForm": {
+    "success_title": "Request Sent.",
+    "success_message": "Our engineering team will get back to you shortly.",
+    "label_first_name": "First Name",
+    "label_last_name": "Last Name",
+    "label_email": "Email",
+    "label_phone": "Phone Number",
+    "label_project_info": "Project Information",
+    "label_address": "Address",
+    "label_city": "City",
+    "label_state": "State",
+    "label_zip": "Zip Code",
+    "btn_submit": "Submit Request"
+  },
+  "ServiceContactSection": {
+    "eyebrow": "READY TO START?",
+    "title_1": "Let's engineer",
+    "title_2": "your vision.",
+    "description": "Fill out the form to request a detailed proposal for your specific project. Our engineering team will review your requirements and get back to you within 24 hours."
+  },
+  "PortfolioGrid": {
+    "filters": {
+      "all": "All",
+      "residential": "Residential",
+      "commercial": "Commercial",
+      "mid-rise": "Mid-Rise",
+      "shop-drawing": "Shop Drawing"
+    },
+    "no_projects": "No projects in this category yet.",
+    "view_project": "View Project"
+  },
+  "PortfolioPage": {
+    "our_work": "Our Work",
+    "title_1": "Selected",
+    "title_2": "projects.",
+    "subtitle": "A curated selection of our residential, commercial, mid-rise, and shop drawing work across the United States.",
+    "discover": "Discover",
+    "explore": "Explore our portfolio",
+    "empty": "Portfolio projects are being added. Please check back soon.",
+    "view_project": "View Project"
+  },
   "Metadata": {
     "title": "DH Engineering & Consulting LLC | Specialized Engineering Services",
     "description": "Specialized engineering firm providing structural design, MEP coordination, building recertifications, and inspections across Florida.",
@@ -219,7 +260,9 @@
     "licensed": "Licensed Engineering Firm · State of Florida"
   },
   "TrustedPartners": {
-    "heading": "Our Partners & Collaborators"
+    "heading": "Our Partners & Collaborators",
+    "headline_1": "Firms that",
+    "headline_2": "trust us."
   },
   "Testimonials": {
     "eyebrow": "Testimonials",
@@ -242,28 +285,9 @@
       }
     ]
   },
-  "PortfolioGrid": {
-    "filters": {
-      "all": "All",
-      "residential": "Residential",
-      "commercial": "Commercial",
-      "mid-rise": "Mid-Rise",
-      "shop-drawing": "Shop Drawing"
-    },
-    "no_projects": "No projects in this category yet."
-  },
   "ParallaxSeparator": {
     "quote": "Reliable engineering is not just about calculations - it is about trust, clarity, and results that stand the test of time.",
     "caption": "The DH Engineering Standard"
-  },
-  "PortfolioPage": {
-    "our_work": "Our Work",
-    "title_1": "Selected",
-    "title_2": "projects.",
-    "subtitle": "A curated selection of our residential, commercial, mid-rise, and shop drawing work across the United States.",
-    "discover": "Discover",
-    "explore": "Explore our portfolio",
-    "empty": "Portfolio projects are being added. Please check back soon."
   },
   "ProjectDetail": {
     "back": "Back to Portfolio",
@@ -563,7 +587,12 @@
   "ContactForm": {
     "types": {
       "res_new": "Residential — New Build",
+      "res_ren": "Residential — Renovation",
       "com_new": "Commercial — New Build",
+      "structural_insp": "Structural Inspection",
+      "recertification": "Building Recertification",
+      "mep_eng": "MEP Engineering",
+      "interior": "Interior Design",
       "other": "Other"
     },
     "budgets": {
@@ -616,6 +645,42 @@
         "role": "Structural Designer",
         "bio": "Involved in structural design and analysis, utilizing solid technical skills to support safe and efficient project outcomes."
       }
-    }
+    },
+    "hero_eyebrow": "Our Firm",
+    "hero_title_1": "Engineering",
+    "hero_title_2": "built to last.",
+    "hero_description": "DH Engineering & Consulting LLC provides comprehensive structural and MEP engineering services — combining technical expertise with a practical understanding of construction and permitting across Florida.",
+    "stats_projects": "Completed Projects",
+    "stats_fbc": "Florida Building Code Experts",
+    "stats_disciplines": "Core Engineering Disciplines",
+    "mission_eyebrow": "Our Mission",
+    "mission_title_1": "Engineering that serves",
+    "mission_title_2": "your vision.",
+    "mission_p1": "At DH Engineering & Consulting LLC, we provide comprehensive engineering services by combining structural expertise with a practical understanding of construction and permitting processes. We specialize in structural design for residential and commercial projects, along with MEP coordination — delivering efficient and fully integrated solutions under one firm.",
+    "mission_p2": "With extensive experience under the Florida Building Code, we produce accurate, code-compliant designs with a strong focus on constructability and cost-efficiency. We also offer building recertifications, structural inspections, and as-built evaluations, supporting clients throughout every stage of their projects.",
+    "work_eyebrow": "How We Work",
+    "work_title_1": "Precision at every",
+    "work_title_2": "phase.",
+    "work_description": "We take pride in providing reliable, high-quality engineering services at competitive prices — meeting deadlines and supporting our clients with clear communication at every step of the process.",
+    "work_items": [
+      "Code-compliant structural design",
+      "Integrated MEP coordination",
+      "Permitting & code compliance support",
+      "Construction-phase engineering support"
+    ],
+    "journey_eyebrow": "Our Journey",
+    "journey_title_1": "Built on",
+    "journey_title_2": "experience.",
+    "journey_items": [
+      { "year": "Est.", "title": "Founded in Florida", "description": "DH Engineering & Consulting LLC was established with a clear mission: deliver accurate, code-compliant engineering services at competitive prices, with a focus on constructability." },
+      { "year": "Core", "title": "Structural Design", "description": "Developed a strong foundation in residential and commercial structural design under the Florida Building Code — from single-family homes to mid-rise buildings." },
+      { "year": "Exp.", "title": "MEP Integration", "description": "Expanded services to include MEP coordination, enabling a fully integrated engineering solution under one firm and eliminating costly interdisciplinary gaps." },
+      { "year": "Now", "title": "Full-Service Engineering", "description": "Today we provide structural inspections, building recertifications, as-built evaluations, and shop drawings — supporting clients through every phase of their project." }
+    ],
+    "cta_eyebrow": "Start a conversation",
+    "cta_title_1": "Ready to start your",
+    "cta_title_2": "project?",
+    "cta_btn_services": "Our Services",
+    "cta_btn_contact": "Contact Us"
   }
 }
