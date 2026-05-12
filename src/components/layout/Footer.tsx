@@ -4,14 +4,15 @@ import { Instagram, Linkedin } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export default function Footer() {
-  const t = useTranslations("Navigation");
+  const tNav = useTranslations("Navigation");
+  const tFooter = useTranslations("Footer");
   const year = new Date().getFullYear();
 
   const footerLinks = [
-    { href: "/about", label: t("about") },
-    { href: "/services", label: t("services") },
-    { href: "/portfolio", label: t("portfolio") },
-    { href: "/contact", label: t("contact") },
+    { href: "/about", label: tNav("about") },
+    { href: "/services", label: tNav("services") },
+    { href: "/portfolio", label: tNav("portfolio") },
+    { href: "/contact", label: tNav("contact") },
   ];
 
   return (
@@ -35,7 +36,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-warm-300 text-sm leading-relaxed max-w-xs">
-              Comprehensive structural and MEP engineering services from Florida.
+              {tFooter("tagline")}
             </p>
             <div className="flex items-center gap-4 mt-6">
               <a
@@ -61,7 +62,7 @@ export default function Footer() {
 
           {/* Nav col */}
           <div className="col-span-6 md:col-span-3 md:col-start-6">
-            <p className="eyebrow text-warm-400 mb-4">Navigation</p>
+            <p className="eyebrow text-warm-400 mb-4">{tFooter("nav_title")}</p>
             <ul className="space-y-3" role="list">
               {footerLinks.map((link) => (
                 <li key={link.href}>
@@ -78,7 +79,7 @@ export default function Footer() {
 
           {/* Contact col */}
           <div className="col-span-6 md:col-span-4 md:col-start-9">
-            <p className="eyebrow text-warm-400 mb-4">Contact</p>
+            <p className="eyebrow text-warm-400 mb-4">{tFooter("contact_title")}</p>
             <address className="not-italic text-warm-300 text-sm space-y-2">
               <p>13951 SW 122th Ave, #206</p>
               <p>Miami, FL 33186</p>
@@ -102,13 +103,13 @@ export default function Footer() {
         <div className="border-t border-brand-blue/10 mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-2 md:gap-4 text-center md:text-left">
           <div className="flex items-center gap-2">
             <p className="text-warm-400 text-xs">
-              &copy; {year} DH Engineering & Consulting LLC. All rights reserved.
+              &copy; {year} DH Engineering & Consulting LLC. {tFooter("rights")}
             </p>
             {/* Hidden quick access to CMS */}
             <Link href="/admin" aria-label="Admin Panel Login" className="w-1.5 h-1.5 rounded-full bg-charcoal-800 hover:bg-warm-500 transition-colors" />
           </div>
           <p className="text-warm-400 text-xs">
-            Licensed Engineering Firm · State of Florida
+            {tFooter("licensed")}
           </p>
         </div>
       </div>

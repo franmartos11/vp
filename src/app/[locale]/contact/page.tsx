@@ -7,11 +7,15 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 import { ContactForm } from "./ContactForm";
 import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Contact Us",
-  description:
-    "Get in touch with Vertex Build Group. Tell us about your project — residential or commercial. We respond within 24 hours.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Metadata" });
+
+  return {
+    title: t("contact.title"),
+    description: t("contact.description"),
+  };
+}
 
 export default async function ContactPage() {
   const t = await getTranslations("ContactPage");
@@ -60,8 +64,8 @@ export default async function ContactPage() {
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Vertex Build Group office map"
-                aria-label="Map showing Vertex Build Group office location in Miami"
+                title={t("map_title")}
+                aria-label={t("map_aria")}
                 className="w-full h-full transition-all duration-1000 ease-in-out"
               />
             </div>
@@ -117,7 +121,7 @@ export default async function ContactPage() {
                         className="text-brand-blue shrink-0 mt-0.5"
                       />
                       <div>
-                        <p>Monday - Friday 8:00am - 6:00 pm</p>
+                        <p>{t("hours")}</p>
                       </div>
                     </div>
                   </div>
@@ -156,7 +160,7 @@ export default async function ContactPage() {
                   src="https://calendly.com/sales/15min"
                   width="100%"
                   height="100%"
-                  title="Schedule a discovery call with Vertex Build Group"
+                  title="Schedule a discovery call with DH Engineering & Consulting LLC"
                   className="w-full h-full grayscale-[50%] contrast-110 opacity-90 transition-all duration-700 group-hover/cal:grayscale-0 group-hover/cal:opacity-100"
                 />
               </div>

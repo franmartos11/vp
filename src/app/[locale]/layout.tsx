@@ -12,64 +12,61 @@ const oswald = localFont({
   display: "swap",
 });
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://yourfirm.com";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: {
-    default: "Vertex Build Group | Luxury Architecture & Construction",
-    template: "%s | Vertex Build Group",
-  },
-  description:
-    "Award-winning luxury architecture and construction firm based in the United States. High-end residential and commercial projects crafted with precision.",
-  keywords: [
-    "luxury architect",
-    "luxury construction",
-    "custom home builder",
-    "residential architect",
-    "commercial construction",
-    "architecture firm",
-  ],
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: SITE_URL,
-    siteName: "Vertex Build Group",
-    title: "Vertex Build Group | Luxury Architecture & Construction",
-    description:
-      "Award-winning luxury architecture and construction firm. Precision-built spaces across the United States.",
-    images: [
-      {
-        url: "/og-default.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Vertex Build Group",
-      },
-    ],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Vertex Build Group | Luxury Architecture & Construction",
-    description:
-      "Award-winning luxury architecture and construction firm. Precision-built spaces across the United States.",
-    images: ["/og-default.jpg"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://dhengconsulting.com";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Metadata" });
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: t("title"),
+      template: `%s | DH Engineering`,
+    },
+    description: t("description"),
+    keywords: t("keywords").split(", "),
+    openGraph: {
+      type: "website",
+      locale: locale === "es" ? "es_ES" : "en_US",
+      url: SITE_URL,
+      siteName: "DH Engineering & Consulting LLC",
+      title: t("title"),
+      description: t("description"),
+      images: [
+        {
+          url: "/og-default.jpg",
+          width: 1200,
+          height: 630,
+          alt: "DH Engineering & Consulting LLC",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("title"),
+      description: t("description"),
+      images: ["/og-default.jpg"],
+    },
+    robots: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
     },
-  },
-  icons: {
-    icon: "/icon.png",
-    apple: "/apple-icon.png",
-  },
-};
+    icons: {
+      icon: "/icon.png",
+      apple: "/apple-icon.png",
+    },
+  };
+}
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
@@ -77,30 +74,29 @@ const organizationJsonLd = {
     {
       "@type": "Organization",
       "@id": `${SITE_URL}/#organization`,
-      name: "Vertex Build Group",
+      name: "DH Engineering & Consulting LLC",
       url: SITE_URL,
       logo: {
         "@type": "ImageObject",
-        url: `${SITE_URL}/logo.png`,
+        url: `${SITE_URL}/Logo.png`,
       },
       contactPoint: {
         "@type": "ContactPoint",
         telephone: "+1-352-659-3636",
         contactType: "customer service",
         areaServed: "US",
-        availableLanguage: "English",
+        availableLanguage: ["English", "Spanish"],
       },
       sameAs: [
-        "https://www.instagram.com/vertexbuildgroup",
-        "https://www.linkedin.com/company/vertexbuildgroup",
+        "https://www.linkedin.com/company/dh-engineering-consulting-llc",
       ],
     },
     {
       "@type": "LocalBusiness",
       "@id": `${SITE_URL}/#localbusiness`,
-      name: "Vertex Build Group",
+      name: "DH Engineering & Consulting LLC",
       description:
-        "Award-winning luxury architecture and construction firm based in the United States.",
+        "Specialized engineering firm providing structural design, MEP coordination, building recertifications, and inspections across Florida.",
       url: SITE_URL,
       telephone: "+1-352-659-3636",
       email: "info@dhengconsulting.com",
@@ -114,8 +110,8 @@ const organizationJsonLd = {
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: 25.7617,
-        longitude: -80.1918,
+        latitude: 25.6385,
+        longitude: -80.3925,
       },
       openingHoursSpecification: [
         {

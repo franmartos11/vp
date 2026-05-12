@@ -44,10 +44,10 @@ export function MakersStory() {
                 </p>
               </div>
               <p className="mb-6">
-                We specialize in structural design for residential and commercial projects, along with MEP coordination, delivering efficient and fully integrated solutions under one firm.
+                {t('description_2')}
               </p>
               <p className="mb-10 text-charcoal-900 font-normal">
-                We take pride in providing reliable, high-quality engineering services at competitive prices — meeting deadlines and supporting our clients with clear communication, helping them achieve their vision through a smooth, efficient, and stress-free process.
+                {t('description_3')}
               </p>
               <div className="font-display italic text-3xl md:text-4xl text-brand-blue">
                 DH Engineering

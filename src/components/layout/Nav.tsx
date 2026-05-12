@@ -50,11 +50,11 @@ export default function Nav() {
           <Link
             href="/"
             className="flex items-center transition-opacity hover:opacity-80"
-            aria-label="Vertex Build Group — Home"
+            aria-label="DH Engineering & Consulting LLC — Home"
           >
             <Image
               src="/Logo.png"
-              alt="Vertex Build Group"
+              alt="DH Engineering & Consulting LLC"
               width={400}
               height={120}
               className={`h-16 md:h-20 w-auto object-contain scale-[2.5] md:scale-[3] origin-left max-w-[140px] md:max-w-none transition-all ${!scrolled && isHome ? 'brightness-0 invert' : ''}`}
@@ -111,7 +111,7 @@ export default function Nav() {
               <Link href="/" className="flex items-center transition-opacity hover:opacity-80">
                 <Image
                   src="/Logo.png"
-                  alt="Vertex Build Group"
+                  alt="DH Engineering & Consulting LLC"
                   width={300}
                   height={100}
                   className="h-16 w-auto object-contain scale-[2.5] origin-left max-w-[140px]"

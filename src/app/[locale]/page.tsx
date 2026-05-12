@@ -18,13 +18,21 @@ import { TrustedPartners } from "@/components/sections/TrustedPartners";
 import { AllServicesGrid } from "@/components/sections/AllServicesGrid";
 import { db } from "@/lib/db";
 
-export const metadata: Metadata = {
-  title: "DH Engineering & Consulting LLC | Structural & MEP Engineering",
-  description:
-    "DH Engineering & Consulting LLC — Comprehensive structural design, MEP coordination, building recertifications, and inspections across Florida. Code-compliant, cost-efficient solutions.",
-};
+import { getTranslations } from "next-intl/server";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Metadata" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 export default async function HomePage() {
+  const t = await getTranslations("HomePage");
+
   let featuredProjects = await db.project.findMany({
     where: { featured: true },
     orderBy: { order: "asc" },
@@ -42,7 +50,6 @@ export default async function HomePage() {
     <>
       <Nav />
       <main>
-
         <HeroSection />
         <InfiniteMarquee />
         <AllServicesGrid />
@@ -58,14 +65,14 @@ export default async function HomePage() {
             <div className="container mx-auto px-6">
               <AnimatedSection className="flex items-end justify-between mb-12">
                 <SectionHeading
-                  eyebrow="Selected Works"
-                  title="Featured projects."
+                  eyebrow={t("selected_works")}
+                  title={t("featured_projects")}
                 />
                 <Link
                   href="/portfolio"
                   className="hidden md:flex items-center gap-2 text-sm text-brand-blue hover:text-brand-blue-dark transition-colors"
                 >
-                  View all <ArrowRight size={14} />
+                  {t("view_all")} <ArrowRight size={14} />
                 </Link>
               </AnimatedSection>
 
@@ -77,7 +84,7 @@ export default async function HomePage() {
 
               <div className="mt-10 md:hidden">
                 <Link href="/portfolio" className="btn-outline">
-                  View all projects <ArrowRight size={14} />
+                  {t("view_all_projects")} <ArrowRight size={14} />
                 </Link>
               </div>
             </div>
@@ -90,14 +97,14 @@ export default async function HomePage() {
             <div className="container mx-auto text-center">
               <AnimatedSection>
                 <SectionHeading
-                  eyebrow="Selected Works"
-                  title="Portfolio coming soon."
-                  subtitle="We're uploading our project portfolio. Check back shortly."
+                  eyebrow={t("selected_works")}
+                  title={t("portfolio_soon")}
+                  subtitle={t("portfolio_soon_desc")}
                   align="center"
                 />
                 <div className="mt-8">
                   <Link href="/contact" className="btn-primary">
-                    Get in touch <ArrowRight size={14} />
+                    {t("get_in_touch")} <ArrowRight size={14} />
                   </Link>
                 </div>
               </AnimatedSection>
@@ -118,15 +125,15 @@ export default async function HomePage() {
               <div className="grid-swiss items-center">
                 <div className="col-span-12 md:col-span-7">
                   <SectionHeading
-                    eyebrow="Start a project"
-                    title="Ready to engineer your vision?"
-                    subtitle="Tell us about your project. We'll provide precise, code-compliant engineering from day one."
+                    eyebrow={t("start_project_eyebrow")}
+                    title={t("ready_to_engineer")}
+                    subtitle={t("ready_to_engineer_desc")}
                     light
                   />
                 </div>
                 <div className="col-span-12 md:col-span-4 md:col-start-9 mt-6 md:mt-0 flex justify-start md:justify-end">
                   <Link href="/contact" className="btn-outline border-brand-blue text-brand-blue hover:bg-brand-blue hover:text-white">
-                    Contact us <ArrowRight size={14} />
+                    {t("contact_us")} <ArrowRight size={14} />
                   </Link>
                 </div>
               </div>

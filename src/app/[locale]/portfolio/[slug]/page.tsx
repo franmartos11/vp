@@ -12,17 +12,6 @@ import { getLocale, getTranslations } from "next-intl/server";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://dhengineering.com";
 
-// Engineering scope items ordered for display
-const SCOPE_LABELS: Record<string, string> = {
-  "structural-engineering": "Structural Engineering",
-  "mep-engineering": "MEP Engineering",
-  "building-recertifications": "Building Recertifications",
-  "structural-inspections": "Structural Inspections",
-  "shop-drawings": "Shop Drawings",
-  "permitting": "Permitting & Compliance",
-  "as-built": "As-Built Evaluations",
-};
-
 interface Props {
   params: Promise<{ slug: string; locale: string }>;
 }
@@ -141,6 +130,10 @@ export default async function ProjectDetailPage({ params }: Props) {
   const translateType = (key: string) => {
     const normalized = key?.toLowerCase().replace(/\s+/g, '-');
     return t.has(`types.${normalized}` as any) ? t(`types.${normalized}` as any) : key;
+  };
+
+  const translateScope = (key: string) => {
+    return t.has(`scope_items.${key}` as any) ? t(`scope_items.${key}` as any) : key;
   };
 
   return (
@@ -294,7 +287,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                       {/* Technical Sheet — each line as a row */}
                       {techLines.length > 0 && (
                         <div className="pt-4 mt-2 border-t border-white/10">
-                          <dt className="text-[10px] text-brand-blue/40 uppercase tracking-widest mb-3 font-mono">Project Data</dt>
+                          <dt className="text-[10px] text-brand-blue/40 uppercase tracking-widest mb-3 font-mono">{t("dossier_label") || "Project Data"}</dt>
                           <dd>
                             <ul className="space-y-2">
                               {techLines.map((line, i) => {
@@ -327,7 +320,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                               {rawScope.map((scope: string, idx: number) => (
                                 <li key={idx} className="flex items-center gap-2 text-xs text-cream-100">
                                   <span className="w-1.5 h-1.5 rounded-full bg-brand-blue shrink-0" />
-                                  {SCOPE_LABELS[scope] || scope}
+                                  {translateScope(scope)}
                                 </li>
                               ))}
                             </ul>
@@ -434,7 +427,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                     <div className="w-12 h-px bg-brand-blue/40 mb-6 transition-all duration-500 group-hover:w-24 group-hover:bg-brand-blue" />
                     <p className="text-warm-400 uppercase tracking-[0.2em] text-[10px] mb-4 font-mono">{t("continue")}</p>
                     <h2 className="text-3xl md:text-5xl font-display text-white transition-colors duration-300 flex items-center justify-center gap-4">
-                      <span className="group-hover:text-brand-blue/90 transition-colors duration-300">View All Projects</span>
+                      <span className="group-hover:text-brand-blue/90 transition-colors duration-300">{t("view_all")}</span>
                       <div className="w-10 h-10 rounded-full border border-brand-blue/30 flex items-center justify-center group-hover:bg-brand-blue group-hover:border-brand-blue transition-all duration-500">
                         <ArrowRight className="text-brand-blue group-hover:text-charcoal-900 group-hover:translate-x-0.5 transition-all duration-500 w-4 h-4" strokeWidth={2} />
                       </div>

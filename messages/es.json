@@ -1,4 +1,21 @@
 {
+  "Metadata": {
+    "title": "DH Engineering & Consulting LLC | Servicios de Ingeniería Especializados",
+    "description": "Firma de ingeniería especializada que ofrece diseño estructural, coordinación MEP, recertificaciones de edificios e inspecciones en Florida.",
+    "keywords": "ingeniería estructural, coordinación MEP, recertificación de edificios, inspección estructural, ingeniería en Miami",
+    "services": {
+      "title": "Nuestros Servicios",
+      "description": "Soluciones integrales de ingeniería que incluyen diseño estructural, coordinación MEP y recertificaciones de edificios."
+    },
+    "about": {
+      "title": "Sobre Nosotros",
+      "description": "Conozca a DH Engineering & Consulting LLC, una firma de ingeniería especializada en diseño estructural, coordinación MEP y recertificaciones."
+    },
+    "contact": {
+      "title": "Contáctenos | DH Engineering",
+      "description": "Póngase en contacto con DH Engineering & Consulting LLC. Cuéntenos sobre su proyecto — residencial o comercial. Respondemos en 24 horas."
+    }
+  },
   "Navigation": {
     "home": "Inicio",
     "about": "Nosotros",
@@ -116,8 +133,90 @@
   "MakersStory": {
     "eyebrow": "Quiénes Somos",
     "title": "Ingeniería en la que puedes confiar",
-    "description": "En DH Engineering & Consulting LLC, brindamos servicios integrales de ingeniería combinando la experiencia estructural con un entendimiento práctico de la construcción y los procesos de permisos.",
-    "mission": "DECLARACIÓN DE MISIÓN: CONVERTIRNOS EN UN SOCIO DE CONFIANZA Y SERVICIO COMPLETO EN EL ENTORNO CONSTRUIDO—MOLDEANDO EL FUTURO A TRAVÉS DE LA EXCELENCIA INTEGRADA EN ARQUITECTURA, INGENIERÍA Y CONSTRUCCIÓN"
+    "description": "En DH Engineering & Consulting LLC, brindamos servicios integrales de ingeniería al combinar la experiencia estructural con una comprensión práctica de los procesos de construcción y permisos.",
+    "description_2": "Nos especializamos en el diseño estructural para proyectos residenciales y comerciales, junto con la coordinación MEP, entregando soluciones eficientes y totalmente integradas bajo una sola firma.",
+    "description_3": "Nos enorgullecemos de brindar servicios de ingeniería confiables y de alta calidad a precios competitivos — cumpliendo con los plazos y apoyando a nuestros clientes con una comunicación clara, ayudándolos a lograr su visión a través de un proceso fluido, eficiente y sin estrés.",
+    "mission": "DECLARACIÓN DE MISIÓN: CONVERTIRNOS EN UN SOCIO DE SERVICIO COMPLETO CONFIABLE EN EL ENTORNO CONSTRUIDO — DANDO FORMA AL FUTURO A TRAVÉS DE LA EXCELENCIA INTEGRADA EN ARQUITECTURA, INGENIERÍA Y CONSTRUCCIÓN."
+  },
+  "HomePage": {
+    "selected_works": "Obras Seleccionadas",
+    "featured_projects": "Proyectos destacados.",
+    "view_all": "Ver todo",
+    "view_all_projects": "Ver todos los proyectos",
+    "portfolio_soon": "Portafolio próximamente.",
+    "portfolio_soon_desc": "Estamos subiendo nuestro portafolio de proyectos. Vuelva pronto.",
+    "get_in_touch": "Póngase en contacto",
+    "start_project_eyebrow": "Iniciar un proyecto",
+    "ready_to_engineer": "¿Listo para diseñar su visión?",
+    "ready_to_engineer_desc": "Cuéntenos sobre su proyecto. Proporcionaremos ingeniería precisa y conforme a códigos desde el primer día.",
+    "contact_us": "Contáctenos"
+  },
+  "AllServicesGrid": {
+    "eyebrow": "Lo Que Ofrecemos",
+    "title_1": "Todos nuestros",
+    "title_2": "servicios de ingeniería.",
+    "description": "Soluciones integrales estructurales y MEP — desde el diseño hasta la inspección — entregadas bajo una sola firma.",
+    "disciplines_label": "Disciplinas de Servicio Completo",
+    "additional_label": "Servicios Adicionales",
+    "view_details": "Ver detalles del servicio",
+    "cta_desc": "¿No está seguro de qué servicio se adapta a su proyecto? Le ayudaremos a encontrar el enfoque de ingeniería adecuado.",
+    "cta_btn": "Hable con un ingeniero",
+    "primary": {
+      "structural": {
+        "title": "Ingeniería Estructural",
+        "desc": "Diseño estructural integral para proyectos residenciales y comerciales. Diseños precisos y conformes a los códigos con un fuerte enfoque en la constructibilidad y la rentabilidad bajo el Código de Construcción de Florida.",
+        "tag": "Servicio Completo"
+      },
+      "mep": {
+        "title": "Ingeniería MEP",
+        "desc": "Diseño mecánico, eléctrico y de plomería integrado coordinado bajo una sola firma. Eliminamos costosas brechas interdisciplinarias y entregamos soluciones totalmente integradas desde el concepto hasta el permiso.",
+        "tag": "Servicio Completo"
+      },
+      "recert": {
+        "title": "Recertificaciones de Edificios",
+        "desc": "Servicios de recertificación estructural y eléctrica que incluyen recertificaciones de 25, 30, 40, 50 años y más. Utilizamos tecnología de drones para inspeccionar eficientemente áreas de difícil acceso.",
+        "tag": "Servicio Completo"
+      },
+      "inspections": {
+        "title": "Inspecciones Estructurales",
+        "desc": "Inspecciones de campo durante la construcción para verificar que el trabajo se complete según los planos aprobados, la intención del diseño y los códigos aplicables. Garantizando calidad y cumplimiento.",
+        "tag": "Servicio Completo"
+      }
+    },
+    "additional": {
+      "residential": {
+        "title": "Casas Uni y Multifamiliares",
+        "desc": "Diseño estructural y MEP para residencias personalizadas, dúplex y casas adosadas. Enfocado en la eficiencia, constructibilidad y cumplimiento total del código.",
+        "tag": "Residencial"
+      },
+      "additions": {
+        "title": "Adiciones y Renovaciones",
+        "desc": "Soluciones estructurales y MEP para adiciones y renovaciones — mejorando la funcionalidad, expandiendo espacios y reforzando elementos estructurales mientras se integran con la estructura existente.",
+        "tag": "Residencial / Comercial"
+      },
+      "commercial": {
+        "title": "Edificios Comerciales",
+        "desc": "Diseño estructural y MEP para nuevos edificios comerciales y expansiones. Soluciones eficientes y conformes a los códigos adaptadas a los requisitos específicos de cada proyecto.",
+        "tag": "Comercial"
+      },
+      "outdoor": {
+        "title": "Terrazas y Pérgolas de Aluminio",
+        "desc": "Diseño y análisis estructural para terrazas de aluminio, pergolas y estructuras exteriores asegurando estabilidad, durabilidad y cumplimiento con los requisitos de carga de viento.",
+        "tag": "Especialidad"
+      },
+      "shop": {
+        "title": "Planos de Taller",
+        "desc": "Planos de taller detallados para escaleras, barandillas, portones, cercas, marquesinas y otros componentes estructurales. Desarrollados para precisión, constructibilidad y cumplimiento total del código.",
+        "tag": "Documentación"
+      }
+    }
+  },
+  "Footer": {
+    "tagline": "Servicios integrales de ingeniería estructural y MEP en Florida.",
+    "nav_title": "Navegación",
+    "contact_title": "Contacto",
+    "rights": "Todos los derechos reservados.",
+    "licensed": "Firma de Ingeniería Licenciada · Estado de Florida"
   },
   "TrustedPartners": {
     "heading": "Nuestros Aliados y Colaboradores"
@@ -170,6 +269,7 @@
     "back": "Volver al Portafolio",
     "vision": "La Visión",
     "dossier": "Dossier del Proyecto",
+    "dossier_label": "Datos del Proyecto",
     "type_label": "Tipo de Proyecto",
     "scope_label": "Alcance de Ingeniería",
     "location_label": "Ubicación",
@@ -184,7 +284,28 @@
       "commercial": "Comercial",
       "mid-rise": "Mid-Rise",
       "shop-drawing": "Shop Drawing"
+    },
+    "scope_items": {
+      "structural-engineering": "Ingeniería Estructural",
+      "mep-engineering": "Ingeniería MEP",
+      "building-recertifications": "Recertificaciones de Edificios",
+      "structural-inspections": "Inspecciones Estructurales",
+      "shop-drawings": "Planos de Taller",
+      "permitting": "Permisos y Cumplimiento",
+      "as-built": "Evaluaciones As-Built"
     }
+  },
+  "ProjectCard": {
+    "view_project": "Ver proyecto"
+  },
+  "ContactPage": {
+    "eyebrow": "Póngase en Contacto",
+    "title": "Construyamos algo juntos.",
+    "subtitle": "Cuéntenos sobre su proyecto. Nuestro equipo de ingeniería está listo para brindar soluciones precisas y conformes a los códigos adaptadas a sus necesidades.",
+    "hq": "Sede Central",
+    "hours": "Lunes - Viernes 8:00am - 6:00pm",
+    "map_title": "Mapa de la oficina de DH Engineering",
+    "map_aria": "Mapa que muestra la ubicación de la oficina de DH Engineering en Miami"
   },
   "ServicesPage": {
     "what_we_do": "Lo Que Hacemos",
@@ -439,19 +560,6 @@
       ]
     }
   },
-  "ContactPage": {
-    "eyebrow": "Contacto",
-    "title": "Iniciemos una conversación.",
-    "subtitle": "Cada gran proyecto arquitectónico comienza con un diálogo honesto. Cuéntanos sobre tu visión, terreno y aspiraciones.",
-    "hq": "Sede principal en Miami",
-    "hours_week": "Lun - Vie: 9:00 AM - 6:00 PM",
-    "hours_weekend": "Fines de semana solo con cita exclusiva",
-    "book": "Reserva un espacio",
-    "prefer_title_1": "¿Prefieres hablar",
-    "prefer_title_2": "directamente con nosotros?",
-    "prefer_desc": "Evita el formulario por completo. Programa una llamada de descubrimiento de 15 minutos sin compromiso con uno de nuestros arquitectos principales en el horario que mejor te convenga.",
-    "select_time": "SELECCIONA UNA HORA A LA DERECHA"
-  },
   "ContactForm": {
     "types": {
       "res_new": "Residencial — Obra Nueva",
@@ -478,5 +586,36 @@
     "message_placeholder": "Describe brevemente tu visión, tiempos y lo que estás buscando.",
     "btn_send": "Enviar Mensaje",
     "btn_sending": "Enviando..."
+  },
+  "AboutPage": {
+    "team_eyebrow": "Nuestro Equipo",
+    "team_title_1": "Los profesionales",
+    "team_title_2": "detrás de su proyecto.",
+    "team": {
+      "rene": {
+        "role": "Ingeniero Profesional",
+        "bio": "Proporciona servicios de ingeniería profesional en sistemas MEP, entregando soluciones de diseño de alta calidad, conforme a códigos y confiables."
+      },
+      "darian": {
+        "role": "Presidente y Fundador",
+        "bio": "Lidera la visión de la firma, enfocándose en la gestión estratégica y operaciones, aportando innovación y creatividad a cada proyecto."
+      },
+      "liliana": {
+        "role": "Delineante Senior",
+        "bio": "Responsable de la coordinación del dibujo, entregando planos claros, precisos y bien estructurados para todos los proyectos, asegurando calidad y atención al detalle."
+      },
+      "ivan": {
+        "role": "Inspector Estructural Senior",
+        "bio": "Realiza inspecciones estructurales, aprovechando su amplia experiencia de campo como Contratista General para asegurar la calidad y el cumplimiento de los códigos."
+      },
+      "jesus": {
+        "role": "Diseñador Estructural Senior",
+        "bio": "Enfocado en el análisis y diseño estructural, aplicando una sólida experiencia técnica para apoyar soluciones de proyectos seguras y eficientes."
+      },
+      "marlon": {
+        "role": "Diseñador Estructural",
+        "bio": "Involucrado en el diseño y análisis estructural, utilizando sólidas habilidades técnicas para apoyar resultados de proyectos seguros y eficientes."
+      }
+    }
   }
 }

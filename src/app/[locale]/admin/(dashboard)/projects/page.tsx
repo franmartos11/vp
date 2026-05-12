@@ -2,6 +2,7 @@ import { db } from "@/lib/db";
 import Link from "next/link";
 import { Plus, Edit2, Trash2, Eye } from "lucide-react";
 import Image from "next/image";
+import DeleteButton from "@/components/admin/DeleteButton";
 import { getLocale } from "next-intl/server";
 
 // Deshabilita el caching estático en el panel
@@ -102,12 +103,7 @@ export default async function AdminProjectsPage() {
                      >
                        <Edit2 size={18} />
                      </Link>
-                     <button 
-                       className="inline-flex p-2 text-warm-400 hover:text-red-600 hover:bg-red-50 rounded-md transition-all"
-                       title="Eliminar"
-                     >
-                       <Trash2 size={18} />
-                     </button>
+                     <DeleteButton id={project.id} endpoint="/api/projects" confirmMessage="¿Estás seguro de que deseas eliminar este proyecto?" />
                   </td>
                 </tr>
               ))}

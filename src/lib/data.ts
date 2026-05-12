@@ -90,6 +90,7 @@ export const FALLBACK_TEAM = [
   {
     _id: '2',
     name: 'Rene Fernandez Jover',
+    tKey: 'rene',
     role: 'Professional Engineer',
     bio: 'Provides professional engineering services in MEP systems, delivering high-quality, code-compliant, and reliable design solutions.',
     photoUrl: '/employee/2. Rene Fernandez Jover.png',
@@ -97,6 +98,7 @@ export const FALLBACK_TEAM = [
   {
     _id: '1',
     name: 'Darian Huerta',
+    tKey: 'darian',
     role: 'President & Founder',
     bio: 'Leads the firm\'s vision, focusing on strategic management, operations, while bringing innovation and creativity to every project.',
     photoUrl: '/employee/1. Darian Huerta.png',
@@ -104,6 +106,7 @@ export const FALLBACK_TEAM = [
   {
     _id: '3',
     name: 'Liliana Araujo',
+    tKey: 'liliana',
     role: 'Senior Drafter',
     bio: 'Responsible for drafting coordination, delivering clear, precise, and well-structured drawings for all projects, ensuring quality and attention to detail.',
     photoUrl: '/employee/3. Liliana Araujo.png',
@@ -111,6 +114,7 @@ export const FALLBACK_TEAM = [
   {
     _id: '4',
     name: 'Ivan Rodriguez',
+    tKey: 'ivan',
     role: 'Senior Structural Inspector',
     bio: 'Performs structural inspections, leveraging extensive field experience as a General Contractor to ensure quality and code compliance.',
     photoUrl: '/employee/4. Ivan Rodriguez.png',
@@ -118,6 +122,7 @@ export const FALLBACK_TEAM = [
   {
     _id: '5',
     name: 'Jesus Gonzalez',
+    tKey: 'jesus',
     role: 'Senior Structural Designer',
     bio: 'Focused on structural analysis and design, applying solid technical expertise to support safe and efficient project solutions.',
     photoUrl: '/employee/5. Jesus Gonzalez.png',
@@ -125,6 +130,7 @@ export const FALLBACK_TEAM = [
   {
     _id: '6',
     name: 'Marlon Cruz',
+    tKey: 'marlon',
     role: 'Structural Designer',
     bio: 'Involved in structural design and analysis, utilizing solid technical skills to support safe and efficient project outcomes.',
     photoUrl: '/employee/6. Marlon Cruz.png',

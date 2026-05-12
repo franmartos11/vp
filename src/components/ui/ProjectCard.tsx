@@ -27,6 +27,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project, priority = false }: ProjectCardProps) {
   const t = useTranslations("ProjectDetail.types");
+  const tCard = useTranslations("ProjectCard");
   const imageUrl = project.coverImage || project.coverImageUrl || "https://images.unsplash.com/photo-1581092335397-9fa73b1e5e6a?w=900&auto=format";
   const slugTarget = typeof project.slug === 'string' ? project.slug : project.slug.current;
   
@@ -70,7 +71,7 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
             className="absolute bottom-0 left-0 right-0 p-5 text-cream-100"
           >
             <p className="flex items-center gap-2 text-xs tracking-wide uppercase text-warm-300 mb-2">
-              View project <ArrowRight size={12} />
+              {tCard("view_project")} <ArrowRight size={12} />
             </p>
             {project.description && (
               <p className="text-xs text-warm-100/80 font-light leading-relaxed line-clamp-2">

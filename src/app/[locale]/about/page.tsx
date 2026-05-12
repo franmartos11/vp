@@ -10,16 +10,22 @@ import { StickyPillars } from "@/components/sections/StickyPillars";
 import { TrustedPartners } from "@/components/sections/TrustedPartners";
 import { ProcessTimeline } from "@/components/sections/ProcessTimeline";
 import { FALLBACK_TEAM } from "@/lib/data";
+import { getLocale, getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "About Us | DH Engineering & Consulting LLC",
-  description:
-    "Learn about DH Engineering & Consulting LLC — a specialized engineering firm providing structural design, MEP coordination, building recertifications, and inspections across Florida.",
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "Metadata.about" });
+
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
 
 type TeamMember = {
   _id: string;
   name: string;
+  tKey: string;
   role: string;
   bio?: string;
   photo?: { asset: { _ref: string }; alt?: string };
@@ -29,6 +35,8 @@ type TeamMember = {
 
 export default async function AboutPage() {
   const team: TeamMember[] = FALLBACK_TEAM;
+  const tAbout = await getTranslations("AboutPage");
+  const tTeam = await getTranslations("AboutPage.team");
 
   return (
     <>
@@ -230,9 +238,9 @@ export default async function AboutPage() {
             <div className="container mx-auto max-w-7xl">
               <AnimatedSection className="flex flex-col md:flex-row md:items-end justify-between gap-6 md:gap-8 mb-12 md:mb-24">
                 <div>
-                  <span className="font-mono text-xs tracking-[0.3em] uppercase text-brand-blue/80 mb-4 block">Our Team</span>
+                  <span className="font-mono text-xs tracking-[0.3em] uppercase text-brand-blue/80 mb-4 block">{tAbout("team_eyebrow")}</span>
                   <h2 className="text-3xl md:text-5xl lg:text-6xl font-display text-white">
-                    The professionals <br /><span className="italic font-light text-brand-blue/60">behind your project.</span>
+                    {tAbout("team_title_1")} <br /><span className="italic font-light text-brand-blue/60">{tAbout("team_title_2")}</span>
                   </h2>
                 </div>
               </AnimatedSection>
@@ -250,6 +258,9 @@ export default async function AboutPage() {
                   return orderedTeam.map((member: any) => {
                     const isFounder = member.name === "Darian Huerta" || member.role.toLowerCase().includes("founder");
                     const photoUrl = member.photoUrl;
+                    const role = tTeam(`${member.tKey}.role`);
+                    const bio = tTeam(`${member.tKey}.bio`);
+
                   return (
                     <article key={member._id} className={`group cursor-pointer ${isFounder ? "relative z-10" : ""}`}>
                       <div className={`relative aspect-[3/4] overflow-hidden bg-charcoal-800 mb-6 transition-all duration-500 ${isFounder ? "ring-2 ring-brand-blue ring-offset-4 ring-offset-charcoal-900 scale-[1.02] shadow-2xl shadow-brand-blue/20" : ""}`}>
@@ -271,14 +282,14 @@ export default async function AboutPage() {
 
                         {/* Overlay Role on Hover */}
                         <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-charcoal-900/90 to-transparent translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                          <p className="text-warm-200 font-light text-sm">{member.bio || "Integral member of our execution and design strategy team."}</p>
+                          <p className="text-warm-200 font-light text-sm">{bio || "Integral member of our execution and design strategy team."}</p>
                         </div>
                       </div>
 
                       <div className={`flex items-start justify-between border-b pb-4 transition-colors duration-500 ${isFounder ? "border-brand-blue" : "border-warm-800/50 group-hover:border-brand-blue"}`}>
                         <div>
                           <h3 className={`font-display text-white group-hover:text-warm-100 transition-colors ${isFounder ? "text-2xl md:text-3xl" : "text-xl"}`}>{member.name}</h3>
-                          <p className={`font-mono uppercase tracking-[0.2em] mt-2 ${isFounder ? "text-brand-blue text-xs font-bold" : "text-warm-400 text-[10px]"}`}>{member.role}</p>
+                          <p className={`font-mono uppercase tracking-[0.2em] mt-2 ${isFounder ? "text-brand-blue text-xs font-bold" : "text-warm-400 text-[10px]"}`}>{role}</p>
                         </div>
                         {member.linkedIn && (
                           <a href={member.linkedIn} target="_blank" rel="noopener noreferrer" aria-label={`${member.name} LinkedIn`} className="text-brand-blue/60 hover:text-brand-blue transition-colors shrink-0 mt-1 cursor-none">

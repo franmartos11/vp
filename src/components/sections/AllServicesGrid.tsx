@@ -14,83 +14,6 @@ type Service = {
   isPrimary?: boolean;
 };
 
-const PRIMARY_SERVICES: Service[] = [
-  {
-    id: 1,
-    title: "Structural Engineering",
-    description:
-      "Comprehensive structural design for residential and commercial projects. Accurate, code-compliant designs with a strong focus on constructability and cost-efficiency under the Florida Building Code.",
-    slug: "structural-engineering",
-    tag: "Full Service",
-    isPrimary: true,
-  },
-  {
-    id: 2,
-    title: "MEP Engineering",
-    description:
-      "Integrated mechanical, electrical, and plumbing design coordinated under one firm. We eliminate costly interdisciplinary gaps and deliver fully integrated solutions from concept to permit.",
-    slug: "mep-engineering",
-    tag: "Full Service",
-    isPrimary: true,
-  },
-  {
-    id: 3,
-    title: "Building Recertifications",
-    description:
-      "Structural and electrical recertification services including 25, 30, 40, 50-year recertifications and beyond. We utilize drone technology to efficiently inspect hard-to-access areas.",
-    slug: "building-recertifications",
-    tag: "Full Service",
-    isPrimary: true,
-  },
-  {
-    id: 4,
-    title: "Structural Inspections",
-    description:
-      "Field inspections during construction to verify work is completed per approved plans, design intent, and applicable codes. Ensuring quality, compliance, and proper execution at each stage.",
-    slug: "structural-inspections",
-    tag: "Full Service",
-    isPrimary: true,
-  },
-];
-
-const ADDITIONAL_SERVICES: Service[] = [
-  {
-    id: 5,
-    title: "Single & Multi-Family Homes",
-    description:
-      "Structural and MEP design for custom residences, duplexes, and townhomes. Focused on efficiency, constructability, and full code compliance.",
-    tag: "Residential",
-  },
-  {
-    id: 6,
-    title: "Additions & Renovations",
-    description:
-      "Structural and MEP solutions for additions and renovations — improving functionality, expanding spaces, and reinforcing structural elements while integrating with the existing structure.",
-    tag: "Residential / Commercial",
-  },
-  {
-    id: 7,
-    title: "Commercial Buildings",
-    description:
-      "Structural and MEP design for new commercial buildings and expansions. Efficient, code-compliant solutions tailored to each project's specific requirements.",
-    tag: "Commercial",
-  },
-  {
-    id: 8,
-    title: "Aluminum Terraces & Pergolas",
-    description:
-      "Structural design and analysis for aluminum terraces, pergolas, and outdoor structures ensuring stability, durability, and compliance with wind load requirements.",
-    tag: "Specialty",
-  },
-  {
-    id: 9,
-    title: "Shop Drawings",
-    description:
-      "Detailed shop drawings for stairs, railings, gates, fences, canopies, and other structural components. Developed for accuracy, constructability, and full code compliance.",
-    tag: "Documentation",
-  },
-];
-
 const containerVariants: Variants = {
   hidden: {},
   visible: {
@@ -104,6 +27,76 @@ const cardVariants: Variants = {
 };
 
 export function AllServicesGrid() {
+  const t = useTranslations("AllServicesGrid");
+
+  const primaryServices = [
+    {
+      id: 1,
+      title: t("primary.structural.title"),
+      description: t("primary.structural.desc"),
+      slug: "structural-engineering",
+      tag: t("primary.structural.tag"),
+      isPrimary: true,
+    },
+    {
+      id: 2,
+      title: t("primary.mep.title"),
+      description: t("primary.mep.desc"),
+      slug: "mep-engineering",
+      tag: t("primary.mep.tag"),
+      isPrimary: true,
+    },
+    {
+      id: 3,
+      title: t("primary.recert.title"),
+      description: t("primary.recert.desc"),
+      slug: "building-recertifications",
+      tag: t("primary.recert.tag"),
+      isPrimary: true,
+    },
+    {
+      id: 4,
+      title: t("primary.inspections.title"),
+      description: t("primary.inspections.desc"),
+      slug: "structural-inspections",
+      tag: t("primary.inspections.tag"),
+      isPrimary: true,
+    },
+  ];
+
+  const additionalServices = [
+    {
+      id: 5,
+      title: t("additional.residential.title"),
+      description: t("additional.residential.desc"),
+      tag: t("additional.residential.tag"),
+    },
+    {
+      id: 6,
+      title: t("additional.additions.title"),
+      description: t("additional.additions.desc"),
+      tag: t("additional.additions.tag"),
+    },
+    {
+      id: 7,
+      title: t("additional.commercial.title"),
+      description: t("additional.commercial.desc"),
+      tag: t("additional.commercial.tag"),
+    },
+    {
+      id: 8,
+      title: t("additional.outdoor.title"),
+      description: t("additional.outdoor.desc"),
+      tag: t("additional.outdoor.tag"),
+    },
+    {
+      id: 9,
+      title: t("additional.shop.title"),
+      description: t("additional.shop.desc"),
+      tag: t("additional.shop.tag"),
+    },
+  ];
+
   return (
     <section
       className="py-20 md:py-28 bg-white border-t border-brand-blue"
@@ -116,21 +109,20 @@ export function AllServicesGrid() {
             <div>
               <span className="font-mono text-xs tracking-[0.3em] uppercase text-brand-blue mb-5 block flex items-center gap-3">
                 <span className="w-6 h-px bg-brand-blue inline-block" />
-                What We Offer
+                {t("eyebrow")}
               </span>
               <h2
                 id="all-services-heading"
                 className="text-4xl md:text-5xl lg:text-6xl font-display text-charcoal-900 leading-tight"
               >
-                All our{" "}
+                {t("title_1")}{" "}
                 <span className="italic font-light text-brand-blue">
-                  engineering services.
+                  {t("title_2")}
                 </span>
               </h2>
             </div>
               <p className="text-lg font-light text-charcoal-600 max-w-sm leading-relaxed md:text-right">
-                Comprehensive structural and MEP solutions — from design to
-                inspection — delivered under one firm.
+                {t("description")}
             </p>
           </div>
         </AnimatedSection>
@@ -138,7 +130,7 @@ export function AllServicesGrid() {
         {/* Primary Services — Grid 2x2 */}
         <AnimatedSection className="mb-6">
           <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-charcoal-400 block mb-4">
-            — Full-Service Disciplines
+            — {t("disciplines_label")}
           </span>
         </AnimatedSection>
 
@@ -149,7 +141,7 @@ export function AllServicesGrid() {
           viewport={{ once: true, margin: "-80px" }}
           className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12"
         >
-          {PRIMARY_SERVICES.map((service) => (
+          {primaryServices.map((service) => (
             <motion.div key={service.id} variants={cardVariants} transition={{ duration: 0.6, ease: "easeOut" }}>
               <Link
                 href={`/services/${service.slug}`}
@@ -184,7 +176,7 @@ export function AllServicesGrid() {
                 {/* Bottom bar */}
                 <div className="mt-8 pt-5 border-t border-warm-100 group-hover:border-brand-blue/20 transition-colors duration-500 relative z-10">
                   <span className="text-[11px] font-mono uppercase tracking-widest text-charcoal-500 group-hover:text-brand-blue transition-colors duration-300 flex items-center gap-2">
-                    View service details <ExternalLink size={12} />
+                    {t("view_details")} <ExternalLink size={12} />
                   </span>
                 </div>
               </Link>
@@ -195,7 +187,7 @@ export function AllServicesGrid() {
         {/* Additional Services — row of 5 */}
         <AnimatedSection className="mb-4">
           <span className="font-mono text-[10px] tracking-[0.3em] uppercase text-charcoal-400 block mb-4">
-            — Additional Services
+            — {t("additional_label")}
           </span>
         </AnimatedSection>
 
@@ -206,7 +198,7 @@ export function AllServicesGrid() {
           viewport={{ once: true, margin: "-60px" }}
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4"
         >
-          {ADDITIONAL_SERVICES.map((service) => (
+          {additionalServices.map((service) => (
             <motion.div key={service.id} variants={cardVariants} transition={{ duration: 0.6, ease: "easeOut" }}>
               <div className="group relative flex flex-col h-full bg-cream-100 border-l-[3px] border-l-brand-blue border-y border-r border-transparent hover:border-warm-200 rounded-lg p-5 transition-all duration-300 hover:shadow-sm">
                 
@@ -235,14 +227,13 @@ export function AllServicesGrid() {
         {/* Bottom CTA */}
         <AnimatedSection className="mt-16 pt-10 border-t border-warm-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
           <p className="text-charcoal-600 font-light text-sm max-w-md">
-            Not sure which service fits your project? We'll help you find the
-            right engineering approach.
+            {t("cta_desc")}
           </p>
           <Link
             href="/contact"
             className="btn-primary"
           >
-            Talk to an engineer <ArrowUpRight size={14} className="ml-1" />
+            {t("cta_btn")} <ArrowUpRight size={14} className="ml-1" />
           </Link>
         </AnimatedSection>
       </div>

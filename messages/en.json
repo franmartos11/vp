@@ -1,4 +1,21 @@
 {
+  "Metadata": {
+    "title": "DH Engineering & Consulting LLC | Specialized Engineering Services",
+    "description": "Specialized engineering firm providing structural design, MEP coordination, building recertifications, and inspections across Florida.",
+    "keywords": "structural engineering, MEP coordination, building recertification, structural inspection, Miami engineering",
+    "services": {
+      "title": "Our Services",
+      "description": "Comprehensive engineering solutions including structural design, MEP coordination, and building recertifications."
+    },
+    "about": {
+      "title": "About Us",
+      "description": "Learn about DH Engineering & Consulting LLC — a specialized engineering firm providing structural design, MEP coordination, and building recertifications."
+    },
+    "contact": {
+      "title": "Contact Us | DH Engineering",
+      "description": "Get in touch with DH Engineering & Consulting LLC. Tell us about your project — residential or commercial. We respond within 24 hours."
+    }
+  },
   "Navigation": {
     "home": "Home",
     "about": "About",
@@ -117,7 +134,89 @@
     "eyebrow": "Who We Are",
     "title": "Engineering you can trust",
     "description": "At DH Engineering & Consulting LLC, we provide comprehensive engineering services by combining structural expertise with a practical understanding of construction and permitting processes.",
+    "description_2": "We specialize in structural design for residential and commercial projects, along with MEP coordination, delivering efficient and fully integrated solutions under one firm.",
+    "description_3": "We take pride in providing reliable, high-quality engineering services at competitive prices — meeting deadlines and supporting our clients with clear communication, helping them achieve their vision through a smooth, efficient, and stress-free process.",
     "mission": "MISSION STATEMENT: TO BECOME A TRUSTED, FULL-SERVICE PARTNER IN THE BUILT ENVIRONMENT—SHAPING THE FUTURE THROUGH INTEGRATED ARCHITECTURE, ENGINEERING, AND CONSTRUCTION EXCELLENCE."
+  },
+  "HomePage": {
+    "selected_works": "Selected Works",
+    "featured_projects": "Featured projects.",
+    "view_all": "View all",
+    "view_all_projects": "View all projects",
+    "portfolio_soon": "Portfolio coming soon.",
+    "portfolio_soon_desc": "We're uploading our project portfolio. Check back shortly.",
+    "get_in_touch": "Get in touch",
+    "start_project_eyebrow": "Start a project",
+    "ready_to_engineer": "Ready to engineer your vision?",
+    "ready_to_engineer_desc": "Tell us about your project. We'll provide precise, code-compliant engineering from day one.",
+    "contact_us": "Contact us"
+  },
+  "AllServicesGrid": {
+    "eyebrow": "What We Offer",
+    "title_1": "All our",
+    "title_2": "engineering services.",
+    "description": "Comprehensive structural and MEP solutions — from design to inspection — delivered under one firm.",
+    "disciplines_label": "Full-Service Disciplines",
+    "additional_label": "Additional Services",
+    "view_details": "View service details",
+    "cta_desc": "Not sure which service fits your project? We'll help you find the right engineering approach.",
+    "cta_btn": "Talk to an engineer",
+    "primary": {
+      "structural": {
+        "title": "Structural Engineering",
+        "desc": "Comprehensive structural design for residential and commercial projects. Accurate, code-compliant designs with a strong focus on constructability and cost-efficiency under the Florida Building Code.",
+        "tag": "Full Service"
+      },
+      "mep": {
+        "title": "MEP Engineering",
+        "desc": "Integrated mechanical, electrical, and plumbing design coordinated under one firm. We eliminate costly interdisciplinary gaps and deliver fully integrated solutions from concept to permit.",
+        "tag": "Full Service"
+      },
+      "recert": {
+        "title": "Building Recertifications",
+        "desc": "Structural and electrical recertification services including 25, 30, 40, 50-year recertifications and beyond. We utilize drone technology to efficiently inspect hard-to-access areas.",
+        "tag": "Full Service"
+      },
+      "inspections": {
+        "title": "Structural Inspections",
+        "desc": "Field inspections during construction to verify work is completed per approved plans, design intent, and applicable codes. Ensuring quality, compliance, and proper execution at each stage.",
+        "tag": "Full Service"
+      }
+    },
+    "additional": {
+      "residential": {
+        "title": "Single & Multi-Family Homes",
+        "desc": "Structural and MEP design for custom residences, duplexes, and townhomes. Focused on efficiency, constructability, and full code compliance.",
+        "tag": "Residential"
+      },
+      "additions": {
+        "title": "Additions & Renovations",
+        "desc": "Structural and MEP solutions for additions and renovations — improving functionality, expanding spaces, and reinforcing structural elements while integrating with the existing structure.",
+        "tag": "Residential / Commercial"
+      },
+      "commercial": {
+        "title": "Commercial Buildings",
+        "desc": "Structural and MEP design for new commercial buildings and expansions. Efficient, code-compliant solutions tailored to each project's specific requirements.",
+        "tag": "Commercial"
+      },
+      "outdoor": {
+        "title": "Aluminum Terraces & Pergolas",
+        "desc": "Structural design and analysis for aluminum terraces, pergolas, and outdoor structures ensuring stability, durability, and compliance with wind load requirements.",
+        "tag": "Specialty"
+      },
+      "shop": {
+        "title": "Shop Drawings",
+        "desc": "Detailed shop drawings for stairs, railings, gates, fences, canopies, and other structural components. Developed for accuracy, constructability, and full code compliance.",
+        "tag": "Documentation"
+      }
+    }
+  },
+  "Footer": {
+    "tagline": "Comprehensive structural and MEP engineering services from Florida.",
+    "nav_title": "Navigation",
+    "contact_title": "Contact",
+    "rights": "All rights reserved.",
+    "licensed": "Licensed Engineering Firm · State of Florida"
   },
   "TrustedPartners": {
     "heading": "Our Partners & Collaborators"
@@ -170,6 +269,7 @@
     "back": "Back to Portfolio",
     "vision": "The Vision",
     "dossier": "Project Dossier",
+    "dossier_label": "Project Data",
     "type_label": "Project Type",
     "scope_label": "Engineering Scope",
     "location_label": "Location",
@@ -184,7 +284,28 @@
       "commercial": "Commercial",
       "mid-rise": "Mid-Rise",
       "shop-drawing": "Shop Drawing"
+    },
+    "scope_items": {
+      "structural-engineering": "Structural Engineering",
+      "mep-engineering": "MEP Engineering",
+      "building-recertifications": "Building Recertifications",
+      "structural-inspections": "Structural Inspections",
+      "shop-drawings": "Shop Drawings",
+      "permitting": "Permitting & Compliance",
+      "as-built": "As-Built Evaluations"
     }
+  },
+  "ProjectCard": {
+    "view_project": "View project"
+  },
+  "ContactPage": {
+    "eyebrow": "Get in Touch",
+    "title": "Let's build something together.",
+    "subtitle": "Tell us about your project. Our engineering team is ready to provide precise, code-compliant solutions tailored to your needs.",
+    "hq": "Headquarters",
+    "hours": "Monday - Friday 8:00am - 6:00pm",
+    "map_title": "DH Engineering office map",
+    "map_aria": "Map showing DH Engineering office location in Miami"
   },
   "ServicesPage": {
     "what_we_do": "What We Do",
@@ -439,19 +560,6 @@
       ]
     }
   },
-  "ContactPage": {
-    "eyebrow": "Contact",
-    "title": "Start a conversation.",
-    "subtitle": "Every great architectural endeavor begins with an honest dialogue. Tell us about your vision, site, and aspirations.",
-    "hq": "Miami Headquarters",
-    "hours_week": "Mon – Fri: 9:00 AM – 6:00 PM",
-    "hours_weekend": "Weekends by exclusive appointment",
-    "book": "Book a slot",
-    "prefer_title_1": "Prefer to speak",
-    "prefer_title_2": "directly with us?",
-    "prefer_desc": "Bypass the form completely. Schedule a 15-minute, no-obligation discovery call with one of our principal architects at a time that works flawlessly for your schedule.",
-    "select_time": "SELECT A TIME ON THE RIGHT"
-  },
   "ContactForm": {
     "types": {
       "res_new": "Residential — New Build",
@@ -478,5 +586,36 @@
     "message_placeholder": "Briefly describe your vision, timeline, and what you're looking for.",
     "btn_send": "Send Message",
     "btn_sending": "Sending..."
+  },
+  "AboutPage": {
+    "team_eyebrow": "Our Team",
+    "team_title_1": "The professionals",
+    "team_title_2": "behind your project.",
+    "team": {
+      "rene": {
+        "role": "Professional Engineer",
+        "bio": "Provides professional engineering services in MEP systems, delivering high-quality, code-compliant, and reliable design solutions."
+      },
+      "darian": {
+        "role": "President & Founder",
+        "bio": "Leads the firm's vision, focusing on strategic management, operations, while bringing innovation and creativity to every project."
+      },
+      "liliana": {
+        "role": "Senior Drafter",
+        "bio": "Responsible for drafting coordination, delivering clear, precise, and well-structured drawings for all projects, ensuring quality and attention to detail."
+      },
+      "ivan": {
+        "role": "Senior Structural Inspector",
+        "bio": "Performs structural inspections, leveraging extensive field experience as a General Contractor to ensure quality and code compliance."
+      },
+      "jesus": {
+        "role": "Senior Structural Designer",
+        "bio": "Focused on structural analysis and design, applying solid technical expertise to support safe and efficient project solutions."
+      },
+      "marlon": {
+        "role": "Structural Designer",
+        "bio": "Involved in structural design and analysis, utilizing solid technical skills to support safe and efficient project outcomes."
+      }
+    }
   }
 }
