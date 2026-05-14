@@ -102,7 +102,7 @@ const organizationJsonLd = {
       email: "info@dhengconsulting.com",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "13951 SW 122th Ave, #206",
+        streetAddress: "13951 SW 122nd Ave, #206",
         addressLocality: "Miami",
         addressRegion: "FL",
         postalCode: "33186",

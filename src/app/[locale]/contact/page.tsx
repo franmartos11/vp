@@ -19,9 +19,10 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function ContactPage() {
   const t = await getTranslations("ContactPage");
+  const address = "13951 SW 122nd Ave, #206, Miami, FL 33186";
   const mapsEmbedUrl =
     process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED ||
-    "https://maps.google.com/maps?q=13951+SW+122th+Ave+#206+Miami+FL+33186&output=embed";
+    `https://maps.google.com/maps?q=${encodeURIComponent(address)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
 
   return (
     <>
@@ -86,7 +87,7 @@ export default async function ContactPage() {
                           className="text-brand-blue shrink-0 mt-0.5"
                         />
                         <span>
-                          13951 SW 122th Ave, #206
+                          13951 SW 122nd Ave, #206
                           <br />
                           Miami, FL 33186
                         </span>
