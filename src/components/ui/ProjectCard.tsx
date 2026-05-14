@@ -21,11 +21,15 @@ interface ProjectCardProps {
     coverImage?: string | null;
   };
   priority?: boolean;
+  translations?: {
+    view_project: string;
+  };
+  typeLabel?: string;
 }
 
 // Removed hardcoded TYPE_LABELS
 
-export default function ProjectCard({ project, priority = false }: ProjectCardProps) {
+export default function ProjectCard({ project, priority = false, translations, typeLabel }: ProjectCardProps) {
   const t = useTranslations("ProjectDetail.types");
   const tCard = useTranslations("ProjectCard");
   const imageUrl = project.coverImage || project.coverImageUrl || "https://images.unsplash.com/photo-1581092335397-9fa73b1e5e6a?w=900&auto=format";
@@ -71,7 +75,7 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
             className="absolute bottom-0 left-0 right-0 p-5 text-cream-100"
           >
             <p className="flex items-center gap-2 text-xs tracking-wide uppercase text-warm-300 mb-2">
-              {tCard("view_project")} <ArrowRight size={12} />
+              {translations?.view_project || tCard("view_project")} <ArrowRight size={12} />
             </p>
             {project.description && (
               <p className="text-xs text-warm-100/80 font-light leading-relaxed line-clamp-2">
@@ -97,7 +101,7 @@ export default function ProjectCard({ project, priority = false }: ProjectCardPr
                 <span className="text-xs text-warm-500">{project.completionYear}</span>
               )}
               <span className="text-2xs tracking-widest uppercase text-warm-400 bg-cream-200 px-2 py-0.5">
-                {t.has(typeKey as any) ? t(typeKey as any) : project.projectType}
+                {typeLabel || (t.has(typeKey as any) ? t(typeKey as any) : project.projectType)}
               </span>
             </div>
           </div>
