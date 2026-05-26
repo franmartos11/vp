@@ -45,9 +45,9 @@ export async function submitContactForm(
   const { name, email, phone, projectType, message } = result.data;
 
   try {
-    await resend.emails.send({
-      from: "Contact Form <contact@vertexbuildgroup.com>",
-      to: [process.env.CONTACT_EMAIL || "hello@vertexbuildgroup.com"],
+    const { error } = await resend.emails.send({
+      from: "Contact Form <info@dhengconsulting.com>",
+      to: [process.env.CONTACT_EMAIL || "info@dhengconsulting.com"],
       replyTo: email,
       subject: `New inquiry from ${name}${projectType ? ` — ${projectType}` : ""}`,
       html: `
@@ -61,6 +61,14 @@ export async function submitContactForm(
         <p>${message.replace(/\n/g, "<br>")}</p>
       `,
     });
+
+    if (error) {
+      console.error("Resend API error:", error);
+      return {
+        success: false,
+        message: "Something went wrong sending the email. Please try again.",
+      };
+    }
 
     return {
       success: true,
