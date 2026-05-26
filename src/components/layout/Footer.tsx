@@ -40,7 +40,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-4 mt-6">
               <a
-                href="https://www.instagram.com"
+                href="https://www.instagram.com/dhengineeringfl/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
