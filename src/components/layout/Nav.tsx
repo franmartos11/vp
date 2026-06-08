@@ -80,7 +80,7 @@ export default function Nav() {
               alt="DH Engineering & Consulting LLC"
               width={400}
               height={120}
-              className={`h-16 md:h-20 w-auto object-contain scale-[2.5] md:scale-[3] origin-left max-w-[140px] md:max-w-none transition-all ${!scrolled && isHome ? 'brightness-0 invert' : ''}`}
+              className={`h-12 md:h-16 w-auto object-contain transition-all ${!scrolled && isHome ? 'brightness-0 invert' : ''}`}
               priority
             />
           </Link>
