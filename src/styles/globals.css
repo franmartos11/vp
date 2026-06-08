@@ -1,5 +1,8 @@
 @import "tailwindcss";
 
+/* ─── Custom Variants ─── */
+@custom-variant landscape (@media (orientation: landscape) and (max-width: 1023px));
+
 /* ─── Tailwind v4 @theme: Design Tokens ─── */
 @theme {
   /* Colors */
@@ -209,4 +212,38 @@
     outline: none;
     border-bottom-color: var(--color-charcoal-900);
   }
+
+  /* Short-screen / landscape optimizations for mobile menu */
+  @media (max-height: 520px) {
+    .mobile-nav-menu {
+      justify-content: flex-start !important;
+      gap: 1rem !important;
+      padding-top: 1rem !important;
+      padding-bottom: 6rem !important;
+    }
+    .mobile-nav-lang {
+      margin-bottom: 0.5rem !important;
+    }
+    .mobile-nav-link {
+      font-size: 1.75rem !important;
+    }
+    .mobile-nav-menu div {
+      margin-top: 0.25rem !important;
+    }
+    .mobile-nav-btn-wrapper {
+      margin-top: 1rem !important;
+    }
+    .mobile-nav-btn {
+      padding-top: 0.75rem !important;
+      padding-bottom: 0.75rem !important;
+    }
+  }
+
+  /* Hero section — very short landscape screens: hide description to keep title + buttons visible */
+  @media (orientation: landscape) and (max-height: 500px) {
+    .hero-description {
+      display: none;
+    }
+  }
 }
+

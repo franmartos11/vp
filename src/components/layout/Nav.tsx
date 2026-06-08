@@ -33,6 +33,29 @@ export default function Nav() {
     setMenuOpen(false);
   }, [pathname]);
 
+  // Auto-close mobile menu on desktop screens
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 1024) {
+        setMenuOpen(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  // Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   const isHome = pathname === "/";
 
   return (
@@ -63,7 +86,7 @@ export default function Nav() {
           </Link>
 
           {/* Desktop nav */}
-          <ul className="hidden md:flex items-center gap-8" role="list">
+          <ul className="hidden lg:flex items-center gap-8" role="list">
             {navLinks.map((link) => {
               const isActive = link.href === "/" ? pathname === "/" : pathname.startsWith(link.href);
               return (
@@ -85,7 +108,7 @@ export default function Nav() {
 
           {/* Mobile hamburger */}
           <button
-            className={`md:hidden p-2 -mr-2 ${!scrolled && isHome ? 'text-white' : 'text-charcoal-900'}`}
+            className={`lg:hidden p-2 -mr-2 ${!scrolled && isHome ? 'text-white' : 'text-charcoal-900'}`}
             onClick={() => setMenuOpen(!menuOpen)}
             aria-expanded={menuOpen}
             aria-label={menuOpen ? "Close menu" : "Open menu"}
@@ -102,19 +125,19 @@ export default function Nav() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0, transition: { duration: 0.35, ease: [0.16, 1, 0.3, 1] } }}
             exit={{ opacity: 0, y: -10, transition: { duration: 0.2 } }}
-            className="fixed inset-0 z-40 bg-cream-100 flex flex-col"
+            className="fixed inset-0 z-40 bg-cream-100 flex flex-col lg:hidden overflow-y-auto"
             role="dialog"
             aria-modal="true"
             aria-label="Mobile navigation"
           >
-            <div className="container mx-auto flex items-center justify-between h-16">
+            <div className="container mx-auto flex items-center justify-between h-16 shrink-0">
               <Link href="/" className="flex items-center transition-opacity hover:opacity-80">
                 <Image
                   src="/Logo.png"
                   alt="DH Engineering & Consulting LLC"
                   width={300}
                   height={100}
-                  className="h-16 w-auto object-contain scale-[2.5] origin-left max-w-[140px]"
+                  className="h-12 w-auto object-contain"
                   priority
                 />
               </Link>
@@ -126,8 +149,8 @@ export default function Nav() {
                 <X size={20} />
               </button>
             </div>
-            <nav className="flex-1 container mx-auto flex flex-col justify-center gap-8">
-              <div className="flex justify-center mb-4">
+            <nav className="flex-1 container mx-auto flex flex-col justify-center gap-8 py-8 min-h-0 mobile-nav-menu">
+              <div className="flex justify-center mb-4 shrink-0 mobile-nav-lang">
                 <LanguageSwitcher />
               </div>
               {navLinks.map((link, i) => {
@@ -140,7 +163,7 @@ export default function Nav() {
                 >
                   <Link
                     href={link.href}
-                    className={`text-4xl md:text-5xl font-display transition-colors ${isActive ? "text-brand-blue" : "text-charcoal-900 hover:text-brand-blue"}`}
+                    className={`text-4xl lg:text-5xl font-display transition-colors mobile-nav-link ${isActive ? "text-brand-blue" : "text-charcoal-900 hover:text-brand-blue"}`}
                   >
                     {link.label}
                   </Link>
@@ -149,9 +172,9 @@ export default function Nav() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0, transition: { delay: 0.3, duration: 0.4, ease: [0.16, 1, 0.3, 1] } }}
-                className="mt-8 flex justify-center"
+                className="mt-8 flex justify-center shrink-0 mobile-nav-btn-wrapper"
               >
-                <Link href="/contact" className="btn-primary w-full max-w-sm text-center bg-brand-blue text-white hover:bg-brand-blue-dark border border-brand-blue transition-colors uppercase tracking-widest text-sm font-semibold py-4">
+                <Link href="/contact" className="btn-primary w-full max-w-sm text-center bg-brand-blue text-white hover:bg-brand-blue-dark border border-brand-blue transition-colors uppercase tracking-widest text-sm font-semibold py-4 mobile-nav-btn">
                   {t("start_project")}
                 </Link>
               </motion.div>

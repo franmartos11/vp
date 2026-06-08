@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Oswald } from "next/font/google";
 import "@/styles/globals.css";
 import {NextIntlClientProvider} from 'next-intl';
 import {getMessages} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
 
-const oswald = localFont({
-  src: "../../../public/Oswald-SemiBold.ttf",
+const oswald = Oswald({
+  subsets: ["latin"],
   variable: "--font-oswald",
   display: "swap",
+  weight: "600",
 });
 
 import { getTranslations } from "next-intl/server";

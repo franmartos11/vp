@@ -6,18 +6,7 @@ import { routing } from "@/i18n/routing";
 
 const intlMiddleware = createMiddleware(routing);
 
-/**
- * Next.js 16 Proxy (renamed from middleware).
- *
- * Routing config: localePrefix = 'as-needed'
- *   - English (default): no prefix → /admin/login, /admin, /portfolio, etc.
- *   - Spanish: /es prefix → /es/admin/login, /es/admin, /es/portfolio, etc.
- *
- * Admin routes live in the filesystem at src/app/[locale]/admin/...
- * next-intl does NOT automatically rewrite /admin/... to /en/admin/... for the
- * app router — we must do that rewrite manually for admin paths.
- */
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // ── Detect admin routes ────────────────────────────────────────────────────

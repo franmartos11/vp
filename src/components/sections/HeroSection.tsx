@@ -22,7 +22,7 @@ export function HeroSection() {
   return (
     <section
       ref={ref}
-      className="relative min-h-[100svh] flex items-end pb-20 md:pb-28 overflow-hidden bg-charcoal-900"
+      className="relative min-h-[100svh] flex items-end pb-16 md:pb-28 landscape:pt-20 landscape:pb-8 overflow-hidden bg-charcoal-900"
       aria-label="Hero"
     >
       {/* Cinematic Video Background with Parallax */}
@@ -53,14 +53,14 @@ export function HeroSection() {
           variants={staggerFast}
           initial="hidden"
           animate="visible"
-          className="max-w-4xl"
+          className="max-w-4xl landscape:max-w-2xl"
         >
-          <motion.div variants={fadeInUp} className="mb-8">
+          <motion.div variants={fadeInUp} className="mb-8 landscape:mb-3">
             <p className="inline-block text-[10px] sm:text-xs tracking-widest uppercase text-white bg-black/40 backdrop-blur-md px-4 py-2 border border-white/20 rounded-sm font-mono shadow-xl">
               {t("eyebrow")}
             </p>
           </motion.div>
-          <h1 className="text-4xl sm:text-5xl md:text-[5.5rem] lg:text-[7rem] font-display text-white leading-[0.9] mb-8 drop-shadow-2xl flex flex-wrap gap-x-3 gap-y-1 md:gap-x-4 md:gap-y-2">
+          <h1 className="text-4xl sm:text-5xl md:text-[5.5rem] lg:text-[7rem] landscape:text-[2.8rem] font-display text-white leading-[0.9] landscape:leading-[1.1] mb-8 landscape:mb-3 flex flex-wrap gap-x-3 gap-y-1 md:gap-x-4 md:gap-y-2 landscape:gap-y-0 relative z-10" style={{ filter: "drop-shadow(0 4px 12px rgba(0,0,0,0.5))" }}>
             {[t("headline_building"), t("headline_spaces"), t("headline_that"), t("headline_outlast"), t("headline_trends")].map((word, i) => (
               <span key={i} className="block relative">
                 <motion.span
@@ -76,15 +76,15 @@ export function HeroSection() {
           </h1>
           <motion.p
             variants={fadeInUp}
-            className="text-warm-300 text-lg md:text-xl max-w-xl leading-relaxed mb-10 font-light"
+            className="text-warm-300 text-lg md:text-xl max-w-xl leading-relaxed mb-8 landscape:mb-3 landscape:text-sm landscape:max-w-md hero-description font-light"
           >
             {t("description")}
           </motion.p>
-          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row flex-wrap gap-4">
-            <Link href="/portfolio" className="btn-primary bg-brand-blue text-white hover:bg-brand-blue-dark transition-colors uppercase tracking-widest text-sm font-semibold">
+          <motion.div variants={fadeInUp} className="flex flex-col sm:flex-row flex-wrap gap-4 landscape:gap-3 landscape:flex-row">
+            <Link href="/portfolio" className="btn-primary bg-brand-blue text-white hover:bg-brand-blue-dark transition-colors uppercase tracking-widest text-sm font-semibold landscape:py-2.5 landscape:text-xs">
               {t("view_work")} <ArrowRight size={14} className="ml-2 inline-block" />
             </Link>
-            <Link href="/contact" className="btn-outline border-white/60 text-white hover:bg-brand-blue/20 hover:border-white transition-colors uppercase tracking-widest text-sm font-semibold">
+            <Link href="/contact" className="btn-outline border-white/60 text-white hover:bg-brand-blue/20 hover:border-white transition-colors uppercase tracking-widest text-sm font-semibold landscape:py-2.5 landscape:text-xs">
               {t("start_project")}
             </Link>
           </motion.div>
