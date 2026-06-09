@@ -23,7 +23,7 @@ export default function Footer() {
           <div className="col-span-12 md:col-span-4 mb-12 md:mb-0">
             <Link
               href="/"
-              className="inline-block mb-8 transition-opacity hover:opacity-80"
+              className="inline-block mb-6 md:mb-8 transition-opacity hover:opacity-80"
               aria-label="DH Engineering & Consulting LLC — Home"
             >
               <Image
@@ -31,7 +31,7 @@ export default function Footer() {
                 alt="DH Engineering & Consulting LLC"
                 width={400}
                 height={120}
-                className="h-16 md:h-20 w-auto object-contain brightness-0 invert scale-[2.5] md:scale-[3] origin-left"
+                className="w-56 md:w-72 lg:w-80 h-auto object-contain brightness-0 invert"
                 priority
               />
             </Link>
