@@ -19,10 +19,8 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 
 export default async function ContactPage() {
   const t = await getTranslations("ContactPage");
-  const address = "15321 S Dixie Hwy, Suite 205, Palmetto Bay, FL 33157";
   const mapsEmbedUrl =
-    process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED ||
-    `https://maps.google.com/maps?q=${encodeURIComponent(address)}&t=&z=13&ie=UTF8&iwloc=&output=embed`;
+    "https://maps.google.com/maps?q=25.6277178,-80.3411869&t=&z=17&ie=UTF8&iwloc=&output=embed";
 
   return (
     <>
