@@ -81,8 +81,8 @@ export default function Footer() {
           <div className="col-span-6 md:col-span-4 md:col-start-9">
             <p className="eyebrow text-warm-400 mb-4">{tFooter("contact_title")}</p>
             <address className="not-italic text-warm-300 text-sm space-y-2">
-              <p>13951 SW 122nd Ave, #206</p>
-              <p>Miami, FL 33186</p>
+              <p>15321 S Dixie Hwy, Suite 205</p>
+              <p>Palmetto Bay, FL 33157</p>
               <a
                 href="tel:+13526593636"
                 className="block hover:text-cream-100 transition-colors"

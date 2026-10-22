@@ -103,16 +103,16 @@ const organizationJsonLd = {
       email: "info@dhengconsulting.com",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "13951 SW 122nd Ave, #206",
-        addressLocality: "Miami",
+        streetAddress: "15321 S Dixie Hwy, Suite 205",
+        addressLocality: "Palmetto Bay",
         addressRegion: "FL",
-        postalCode: "33186",
+        postalCode: "33157",
         addressCountry: "US",
       },
       geo: {
         "@type": "GeoCoordinates",
-        latitude: 25.6385,
-        longitude: -80.3925,
+        latitude: 25.6277,
+        longitude: -80.3412,
       },
       openingHoursSpecification: [
         {
